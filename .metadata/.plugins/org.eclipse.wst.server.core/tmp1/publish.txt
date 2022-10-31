@@ -1,0 +1,6 @@
+#Tomcat publish data
+#Mon Oct 31 12:16:33 BOT 2022
+org.eclipse.jst.jee.server\:AutoServe=C\:\\Program Files\\Apache Software Foundation\\Tomcat 9.0\\wtpwebapps\\AutoServe
+org.eclipse.jst.jee.server\:LoginExample=C\:\\Program Files\\Apache Software Foundation\\Tomcat 9.0\\wtpwebapps\\LoginExample
+org.eclipse.jst.jee.server\:Personal=C\:\\Program Files\\Apache Software Foundation\\Tomcat 9.0\\wtpwebapps\\Personal
+org.eclipse.jst.jee.server\:RegristrationExample=C\:\\Program Files\\Apache Software Foundation\\Tomcat 9.0\\wtpwebapps\\RegristrationExample

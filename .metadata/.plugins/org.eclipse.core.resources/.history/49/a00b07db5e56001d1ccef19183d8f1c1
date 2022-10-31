@@ -1,0 +1,11 @@
+package Servlets;
+
+import java.io.IOException;
+
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletResponse;
+
+public class SqServlet {
+	public void doGet(HttpServlet request, HttpServletResponse response) throws IOException
+	
+}

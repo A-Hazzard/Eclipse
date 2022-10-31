@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #636e72;
+}
+//Top Header of the page
+.header{ 
+    //Styles orientation and color of the header
+    width: 100vw;
+    height: 15%;
+    background-color: #2d3436;
+
+    //Styles the navigation bar's content
+    .navbar{
+        width: 20%;
+        float: right;  
+        
+        li{
+            display: inline;
+            margin-left: 2%;
+            .links{
+                display: inline;
+                text-decoration: none;
+                color: white;
+                font-size: 1.3rem;
+            }
+        }
+    }
+
+}
+
+//Main container to hold main content
+main{
+    //Centers content on the page
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5%;
+
+    #loginForm{
+        #loginFormTable{
+            label {
+                font-size: 1.5rem;
+            }
+            input:not(#submit){
+                margin-bottom: 5%;
+                height: 1.5rem;
+                font-size: 1.5rem;
+                
+                
+            }
+            input[type="submit"]{
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+
+}

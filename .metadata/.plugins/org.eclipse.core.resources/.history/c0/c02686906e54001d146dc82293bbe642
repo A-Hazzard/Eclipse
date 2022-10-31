@@ -1,0 +1,29 @@
+import java.sql.Connection;
+import java.sql.SQLException;
+
+public class RegisterDao {
+	private String dbUrl = "jdbc:oracle:thin:@localhost:1521:xe";
+	private String dbUname = "sys as sysdba";
+	private String dbPassword = "password123";
+	private String dbDriver = "oracle.jdbc.driver.OracleDriver";
+	
+	public void loadDriver(String dbDriver) {
+		try {
+			Class.forName(dbDriver);
+		} catch(ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}//end loadDriver method
+	
+	public Connection getConnection() {
+		Connection con = null;
+		try {
+			con = DriverManager.getConnection(dbUrl, dbUname, dbPassword);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return con;
+	}
+	
+	
+}//end RegisterDao class

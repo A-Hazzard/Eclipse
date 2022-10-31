@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #636e72;
+}
+
+.header {
+  width: 100vw;
+  height: 15%;
+  background-color: #2d3436;
+}
+.header .navbar {
+  width: 20%;
+  float: right;
+}
+.header .navbar li {
+  display: inline;
+  margin-left: 2%;
+}
+.header .navbar li .links {
+  display: inline;
+  text-decoration: none;
+  color: white;
+  font-size: 1.3rem;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5%;
+}
+main #loginForm #loginFormTable label {
+  font-size: 1.5rem;
+}
+main #loginForm #loginFormTable input:not(#submit) {
+  margin-bottom: 5%;
+  height: 1.5rem;
+  font-size: 1.5rem;
+}
+main #loginForm #loginFormTable input[type=submit] {
+  font-size: 1.2rem;
+}/*# sourceMappingURL=style.css.map */
