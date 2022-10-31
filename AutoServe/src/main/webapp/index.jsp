@@ -29,6 +29,14 @@
         <!--Form used for logging in-->
         <form action="LoginServlet" method="post" id="loginForm">
             <table id="loginFormTable">
+            
+                <tr>
+                    <td>
+                        <label for="email">Email Address: </label>
+                        <input type="email" name="email" id="email">
+                    </td>
+                </tr>
+                
                 <tr>
                     <td>
                         <label for="firstName">First Name: </label>
@@ -41,12 +49,7 @@
                         <input type="text" name="lastName" id="lastName">
                     </td>
                 </tr>
-                <tr>
-                    <td>
-                        <label for="email">Email Address: </label>
-                        <input type="email" name="email" id="email">
-                    </td>
-                </tr>
+            
 
                  <tr>
                     <td>
@@ -57,11 +60,13 @@
 
                 <tr>
                     <td>
-                        <label for="phone">Phone Numer: </label>
+                        <label for="phone">Phone Number: </label>
                         <input type="text" name="phone" id="phone">
                     </td>
                 </tr>
-    
+                
+ 
+				    
                 <tr>
                     <td>
                         <input type="submit" value="Register" id="submit">
