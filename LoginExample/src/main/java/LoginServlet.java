@@ -23,7 +23,9 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 	        throws ServletException, IOException {
-		
+		String url = "jdbc:oracle:thin:@localhost:1521:xe";
+		String SQLuserName = "sys as sysdba";
+		String password = "password";
 				try{
 		// TODO Auto-generated method stub
 	    PrintWriter out = response.getWriter();
@@ -32,8 +34,7 @@ public class LoginServlet extends HttpServlet {
 		//Load JDBC driver
 		Class.forName("oracle.jdbc.driver.OracleDriver");
 		//Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/", "root", "password123");
-		Connection con = DriverManager.getConnection(
-			"jdbc:oracle:thin:@localhost:1521:xe", "sys as sysdba", "password");
+		Connection con = DriverManager.getConnection(url, SQLuserName, password);
 		
 			//Information provided by the User
 			String uname = request.getParameter("userName");
@@ -44,7 +45,7 @@ public class LoginServlet extends HttpServlet {
 				"SELECT userName FROM login WHERE userName = ? AND userPassword = ?");
 				ps.setString(1, uname);
 				ps.setString(2, upass);
-				ResultSet rs = ps.executeQuery();
+				ResultSet rs = ps.executeQuery();//Executes the sql statement
 
 				//if login successful the user routed to login.jsp or if not an error.jsp
 				if(rs.next()){

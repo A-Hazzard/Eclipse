@@ -4,8 +4,6 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-
-
 public class RegisterDao {
 	private String dbUrl = "jdbc:oracle:thin:@localhost:1521:xe";
 	private String dbUname = "sys as sysdba";
@@ -51,6 +49,5 @@ public class RegisterDao {
 		}
 		return result;
 	}
-	
 	
 }//end RegisterDao class

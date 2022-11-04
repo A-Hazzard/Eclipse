@@ -22,6 +22,9 @@ public class Registration extends HttpServlet {
 		String email = request.getParameter("email");
 		String phone = request.getParameter("phone");
 		
+		System.out.println("Processing Data...");
+		System.out.println("User Name: " + uname + "\nPassword: " + password + "\nEmail: " + email + "\nPhone: " + phone);
+		
 		Member member = new Member(uname, password, email, phone);
 		
 		RegisterDao rDao = new RegisterDao();

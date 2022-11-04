@@ -4,8 +4,11 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,20 +25,37 @@ public class LoginServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		String jdbcURL = "jdbc:oracle:thin:@localhost:1521:xe";
+		String SQLuserName = "sys as sysdba";
+		String SQLuserPwd = "password";
+		PrintWriter out = response.getWriter();
 	try {
-		String email = request.getParameter("email");
-		String fName = request.getParameter("firstName");
-		String lName = request.getParameter("lastName");	
-		String pwd = request.getParameter("passowrd");
-		String phone = request.getParameter("phone");
-
-		//Logs the user info for debugging
-		System.out.println("First name: " + fName + "\nLast name: " + lName +
-		"\nEmail: " + email + "\nPhone: " + phone);
 		
+		String email = request.getParameter("email");			
+		String pwd = request.getParameter("password");		//Logs the user info for debugging
+		System.out.println("\nEmail: " + email);
+		
+		//load oracle jdbc driver
 		Class.forName("oracle.jdbc.driver.OracleDriver");
-		Connection con = DriverManager.getConnection(
-				"jdbc:oracle:thin:@localhost:1521:xe", "sys as sysdba", "password");
+		//get connection to sql database
+		Connection con = DriverManager.getConnection(jdbcURL, SQLuserName, SQLuserPwd);
+		System.out.println("Connection established......");
+		
+		String sqlStatement = "SELECT email FROM autoLogin WHERE email = ? AND pwd = ?";
+		
+		PreparedStatement ps = con.prepareStatement(sqlStatement);
+		ps.setString(1, email);//set's the first question mark in the sql statement to the user email
+		ps.setString(2, pwd);//likewise for the password
+		ResultSet rs = ps.executeQuery();
+		
+		//checks if there is a record
+		if(rs.next()) {
+			RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+			rd.forward(request, response);
+		}
+		else
+			out.println("<font color = red size = 18>Login Failed!!<br/>");
+			out.println("<a href = login.jsp>TRY AGAIN!!</a>");
 		
 	}catch(ClassNotFoundException e) {
 		e.printStackTrace();
