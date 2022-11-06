@@ -19,11 +19,11 @@
                 </tr>
 
                 <tr>
-                    <td>Email: <input type = "text" name = "email" required/></td>
+                    <td>Email: <input type = "email" name = "email" required/></td>
                 </tr>
 
                 <tr>
-                    <td>Password: <input type = "text" name = "password" required/></td>
+                    <td>Password: <input type = "password" name = "password" required/></td>
                 </tr>
 
                 <tr>

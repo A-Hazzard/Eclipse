@@ -18,8 +18,8 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class LoginServlet
  */
-@WebServlet("/LoginServlet")
-public class LoginServlet extends HttpServlet {
+@WebServlet("/ResetPassword")
+public class ResetPassword extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 
@@ -41,20 +41,21 @@ public class LoginServlet extends HttpServlet {
 		Connection con = DriverManager.getConnection(jdbcURL, SQLuserName, SQLuserPwd);
 		System.out.println("Connection established......");
 		
-		String sqlStatement = "SELECT email FROM users WHERE email = ? AND password = ?";
+		String sqlStatement = "UPDATE users SET password = ? WHERE email = ?";
 		
 		PreparedStatement ps = con.prepareStatement(sqlStatement);
-		ps.setString(1, email);//set's the first question mark in the sql statement to the user email
-		ps.setString(2, pwd);//likewise for the password
+		ps.setString(1, pwd);//likewise for the password
+		ps.setString(2, email);//set's the first question mark in the sql statement to the user email
+		
 		ResultSet rs = ps.executeQuery();
 		
 		//checks if there is a record
 		if(rs.next()) {
-			RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("passwordRest.jsp");
 			rd.forward(request, response);
 		}
 		else
-			out.println("<font color = red size = 18>Login Failed!!<br/>");
+			out.println("<font color = red size = 18>Email Not Found!!<br/>");
 			out.println("<a href = login.jsp>TRY AGAIN!!</a>");
 		
 	}catch(ClassNotFoundException e) {

@@ -21,21 +21,26 @@ public class RegServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			PrintWriter out = response.getWriter();
 		try {
+			//Try to get user info
 			String firstname = request.getParameter("firstname");
 			String lastname = request.getParameter("lastname");
 			String email = request.getParameter("email");
 			String password = request.getParameter("password");
-			userInfo uInfo = new userInfo(firstname, lastname, email, password);
+			
+			//put user info into a class to process
+			userInfo credentials = new userInfo(firstname, lastname, email, password);
 			
 	    	out.println("Gathered information into our java servlet, please wait...");
-
+	    	
+	    	RegisterFunctionality registration = new RegisterFunctionality();
+			String result = registration.insert(credentials);
+			response.getWriter().print(result);
+	    	
 		} catch (Exception e) {
 			out.println("Failed to aceept input");
 		}
 		
-		
-		
-		
+
 			
 	}
 
