@@ -41,7 +41,7 @@ public class LoginServlet extends HttpServlet {
 		Connection con = DriverManager.getConnection(jdbcURL, SQLuserName, SQLuserPwd);
 		System.out.println("Connection established......");
 		
-		String sqlStatement = "SELECT email FROM users WHERE email = ? AND password = ?";
+		String sqlStatement = "SELECT email FROM Person WHERE email = ? AND password = ?";
 		
 		PreparedStatement ps = con.prepareStatement(sqlStatement);
 		ps.setString(1, email);//set's the first question mark in the sql statement to the user email
@@ -50,7 +50,7 @@ public class LoginServlet extends HttpServlet {
 		
 		//checks if there is a record
 		if(rs.next()) {
-			RequestDispatcher rd = request.getRequestDispatcher("pages/home.html");
+			RequestDispatcher rd = request.getRequestDispatcher("index.html");
 			rd.forward(request, response);
 		}
 		else

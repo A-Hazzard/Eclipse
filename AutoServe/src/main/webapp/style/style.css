@@ -4,15 +4,14 @@
   padding: 0;
 }
 
-body {
-  background-color: #636e72;
-}
-
 .header {
   background-color: white;
   height: 5rem;
   color: black;
   display: flex;
+}
+.header h1 {
+  font-family: "Segoe UI";
 }
 .header #logo {
   position: relative;
@@ -37,26 +36,62 @@ body {
   text-decoration: none;
   color: hsl(0deg, 0%, 13%);
   font-size: 1.3rem;
+  font-family: "Segoe UI";
 }
 
 #index-main {
   padding-left: 2%;
   padding-right: 2%;
 }
-#index-main #CTA-container {
-  background-image: url("../media/homeBackgroundImage.png");
+#index-main #CTA-container #backgroundImage {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)), url("../media/homeBackgroundImage.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  opacity: 50%;
-  height: 85vh;
+  opacity: 92%;
+  height: 100vh;
 }
-#index-main h2 {
+#index-main #CTA-container #CTA {
+  margin-left: 25%;
+  position: absolute;
+  margin-top: -35%;
+}
+#index-main #CTA-container #CTA h2, #index-main #CTA-container #CTA span {
   color: white;
   font-size: 5rem;
-  margin-top: -25%;
-  padding-left: 4%;
+  text-align: center;
+  font-family: "Segoe UI";
+}
+#index-main #CTA-container #flex-banner {
+  display: flex;
+  width: 70%;
+  height: 11rem;
   position: absolute;
+  margin-top: -15%;
+  margin-left: 15%;
+}
+#index-main #CTA-container #flex-banner :first-child {
+  background-color: rgb(255, 255, 255);
+}
+#index-main #CTA-container #flex-banner :nth-child(2) {
+  background-color: rgb(237, 237, 237);
+}
+#index-main #CTA-container #flex-banner :last-child {
+  background-color: rgb(214, 214, 214);
+}
+#index-main #CTA-container #flex-banner .banner {
+  flex: 1;
+  text-align: center;
+  padding-top: 3%;
+}
+#index-main #CTA-container #flex-banner .banner .fa-solid {
+  font-size: 2rem;
+  background-color: transparent;
+}
+#index-main #CTA-container #flex-banner .banner .credits {
+  background-color: transparent;
+  padding-top: 10%;
+  font-size: 1.5rem;
 }
 
 #login-main {

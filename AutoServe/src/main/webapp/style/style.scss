@@ -1,12 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 
+$headerFont: 'Segoe UI';
 *{
     margin: 0;
     padding: 0;
 }
-body{
-    background-color: #636e72;
-}
+
 //Top Header of the page
 .header{ 
 
@@ -15,62 +14,116 @@ height: 5rem;
 color: black;
 display: flex;
 
-#logo{//Logo in the header
-position: relative;
-margin-left: 10%;
-top: 25%;
-height: 2rem;
-flex: .4;//flex used to help center navbar
-}
-//Styles the navigation bar's content
-.navbar{
-    width: 35%;
-    flex: 1;//flex used to help center navbar
-    
-        ul{
-            padding-top: 3%;
+    h1{
+        font-family: $headerFont;
         }
-        li{
-            display: inline;
-            margin-left: 2%;
-            .links{
+    #logo{//Logo in the header
+    position: relative;
+    margin-left: 10%;
+    top: 25%;
+    height: 2rem;
+    flex: .4;//flex used to help center navbar
+    }
+    //Styles the navigation bar's content
+    .navbar{
+        width: 35%;
+        flex: 1;//flex used to help center navbar
+        
+            ul{
+                padding-top: 3%;
+            }
+            li{
                 display: inline;
-                text-decoration: none;
-                color: hsl(0, 0%, 13%);
-                font-size: 1.3rem;
+                margin-left: 2%;
+                .links{
+                    display: inline;
+                    text-decoration: none;
+                    color: hsl(0, 0%, 13%);
+                    font-size: 1.3rem;
+                    font-family: $headerFont;
+                }
             }
         }
+
     }
 
-}
-
 #index-main {
+    //padding centers items
     padding-left: 2% ;
     padding-right: 2%;
 
     #CTA-container{
-        
-        background-image: url("../media/homeBackgroundImage.png");
+    
+    #backgroundImage{
+        //darkens image
+        background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url("../media/homeBackgroundImage.png");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
-        opacity: 50%;
-        height: 85vh;
- 
+        opacity: 92%;
+        height: 100vh;
+        
+        
+        
+                }//END backgroundImage
 
+        #CTA{      
+            margin-left: 25%;
+            position: absolute;  
+            margin-top: -35%;
+            
+            h2, span{
+                color: white;
+                font-size: 5rem;
+                text-align: center;
+                font-family: $headerFont;
+            }
+        }//end CTA
 
-}
-h2{
-    color: white;
-    font-size: 5rem;
-    margin-top: -25%;
-    padding-left: 4%;
-    position: absolute;
-}
+        #flex-banner{
+            display: flex;
+            width: 70%;
+            height: 11rem;
+            position: absolute;
+            margin-top: -15%;
+            margin-left: 15%;
+        
+            :first-child{
+                background-color: rgb(255,255,255);
+            }
 
+            :nth-child(2){
+                background-color: rgb(237,237,237);
+            }
 
+            :last-child{
+                background-color: rgb(214,214,214);
+            }
+
+            .banner{
+                flex: 1;
+                text-align: center;
+                padding-top: 3%;
+
+                .fa-solid{//icons
+                    font-size: 2rem;
+                    background-color:transparent;
+                }
+
+                .credits{
+                    background-color: transparent;
+                    padding-top: 10%;
+                    font-size: 1.5rem;
+                }
+            
+            }
+
+           
+       
+        }//end flex-banner
 
     }
+}//end index-main
 
 
 
