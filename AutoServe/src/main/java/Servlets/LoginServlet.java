@@ -50,12 +50,12 @@ public class LoginServlet extends HttpServlet {
 		
 		//checks if there is a record
 		if(rs.next()) {
-			RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("pages/home.html");
 			rd.forward(request, response);
 		}
 		else
 			out.println("<font color = red size = 18>Login Failed!!<br/>");
-			out.println("<a href = login.jsp>TRY AGAIN!!</a>");
+			out.println("<a href = index.html>TRY AGAIN!!</a>");
 		
 	}catch(ClassNotFoundException e) {
 		e.printStackTrace();

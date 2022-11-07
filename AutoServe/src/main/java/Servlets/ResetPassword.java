@@ -51,12 +51,12 @@ public class ResetPassword extends HttpServlet {
 		
 		//checks if there is a record
 		if(rs.next()) {
-			RequestDispatcher rd = request.getRequestDispatcher("passwordRest.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("pages/passwordReset.html");
 			rd.forward(request, response);
 		}
 		else
 			out.println("<font color = red size = 18>Email Not Found!!<br/>");
-			out.println("<a href = login.jsp>TRY AGAIN!!</a>");
+			out.println("<a href = index.html>TRY AGAIN!!</a>");
 		
 	}catch(ClassNotFoundException e) {
 		e.printStackTrace();

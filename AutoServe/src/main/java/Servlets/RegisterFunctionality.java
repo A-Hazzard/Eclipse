@@ -32,8 +32,8 @@ public class RegisterFunctionality {
 	public String insert(userInfo credentials) {
 		loadDriver(dbDriver);
 		Connection con = getConnection();
-		String result = "Data entered successfully.";
-		String sql = "INSERT INTO users VALUES(ID.nextval,?,?,?,?)";
+		String result = "Data entered successfully. <a href = \"registration.html\">Register again.</a>";
+		String sql = "INSERT INTO Person VALUES(personID.nextval,?,?,?,?,?,?)";
 		
 		PreparedStatement ps;
 		try {
@@ -41,8 +41,10 @@ public class RegisterFunctionality {
 			ps.setString(1, credentials.getFirstName());
 			ps.setString(2, credentials.getLastName());
 			ps.setString(3, credentials.getEmail());
-			ps.setString(4, credentials.getPassword());
-		
+			ps.setString(4, credentials.getPhone());
+			ps.setString(5, credentials.getPassword());
+			ps.setString(6, credentials.getPosition());
+
 			ps.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();

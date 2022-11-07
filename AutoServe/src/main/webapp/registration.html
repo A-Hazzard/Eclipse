@@ -1,5 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +5,7 @@
 <title>AutoServe Inc. Registration</title>
 </head>
 <body>
+
 	<h1>Register for you AutoServe Account</h1>
 		<form action = "RegServlet" method = "post">
 			<table>
@@ -21,13 +20,22 @@
                 <tr>
                     <td>Email: <input type = "email" name = "email" required/></td>
                 </tr>
+                
+                 <tr>
+                    <td>Phone: <input type = "text" name = "phone" required/></td>
+                </tr>
 
                 <tr>
                     <td>Password: <input type = "password" name = "password" required/></td>
                 </tr>
+                
+                 <tr>
+                    <td>Position(Staff/Mechanic/Client): <input type = "text" name = "position" required/></td>
+                </tr>
 
                 <tr>
                     <td><input type = "submit" value = "Sign-Up" required/>
+                    <td><a href = "../index.html">Already have an account? Login.</a>
                 </tr>
 			
 			</table>
