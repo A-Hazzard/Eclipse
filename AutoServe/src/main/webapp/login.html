@@ -9,7 +9,7 @@
 </head>
 <body>
     <!--Horizontal Header of the web page-->
-    <header class="header"><!--FLEXBOX-->
+    <header class="login-header"><!--FLEXBOX-->
 
         <h1 id="logo">Auto Serve Inc.</h1><!--Logo-->
         
@@ -25,28 +25,35 @@
     </header>
     <!--Main content for login page-->
     <main id = "login-main">
+
+        <h2>Log In</h2><br>
+        <p>New to this site? <a href="registration.html">Sign up</a> </p>
         <!--Form used for logging in-->
         <form action="LoginServlet" method="post" id="loginForm">
             <table id="loginFormTable">
             
                 <tr>
                     <td>
-                        <label for="email">Email Address: </label>
+                        <label for="email">Email: </label><br>
                         <input type="email" name="email" id="email" required>
                     </td>
                 </tr>
                  <tr>
                     <td>
-                        <label for="password">Password: </label>
+                        <label for="password">Password: </label><br>
                         <input type="password" name="password" id="password" required>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <input type="submit" value="Login" id="submit">
-                        <a href = "pages/forgotPassword.html">Forgot Password</a>
+                        <br>
+                        <a href = "pages/forgotPassword.html" id="forgotpassword">Forgot Password</a>
                     </td>
-                    <td><a href = "pages/registration.html">Now a member? Sign-up</a></td>
+                </tr>
+
+                <tr>
+                    <td><input type="submit" value="Login" id="submit"/>
+                    </td>
                 </tr>
             </table>
         </form>

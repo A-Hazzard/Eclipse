@@ -39,6 +39,41 @@
   font-family: "Segoe UI";
 }
 
+.login-header {
+  background-color: white;
+  height: 5rem;
+  color: black;
+  display: flex;
+}
+.login-header h1 {
+  font-family: "Segoe UI";
+}
+.login-header #logo {
+  position: relative;
+  margin-left: 5%;
+  top: 25%;
+  height: 2rem;
+  flex: 0.43;
+}
+.login-header .navbar {
+  width: 35%;
+  flex: 1;
+}
+.login-header .navbar ul {
+  padding-top: 3%;
+}
+.login-header .navbar li {
+  display: inline;
+  margin-left: 2%;
+}
+.login-header .navbar li .links {
+  display: inline;
+  text-decoration: none;
+  color: hsl(0deg, 0%, 13%);
+  font-size: 1.3rem;
+  font-family: "Segoe UI";
+}
+
 #index-main {
   padding-left: 2%;
   padding-right: 2%;
@@ -94,22 +129,58 @@
   font-size: 1.5rem;
 }
 
-#login-main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 5%;
+#access-main {
+  height: 80vh;
 }
-#login-main #loginForm #loginFormTable label {
-  font-size: 1.5rem;
+#access-main h2, #access-main p {
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: -1px;
+  text-align: center;
 }
-#login-main #loginForm #loginFormTable input:not(#submit) {
+#access-main h2 {
+  font-size: 3.5rem;
+}
+#access-main p {
+  font-size: 1.1rem;
+  color: grey;
+}
+#access-main p a {
+  color: rgb(233, 70, 21);
+}
+#access-main #loginForm {
+  padding-left: 38%;
+  padding-top: 2%;
+}
+#access-main #loginForm table {
+  width: 70%;
+}
+#access-main #loginForm label {
+  font-size: 1rem;
+  color: grey;
+}
+#access-main #loginForm input[type=email], #access-main #loginForm input[type=password], #access-main #loginForm input[type=text] {
+  width: 60%;
+  height: 2rem;
+  font-size: 1rem;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-color: grey;
   margin-bottom: 5%;
-  height: 1.5rem;
-  font-size: 1.5rem;
+  outline: none;
 }
-#login-main #loginForm #loginFormTable input[type=submit] {
-  font-size: 1.2rem;
+#access-main #loginForm #forgotpassword {
+  margin-bottom: 15%;
+  color: grey;
+}
+#access-main #loginForm input[type=submit] {
+  width: 60%;
+  height: 3rem;
+  background-color: rgb(233, 70, 21);
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  margin-top: 2%;
 }
 
 #calculator-main .calculator {

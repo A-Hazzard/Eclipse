@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
-
 $headerFont: 'Segoe UI';
 *{
     margin: 0;
@@ -47,6 +46,45 @@ display: flex;
 
     }
 
+.login-header{ 
+
+        background-color: white;
+        height: 5rem;
+        color: black;
+        display: flex;
+        
+            h1{
+                font-family: $headerFont;
+                }
+            #logo{//Logo in the header
+            position: relative;
+            margin-left: 5%;
+            top: 25%;
+            height: 2rem;
+            flex: .43;//flex used to help center navbar
+            }
+            //Styles the navigation bar's content
+            .navbar{
+                width: 35%;
+                flex: 1;//flex used to help center navbar
+                
+                    ul{
+                        padding-top: 3%;
+                    }
+                    li{
+                        display: inline;
+                        margin-left: 2%;
+                        .links{
+                            display: inline;
+                            text-decoration: none;
+                            color: hsl(0, 0%, 13%);
+                            font-size: 1.3rem;
+                            font-family: $headerFont;
+                        }
+                    }
+                }
+        
+            }
 #index-main {
     //padding centers items
     padding-left: 2% ;
@@ -118,44 +156,77 @@ display: flex;
             
             }
 
-           
-       
         }//end flex-banner
 
     }
 }//end index-main
 
 
-
-
 //Main container to hold main content
-#login-main{
-    //Centers content on the page
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 5%;
+#access-main{
 
-    #loginForm{
-        #loginFormTable{
-            label {
-                font-size: 1.5rem;
-            }
-            input:not(#submit){
-                margin-bottom: 5%;
-                height: 1.5rem;
-                font-size: 1.5rem;
-                
-                
-            }
-            input[type="submit"]{
-                font-size: 1.2rem;
-            }
+    height: 80vh;
+
+    h2, p{
+        font-family:Arial, Helvetica, sans-serif;
+        letter-spacing: -1px;
+        text-align: center;
+    }//end h2 and p
+    h2{
+        font-size: 3.5rem;
+    }//end h2
+    p{
+        font-size: 1.1rem;
+        color: grey;
+        a{
+            color: rgb(233,70,21);
         }
     }
 
+    #loginForm{
+    
+    padding-left: 38%;
+    padding-top: 2%;    
+    table{
+        width: 70%;
+    }
+        label{
+            font-size: 1rem;
+            color: grey;
+        }//end label
 
-}
+        input[type=email], input[type=password], input[type=text]{
+            width: 60%;
+            height: 2rem;
+            font-size: 1rem;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-color: grey;
+            margin-bottom: 5%;
+            outline: none;
+           
+            
+        }
+
+        #forgotpassword{
+            margin-bottom: 15%;
+            color: grey;
+        }
+
+        input[type=submit]{
+            width: 60%;
+            height: 3rem;
+            background-color: rgb(233,70,21);
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            margin-top: 2%;
+        }
+    }//end login form
+
+}//end login-main
+
 
 #calculator-main{
 .calculator {
