@@ -27,10 +27,9 @@ public class RegServlet extends HttpServlet {
 			String email = request.getParameter("email");
 			String phone = request.getParameter("phone");
 			String password = request.getParameter("password");
-			String position = request.getParameter("position");
 
 			//put user info into a class to process
-			userInfo credentials = new userInfo(firstname, lastname, email, phone, password, position);
+			userInfo credentials = new userInfo(firstname, lastname, email, phone, password);
 			 
 	    	out.println("Gathered information into our java servlet, please wait...");
 	    	
