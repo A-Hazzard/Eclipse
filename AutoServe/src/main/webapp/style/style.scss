@@ -46,7 +46,7 @@ display: flex;
 
     }
 
-.login-header{ 
+.access-header{ 
 
         background-color: white;
         height: 5rem;
@@ -61,7 +61,7 @@ display: flex;
             margin-left: 5%;
             top: 25%;
             height: 2rem;
-            flex: .43;//flex used to help center navbar
+            flex: .4;//flex used to help center navbar
             }
             //Styles the navigation bar's content
             .navbar{
@@ -86,12 +86,23 @@ display: flex;
         
             }
 #index-main {
+ 
+
+
     //padding centers items
     padding-left: 2% ;
     padding-right: 2%;
 
     #CTA-container{
-    
+        position: relative;
+        .link-span{
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            z-index: 2;
+            top: 0;
+            left: 0;
+        }
     #backgroundImage{
         //darkens image
         background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url("../media/homeBackgroundImage.png");
@@ -229,41 +240,69 @@ display: flex;
 
 
 #calculator-main{
-.calculator {
-    padding: 10px;
-    border-radius: 1em;
-    height: 380px;
-    width: 400px;
-    margin: auto;
-    background-color: #191b28;
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-}
-.display-box {
-    font-family: 'Orbitron', sans-serif;
-    background-color: #dcdbe1;
-    border: solid black 0.5px;
-    color: black;
-    border-radius: 5px;
-    width: 100%;
-    height: 65%;
-}
-#btn {
-    background-color: #fb0066;
-}
-input[type=button] {
-    font-family: 'Orbitron', sans-serif;
-    background-color: #64278f;
-    color: white;
-    border: solid black 0.5px;
-    width: 100%;
-    border-radius: 5px;
-    height: 70%;
-    outline: none;
-}
-input:active[type=button] {
-    background: #e5e5e5;
-    -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
-    -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
-    box-shadow: inset 0px 0px 5px #c1c1c1;
-}
-}
+
+    #progress {
+        position: relative;
+        width: 50%;
+        margin-top: 2%;
+        margin-bottom: 30px;
+        margin-left: 24% ;
+        #progress-bar {
+            position: absolute;
+            background: lightseagreen;
+            height: 5px;
+            top: 50%;
+            left: 0%;
+            }//end progress-bar
+
+            #progress-num {//ul tag
+                list-style: none;//removes bullet points
+                display: flex;
+                justify-content: space-between;
+
+            .step {//list item tags
+                border: 3px solid lightgray;
+                border-radius: 100%;
+                width: 25px;
+                height: 25px;
+                line-height: 25px;
+                text-align: center;
+                background-color: #fff;
+                font-family: sans-serif;
+                font-size: 14px;  
+                position: relative;
+            }//end step
+            .active {
+                border-color: lightseagreen;
+                background-color: lightseagreen;
+                color: #fff;
+              }//end active
+
+            }//end progress-num
+
+
+
+
+            #progress-num::before {
+                content: "";
+                background-color: lightgray;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                height: 5px;
+                width: 100%;
+                z-index: -1;
+
+          
+            }//end progress-num:before
+    }//end progress
+    
+    
+        .btn {
+            background: lightgray;    
+            border: none;
+            border-radius: 3px;
+            padding: 6px 12px;   
+        }//end btn
+
+}//end calculator-main

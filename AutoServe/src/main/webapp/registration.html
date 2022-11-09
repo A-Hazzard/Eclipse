@@ -9,12 +9,13 @@
 </head>
 <body>
     <!--Horizontal Header of the web page-->
-    <header class="login-header"><!--FLEXBOX-->
+    <header class="access-header"><!--FLEXBOX-->
 
         <h1 id="logo">Auto Serve Inc.</h1><!--Logo-->
         
         <nav class="navbar"><!--NAVIGATION BAR-->
             <ul class="link-container">
+                <li><a href="index.html" class="links">Home</a></li>
                 <li><a href="pages/calculator.html" class="links">Calculator</a></li>
                 <li><a href="pages/jobs.html" class="links">Jobs</a></li>
                 <li><a href="#" class="links">Services</a></li>
@@ -27,6 +28,7 @@
     <main id = "access-main">
 
         <h2>Sign Up</h2>
+        <p>Already a member? <a href = "login.html">Log in.</a>
 
 
         <form action="RegServlet" method="post" id="loginForm">
@@ -66,6 +68,7 @@
                         <input type="password" name="password" id="password" required>
                     </td>
                 </tr>
+                
                 <tr>
                     <td>
                         <br>
