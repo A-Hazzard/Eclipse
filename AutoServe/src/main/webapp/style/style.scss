@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
 $headerFont: 'Segoe UI';
+$orange: rgb(229,36,14);
 *{
     margin: 0;
     padding: 0;
@@ -12,11 +14,13 @@ background-color: white;
 height: 5rem;
 color: black;
 display: flex;
+border: 2.5px solid $orange;
+border-top: none;
+border-left: none;
+border-right: none;
 
-    h1{
-        font-family: $headerFont;
-        }
     #logo{//Logo in the header
+        font-family: $headerFont;
     position: relative;
     margin-left: 10%;
     top: 25%;
@@ -52,8 +56,12 @@ display: flex;
         height: 5rem;
         color: black;
         display: flex;
-        
-            h1{
+        border: 2.5px solid $orange;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        margin-bottom: 2%;
+        h1{
                 font-family: $headerFont;
                 }
             #logo{//Logo in the header
@@ -85,6 +93,27 @@ display: flex;
                 }
         
             }
+
+            .sub-navbar{
+                width: 100vw;
+                padding-top: 2%;
+                ul{
+                    padding-left: 15%;
+                    li{
+                        display: inline;
+                        a{
+                            text-decoration: none;
+                            color: grey;
+        
+                        }
+                    }
+                }
+            }//end sub-navbar
+        
+.home-header {
+    border: none !important;
+  
+}
 #index-main {
  
 
@@ -117,7 +146,7 @@ display: flex;
                 }//END backgroundImage
 
         #CTA{      
-            margin-left: 25%;
+            margin-left: 30%;
             position: absolute;  
             margin-top: -35%;
             
@@ -190,7 +219,7 @@ display: flex;
         font-size: 1.1rem;
         color: grey;
         a{
-            color: rgb(233,70,21);
+            color: $orange;
         }
     }
 
@@ -228,7 +257,7 @@ display: flex;
         input[type=submit]{
             width: 60%;
             height: 3rem;
-            background-color: rgb(233,70,21);
+            background-color: $orange;
             border: none;
             color: white;
             font-size: 1.5rem;
@@ -240,6 +269,22 @@ display: flex;
 
 
 #calculator-main{
+   
+    #calc-info{
+        width: 100vw;
+        padding: 2% 0 0 15%;
+
+        h2{
+            font-family: $headerFont;
+        }
+
+        p{
+            font-family: $headerFont;
+            padding-top: .5%;
+            padding-left: 2%;
+            font-style: italic;
+        }
+    }//end calc-info
 
     #progress {
         position: relative;
@@ -297,12 +342,81 @@ display: flex;
             }//end progress-num:before
     }//end progress
     
+#calculator{
+    display: flex;
+    flex-direction: row;
+    height: 70vh;
+
+    #input-container{
+        flex: .6;
+        padding-top: 12%;
+        padding-left: 23%;
+        //border: 1px solid red;
+
+        #calculator-form{ 
+        table{
+            width: 100%;
+            tr{   
+                display: inline;
+                label{
+                    font-size: 1.2rem;
+                    font-family: 'Secular One', sans-serif;
+                }
+
+                select{
+                    border-top: none;
+                    border-left: none;
+                    border-right: none;
+                    outline: none;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    font-size: .9rem;
+                    font-family: 'Secular One', sans-serif;
+
+                    
+                }
+            }//end table row
+            #location-tr{
+                margin-left: 10%;
+            }//end location
+        }//end table
+    }//end calculator-form
     
-        .btn {
-            background: lightgray;    
-            border: none;
-            border-radius: 3px;
-            padding: 6px 12px;   
-        }//end btn
+    }//end input-container
+
+    #display-container{
+        flex: .8;
+        padding-top: 2%;
+        padding-left: 2%;
+        img{
+            padding-left: 5%;
+        }//end img
+        #display-header{
+            font-family: $headerFont;
+            font-size: 2rem;
+            margin-top: -2%;
+        }//end display-header
+
+        #display-note{
+            font-size: 1.2rem;
+            font-family: $headerFont;
+            font-style: italic;
+        }//end display-note
+    }//end display-container
+}
+.btn {
+    background: $orange;
+    color: #fff;
+    font-family: 'Secular One', sans-serif;    
+    border: none;
+    border-radius: .8rem;
+    padding: 1rem;
+    width: 30%; 
+    display: inline;
+}//end btn
+
+#progress-next{
+    margin-left: 8%;
+}
 
 }//end calculator-main

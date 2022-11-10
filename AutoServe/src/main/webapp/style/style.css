@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Secular+One&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -9,11 +10,13 @@
   height: 5rem;
   color: black;
   display: flex;
-}
-.header h1 {
-  font-family: "Segoe UI";
+  border: 2.5px solid rgb(229, 36, 14);
+  border-top: none;
+  border-left: none;
+  border-right: none;
 }
 .header #logo {
+  font-family: "Segoe UI";
   position: relative;
   margin-left: 10%;
   top: 25%;
@@ -44,6 +47,11 @@
   height: 5rem;
   color: black;
   display: flex;
+  border: 2.5px solid rgb(229, 36, 14);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  margin-bottom: 2%;
 }
 .access-header h1 {
   font-family: "Segoe UI";
@@ -74,6 +82,25 @@
   font-family: "Segoe UI";
 }
 
+.sub-navbar {
+  width: 100vw;
+  padding-top: 2%;
+}
+.sub-navbar ul {
+  padding-left: 15%;
+}
+.sub-navbar ul li {
+  display: inline;
+}
+.sub-navbar ul li a {
+  text-decoration: none;
+  color: grey;
+}
+
+.home-header {
+  border: none !important;
+}
+
 #index-main {
   padding-left: 2%;
   padding-right: 2%;
@@ -98,7 +125,7 @@
   height: 100vh;
 }
 #index-main #CTA-container #CTA {
-  margin-left: 25%;
+  margin-left: 30%;
   position: absolute;
   margin-top: -35%;
 }
@@ -156,7 +183,7 @@
   color: grey;
 }
 #access-main p a {
-  color: rgb(233, 70, 21);
+  color: rgb(229, 36, 14);
 }
 #access-main #loginForm {
   padding-left: 38%;
@@ -187,13 +214,26 @@
 #access-main #loginForm input[type=submit] {
   width: 60%;
   height: 3rem;
-  background-color: rgb(233, 70, 21);
+  background-color: rgb(229, 36, 14);
   border: none;
   color: white;
   font-size: 1.5rem;
   margin-top: 2%;
 }
 
+#calculator-main #calc-info {
+  width: 100vw;
+  padding: 2% 0 0 15%;
+}
+#calculator-main #calc-info h2 {
+  font-family: "Segoe UI";
+}
+#calculator-main #calc-info p {
+  font-family: "Segoe UI";
+  padding-top: 0.5%;
+  padding-left: 2%;
+  font-style: italic;
+}
 #calculator-main #progress {
   position: relative;
   width: 50%;
@@ -240,9 +280,67 @@
   width: 100%;
   z-index: -1;
 }
+#calculator-main #calculator {
+  display: flex;
+  flex-direction: row;
+  height: 70vh;
+}
+#calculator-main #calculator #input-container {
+  flex: 0.6;
+  padding-top: 12%;
+  padding-left: 23%;
+}
+#calculator-main #calculator #input-container #calculator-form table {
+  width: 100%;
+}
+#calculator-main #calculator #input-container #calculator-form table tr {
+  display: inline;
+}
+#calculator-main #calculator #input-container #calculator-form table tr label {
+  font-size: 1.2rem;
+  font-family: "Secular One", sans-serif;
+}
+#calculator-main #calculator #input-container #calculator-form table tr select {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-size: 0.9rem;
+  font-family: "Secular One", sans-serif;
+}
+#calculator-main #calculator #input-container #calculator-form table #location-tr {
+  margin-left: 10%;
+}
+#calculator-main #calculator #display-container {
+  flex: 0.8;
+  padding-top: 2%;
+  padding-left: 2%;
+}
+#calculator-main #calculator #display-container img {
+  padding-left: 5%;
+}
+#calculator-main #calculator #display-container #display-header {
+  font-family: "Segoe UI";
+  font-size: 2rem;
+  margin-top: -2%;
+}
+#calculator-main #calculator #display-container #display-note {
+  font-size: 1.2rem;
+  font-family: "Segoe UI";
+  font-style: italic;
+}
 #calculator-main .btn {
-  background: lightgray;
+  background: rgb(229, 36, 14);
+  color: #fff;
+  font-family: "Secular One", sans-serif;
   border: none;
-  border-radius: 3px;
-  padding: 6px 12px;
+  border-radius: 0.8rem;
+  padding: 1rem;
+  width: 30%;
+  display: inline;
+}
+#calculator-main #progress-next {
+  margin-left: 8%;
 }/*# sourceMappingURL=style.css.map */
