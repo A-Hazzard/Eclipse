@@ -358,16 +358,26 @@
   padding-top: 2%;
   padding-left: 5%;
 }
+#jobs-main #jobs-flex-container #available-jobs button {
+  border: none;
+  border-radius: 0.5rem;
+  margin-bottom: 5%;
+  width: 90%;
+  text-align: left;
+  background-color: transparent;
+  cursor: pointer;
+  background-color: black;
+}
 #jobs-main #jobs-flex-container #available-jobs .flex-container {
   background-color: rgb(255, 255, 255);
-  margin-bottom: 5%;
   padding: 5%;
-  width: 80%;
+  width: 90%;
   border-radius: 0.5rem;
   box-shadow: 0.2rem 0.1rem 0.4rem rgb(223, 223, 223);
 }
-#jobs-main #jobs-flex-container #available-jobs .flex-container :hover {
-  cursor: pointer;
+#jobs-main #jobs-flex-container #available-jobs .flex-container a {
+  text-decoration: none;
+  color: unset;
 }
 #jobs-main #jobs-flex-container #available-jobs .flex-container .job-title {
   display: block;
@@ -393,39 +403,39 @@
 #jobs-main #jobs-flex-container #job-status {
   flex: 2.5;
 }
-#jobs-main #jobs-flex-container #job-status #information {
+#jobs-main #jobs-flex-container #job-status #heavy-equipment-information {
   background-color: rgb(255, 255, 255);
   margin-top: 3%;
-  width: 80%;
+  width: 92%;
   height: 85%;
   overflow-y: scroll;
   padding: 1%;
   border-radius: 0.5rem;
   box-shadow: 1rem 1rem 5rem rgb(223, 223, 223);
 }
-#jobs-main #jobs-flex-container #job-status #information .top-flex-portion {
+#jobs-main #jobs-flex-container #job-status #heavy-equipment-information .top-flex-portion {
   border: 1px solid rgba(198, 198, 198, 0.809);
   border-top: none;
   border-left: none;
   border-right: none;
 }
-#jobs-main #jobs-flex-container #job-status #information .top-flex-portion .job-title {
+#jobs-main #jobs-flex-container #job-status #heavy-equipment-information .top-flex-portion .job-title {
   font-family: Roboto, Helvetica, sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 1.8rem;
 }
-#jobs-main #jobs-flex-container #job-status #information .top-flex-portion .recruiter {
+#jobs-main #jobs-flex-container #job-status #heavy-equipment-information .top-flex-portion .recruiter {
   font-family: "Ubuntu", sans-serif;
   font-weight: 400;
   margin-top: 1%;
   margin-bottom: 1%;
 }
-#jobs-main #jobs-flex-container #job-status #information .top-flex-portion .position {
+#jobs-main #jobs-flex-container #job-status #heavy-equipment-information .top-flex-portion .position {
   font-family: "Segoe UI";
   font-weight: 450;
 }
-#jobs-main #jobs-flex-container #job-status #information .top-flex-portion .position span {
+#jobs-main #jobs-flex-container #job-status #heavy-equipment-information .top-flex-portion .position span {
   opacity: 50%;
   font-size: 0.8rem;
   margin-bottom: 2%;

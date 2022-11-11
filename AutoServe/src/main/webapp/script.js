@@ -38,3 +38,4 @@ const updateProgress = () => {
     progressNext.disabled = false;
   }
 };
+
