@@ -9,16 +9,13 @@
   <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 
   <script>
-//JQUIERY CODE
-$(document).ready(function() {
 
-  //loads prices in calculator page
+$(function(){
+      //loads prices in calculator page
 $("#progress-next").click(function(){
     $("#input-container").load("states/prices.txt");
 })
-
-
-});//end main ready function
+})
 
 
   </script>
@@ -80,7 +77,7 @@ $("#progress-next").click(function(){
     <div id="input-container">
       <form action="" method="post" id="calculator-form">
           <table>
-            <tr>
+            <tr id="vehicles-tr">
               <td>
                 <label for="vehicleType">Vehicle:</label><br>
                 <select name="selectVehicleType" id="vehicleType">
@@ -89,12 +86,12 @@ $("#progress-next").click(function(){
                   <option value="Truck">Truck</option>
                   <option value="Van">Van</option>
                   <option value="MotorBike">MotorBike</option>
-                </select>
+                </select><!--End select-->
               </td>
-            </tr>
+            </tr><!--End vehicles table row-->
             <tr id="location-tr">
               <td>
-                <label for="location" id="location-label">Location:</label><br>
+                <label for="location" id="location-label">Location:</label> <br>
                 <select name="selectLocation" id="location">
                   <option value="" disabled selected hidden class="default-option">Select your location</option>
                   <option value="Trinidad">Trinidad</option>
@@ -102,13 +99,13 @@ $("#progress-next").click(function(){
                   <option value="United States">United States</option>
                 </select>
               </td>
-            </tr>
-          </table>  
-      </form>
-    </div>
+            </tr><!--End location table row-->
+          </table><!--END table-->
+      </form><!--END FORM-->
+    </div><!--END input-container-->
 
-    <button id="progress-prev" class="btn" disabled>Prev</button>
-    <button id="progress-next" class="btn">Next</button> 
+    <button type="button" id="progress-prev" class="btn" disabled>Prev</button>
+    <button type="button" id="progress-next" class="btn">Next</button> 
 
 </div>
 
@@ -121,7 +118,7 @@ $("#progress-next").click(function(){
   </section>
 
 </main>
-<script type="text/javascript" src="../script.js"></script>
+<script type="text/javascript" src="../js/calculate.js"></script>
  
 </body>
  

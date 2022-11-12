@@ -6,11 +6,7 @@
   padding: 0;
 }
 
-#jobs-body {
-  overflow: hidden;
-}
-
-#calculator-body {
+body {
   overflow-x: hidden;
 }
 
@@ -126,7 +122,7 @@
   left: 0;
 }
 #index-main #CTA-container #backgroundImage {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)), url("../media/homeBackgroundImage.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)), url("../pages/states/media/homeBackgroundImage.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -376,6 +372,7 @@
   display: inline;
   margin-left: 25%;
   margin-top: 2%;
+  cursor: pointer;
 }
 #calculator-main #progress-next {
   margin-left: 6%;

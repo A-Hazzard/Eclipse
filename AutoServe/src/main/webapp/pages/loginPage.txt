@@ -23,7 +23,7 @@
                 <tr>
                     <td>
                         <br>
-                        <a href = "pages/forgotPassword.html" id="forgotpassword">Forgot Password</a>
+                        <a href = "#" id="forgotPassword">Forgot Password</a>
                     </td>
                 </tr>
 
@@ -33,33 +33,38 @@
                 </tr>
             </table>
         </form>
-       
     </div>
 
     <script>
-    //loads registrationPage on click
     $(function(){
-  let viewPwd = false;
+        let viewPwd = false;
 
-    $("#viewPwd").on('click', function(){
-      let getPwdType = $("#password");
-      if(viewPwd === false) {
-        console.log('checked, changed password field to text')
-        getPwdType.attr('type', 'text');
-        viewPwd = true;
-      
-      }
-      else if(viewPwd === true){
-        console.log("Unchecked, changed password field back to password")
-        getPwdType.attr('type', 'password');
-        viewPwd = false;
-      }
-    })
+            $("#viewPwd").on('click', function(){
+            let getPwdType = $("#password");
+            if(viewPwd === false) {
+                console.log('checked, changed password field to text')
+                getPwdType.attr('type', 'text');
+                viewPwd = true;
+            
+            }
+            else if(viewPwd === true){
+                console.log("Unchecked, changed password field back to password")
+                getPwdType.attr('type', 'password');
+                viewPwd = false;
+            }
+            })
+            
+        
+            $("#registrationPage").on('click', function(){
+                $("main").hide().load("pages/states/registrationPage.txt").fadeIn("slow");
+            })
+
+            $("#forgotPassword").on('click', function(){
+             
+                $("main").hide().load("forgotPassword.txt").fadeIn("slow");
+            })
 })
-   
-    $("#registrationPage").on('click', function(){
-        $("main").hide().load("pages/states/registrationPage.txt").fadeIn("slow");
-    })
+
     </script>
    
    

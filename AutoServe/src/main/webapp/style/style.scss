@@ -12,11 +12,8 @@ $grey: rgb(245,245,245);
     padding: 0;
 }
 
-#jobs-body{
-    overflow: hidden ;
-}
-#calculator-body{
-    overflow-x: hidden ;
+body{
+    overflow-x: hidden;
 }
 
 //Top Header of the page
@@ -146,7 +143,7 @@ border-right: none;
         }
     #backgroundImage{
         //darkens image
-        background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url("../media/homeBackgroundImage.png");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url("../pages/states/media/homeBackgroundImage.png");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -458,6 +455,7 @@ border-right: none;
     display: inline;
     margin-left: 25%;
     margin-top: 2%;
+    cursor: pointer;
 }//end btn
 
 #progress-next{

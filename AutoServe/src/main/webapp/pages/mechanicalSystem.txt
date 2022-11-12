@@ -1,0 +1,75 @@
+<div class="information">
+
+    <div class="top-flex-portion">
+        <span class="job-title">Mechanical System Engineer</span>
+            <p class="recruiter">Progressive Recruitment Specialists Ltd.</p>
+            <p class="position">Tunapuna<br>
+                <span>Published August 20</span>
+            </p>
+    </div>
+
+    <p>Type of employment: <br> Full Time <br><br>
+    Job description <br> <br>
+
+    Job Purpose: <br>
+To ensure overall compliance in the manufacturing of sensitive and CSD products. <br>
+To ensure all ISO requirements are consistently implemented and maintained throughout the plant.
+<br> <br>
+Key Result Areas: <br>
+Maintain all plant mechanical equipment and production lines
+Maintain all plant utility equipment
+Maintain all plant buildings and assets
+Manage and upkeep the machine, equipment and building maintenance system software
+Manage and upkeep the machine, equipment and building spares and inventory
+Provide accounting records for all PM, CM, conditional maintenance and inventory.
+Supervise and train team members as necessary in the field of mechanical maintenance, trouble shooting and repair
+Ensure that all mechanical safety policies are up to date and followed as per standards <br>
+Maintain the documentation, policies and procedures for the lockout tag out system as per ISO requirements
+Maintain the documentation, policies, procedures and carry out all mechanical safety checks as per ISO requirements
+Inspect installations and observe operations, to ensure conformance to mechanical design specifications and compliance with operational and safety standards.
+Initiate governmental regulatory requirements for system inspections and certificates. <br>
+Maintain detail records of mechanical distribution systems (raw water, treated water, air, CO2, CTW, CW, waste etc)
+Collect data to determine operating efficiency of all mechanical systems.
+Available for on call production downtime related to mechanical issues
+Coordinate and execute all mechanical related corrective actions and repairs in plant Perform assignments independently with instruction as to the general results expected and with guidance from department manager and or engineering specialist on complex problems. <br>
+Investigate customer or public complaints, determine nature and extent of problem, and recommend remedial measures.
+Assist in developing capital project programs for new equipment and major repairs.
+Develop budgets, estimating labor, material, and construction costs.
+Compile data and write reports regarding existing and potential engineering studies and projects.
+Serve and project engineer on projects
+Conduct Tasks outlined by the maintenance manager for plant improvement.
+Plan, schedule, conduct and coordinate program of assigned engineering work and projects
+Report up-to 6 performance KPIs related to company goals and objectivesReport and manage meetings and logs
+Lead Integrated Management Systems (IMS) team as required.
+Maintain Plant Hygiene, Sanitation, Good Manufacturing Practices (GMP’s) Programmes and Contractors according to Company requirements.
+Lead ISO effort for Technical and Maintenance Team.
+Conduct Internal Audits as required by KORE and ISO standards.
+Be up to date on HACCP, ISO, PAS 220, KORE and GMP requirements.
+Train maintenance personal on HACCP, ISO, PAS 220, KORE and GMP requirements.
+Conduct duties as outlined in the Company’s Management System documents and contributes to team effort by accomplishing related results as needed.
+Ensures all relevant systems & programs are in compliance with ISO requirements
+
+<br><br>
+
+Knowledge & Experience:-
+Experience in mechanical plant maintenance Technology. <br>
+Experience in a mechanical Engineering and Maintenance <br>
+A minimum of five (5) years experience in a related field / industry. <br>
+Ability use AutoCAD or drawing utilityExcellent computer skills in Microsoft office and other reporting software <br>
+Ability to use and manage computerized maintenance programs <br>
+Knowledge of Trinidad and Tobago safety codes <br>
+Understanding of ISO Standards and implementation of a management system to achieve operational controls <br>
+Knowledge of procedures that address compliance with applicable regulatory and KORE requirements <br>
+
+<br>
+<br>
+Work Environment and physical demands: <br>
+Job will generally be in an office environment but will require travel to visit customer or supplier facility or construction job site. Work condition will vary at each location <br>
+May be assigned to work at another construction site or facility for a short period of time. <br>
+Long hours may be necessary as workload dictate. This may include week days, weekends and public holidays <br>
+Must occasionally lift and move up to 50 pounds <br>
+<br><br>
+Education: <br>
+A Bachelor’s Degree in Engineering or equivalent qualifications. <br>
+</p>
+</div>
