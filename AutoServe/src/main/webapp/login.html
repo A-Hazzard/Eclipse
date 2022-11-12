@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style/style.css">
     <link rel="shortcut icon" type="image/x-icon" href="media/logo.jpg" />
 
+  
     <title>AutoServe Login</title>
 </head>
 <body>
@@ -45,7 +46,8 @@
                  <tr>
                     <td>
                         <label for="password">Password: </label><br>
-                        <input type="password" name="password" id="password" required>
+                        <input type="password" name="password" id="password" required> <br>
+                        <div id="viewPassword-container"><input type="checkbox" id="viewPwd"><label for="viewPwd">Show Password</label></div>
                     </td>
                 </tr>
                 <tr>
@@ -64,5 +66,9 @@
        
     </main>
   
+      <!--JQUERY-->
+      <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+      <script src="script.js"></script>
+      <script src="jquery.js"></script>
 </body>
 </html>

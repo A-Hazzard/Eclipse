@@ -6,6 +6,14 @@
   padding: 0;
 }
 
+#jobs-body {
+  overflow: hidden;
+}
+
+#calculator-body {
+  overflow-x: hidden;
+}
+
 .header {
   background-color: white;
   height: 5rem;
@@ -193,11 +201,11 @@
 #access-main #loginForm table {
   width: 70%;
 }
-#access-main #loginForm label {
+#access-main #loginForm table label {
   font-size: 1rem;
   color: grey;
 }
-#access-main #loginForm input[type=email], #access-main #loginForm input[type=password], #access-main #loginForm input[type=text] {
+#access-main #loginForm table input[type=email], #access-main #loginForm table input[type=password], #access-main #loginForm table input[type=text] {
   width: 60%;
   height: 2rem;
   font-size: 1rem;
@@ -208,11 +216,7 @@
   margin-bottom: 5%;
   outline: none;
 }
-#access-main #loginForm #forgotpassword {
-  margin-bottom: 15%;
-  color: grey;
-}
-#access-main #loginForm input[type=submit] {
+#access-main #loginForm table input[type=submit] {
   width: 60%;
   height: 3rem;
   background-color: rgb(229, 36, 14);
@@ -220,6 +224,16 @@
   color: white;
   font-size: 1.5rem;
   margin-top: 2%;
+}
+#access-main #loginForm table input[type=checkbox] {
+  margin-right: 2%;
+}
+#access-main #loginForm table #viewPassword-container {
+  margin-top: -3%;
+}
+#access-main #loginForm table #forgotpassword {
+  margin-bottom: 15%;
+  color: grey;
 }
 
 #calculator-main #calc-info {
@@ -284,24 +298,43 @@
 #calculator-main #calculator {
   display: flex;
   flex-direction: row;
-  height: 70vh;
 }
-#calculator-main #calculator #input-container {
-  flex: 0.6;
-  padding-top: 12%;
-  padding-left: 23%;
+#calculator-main #calculator .wrapper {
+  flex: 1.3;
+  padding-left: 15%;
 }
-#calculator-main #calculator #input-container #calculator-form table {
+#calculator-main #calculator .wrapper #input-container {
+  padding-top: 25%;
+  padding-left: 25%;
+}
+#calculator-main #calculator .wrapper #input-container #price-form {
+  border: none;
+  font-size: 1.5rem;
+  font-family: "Ubuntu", sans-serif;
+  margin-bottom: 3%;
+  margin-top: -10%;
+}
+#calculator-main #calculator .wrapper #input-container #price-form .service {
   width: 100%;
+  padding: 2%;
 }
-#calculator-main #calculator #input-container #calculator-form table tr {
+#calculator-main #calculator .wrapper #input-container #price-form .price {
+  text-align: right;
+}
+#calculator-main #calculator .wrapper #input-container #calculator-form {
+  width: 89%;
+}
+#calculator-main #calculator .wrapper #input-container #calculator-form table {
+  width: 80%;
+}
+#calculator-main #calculator .wrapper #input-container #calculator-form table tr {
   display: inline;
 }
-#calculator-main #calculator #input-container #calculator-form table tr label {
+#calculator-main #calculator .wrapper #input-container #calculator-form table tr label {
   font-size: 1.2rem;
   font-family: "Secular One", sans-serif;
 }
-#calculator-main #calculator #input-container #calculator-form table tr select {
+#calculator-main #calculator .wrapper #input-container #calculator-form table tr select {
   border-top: none;
   border-left: none;
   border-right: none;
@@ -311,11 +344,11 @@
   font-size: 0.9rem;
   font-family: "Secular One", sans-serif;
 }
-#calculator-main #calculator #input-container #calculator-form table #location-tr {
+#calculator-main #calculator .wrapper #input-container #calculator-form table #location-tr {
   margin-left: 10%;
 }
 #calculator-main #calculator #display-container {
-  flex: 0.8;
+  flex: 1.2;
   padding-top: 2%;
   padding-left: 2%;
 }
@@ -325,7 +358,7 @@
 #calculator-main #calculator #display-container #display-header {
   font-family: "Segoe UI";
   font-size: 2rem;
-  margin-top: -2%;
+  margin-top: 2%;
 }
 #calculator-main #calculator #display-container #display-note {
   font-size: 1.2rem;
@@ -339,16 +372,18 @@
   border: none;
   border-radius: 0.8rem;
   padding: 1rem;
-  width: 30%;
+  width: 20%;
   display: inline;
+  margin-left: 25%;
+  margin-top: 2%;
 }
 #calculator-main #progress-next {
-  margin-left: 8%;
+  margin-left: 6%;
 }
 
 #jobs-main {
   background-color: rgb(245, 245, 245);
-  width: 100vw;
+  height: 100vh;
 }
 #jobs-main #jobs-flex-container {
   display: flex;
@@ -358,18 +393,10 @@
   padding-top: 2%;
   padding-left: 5%;
 }
-#jobs-main #jobs-flex-container #available-jobs button {
-  border: none;
-  border-radius: 0.5rem;
-  margin-bottom: 5%;
-  width: 90%;
-  text-align: left;
-  background-color: transparent;
-  cursor: pointer;
-  background-color: black;
-}
 #jobs-main #jobs-flex-container #available-jobs .flex-container {
   background-color: rgb(255, 255, 255);
+  cursor: pointer;
+  margin-bottom: 5%;
   padding: 5%;
   width: 90%;
   border-radius: 0.5rem;
@@ -402,43 +429,61 @@
 }
 #jobs-main #jobs-flex-container #job-status {
   flex: 2.5;
+  height: 70vh;
+  padding-left: 2%;
 }
-#jobs-main #jobs-flex-container #job-status #heavy-equipment-information {
+#jobs-main #jobs-flex-container #job-status img {
+  width: 10%;
+  margin-top: 10%;
+  margin-bottom: 3%;
+  margin-left: 45%;
+}
+#jobs-main #jobs-flex-container #job-status #note {
+  font-family: "Ubuntu", sans-serif;
+  text-align: center;
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+#jobs-main #jobs-flex-container #job-status .information {
   background-color: rgb(255, 255, 255);
   margin-top: 3%;
   width: 92%;
-  height: 85%;
+  height: 70vh;
   overflow-y: scroll;
   padding: 1%;
   border-radius: 0.5rem;
   box-shadow: 1rem 1rem 5rem rgb(223, 223, 223);
 }
-#jobs-main #jobs-flex-container #job-status #heavy-equipment-information .top-flex-portion {
+#jobs-main #jobs-flex-container #job-status .information .top-flex-portion {
   border: 1px solid rgba(198, 198, 198, 0.809);
   border-top: none;
   border-left: none;
   border-right: none;
 }
-#jobs-main #jobs-flex-container #job-status #heavy-equipment-information .top-flex-portion .job-title {
+#jobs-main #jobs-flex-container #job-status .information .top-flex-portion .job-title {
   font-family: Roboto, Helvetica, sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 1.8rem;
 }
-#jobs-main #jobs-flex-container #job-status #heavy-equipment-information .top-flex-portion .recruiter {
+#jobs-main #jobs-flex-container #job-status .information .top-flex-portion .recruiter {
   font-family: "Ubuntu", sans-serif;
   font-weight: 400;
   margin-top: 1%;
   margin-bottom: 1%;
 }
-#jobs-main #jobs-flex-container #job-status #heavy-equipment-information .top-flex-portion .position {
+#jobs-main #jobs-flex-container #job-status .information .top-flex-portion .position {
   font-family: "Segoe UI";
   font-weight: 450;
 }
-#jobs-main #jobs-flex-container #job-status #heavy-equipment-information .top-flex-portion .position span {
+#jobs-main #jobs-flex-container #job-status .information .top-flex-portion .position span {
   opacity: 50%;
   font-size: 0.8rem;
   margin-bottom: 2%;
   margin-top: 2%;
   display: block;
+}
+#jobs-main #jobs-flex-container #job-status .electric {
+  height: 50% !important;
+  overflow: unset;
 }/*# sourceMappingURL=style.css.map */

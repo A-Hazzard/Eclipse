@@ -1,4 +1,4 @@
-<div id="heavy-equipment-information">
+<div class="information">
 
     <!--Top portion of container-->
     <div class="top-flex-portion">

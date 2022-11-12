@@ -50,7 +50,7 @@ public class LoginServlet extends HttpServlet {
 		
 		//checks if there is a record
 		if(rs.next()) {
-			RequestDispatcher rd = request.getRequestDispatcher("index.html");
+			RequestDispatcher rd = request.getRequestDispatcher("pages/jobs.html");
 			rd.forward(request, response);
 		}
 		else

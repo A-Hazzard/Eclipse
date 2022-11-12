@@ -6,10 +6,25 @@
   <title>Calculator</title>
   <link rel="stylesheet" href="../style/style.css">
   <link rel="shortcut icon" type="image/x-icon" href="../media/logo.jpg" />
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 
+  <script>
+//JQUIERY CODE
+$(document).ready(function() {
+
+  //loads prices in calculator page
+$("#progress-next").click(function(){
+    $("#input-container").load("states/prices.txt");
+})
+
+
+});//end main ready function
+
+
+  </script>
 </head>
- 
-<body>
+
+<body id="calculator-body">
     <!--Horizontal Header of the web page-->
     <header class="header"><!--FLEXBOX-->
 
@@ -61,8 +76,8 @@
   <!--Sections that contains the calculator, also a flexbox-->
   <section id="calculator">
 
+<div class="wrapper">
     <div id="input-container">
-
       <form action="" method="post" id="calculator-form">
           <table>
             <tr>
@@ -90,15 +105,18 @@
             </tr>
           </table>  
       </form>
-      
-      <button id="progress-prev" class="btn" disabled>Prev</button>
-      <button id="progress-next" class="btn">Next</button>  
     </div>
+
+    <button id="progress-prev" class="btn" disabled>Prev</button>
+    <button id="progress-next" class="btn">Next</button> 
+
+</div>
 
     <div id="display-container">
       <img src="../media/carImg.png" alt="picture of a car">
       <p id="display-header">Estimated cost</p>
       <p id="display-note">Your estimated price will be displayed here</p>
+      <p id="code"></p>
     </div>
   </section>
 

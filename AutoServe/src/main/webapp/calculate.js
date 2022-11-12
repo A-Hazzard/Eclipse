@@ -1,3 +1,4 @@
+
 const progressBar = document.getElementById("progress-bar");
 const progressNext = document.getElementById("progress-next");
 const progressPrev = document.getElementById("progress-prev");
@@ -38,4 +39,6 @@ const updateProgress = () => {
     progressNext.disabled = false;
   }
 };
+
+
 
