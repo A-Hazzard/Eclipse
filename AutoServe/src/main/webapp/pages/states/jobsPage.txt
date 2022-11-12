@@ -1,47 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="../style/style.css" />
-<link rel="shortcut icon" type="image/x-icon" href="../media/logo.jpg" />
-<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-<script>
-    
-$(document).ready(function() {
-
-
-$(".job1").click(function(){
-    $("#job-status").hide().load("states/heavyEquipment.txt").fadeIn("slow");
-})
-$(".job2").click(function(){
-    $("#job-status").hide().load("states/electricVehicleTech.txt").fadeIn("slow");
-})
-$(".job3").click(function(){
-    $("#job-status").hide().load("states/mechanicalSystem.txt").fadeIn("slow");
-})
-
-});//end main ready function
-</script>
-<title>Jobs</title>
-</head>
-<body id="jobs-body">
-	<header class="header"><!--FLEXBOX-->
-
-            <h1 id="logo">Auto Serve Inc.</h1><!--Logo-->
-            
-            <nav class="navbar"><!--NAVIGATION BAR-->
-                <ul class="link-container">
-                    <li><a href="../index.html" class="links">Home</a></li>
-                    <li><a href="calculator.html" class="links">Calculator</a></li>
-                    <li><a href="#" class="links">Jobs</a></li>
-                    <li><a href="#" class="links">Services</a></li>
-                    <li><a href="../login.html" class="links">Login/Sign-Up</a></li>
-                </ul>
-            </nav>
-
-        </header>
-
-    <main id="jobs-main">
+  <div id="jobs-main">
         <div class="sub-navbar">
             <ul>
               <li><a href="index.html"> Home</a> > </li>
@@ -98,7 +55,4 @@ $(".job3").click(function(){
         </section><!--End jobs-flex-container-->
 
 
-    </main>
-    <script src="script.js"></script>
-</body>
-</html>
+    </div>
