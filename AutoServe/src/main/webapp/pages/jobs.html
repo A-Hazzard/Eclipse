@@ -11,13 +11,13 @@ $(document).ready(function() {
 
 
 $(".job1").click(function(){
-    $("#job-status").hide().load("states/heavyEquipment.txt").fadeIn("slow");
+    $("#job-status").load("states/heavyEquipment.txt");
 })
 $(".job2").click(function(){
-    $("#job-status").hide().load("states/electricVehicleTech.txt").fadeIn("slow");
+    $("#job-status").load("states/electricVehicleTech.txt");
 })
 $(".job3").click(function(){
-    $("#job-status").hide().load("states/mechanicalSystem.txt").fadeIn("slow");
+    $("#job-status").load("states/mechanicalSystem.txt");
 })
 
 });//end main ready function
@@ -31,7 +31,6 @@ $(".job3").click(function(){
             
             <nav class="navbar"><!--NAVIGATION BAR-->
                 <ul class="link-container">
-                    <li><a href="../index.html" class="links">Home</a></li>
                     <li><a href="calculator.html" class="links">Calculator</a></li>
                     <li><a href="#" class="links">Jobs</a></li>
                     <li><a href="#" class="links">Services</a></li>
@@ -91,7 +90,7 @@ $(".job3").click(function(){
 
 
             <div id="job-status">
-            <img src = "https://th.bing.com/th/id/R.44dcfde519b952ed32d36d9fc63dc606?rik=Lk2HNIrqTWWqHw&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_393604.png&ehk=YHKmxmrh66dqQgcJG9MAkgPMvsxoVwuwdg0rbYwyLs0%3d&risl=&pid=ImgRaw&r=0" width="10%"  alt = "picture of a sad face"/>
+            	<img src = "https://th.bing.com/th/id/R.44dcfde519b952ed32d36d9fc63dc606?rik=Lk2HNIrqTWWqHw&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_393604.png&ehk=YHKmxmrh66dqQgcJG9MAkgPMvsxoVwuwdg0rbYwyLs0%3d&risl=&pid=ImgRaw&r=0" width="10%"  alt = "picture of a sad face"/>
                 <p id="note">There's nothing to see here</p>
             </div><!--Right main container that displays information on the jobs-->
         
