@@ -12,8 +12,11 @@ $grey: rgb(245,245,245);
     padding: 0;
 }
 
-body{
-    overflow-x: hidden;
+#jobs-body{
+    overflow: hidden ;
+}
+#calculator-body{
+    overflow-x: hidden ;
 }
 
 //Top Header of the page
@@ -143,7 +146,8 @@ border-right: none;
         }
     #backgroundImage{
         //darkens image
-        background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url("../pages/states/media/homeBackgroundImage.png");
+        background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url("../pages/media/homeBackgroundImage.png");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;

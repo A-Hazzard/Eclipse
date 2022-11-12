@@ -1,0 +1,27 @@
+ <form action="" method="post" id="calculator-form">
+          <table>
+            <tr>
+              <td>
+                <label for="vehicleType">Vehicle:</label><br>
+                <select name="selectVehicleType" id="vehicleType">
+                  <option value="" disabled selected hidden class="default-option">Select your Vehicle</option>
+                  <option value="Car">Car</option>
+                  <option value="Truck">Truck</option>
+                  <option value="Van">Van</option>
+                  <option value="MotorBike">MotorBike</option>
+                </select>
+              </td>
+            </tr>
+            <tr id="location-tr">
+              <td>
+                <label for="location" id="location-label">Location:</label><br>
+                <select name="selectLocation" id="location">
+                  <option value="" disabled selected hidden class="default-option">Select your location</option>
+                  <option value="Trinidad">Trinidad</option>
+                  <option value="Tobago">Tobago</option>
+                  <option value="United States">United States</option>
+                </select>
+              </td>
+            </tr>
+          </table>  
+      </form>

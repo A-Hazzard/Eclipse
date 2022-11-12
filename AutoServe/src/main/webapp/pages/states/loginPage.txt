@@ -38,6 +38,11 @@
 
     <script>
     //loads registrationPage on click
+    $("#registrationPage").on('click', function(){
+        $("main").hide().load("pages/states/registrationPage.txt").fadeIn("slow");
+    })
+
+    //changes password to Text
     $(function(){
   let viewPwd = false;
 
@@ -56,10 +61,6 @@
       }
     })
 })
-   
-    $("#registrationPage").on('click', function(){
-        $("main").hide().load("pages/states/registrationPage.txt").fadeIn("slow");
-    })
     </script>
    
    

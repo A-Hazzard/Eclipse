@@ -62,6 +62,6 @@
 <script>
     //loads loginPage on click
     $("#loginPage").on('click', function(){
-        $("main").hide().load("loginPage.txt").fadeIn("slow");
+        $("main").hide().load("pages/states/loginPage.txt").fadeIn("slow");
     })
 </script>
