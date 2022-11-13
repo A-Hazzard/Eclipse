@@ -315,7 +315,7 @@ border-right: none;
         margin-left: 24% ;
         #progress-bar {
             position: absolute;
-            background: $orange;
+            background: lightseagreen;
             height: 5px;
             top: 50%;
             left: 0%;
@@ -339,8 +339,8 @@ border-right: none;
                 position: relative;
             }//end step
             .active {
-                border-color: $orange;
-                background-color: $orange;
+                border-color: lightseagreen;
+                background-color: lightseagreen;
                 color: #fff;
               }//end active
 
@@ -602,38 +602,3 @@ border-right: none;
         }//end job-status
     }//end jobs-flex-container
 }//end jobs main
-
-
-#bookings-form{
-    margin-top: -20%;
-    label{
-        font-family: $paragraphFont;
-        font-size: 1.2rem;
-    }
-    input[type=text], input[type=email]{
-        border-top: none;
-        border-right: none;
-        border-left: none;
-        width: 100%;
-        margin-bottom: 15%;
-        }
-        
-        form{
-            border: 1px solid;
-            width: 25%;
-            margin-left: 20%
-        }
-        table{
-            width: 90%;
-        }
-        input[type=submit]{
-            padding: 5%;
-            width: 100%;
-            background-color: $orange;
-            color: white;
-            border: none;
-            border-color: orange;
-            border-radius: .5rem;
-            cursor: pointer;
-        }
-}

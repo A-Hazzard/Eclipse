@@ -151,9 +151,7 @@ let motorbike = false;
         }
 
       else if(step === 3){
-        $("#input-container").hide().load("pages/states/bookings.txt").fadeIn("slow");
-        $("#progress-prev").hide();
-        $("#progress-next").hide();
+        
       }
   })
 </script>

@@ -28,7 +28,7 @@
 <script>
 
 
-      if (step === 1){  
+      if (step === 1){
         
             //Change vehicle images
             changedVehicle = false;

@@ -254,7 +254,7 @@ body {
 }
 #calculator-main #progress #progress-bar {
   position: absolute;
-  background: rgb(229, 36, 14);
+  background: lightseagreen;
   height: 5px;
   top: 50%;
   left: 0%;
@@ -277,8 +277,8 @@ body {
   position: relative;
 }
 #calculator-main #progress #progress-num .active {
-  border-color: rgb(229, 36, 14);
-  background-color: rgb(229, 36, 14);
+  border-color: lightseagreen;
+  background-color: lightseagreen;
   color: #fff;
 }
 #calculator-main #progress #progress-num::before {
@@ -492,37 +492,4 @@ body {
 #jobs-main #jobs-flex-container #job-status .electric {
   height: 50% !important;
   overflow: unset;
-}
-
-#bookings-form {
-  margin-top: -20%;
-}
-#bookings-form label {
-  font-family: "Ubuntu", sans-serif;
-  font-size: 1.2rem;
-}
-#bookings-form input[type=text], #bookings-form input[type=email] {
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  width: 100%;
-  margin-bottom: 15%;
-}
-#bookings-form form {
-  border: 1px solid;
-  width: 25%;
-  margin-left: 20%;
-}
-#bookings-form table {
-  width: 90%;
-}
-#bookings-form input[type=submit] {
-  padding: 5%;
-  width: 100%;
-  background-color: rgb(229, 36, 14);
-  color: white;
-  border: none;
-  border-color: orange;
-  border-radius: 0.5rem;
-  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */
