@@ -27,7 +27,6 @@
 
 <script>
 
-
       if (step === 1){
         
             //Change vehicle images
@@ -110,7 +109,4 @@
             });
     }//end if-statement
 
-
-
-     
       </script>

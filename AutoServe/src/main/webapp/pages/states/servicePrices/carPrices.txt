@@ -1,33 +1,289 @@
-<form action="" method="post" id="price-form">
-<h3>CAR SERVICES</h3>
-    <table>
+   <h3 class = "service-header">CAR SERVICES</h3>
+<section id = "prices-section">
+
+    
+<div class = "engine-services-dropdown services-dropdown">
+  
+  <!--Title for the type of service dropdown-->
+ <div id = "title">
+   <span class = "service-type">Engine Repair & Service </span> 
+   <button type = "button">
+     <i class="fa-sharp fa-solid fa-plus"></i>
+     </button>
+   <p class = "dropdown-details">Includes cost of parts and services for the <u>Engine</u></p>
+   
+  </div>
+  <br>
+ <!--Services with prices-->
+    <form action="" method="post" id= "engineRepair-form"  class="price-form">
+        <table>
+            <tr>
+                <td class="services-row">
+                    
+                    <input type="checkbox" name="oil" id="oil" value="650.98">
+                    <label for="oil">Air Filter</label>
+                </td>
+                <td class = "price">
+                $2,126.15 - $2,622.25
+                </td>
+            </tr>
+            <tr>
+                <td class="service">
+                    <input type="checkbox" name="gas" id="gas" value="1050.98">
+                    <label for="gas">Gas Filter</label>
+                </td>
+                <td class = "price">
+                $1,063.08 - $1,275.69
+                </td>
+            </tr>
+            <tr>
+                <td class="service">
+                    <input type="checkbox" name="tires" id="tires" value = "2050.98">
+                    <label for="tires">Fuel Filter</label>
+                </td>
+                <td class = "price">
+                $3,614.46 - $4,394.05
+                </td>
+            </tr>
         <tr>
-            <td class="service">
-                
-                <input type="checkbox" name="oil" id="oil" value="650.98">
-                <label for="oil">Oil Filter</label>
-            </td>
-            <td class = "price">
-            $650.98
-            </td>
-        </tr>
+                <td class="service">
+                    <input type="checkbox" name="tires" id="tires" value = "2050.98">
+                    <label for="tires">Spark Plug</label>
+                </td>
+                <td class = "price">
+                $5,244.51 - $6,449.33
+                </td>
+            </tr>
         <tr>
-            <td class="service">
-                <input type="checkbox" name="gas" id="gas" value="1050.98">
-                <label for="gas">Air Filter</label>
-            </td>
-             <td class = "price">
-            $1050.98
-            </td>
-        </tr>
+                <td class="service">
+                    <input type="checkbox" name="tires" id="tires" value = "2050.98">
+                    <label for="tires">Timing Belt/Chain</label>
+                </td>
+                <td class = "price">
+                $9,355.07 - $1,1410.35
+                </td>
+            </tr>
         <tr>
-            <td class="service">
-                <input type="checkbox" name="tires" id="tires" value = "2050.98">
-                <label for="tires">Fuel</label>
-            </td>
-             <td class = "price">
-            $2050.98
-            </td>
-        </tr>
-    </table>
-</form>
+                <td class="service">
+                    <input type="checkbox" name="tires" id="tires" value = "2050.98">
+                    <label for="tires">Fan Belt/Drive Belt</label>
+                </td>
+                <td class = "price">
+                $3,685.33 - $4,323.18
+                </td>
+            </tr>
+        <tr>
+                <td class="service">
+                    <input type="checkbox" name="tires" id="tires" value = "2050.98">
+                    <label for="tires">Radiator Hose Set</label>
+                </td>
+                <td class = "price">
+                $7,228.92 - $8,858.97
+                </td>
+            </tr>
+            <tr>
+                <td class="service">
+                    <input type="checkbox" name="tires" id="tires" value = "2050.98">
+                    <label for="tires">Radiator</label>
+                </td>
+                <td class = "price">
+                $2,7214.74 - $3,3309.71
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+    <br>
+<div class = "breaks-services-dropdown services-dropdown">
+    
+    <!--Title for the type of service dropdown-->
+    <div id = "title">
+        <span class = "service-type">Breaks Repair & Service </span> 
+        <button type = "button">
+            <i class="fa-sharp fa-solid fa-plus"></i>
+            </button>
+        <p class = "dropdown-details">Includes cost of parts and services for the <u>Breaks</u></p>
+    </div>
+    <br>
+    <!--Services with prices-->
+    <form action="" method="post" id = "breaksRepair-form" class="price-form">
+        <table>
+            <tr>
+                <td class="services-row">
+                    
+                    <input type="checkbox" name="oil" id="oil" value="650.98">
+                    <label for="oil">Front Brake Pads (set of 4)</label>
+                </td>
+                <td class = "price">
+                $18,922.75 - $23,104.18
+                </td>
+            </tr>
+            <tr>
+                <td class="service">
+                    <input type="checkbox" name="gas" id="gas" value="1050.98">
+                    <label for="gas">Brake Oil</label>
+                </td>
+                <td class = "price">
+                $2,764.00 - $3,330.97
+                </td>
+            </tr>
+            <tr>
+                <td class="service">
+                    <input type="checkbox" name="tires" id="tires" value = "2050.98">
+                    <label for="tires">Front & Rear Brakes cleaning along with caliper greasing</label>
+                </td>
+                <td class = "price">
+                $14,245.22 - $17,434.44
+                </td>
+            </tr>
+        <tr>
+                <td class="service">
+                    <input type="checkbox" name="tires" id="tires" value = "2050.98">
+                    <label for="tires">Front Brakes Disc/Drum</label>
+                </td>
+                <td class = "price">
+                $9,284.20 - $11,339.48
+                </td>
+            </tr>
+        <tr>
+                <td class="service">
+                    <input type="checkbox" name="tires" id="tires" value = "2050.98">
+                    <label for="tires">Front Brakes Overhaul</label>
+                </td>
+                <td class = "price">
+                $9,355.07 - $1,1410.35
+                </td>
+            </tr>
+        <tr>
+                <td class="service">
+                    <input type="checkbox" name="tires" id="tires" value = "2050.98">
+                    <label for="tires">Rear Brakes Overhaul</label>
+                </td>
+                <td class = "price">
+                $3,685.33 - $4,323.18
+                </td>
+            </tr>
+        <tr>
+                <td class="service">
+                    <input type="checkbox" name="tires" id="tires" value = "2050.98">
+                    <label for="tires">Radiator Hose Set</label>
+                </td>
+                <td class = "price">
+                $7,228.92 - $8,858.97
+                </td>
+            </tr>
+            <tr>
+                <td class="service">
+                    <input type="checkbox" name="tires" id="tires" value = "2050.98">
+                    <label for="tires">Radiator</label>
+                </td>
+                <td class = "price">
+                $2,7214.74 - $3,3309.71
+                </td>
+            </tr>
+        </table>
+    </form>
+    
+</div>
+
+    <br>
+
+<div class = "clutch-services-dropdown services-dropdown">
+    
+    <!--Title for the type of service dropdown-->
+    <div id = "title">
+    <span class = "service-type">Clutch Repair & Service </span> 
+    <button type = "button">
+        <i class="fa-sharp fa-solid fa-plus"></i>
+        </button>
+    <p class = "dropdown-details">Includes cost of parts and services for the <u>Clutch</u></p>
+    
+    </div>
+    <br>
+    <!--Services with prices-->
+    <form action="" method="post" id = "clutchRepair-form" class = "price-form">
+        <table>
+            <tr>
+                <td class="services-row">
+                    
+                    <input type="checkbox" name="oil" id="oil" value="650.98">
+                    <label for="oil">Clutch and Pressure Plate</label>
+                </td>
+                <td class = "price">
+                $3,2530.12 - $3,9759.04
+                </td>
+            </tr>
+            <tr>
+                <td class="service">
+                    <input type="checkbox" name="gas" id="gas" value="1050.98">
+                    <label for="gas">Clutch Release Bearing</label>
+                </td>
+                <td class = "price">
+                $7,299.79 - $8,929.84
+                </td>
+            </tr>
+       
+            <tr>
+                <td class="service">
+                    <input type="checkbox" name="tires" id="tires" value = "2050.98">
+                    <label for="tires">Clutch Overhaul</label>
+                </td>
+                <td class = "price">
+                $24,238.13 - $2,9624.38
+                </td>
+            </tr>
+        </table>
+    </form>
+    
+    </div>
+</div>
+
+</section>
+
+
+<!--JQUERY-->
+<script>
+    let down = false;
+    $(".engine-services-dropdown").on('click', function(){
+    if (down === false){
+    $("#engineRepair-form").slideDown("2000")
+    down = true;
+    console.log(down)
+    }
+    else{
+        $("#engineRepair-form").slideUp("slow")
+            down = false
+        console.log(down)
+    }
+        
+    })
+
+    $(".breaks-services-dropdown").on('click', function(){
+    if (down === false){
+    $("#breaksRepair-form").slideDown("2000")
+    down = true;
+    console.log(down)
+    }
+    else{
+        $("#breaksRepair-form").slideUp("slow")
+            down = false
+        console.log(down)
+    }
+        
+    })
+
+    $(".clutch-services-dropdown").on('click', function(){
+    if (down === false){
+    $("#clutchRepair-form").slideDown("2000")
+    down = true;
+    console.log(down)
+    }
+    else{
+        $("#clutchRepair-form").slideUp("slow")
+            down = false
+        console.log(down)
+    }
+        
+    })
+</script>

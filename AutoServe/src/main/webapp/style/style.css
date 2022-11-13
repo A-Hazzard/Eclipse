@@ -303,19 +303,43 @@ body {
   padding-top: 25%;
   padding-left: 25%;
 }
-#calculator-main #calculator .wrapper #input-container #price-form {
-  border: none;
-  font-size: 1.5rem;
-  font-family: "Ubuntu", sans-serif;
-  margin-bottom: 3%;
+#calculator-main #calculator .wrapper #input-container .service-header {
   margin-top: -10%;
+  margin-left: -1.5%;
+  position: absolute;
 }
-#calculator-main #calculator .wrapper #input-container #price-form .service {
-  width: 100%;
-  padding: 2%;
+#calculator-main #calculator .wrapper #input-container #prices-section {
+  margin-top: -20%;
+  margin-left: -5%;
 }
-#calculator-main #calculator .wrapper #input-container #price-form .price {
-  text-align: right;
+#calculator-main #calculator .wrapper #input-container .services-dropdown {
+  width: 95%;
+  cursor: pointer;
+}
+#calculator-main #calculator .wrapper #input-container .services-dropdown .service-type {
+  font-size: 1.2rem;
+}
+#calculator-main #calculator .wrapper #input-container .services-dropdown button {
+  border-radius: 100rem;
+  width: 1rem;
+  height: 1rem;
+  background-color: rgb(229, 36, 14);
+  color: white;
+  float: right;
+  position: relative;
+  margin-top: -1%;
+  margin-right: 8%;
+  border: none;
+  cursor: pointer;
+}
+#calculator-main #calculator .wrapper #input-container .services-dropdown .dropdown-details {
+  color: grey;
+}
+#calculator-main #calculator .wrapper #input-container .services-dropdown .price-form {
+  display: none;
+}
+#calculator-main #calculator .wrapper #input-container .services-dropdown .price-form table .services-row {
+  width: 65%;
 }
 #calculator-main #calculator .wrapper #input-container #calculator-form {
   width: 89%;

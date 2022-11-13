@@ -374,22 +374,60 @@ border-right: none;
         padding-top: 25%;
         padding-left: 25%;
 
-        #price-form{
-            border: none;
-            font-size: 1.5rem;
-            font-family: $paragraphFont;
-            margin-bottom: 3%;
-            margin-top: -10%;
-            .service{
-                width: 100%;
-                padding: 2%;
-            }
-            .price{
-                text-align: right   ;
-            }
+    //vehicle form
+    .service-header{
+        margin-top: -10%;
+        margin-left: -1.5%;
+        position: absolute;
+    }
+    #prices-section{
+        margin-top: -20%;
+        margin-left: -5%;
+    }
+
+    
+.services-dropdown{
+    width: 95%;
+    cursor: pointer;
+    .service-type{
+      font-size: 1.2rem;
+    }
+    
+    button{
+    border-radius: 100rem;
+    width: 1rem;
+    height: 1rem;
+    background-color: rgb(229,36,14);
+    color: white;
+    float: right;
+    position: relative;
+    margin-top: -1%;
+    margin-right: 8%;   
+    border: none;
+    cursor: pointer;
+  }
+   
+    .dropdown-details{
+      color: grey;
+    }
+  
+  .price-form{
+    display: none;
+    
+     table{
+      .services-row{
+        width: 65%;  
+      }
+       
+    }
+  
+  }
+  
+  
+  }
+  
 
         
-        }
 
 
         #calculator-form{ 
