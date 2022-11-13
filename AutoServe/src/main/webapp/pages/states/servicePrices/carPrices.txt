@@ -243,6 +243,7 @@
 
 <!--JQUERY-->
 <script>
+
     $(".engine-btn").on('click', function(){
     if (down === false){
     $("#engineRepair-form").slideDown("2000")
@@ -284,4 +285,15 @@
     }
         
     })
+
+        $("input[type=checkbox]").click(function() {
+            console.log("Clicked checkbox");
+
+                if($(this).prop("checked") === true){
+                    console.log("checked");
+                }
+                else{
+                    console.log("unChecked");
+                }
+        })
 </script>
