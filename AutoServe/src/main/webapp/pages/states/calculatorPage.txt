@@ -103,24 +103,55 @@
 
 
   //JQUERY CODE
-  //loads PRICES on click
-
+let car = false;
+let truck = false;
+let van = false;
+let motorbike = false;
   $("#input-container").load("pages/states/vehicleInfo.txt").fadeIn("slow");
   let step = 1;
-  $("#progress-next").on('click', function(){
-    step++
-    console.log("Step " + step)
-    if(step === 2)
-      $("#input-container").hide().load("pages/states/servicePrices/prices.txt").fadeIn("slow");
-  })
 
-  $("#progress-prev").on('click', function(){
+   $("#progress-prev").on('click', function(){
     step--;
-    console.log("Step" + step)
-    if(step === 1){
-      $("#input-container").hide().load("pages/states/vehicleInfo.txt").fadeIn("slow");
+    console.log("Step" + step);
 
-    
-  }
+      if(step === 1){
+        car = false;
+        truck = false;
+        van = false;
+        motorbike = false;
+        $("#input-container").hide().load("pages/states/vehicleInfo.txt").fadeIn("slow");
+      }
+  });
+
+  //loads PRICES on click
+
+   $("#progress-next").on('click', function(){
+    step++;
+    console.log("Step " + step);
+       if(step === 2){
+          if (car == true){
+              $("#input-container").hide().load("pages/states/servicePrices/carPrices.txt").fadeIn("slow");
+              console.log("loaded car services");
+            }
+
+            else if (truck == true){
+              $("#input-container").hide().load("pages/states/servicePrices/truckPrices.txt").fadeIn("slow");
+              console.log("loaded truck services");
+            }
+
+            else if (van == true){
+              $("#input-container").hide().load("pages/states/servicePrices/vanPrices.txt").fadeIn("slow");
+              console.log("loaded van services");
+            }
+
+            else if (motorbike == true){
+              $("#input-container").hide().load("pages/states/servicePrices/bikePrices.txt").fadeIn("slow");
+              console.log("loaded motorbike services");
+            }
+        }
+
+      else if(step === 3){
+        
+      }
   })
 </script>

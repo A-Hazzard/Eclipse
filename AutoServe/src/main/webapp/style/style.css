@@ -351,7 +351,7 @@ body {
 #calculator-main #calculator #display-container #vehicleDisplay #defaultImg {
   padding-left: 5%;
 }
-#calculator-main #calculator #display-container #vehicleDisplay #carImg, #calculator-main #calculator #display-container #vehicleDisplay #truckImg, #calculator-main #calculator #display-container #vehicleDisplay #vanImg {
+#calculator-main #calculator #display-container #vehicleDisplay .carImg, #calculator-main #calculator #display-container #vehicleDisplay #truckImg, #calculator-main #calculator #display-container #vehicleDisplay #vanImg {
   width: 35%;
 }
 #calculator-main #calculator #display-container #vehicleDisplay #motorbikeImg {

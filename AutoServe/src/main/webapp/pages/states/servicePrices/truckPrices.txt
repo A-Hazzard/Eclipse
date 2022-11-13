@@ -1,5 +1,5 @@
 <form action="" method="post" id="price-form">
-<h3>CAR SERVICES</h3>
+<h3>TRUCK SERVICES</h3>
     <table>
         <tr>
             <td class="service">
@@ -8,7 +8,7 @@
                 <label for="oil">Oil Filter</label>
             </td>
             <td class = "price">
-            $650.98
+            $4050.50
             </td>
         </tr>
         <tr>
@@ -17,7 +17,7 @@
                 <label for="gas">Air Filter</label>
             </td>
              <td class = "price">
-            $1050.98
+            $10050.12
             </td>
         </tr>
         <tr>
@@ -26,7 +26,7 @@
                 <label for="tires">Fuel</label>
             </td>
              <td class = "price">
-            $2050.98
+            $12050.00
             </td>
         </tr>
     </table>

@@ -1,0 +1,9 @@
+<div id = "vehicleDisplay">
+              <img src="https://lh3.googleusercontent.com/MwN3juPSBsOMsS8INWndT-kwIXyQT-oocb9QvoKo40Bm6XHQD4uXfGEDGE_XU0hnI_1Ls3PnWq65vC5yAFbgxyxVa0xLq7xd2hBD1cjak0C3GgSqmqMn6aF7zZ7QWTHI1mq4APklqRzuumgjLDxhHh8jw_WRlZ4KKJP2rQDS9wdiOvGI4fvNacPplK6bzVnwvD6O9GG2pIuId5LOCNK5pvULct_zqV_FsTDhFYnys_7B7gHpgKAbvWgeAtcf43aFYWkR4D6zPg5Mn5qK88oYWIhRqlaBCIO9BgAix3sbjpW_BsdwkNgV2A-v_VhAZV0UYzcjm7heSEniUvamuPE6KkcwS-nqwr-AF5aFEIDmqnSTUbxkgXCGdVI0aK56jcKSPV5hqeSzgn8dWDG03cwc1DFrJK3qruZnY7a8BPhTlSgpRfZlMrJJ43oeghDBu--CGbOxp75d1sNML_DmqDJIx2ECoqtF2a6zd-K-SLIK0vg1bLSwLezCh9GUmLN5s0cvJ26caIeEw_U0CJ7hLZ-b4srrt_hTGLTb9VogdzfvEJFbO7V6bJyph4QKtWUw0cNnU_e9jhnUn5icGNE1p0OuwI9NkDYhjmrmbPvUILnu37qUWH_b9R6b8Efziejascd6pDDwhWbKxKfAX_UelnrzvNWFcit6lECzshCu0uJ520B9ZLV0iUxfDUoLkqikWwtNzh8vUCPmuXm3-7S_mxAv3IvTmeYfhu0IdGSoh5SdM_G2-Cwqv_3639N1CbiSUrQ0Lah2SOCQxz2tc6U2iVlO6w5McycMq9rQk96-MYQfwHjmVQTktpEcm1tYh0EG_tI22YssQ04Hh5zrlxzRYY5cdVeMmVGhY_owaHccHYrukR4t7QNqP-wUTjRVgTcB67cWCa5DAGGhsqqJC35D5Duo1bLM3lVi6s_pALj4FtE24bXf4SYxOs4UAnyiWKTr9-lPp-BeuAJNXHopGZ5rV_A=w142-h157-no?authuser=0" 
+              alt="picture of a car" id = "defaultImg">
+            </div>
+            <div id="subDisplay">
+               <p id="display-header">Estimated cost</p>
+              <p id="display-note">Your estimated price will be displayed here</p>
+              <p id="code"></p>
+            </div>

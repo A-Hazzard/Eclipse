@@ -25,72 +25,92 @@
           </table>  
       </form>
 
-      <script>
+<script>
+
 
       if (step === 1){
-        //Change vehicle images
-        changedVehicle = false;
-              $("#vehicleType").change(function() {
-                let vehicleType = $("#vehicleType option:selected").val();
-                changedVehicle = true;
+        
+            //Change vehicle images
+            changedVehicle = false;
+                  $("#vehicleType").change(function() {
+                    let vehicleType = $("#vehicleType option:selected").val();
+                    changedVehicle = true;
+                    console.log(changedVehicle);
 
-                console.log(changedVehicle);
 
-
-                if (vehicleType === "Car"){
-                console.log("Selected: " + vehicleType);
-                  $("#vehicleDisplay").hide().load("pages/states/vehicles/car.txt").fadeIn("fast");
-                }
-                
-                  else if (vehicleType === "Truck"){
-                  console.log("Selected: " + vehicleType);
-                    $("#vehicleDisplay").hide().load("pages/states/vehicles/truck.txt").fadeIn("fast");
-                  }
-                  
-                    else if (vehicleType === "Van"){
+                    if (vehicleType === "Car"){
                     console.log("Selected: " + vehicleType);
-                      $("#vehicleDisplay").hide().load("pages/states/vehicles/van.txt").fadeIn("fast");
+                      $("#vehicleDisplay").hide().load("pages/states/vehicles/car.txt").fadeIn("fast");
+                      car = true;
+
                     }
-                
-                      else if (vehicleType === "MotorBike"){
-                      console.log("Selected: " + vehicleType);
-                        $("#vehicleDisplay").hide().load("pages/states/vehicles/motorbike.txt").fadeIn("fast");
+                    
+                      else if (vehicleType === "Truck"){
+                        console.log("Selected: " + vehicleType);
+                          $("#vehicleDisplay").hide().load("pages/states/vehicles/truck.txt").fadeIn("fast");
+                            truck = true;
                       }
-              })
+                      
+                        else if (vehicleType === "Van"){
+                          console.log("Selected: " + vehicleType);
+                            $("#vehicleDisplay").hide().load("pages/states/vehicles/van.txt").fadeIn("fast");
+                              van = true;
+                        }
+                    
+                          else if (vehicleType === "MotorBike"){
+                          console.log("Selected: " + vehicleType);
+                            $("#vehicleDisplay").hide().load("pages/states/vehicles/motorbike.txt").fadeIn("fast");
+                              motorbike = true;
+                          }
 
+                            if((changedFlag && changedVehicle) === true) {
+              $("#progress-next").removeAttr('disabled');
+              
+              }
+              else if ((changedFlag && changedVehicle) == false){
+                console.log("false");
+              }
+                  })
 
-        //Change country flag
-        changedFlag = false;
-        $("#location").change(function() {
-          let location = $("#location option:selected").val();
-          changedFlag = true;
-          console.log(changedFlag)
-            if(location === "T&T"){
-              console.log("Location " + location);
-                $("#subDisplay").hide().load("pages/states/countries/T&T_flag.txt").fadeIn("fast");
-            }
+            //Change country flag
+            changedFlag = false;
 
-            else if(location === "USA"){
-              console.log("Location " + location);
-                $("#subDisplay").hide().load("pages/states/countries/USA_flag.txt").fadeIn("fast");
-            }
+            $("#location").change(function() {
+              let location = $("#location option:selected").val();
+              changedFlag = true;
+              console.log(changedFlag)
 
-              if((changedFlag && changedVehicle) === true) {
-          $("#progress-next").removeAttr('disabled');
-          
-          }
-          else if ((changedFlag && changedVehicle) == false){
-            console.log("false");
-          }
-        })
+                if(location === "T&T"){
+                  console.log("Location " + location);
+                    $("#subDisplay").hide().load("pages/states/countries/T&T_flag.txt").fadeIn("fast");
+                }
 
-      $("#progress-prev").on('click', function () {
-        if (step === 1) {
-          console.log('disabled next button');
-          $("#progress-next").prop('disabled', true);
-          }
-      });
+                else if(location === "USA"){
+                  console.log("Location " + location);
+                    $("#subDisplay").hide().load("pages/states/countries/USA_flag.txt").fadeIn("fast");
+                }
 
+                  if((changedFlag && changedVehicle) === true) {
+              $("#progress-next").removeAttr('disabled');
+              
+              }
+              else if ((changedFlag && changedVehicle) == false){
+                console.log("false");
+              }
+            })
+
+            $("#progress-prev").on('click', function () {
+              if(step === 1){
+                console.log('disabled next button');
+               $("#vehicleDisplay").hide().load("pages/media/carImg.txt").fadeIn("fast");
+                $("#subDisplay").hide().fadeOut("fast");
+                $("#progress-next").prop('disabled', true);
+              }
+      
+            });
     }//end if-statement
 
+
+
+     
       </script>
