@@ -1,2 +1,2 @@
 <img src = 'https://th.bing.com/th/id/OIP.WwauKovsH5sLYnXksP2BmAHaE8?pid=ImgDet&w=1200&h=800&rs=1' 
-alt='car' class = "carImg" />
+alt='car' class = "carImg vehicle" />

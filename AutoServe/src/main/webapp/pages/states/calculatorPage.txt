@@ -107,6 +107,7 @@ let car = false;
 let truck = false;
 let van = false;
 let motorbike = false;
+let down = false;
 
   $("#input-container").load("pages/states/vehicleInfo.txt").fadeIn("slow");
   let step = 1;
@@ -121,6 +122,8 @@ let motorbike = false;
         van = false;
         motorbike = false;
         $("#input-container").hide().load("pages/states/vehicleInfo.txt").fadeIn("slow");
+        $("#vehicleDisplay").hide().load("pages/media/carImg.txt").fadeIn("slow");
+        console.log("loaded image on step 1");
       }
   });
 
@@ -132,6 +135,19 @@ let motorbike = false;
           if (car == true){
               $("#input-container").hide().load("pages/states/servicePrices/carPrices.txt").fadeIn("slow");
               console.log("loaded car services");
+
+              document.querySelector('.vehicle').style.width = "10%";
+              document.querySelector('.flag').style.width = "5%";
+              console.log("Changed width of vehicle and flag to 10%");
+
+              $(".flag").css("margin-top", "-3.5%");
+              $(".flag").css("margin-left", "5%");
+
+              $(".flag").css("position", "absolute");
+
+              console.log("Changed position of flag to the left of the vehicle");
+
+
             }
 
             else if (truck == true){
@@ -148,10 +164,13 @@ let motorbike = false;
               $("#input-container").hide().load("pages/states/servicePrices/bikePrices.txt").fadeIn("slow");
               console.log("loaded motorbike services");
             }
+       
         }
 
       else if(step === 3){
-        
+        $("#input-container").hide().load("pages/states/bookings.txt").fadeIn("slow");
+        $("#progress-prev").hide();
+        $("#progress-next").hide();
       }
   })
 </script>
