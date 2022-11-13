@@ -17,11 +17,80 @@
                 <label for="location" id="location-label">Location:</label><br>
                 <select name="selectLocation" id="location">
                   <option value="" disabled selected hidden class="default-option">Select your location</option>
-                  <option value="Trinidad">Trinidad</option>
-                  <option value="Tobago">Tobago</option>
-                  <option value="United States">United States</option>
+                  <option value="T&T">Trinidad & Tobago</option>
+                  <option value="USA">United States</option>
                 </select>
               </td>
             </tr>
           </table>  
       </form>
+
+      <script>
+
+      if (step === 1){
+        //Change vehicle images
+        changedVehicle = false;
+              $("#vehicleType").change(function() {
+                let vehicleType = $("#vehicleType option:selected").val();
+                changedVehicle = true;
+
+                console.log(changedVehicle);
+
+
+                if (vehicleType === "Car"){
+                console.log("Selected: " + vehicleType);
+                  $("#vehicleDisplay").hide().load("pages/states/vehicles/car.txt").fadeIn("fast");
+                }
+                
+                  else if (vehicleType === "Truck"){
+                  console.log("Selected: " + vehicleType);
+                    $("#vehicleDisplay").hide().load("pages/states/vehicles/truck.txt").fadeIn("fast");
+                  }
+                  
+                    else if (vehicleType === "Van"){
+                    console.log("Selected: " + vehicleType);
+                      $("#vehicleDisplay").hide().load("pages/states/vehicles/van.txt").fadeIn("fast");
+                    }
+                
+                      else if (vehicleType === "MotorBike"){
+                      console.log("Selected: " + vehicleType);
+                        $("#vehicleDisplay").hide().load("pages/states/vehicles/motorbike.txt").fadeIn("fast");
+                      }
+              })
+
+
+        //Change country flag
+        changedFlag = false;
+        $("#location").change(function() {
+          let location = $("#location option:selected").val();
+          changedFlag = true;
+          console.log(changedFlag)
+            if(location === "T&T"){
+              console.log("Location " + location);
+                $("#subDisplay").hide().load("pages/states/countries/T&T_flag.txt").fadeIn("fast");
+            }
+
+            else if(location === "USA"){
+              console.log("Location " + location);
+                $("#subDisplay").hide().load("pages/states/countries/USA_flag.txt").fadeIn("fast");
+            }
+
+              if((changedFlag && changedVehicle) === true) {
+          $("#progress-next").removeAttr('disabled');
+          
+          }
+          else if ((changedFlag && changedVehicle) == false){
+            console.log("false");
+          }
+        })
+
+      $("#progress-prev").on('click', function () {
+        if (step === 1) {
+          console.log('disabled next button');
+          $("#progress-next").prop('disabled', true);
+          }
+      });
+
+    }//end if-statement
+
+      </script>

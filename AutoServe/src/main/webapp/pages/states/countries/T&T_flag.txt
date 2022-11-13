@@ -1,0 +1,2 @@
+<img src="https://th.bing.com/th/id/R.51ac07f4caef98b9a841930560db8482?rik=jizqYMW3PLNVtw&riu=http%3a%2f%2fimg.freeflagicons.com%2fthumb%2ftwo_wavy_flags%2ftrinidad_and_tobago%2ftrinidad_and_tobago_640.png&ehk=z499b%2bdWIYdhzTLyzOY8SJaVu33OYqZ3Es4TGQ2AHH4%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1"
+alt="Trinidad and Tobago flag" id = "TnT_flag" width = "35%" />

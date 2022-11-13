@@ -6,11 +6,7 @@
   padding: 0;
 }
 
-#jobs-body {
-  overflow: hidden;
-}
-
-#calculator-body {
+body {
   overflow-x: hidden;
 }
 
@@ -352,8 +348,17 @@
   padding-top: 2%;
   padding-left: 2%;
 }
-#calculator-main #calculator #display-container img {
+#calculator-main #calculator #display-container #vehicleDisplay #defaultImg {
   padding-left: 5%;
+}
+#calculator-main #calculator #display-container #vehicleDisplay #carImg, #calculator-main #calculator #display-container #vehicleDisplay #truckImg, #calculator-main #calculator #display-container #vehicleDisplay #vanImg {
+  width: 35%;
+}
+#calculator-main #calculator #display-container #vehicleDisplay #motorbikeImg {
+  width: 25%;
+}
+#calculator-main #calculator #display-container #vehicleDisplay #TnT_flag, #calculator-main #calculator #display-container #vehicleDisplay #USA_flag {
+  width: 1px;
 }
 #calculator-main #calculator #display-container #display-header {
   font-family: "Segoe UI";
