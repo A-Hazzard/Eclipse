@@ -1,0 +1,20 @@
+<div class="information electric">
+
+<!--Top portion of container-->
+    <div class="top-flex-portion">
+       <span class="job-title">Electric Vehicle Technicians</span>
+        <p class="recruiter">The Industry's Professional Solution</p>
+        <p class="position">Port-Of-Spain</p>
+        <span>Published October 8</span>
+    </div>
+
+
+<p>Type of employment: <br> Contract <br><br>
+    Job description <br>
+To qualify for this position, you should have been trained 
+to diagnose and repair Battery Powered Electric Vehicles and must possess 
+the ability to work outside of Trinidad and Tobago for up to three months at a time.
+
+</p>
+
+</div><!--End main container-->

@@ -60,11 +60,11 @@
 <script>
 
   //Vanilla js code
-  var progressBar = document.getElementById("progress-bar");
-  var progressNext = document.getElementById("progress-next");
-  var progressPrev = document.getElementById("progress-prev");
-  var steps = document.querySelectorAll(".step");
-  var active = 1;
+  const progressBar = document.getElementById("progress-bar");
+  const progressNext = document.getElementById("progress-next");
+  const progressPrev = document.getElementById("progress-prev");
+  const steps = document.querySelectorAll(".step");
+  let active = 1;
 
   progressNext.addEventListener("click", () => {
     active++;
@@ -82,7 +82,7 @@
     updateProgress();
   });
 
-  var updateProgress = () => {
+  const updateProgress = () => {
     steps.forEach((step, i) => {
       if (i < active) {
         step.classList.add("active");
@@ -103,14 +103,14 @@
 
 
   //JQUERY CODE
-var car = false;
-var truck = false;
-var van = false;
-var motorbike = false;
-var down = false;
+let car = false;
+let truck = false;
+let van = false;
+let motorbike = false;
+let down = false;
 
   $("#input-container").load("pages/states/vehicleInfo.txt").fadeIn("slow");
-  var step = 1;
+  let step = 1;
 
       $("#progress-prev").on('click', function(){
         step--;
@@ -164,9 +164,9 @@ var down = false;
               console.log("Changed position of flag to the left of the vehicle");
 
             //Estimate container
-            var estimateCost = "<div id = 'estimateCost-container'></div>";
-            var estimateCostH4 = "<h4 id = 'estimateCostH4'>ESTIMATE COST</h4> <br>"
-            var priceTaG = "<p id = 'priceTaG'>$ 0 - 0</p>"
+            const estimateCost = "<div id = 'estimateCost-container'></div>";
+            const estimateCostH4 = "<h4 id = 'estimateCostH4'>ESTIMATE COST</h4> <br>"
+            const priceTaG = "<p id = 'priceTaG'>$ 0 - 0</p>"
             $("#subDisplay").append(estimateCost);
             $("#estimateCost-container").append(estimateCostH4);                   
             $("#estimateCost-container").append(priceTaG);
@@ -186,8 +186,8 @@ var down = false;
 
            
             //Cheque Container
-            var chequeContainer = "<div id = 'cheque-container'></div>";
-            var note = "<p style='color: grey;'>* This is an estimated cost collected from multiple sources. Actual prices may vary.</p>"
+            const chequeContainer = "<div id = 'cheque-container'></div>";
+            const note = "<p style='color: grey;'>* This is an estimated cost collected from multiple sources. Actual prices may vary.</p>"
             $("#subDisplay").append(note);
 
             $("#subDisplay").append(chequeContainer);
