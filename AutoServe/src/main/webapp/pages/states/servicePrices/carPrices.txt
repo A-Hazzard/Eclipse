@@ -2,16 +2,16 @@
 <section id = "prices-section">
 
         
-    <div class = "engine-services-dropdown services-dropdown">
+ 
+<div class = "engine-services-dropdown services-dropdown">
     
     <!--Title for the type of service dropdown-->
     <div id = "engine-title title">
     <span class = "service-type">Engine Repair & Service </span> 
-    <button type = "button" class = "engine-btn">
-        <i class="fa-sharp fa-solid fa-plus"></i>
-        </button>
-    <p class = "dropdown-details">Includes cost of parts and services for the <u>Engine</u></p>
-    
+     <button type = "button" class = "engine-btn">
+                <i class="fa-sharp fa-solid fa-plus"></i>
+                </button>
+      <p class = "dropdown-details">Includes cost of parts and services for the <u>Engine</u></p>
     </div>
     <br>
     <!--Services with prices-->
@@ -20,7 +20,7 @@
                 <tr>
                     <td class="services-row">
                         
-                        <input type="checkbox" name="oil" id="oil" value="650.98">
+                        <input type="checkbox" name="array[]" id="oil" value="2126.15">
                         <label for="oil">Air Filter</label>
                     </td>
                     <td class = "price">
@@ -29,7 +29,7 @@
                 </tr>
                 <tr>
                     <td class="service">
-                        <input type="checkbox" name="gas" id="gas" value="1050.98">
+                        <input type="checkbox" name="array[]" id="gas" value="1063.08">
                         <label for="gas">Gas Filter</label>
                     </td>
                     <td class = "price">
@@ -38,7 +38,7 @@
                 </tr>
                 <tr>
                     <td class="service">
-                        <input type="checkbox" name="tires" id="tires" value = "2050.98">
+                        <input type="checkbox" name="array[]" id="tires" value = "3614.46">
                         <label for="tires">Fuel Filter</label>
                     </td>
                     <td class = "price">
@@ -47,8 +47,8 @@
                 </tr>
             <tr>
                     <td class="service">
-                        <input type="checkbox" name="tires" id="tires" value = "2050.98">
-                        <label for="tires">Spark Plug</label>
+                        <input type="checkbox" name="array[]" id="sparkPlug" value = "5244.51">
+                        <label for="sparkPlug">Spark Plug</label>
                     </td>
                     <td class = "price">
                     $5,244.51 - $6,449.33
@@ -56,8 +56,8 @@
                 </tr>
             <tr>
                     <td class="service">
-                        <input type="checkbox" name="tires" id="tires" value = "2050.98">
-                        <label for="tires">Timing Belt/Chain</label>
+                        <input type="checkbox" name="array[]" id="belt_chain" value = "9355.07">
+                        <label for="belt_chain">Timing Belt/Chain</label>
                     </td>
                     <td class = "price">
                     $9,355.07 - $1,1410.35
@@ -65,8 +65,8 @@
                 </tr>
             <tr>
                     <td class="service">
-                        <input type="checkbox" name="tires" id="tires" value = "2050.98">
-                        <label for="tires">Fan Belt/Drive Belt</label>
+                        <input type="checkbox" name="array[]" id="belt_drive" value = "3685.33">
+                        <label for="belt_drive">Fan Belt/Drive Belt</label>
                     </td>
                     <td class = "price">
                     $3,685.33 - $4,323.18
@@ -74,8 +74,8 @@
                 </tr>
             <tr>
                     <td class="service">
-                        <input type="checkbox" name="tires" id="tires" value = "2050.98">
-                        <label for="tires">Radiator Hose Set</label>
+                        <input type="checkbox" name="array[]" id="radiatorHoseSet" value = "7228.92">
+                        <label for="radiatorHoseSet">Radiator Hose Set</label>
                     </td>
                     <td class = "price">
                     $7,228.92 - $8,858.97
@@ -83,11 +83,11 @@
                 </tr>
                 <tr>
                     <td class="service">
-                        <input type="checkbox" name="tires" id="tires" value = "2050.98">
-                        <label for="tires">Radiator</label>
+                        <input type="checkbox" name="array[]" id="radiator" value = "27214.74">
+                        <label for="radiator">Radiator</label>
                     </td>
                     <td class = "price">
-                    $2,7214.74 - $3,3309.71
+                    $27,214.74 - $33,309.71
                     </td>
                 </tr>
             </table>
@@ -285,15 +285,22 @@
     }
         
     })
+   
+   if(step === 2){
+     $('input[type="checkbox"]').click(function() {
 
-        $("input[type=checkbox]").click(function() {
-            console.log("Clicked checkbox");
+              var total1 = 0;
+              var total2 = 0;
+              $('input:checked').each(function(index, item) {
+                        $("#cheque-container").load("pages/states/servicePrices/cheque.txt").fadeIn("fast");
 
-                if($(this).prop("checked") === true){
+                    var items = item.parentElement.nextElementSibling.innerText.replace(/[$, ]/g,'').split("-");
+                    total1 += Number(items[0]);
+                    total2 += Number(items[1]);
                     console.log("checked");
-                }
-                else{
-                    console.log("unChecked");
-                }
-        })
+              }); //end input:checked method
+
+              $('#priceTaG').text('$'+total1.toFixed(2)+' - '+ '$'+total2.toFixed(2));
+            });//end click method
+   }
 </script>

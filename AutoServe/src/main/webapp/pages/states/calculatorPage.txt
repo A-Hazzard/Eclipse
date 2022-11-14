@@ -43,16 +43,16 @@
         </div>
 
             <div id="display-container">
-            <div id = "vehicleDisplay">
-              <img src="pages/media/carImg.png" 
-              alt="picture of a car" id = "defaultImg">
-            </div>
-            <div id="subDisplay">
-               <p id="display-header">Estimated cost</p>
-              <p id="display-note">Your estimated price will be displayed here</p>
-              <p id="code"></p>
-            </div>
-             
+              <div id = "vehicleDisplay">
+                <img src="pages/media/carImg.png" 
+                alt="picture of a car" id = "defaultImg">
+              </div>
+                <div id="subDisplay">
+                  <p id="display-header">Estimated cost</p>
+                  <p id="display-note">Your estimated price will be displayed here</p>
+                  <p id="code"></p>
+                </div>
+              
             </div>
           </section>
 </div>
@@ -146,9 +146,7 @@ let down = false;
               $(".flag").css("position", "absolute");
 
               console.log("Changed position of flag to the left of the vehicle");
-
-
-            }
+          }
 
             else if (truck == true){
               $("#input-container").hide().load("pages/states/servicePrices/truckPrices.txt").fadeIn("slow");
@@ -164,8 +162,37 @@ let down = false;
               $("#input-container").hide().load("pages/states/servicePrices/bikePrices.txt").fadeIn("slow");
               console.log("loaded motorbike services");
             }
-       
-        }
+            //Estimate container
+            const estimateCost = "<div id = 'estimateCost-container'></div>";
+            const estimateCostH4 = "<h4 id = 'estimateCostH4'>ESTIMATE COST</h4> <br>"
+            const priceTaG = "<p id = 'priceTaG'>$ 0 - 0</p>"
+            $("#subDisplay").append(estimateCost);
+            $("#estimateCost-container").append(estimateCostH4);                   
+            $("#estimateCost-container").append(priceTaG);
+
+            //css 
+            $("#estimateCost-container").css("padding-top", "2%");
+            $("#estimateCost-container").css("text-align", "center");
+
+            $("#estimateCostH4").css("font-size", "2rem");
+            $("#estimateCostH4").css("font-family", "sans-serif");
+            $("#priceTaG").css("font-family", "sans-serif");
+            $("#priceTaG").css("font-size", "1.5rem");
+           
+
+            $(".flag").css("margin-left", "12%");
+            $(".carImg").css("margin-left", "2%");
+
+           
+            //Cheque Container
+            const chequeContainer = "<div id = 'cheque-container'></div>";
+            $("#subDisplay").append(chequeContainer);
+
+
+
+
+
+          }
 
       else if(step === 3){
         $("#input-container").hide().load("pages/states/bookings.txt").fadeIn("slow");

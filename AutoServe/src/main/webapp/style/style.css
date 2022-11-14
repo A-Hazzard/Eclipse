@@ -384,12 +384,15 @@ body {
 #calculator-main #calculator #display-container #vehicleDisplay #TnT_flag, #calculator-main #calculator #display-container #vehicleDisplay #USA_flag {
   width: 1px;
 }
-#calculator-main #calculator #display-container #display-header {
+#calculator-main #calculator #display-container #subDisplay {
+  width: 45%;
+}
+#calculator-main #calculator #display-container #subDisplay #display-header {
   font-family: "Segoe UI";
   font-size: 2rem;
   margin-top: 2%;
 }
-#calculator-main #calculator #display-container #display-note {
+#calculator-main #calculator #display-container #subDisplay #display-note {
   font-size: 1.2rem;
   font-family: "Segoe UI";
   font-style: italic;
@@ -549,4 +552,42 @@ body {
   border-color: orange;
   border-radius: 0.5rem;
   cursor: pointer;
+}
+
+#cheque-container, #typeofService, #totalCost {
+  display: flex;
+}
+
+#cheque-container {
+  flex-direction: column;
+  width: 140%;
+}
+
+#typeofService, #totalCost {
+  flex-direction: row;
+}
+#typeofService .right, #totalCost .right {
+  margin-left: 60%;
+}
+
+#cheque-container {
+  margin-left: -20%;
+}
+#cheque-container #p1 {
+  font-size: 1.5rem;
+  margin-bottom: 5%;
+  letter-spacing: -1px;
+  font-family: "Ubuntu", sans-serif;
+}
+#cheque-container #typeofService #serviceCategory {
+  font-size: 1rem;
+  margin-bottom: 5%;
+  font-family: "Secular One", sans-serif;
+}
+#cheque-container #typeofService #price {
+  font-size: 1.2rem;
+  font-weight: 550;
+}
+#cheque-container #totalCost #totalHeading {
+  font-size: 1.1rem;
 }/*# sourceMappingURL=style.css.map */

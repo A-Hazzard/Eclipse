@@ -1,74 +1,62 @@
-<!--THIS IS THE FIRST PAGE THE USER WILL SEE ON VISIT-->
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" type="image/x-icon" href="media/logo.jpg" />
-        <link rel="stylesheet" href="style/style.css">
-        <title>AutoServe Inc.</title>
-    </head>
-    <body>
-        <!--Horizontal Header of the web page-->
-        <header class="header "><!--FLEXBOX-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Auto Serve Inc.</title>
+</head>
+<body>
+    <!--Horizontal Header of the web page-->
+    <header class="header "><!--FLEXBOX-->
 
-            <h1 id="logo">Auto Serve Inc.</h1><!--Logo-->
-            
-            <nav class="navbar"><!--NAVIGATION BAR-->
-                <ul class="link-container">
-                    <li><a href="pages/calculator.html" class="links">Calculator</a></li>
-                    <li><a href="pages/jobs.html" class="links">Jobs</a></li>
-                    <li><a href="#" class="links">Services</a></li>
-                    <li><a href="login.html" class="links">Login/Sign-Up</a></li>
-                </ul>
-            </nav>
-
-        </header>
-
-        <!--MAIN CONTAINER TO HOLD CONTENT-->
-        <main id="index-main">
-
-        <div id="CTA-container">
-
-            <div id="backgroundImage"></div>
-            
-            <!--A MECHANIC YOU CAN TRUST CALL TO ACTION-->
-            <div id="CTA">
-                <h2>A MECHANIC</h2>
-                <span>YOU CAN TRUST</span>
-            </div><!--END OF CTA-->
+        <h1 id="logo">Auto Serve Inc.</h1><!--Logo-->
         
-            <div id="flex-banner">
+        <nav class="navbar"><!--NAVIGATION BAR-->
+            <ul class="link-container">
+                <li><a href="#" id="homePage" class="links">Home</a></li>
+                <li><a href="#" id="calculatorPage" class="links">Calculator</a></li>
+                <li><a href="#" id="jobsPage" class="links">Jobs</a></li>
+                <li><a href="#" id="servicesPage" class="links">Services</a></li>
+                <li><a href="#" id="loginPage" class="links">Login/Sign-Up</a></li>
+            </ul>
+        </nav>
 
-                <div class="banner">
-                    <i class="fa-solid fa-wrench"></i><!--WRENCH ICON-->
-                    <p class="credits">Experienced Mechancs</p>
-                </div>
+    </header>
 
-                    <div class="banner">
-                        <i class="fa-solid fa-star"></i><!--STAR ICON-->
-                        <p class="credits">Quality Service</p>
-                    </div>
+    <main></main>
 
-                        <div class="banner">
-                            <i class="fa-solid fa-check"></i><!--CHECK ICON-->
-                        <p class="credits">Affordable Prices</p>
-                        </div>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/18479e6558.js" crossorigin="anonymous"></script>
+<script>
+$(function(){
 
-            </div><!--END OF flex-banner-->
+//loads home page by default
+$("main").load("pages/states/homePage.txt");
 
-        </div><!--END OF CTA CONTAINER-->
-</main>
+//loads home page on click
+$("#homePage").on('click', function(){
+    $("main").hide().load("pages/states/homePage.txt").fadeIn("slow");
+})
+
+//loads calculatorPage on click
+$("#calculatorPage").on('click', function(){
+    $("main").hide().load("pages/states/calculatorPage.txt").fadeIn("slow");
+})
+
+//loads jobsPage on click
+$("#jobsPage").on('click', function(){
+    $("main").hide().load("pages/states/jobsPage.txt").fadeIn("slow");
+})
+
+//loads memberPage on click
+$("#loginPage").on('click', function(){
+    $("main").hide().load("pages/states/loginPage.txt").fadeIn("slow");
+})
 
 
-
-
-
-
-
-
-        <!--FONT AWESOME SCRIPT TO ACCESS COOL ICONS-->
-        <script src="https://kit.fontawesome.com/18479e6558.js" crossorigin="anonymous"></script>
+})
+</script>
 </body>
 </html>

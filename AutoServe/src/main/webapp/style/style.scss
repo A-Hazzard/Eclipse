@@ -481,7 +481,9 @@ border-right: none;
                 width: 1px;
             }
         }
-        
+    #subDisplay{
+      
+        width: 45%;
         #display-header{
             font-family: $headerFont;
             font-size: 2rem;
@@ -493,6 +495,8 @@ border-right: none;
             font-family: $headerFont;
             font-style: italic;
         }//end display-note
+    }
+    
     }//end display-container
 }
 .btn {
@@ -675,4 +679,44 @@ border-right: none;
             border-radius: .5rem;
             cursor: pointer;
         }
+}
+
+#cheque-container, #typeofService, #totalCost{display: flex;}
+#cheque-container{flex-direction: column; width: 140%;}
+#typeofService,#totalCost{
+    flex-direction: row;
+    .right{
+        margin-left: 60%;
+    }
+}
+
+#cheque-container{
+    margin-left: -20%;
+    #p1{
+        font-size:1.5rem;
+        margin-bottom: 5%;
+        letter-spacing: -1px;
+        font-family: $paragraphFont;
+    }
+
+    #typeofService{
+        #serviceCategory{
+            font-size: 1rem;
+            margin-bottom: 5%;
+            font-family: $subHeader-font;
+        }
+        #price{
+            font-size: 1.2rem;
+            font-weight: 550;
+        }
+    }
+
+    #totalCost{
+        #totalHeading{
+            font-size: 1.1rem;
+        }
+    }
+
+
+
 }
