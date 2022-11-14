@@ -1,0 +1,176 @@
+<div id = "calculator-main">
+        <!--RESEARCH LINE HEIGHT, JUSTIFY CONTENT-->
+
+        <div class="sub-navbar">
+          <ul>
+            <li><a href="../index.html"> Home </a> > </li>
+            <li>Calculator</li>
+          </ul>
+
+        </div>
+
+        <div id="calc-info">
+        <h2>Repair Estimate Calculator</h2>
+
+          <p>
+            Repair Estimate tool helps you find out the estimated repair cost of your 
+            vehicle. Just enter the details of your vehicle and select <br> the type of services
+            you wish to avail and instantly get a quote for free. Additionally, you can 
+            book repair services on our platform.
+          </p>
+        </div>
+
+          <div id="progress">
+            <div id="progress-bar"></div>
+            <ul id="progress-num">
+              <li class="step active">1</li>
+              <li class="step">2</li>
+              <li class="step">3</li>
+            </ul>
+          </div>
+
+          <!--Sections that contains the calculator, also a flexbox-->
+          <section id="calculator">
+
+        <div class="wrapper">
+            <div id="input-container">
+            
+            </div>
+
+            <button id="progress-prev" class="btn" disabled>Prev</button>
+            <button id="progress-next" class="btn" disabled>Next</button> 
+
+        </div>
+
+            <div id="display-container">
+            <div id = "vehicleDisplay">
+              <img src="pages/media/carImg.png" 
+              alt="picture of a car" id = "defaultImg">
+            </div>
+            <div id="subDisplay">
+               <p id="display-header">Estimated cost</p>
+              <p id="display-note">Your estimated price will be displayed here</p>
+              <p id="code"></p>
+            </div>
+             
+            </div>
+          </section>
+</div>
+
+<script>
+
+  //Vanilla js code
+  const progressBar = document.getElementById("progress-bar");
+  const progressNext = document.getElementById("progress-next");
+  const progressPrev = document.getElementById("progress-prev");
+  const steps = document.querySelectorAll(".step");
+  let active = 1;
+
+  progressNext.addEventListener("click", () => {
+    active++;
+    if (active > steps.length) {
+      active = steps.length;
+    }
+    updateProgress();
+  });
+
+  progressPrev.addEventListener("click", () => {
+    active--;
+    if (active < 1) {
+      active = 1;
+    }
+    updateProgress();
+  });
+
+  const updateProgress = () => {
+    steps.forEach((step, i) => {
+      if (i < active) {
+        step.classList.add("active");
+      } else {
+        step.classList.remove("active");
+      }
+    });
+    progressBar.style.width = ((active - 1) / (steps.length - 1)) * 100 + "%";
+    if (active === 1) {
+      progressPrev.disabled = true;
+    } else if (active === steps.length) {
+      progressNext.disabled = true;
+    } else {
+      progressPrev.disabled = false;
+      progressNext.disabled = false;
+    }
+  };
+
+
+  //JQUERY CODE
+let car = false;
+let truck = false;
+let van = false;
+let motorbike = false;
+let down = false;
+
+  $("#input-container").load("pages/states/vehicleInfo.txt").fadeIn("slow");
+  let step = 1;
+
+   $("#progress-prev").on('click', function(){
+    step--;
+    console.log("Step" + step);
+
+      if(step === 1){
+        car = false;
+        truck = false;
+        van = false;
+        motorbike = false;
+        $("#input-container").hide().load("pages/states/vehicleInfo.txt").fadeIn("slow");
+        $("#vehicleDisplay").hide().load("pages/media/carImg.txt").fadeIn("slow");
+        console.log("loaded image on step 1");
+      }
+  });
+
+  //loads PRICES on click
+   $("#progress-next").on('click', function(){
+    step++;
+    console.log("Step " + step);
+       if(step === 2){
+          if (car == true){
+              $("#input-container").hide().load("pages/states/servicePrices/carPrices.txt").fadeIn("slow");
+              console.log("loaded car services");
+
+              document.querySelector('.vehicle').style.width = "10%";
+              document.querySelector('.flag').style.width = "5%";
+              console.log("Changed width of vehicle and flag to 10%");
+
+              $(".flag").css("margin-top", "-3.5%");
+              $(".flag").css("margin-left", "5%");
+
+              $(".flag").css("position", "absolute");
+
+              console.log("Changed position of flag to the left of the vehicle");
+
+
+            }
+
+            else if (truck == true){
+              $("#input-container").hide().load("pages/states/servicePrices/truckPrices.txt").fadeIn("slow");
+              console.log("loaded truck services");
+            }
+
+            else if (van == true){
+              $("#input-container").hide().load("pages/states/servicePrices/vanPrices.txt").fadeIn("slow");
+              console.log("loaded van services");
+            }
+
+            else if (motorbike == true){
+              $("#input-container").hide().load("pages/states/servicePrices/bikePrices.txt").fadeIn("slow");
+              console.log("loaded motorbike services");
+            }
+       
+        }
+
+      else if(step === 3){
+        $("#input-container").hide().load("pages/states/bookings.txt").fadeIn("slow");
+        $("#progress-prev").hide();
+        $("#progress-next").hide();
+      }
+  })
+</script>

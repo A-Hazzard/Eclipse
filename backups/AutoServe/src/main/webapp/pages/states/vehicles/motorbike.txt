@@ -1,0 +1,2 @@
+<img src = 'https://th.bing.com/th/id/OIP.yz7GOK-FQ0WeQxKtNhDKJgHaGU?pid=ImgDet&rs=1' 
+alt='truck' id = "motorbikeImg" />

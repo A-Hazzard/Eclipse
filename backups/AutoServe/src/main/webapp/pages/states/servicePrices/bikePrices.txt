@@ -1,0 +1,33 @@
+<form action="" method="post" id="price-form">
+<h3>CAR SERVICES</h3>
+    <table>
+        <tr>
+            <td class="service">
+                
+                <input type="checkbox" name="oil" id="oil" value="650.98">
+                <label for="oil">Oil Filter</label>
+            </td>
+            <td class = "price">
+            $650.98
+            </td>
+        </tr>
+        <tr>
+            <td class="service">
+                <input type="checkbox" name="gas" id="gas" value="1050.98">
+                <label for="gas">Air Filter</label>
+            </td>
+             <td class = "price">
+            $1050.98
+            </td>
+        </tr>
+        <tr>
+            <td class="service">
+                <input type="checkbox" name="tires" id="tires" value = "2050.98">
+                <label for="tires">Fuel</label>
+            </td>
+             <td class = "price">
+            $2050.98
+            </td>
+        </tr>
+    </table>
+</form>

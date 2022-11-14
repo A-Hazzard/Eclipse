@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+ 
+<head>
+  <meta charset="utf-8">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="../style/style.css">
+  <link rel="shortcut icon" type="image/x-icon" href="../media/logo.jpg" />
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+  <script>
+//JQUIERY CODE
+$(document).ready(function() {
+
+  //loads prices in calculator page
+$("#progress-next").click(function(){
+    $("#input-container").load("states/prices.txt");
+})
+
+
+});//end main ready function
+
+
+  </script>
+</head>
+
+<body id="calculator-body">
+    <!--Horizontal Header of the web page-->
+    <header class="header"><!--FLEXBOX-->
+
+      <h1 id="logo"  class="calculator-logo">Auto Serve Inc.</h1><!--Logo-->
+      
+      <nav class="navbar calculator-navbar"><!--NAVIGATION BAR-->
+          <ul class="link-container">
+            <li><a href="../index.html" class="links">Home</a></li>
+              <li><a href="#" class="links">Calculator</a></li>
+              <li><a href="jobs.html" class="links">Jobs</a></li>
+              <li><a href="#" class="links">Services</a></li>
+              <li><a href="../login.html" class="links">Login/Sign-Up</a></li>
+          </ul>
+      </nav>
+
+  </header>
+<main id = "calculator-main">
+<!--RESEARCH LINE HEIGHT, JUSTIFY CONTENT-->
+
+<div class="sub-navbar">
+  <ul>
+    <li><a href="../index.html"> Home ></a></li>
+    <li>Calculator</li>
+  </ul>
+
+</div>
+
+<div id="calc-info">
+<h2>Repair Estimate Calculator</h2>
+
+  <p>
+    Repair Estimate tool helps you find out the estimated repair cost of your 
+    vehicle. Just enter the details of your vehicle and select <br> the type of services
+    you wish to avail and instantly get a quote for free. Additionally, you can 
+    book repair services on our platform.
+  </p>
+</div>
+
+  <div id="progress">
+    <div id="progress-bar"></div>
+    <ul id="progress-num">
+      <li class="step active">1</li>
+      <li class="step">2</li>
+      <li class="step">3</li>
+      <li class="step">4</li>
+    </ul>
+  </div>
+
+  <!--Sections that contains the calculator, also a flexbox-->
+  <section id="calculator">
+
+<div class="wrapper">
+    <div id="input-container">
+      <form action="" method="post" id="calculator-form">
+          <table>
+            <tr>
+              <td>
+                <label for="vehicleType">Vehicle:</label><br>
+                <select name="selectVehicleType" id="vehicleType">
+                  <option value="" disabled selected hidden class="default-option">Select your Vehicle</option>
+                  <option value="Car">Car</option>
+                  <option value="Truck">Truck</option>
+                  <option value="Van">Van</option>
+                  <option value="MotorBike">MotorBike</option>
+                </select>
+              </td>
+            </tr>
+            <tr id="location-tr">
+              <td>
+                <label for="location" id="location-label">Location:</label><br>
+                <select name="selectLocation" id="location">
+                  <option value="" disabled selected hidden class="default-option">Select your location</option>
+                  <option value="Trinidad">Trinidad</option>
+                  <option value="Tobago">Tobago</option>
+                  <option value="United States">United States</option>
+                </select>
+              </td>
+            </tr>
+          </table>  
+      </form>
+    </div>
+
+    <button id="progress-prev" class="btn" disabled>Prev</button>
+    <button id="progress-next" class="btn">Next</button> 
+
+</div>
+
+    <div id="display-container">
+      <img src="../media/carImg.png" alt="picture of a car">
+      <p id="display-header">Estimated cost</p>
+      <p id="display-note">Your estimated price will be displayed here</p>
+      <p id="code"></p>
+    </div>
+  </section>
+
+</main>
+<script type="text/javascript" src="../script.js"></script>
+ 
+</body>
+ 
+</html>

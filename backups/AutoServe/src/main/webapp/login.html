@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="media/logo.jpg" />
+
+  
+    <title>AutoServe Login</title>
+</head>
+<body>
+    <!--Horizontal Header of the web page-->
+    <header class="access-header"><!--FLEXBOX-->
+
+        <h1 id="logo">Auto Serve Inc.</h1><!--Logo-->
+        
+        <nav class="navbar"><!--NAVIGATION BAR-->
+            <ul class="link-container">
+                <li><a href="index.html" class="links">Home</a></li>
+                <li><a href="pages/calculator.html" class="links">Calculator</a></li>
+                <li><a href="pages/jobs.html" class="links">Jobs</a></li>
+                <li><a href="#" class="links">Services</a></li>
+                <li><a href="#" class="links">Login/Sign-Up</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <!--Main content for login page-->
+    <main id = "access-main">
+
+        <h2>Log In</h2><br>
+        <p>New to this site? <a href="#" id="registrationPage">Sign up</a> </p>
+        <!--Form used for logging in-->
+        <form action="LoginServlet" method="post" id="loginForm">
+            <table id="loginFormTable">
+            
+                <tr>
+                    <td>
+                        <label for="email">Email: </label><br>
+                        <input type="email" name="email" id="email" required>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                        <label for="password">Password: </label><br>
+                        <input type="password" name="password" id="password" required> <br>
+                        <div id="viewPassword-container"><input type="checkbox" id="viewPwd"><label for="viewPwd">Show Password</label></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <br>
+                        <a href = "pages/forgotPassword.html" id="forgotpassword">Forgot Password</a>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><input type="submit" value="Login" id="submit"/>
+                    </td>
+                </tr>
+            </table>
+        </form>
+       
+    </main>
+  
+      <!--JQUERY-->
+      <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+      <script src="script.js"></script>
+      <script src="jquery.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<div class="information">
+
+    <!--Top portion of container-->
+    <div class="top-flex-portion">
+        <span class="job-title">Heavy Equipment Mechanic</span> <br>
+        <p class="recruiter">Port to Port Immigration Services Inc.</p>
+        <p class="position">Port of Spain <br>
+            <span>Published September 9</span>
+        </p>
+    </div>
+
+
+<p>Type of employment: <br> Full time <br>
+
+Job description <br>
+Port to Port Immigration Servicesare looking to hire an experienced heavy equipment mechanic to inspect, service, and maintain a range of heavy-duty construction equipment. You will be responsible for inspecting engines and equipment, carrying out services, conducting repairs, and providing routine maintenance to the construction fleet. To ensure success as a heavy equipment mechanic, you should have proven experience working with heavy machinery, be physically fit, and be able to troubleshoot issues on the job site. Heavy Equipment Mechanic Responsibilities:
+<br>
+</p> 
+<br>
+Inspecting trucks, cranes, bulldozers, and other heavy equipment for proper performance.
+Diagnosing faults using computerized testing equipment.
+Adjusting equipment and replacing faulty parts.
+Repairing damaged equipment parts.
+Cleaning, lubricating, and conducting routine services on heavy-duty vehicles.
+Cleaning and servicing of machine attachments like winches, blades, and side booms.
+Performing major repair work when necessary.
+Consulting with other mechanics on smaller jobs.
+Reporting damaged or faulty equipment to management.
+
+<br><br>
+Heavy Equipment Mechanic Requirements:
+<br>
+
+High school diploma or GED.
+Certification as a heavy equipment mechanic.
+Proven work experience as a diesel or heavy equipment mechanic.
+Understanding of computer testing technologies.
+Ability to lift heavy machinery.
+Extensive knowledge of diesel engines and construction equipment.
+<br><br>
+
+Powered by JazzHRNl2aO0PzKU
+</p>
+            </div><!--End heavy-equipment information container-->
