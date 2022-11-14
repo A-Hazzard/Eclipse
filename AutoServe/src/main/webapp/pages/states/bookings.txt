@@ -1,4 +1,4 @@
-<form action="" id="bookings-form">
+<form action='bookingServlet' method = 'post' id="bookings-form">
     <table>
         <tr>
             <td>

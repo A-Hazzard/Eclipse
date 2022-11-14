@@ -37,8 +37,8 @@
             
             </div>
 
-            <button id="progress-prev" class="btn" disabled>Prev</button>
-            <button id="progress-next" class="btn" disabled>Next</button> 
+            <button type = "button" id="progress-prev" class="btn" disabled>Prev</button>
+            <button type = "button" id="progress-next" class="btn" disabled>Next</button> 
 
         </div>
 
@@ -112,20 +112,20 @@ let down = false;
   $("#input-container").load("pages/states/vehicleInfo.txt").fadeIn("slow");
   let step = 1;
 
-   $("#progress-prev").on('click', function(){
-    step--;
-    console.log("Step" + step);
+      $("#progress-prev").on('click', function(){
+        step--;
+        console.log("Step" + step);
 
-      if(step === 1){
-        car = false;
-        truck = false;
-        van = false;
-        motorbike = false;
-        $("#input-container").hide().load("pages/states/vehicleInfo.txt").fadeIn("slow");
-        $("#vehicleDisplay").hide().load("pages/media/carImg.txt").fadeIn("slow");
-        console.log("loaded image on step 1");
-      }
-  });
+          if(step === 1){
+            car = false;
+            truck = false;
+            van = false;
+            motorbike = false;
+            $("#input-container").hide().load("pages/states/vehicleInfo.txt").fadeIn("slow");
+            $("#vehicleDisplay").hide().load("pages/media/carImg.txt").fadeIn("slow");
+            console.log("loaded image on step 1");
+          }
+      });
 
   //loads PRICES on click
    $("#progress-next").on('click', function(){
@@ -135,7 +135,6 @@ let down = false;
           if (car == true){
               $("#input-container").hide().load("pages/states/servicePrices/carPrices.txt").fadeIn("slow");
               console.log("loaded car services");
-
           }
 
             else if (truck == true){
@@ -194,16 +193,15 @@ let down = false;
             $("#subDisplay").append(chequeContainer);
                        // $("#cheque-container").load("pages/states/servicePrices/cheque.txt").fadeIn("fast");
 
-
-
-
-
-          }
+          }//end else if
 
       else if(step === 3){
         $("#input-container").hide().load("pages/states/bookings.txt").fadeIn("slow");
         $("#progress-prev").hide();
-        $("#progress-next").hide();
+       $("#progress-next").hide();
+        console.log("hid both buttons");
+
       }
   })
+
 </script>
