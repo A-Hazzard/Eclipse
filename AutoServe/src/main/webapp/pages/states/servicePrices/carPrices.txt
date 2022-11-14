@@ -20,7 +20,7 @@
                 <tr>
                     <td class="services-row">
                         
-                        <input type="checkbox" name="oil" id="oil" value="$2,126.15 - $2,622.25">
+                        <input type="checkbox" name="oil" id="oil" value="650.98">
                         <label for="oil">Air Filter</label>
                     </td>
                     <td class = "price">
@@ -29,7 +29,7 @@
                 </tr>
                 <tr>
                     <td class="service">
-                        <input type="checkbox" name="gas" id="gas" value="$1,063.08 - $1,275.69">
+                        <input type="checkbox" name="gas" id="gas" value="1050.98">
                         <label for="gas">Gas Filter</label>
                     </td>
                     <td class = "price">
@@ -38,7 +38,7 @@
                 </tr>
                 <tr>
                     <td class="service">
-                        <input type="checkbox" name="tires" id="tires" value = "$3,614.46 - $4,394.05">
+                        <input type="checkbox" name="tires" id="tires" value = "2050.98">
                         <label for="tires">Fuel Filter</label>
                     </td>
                     <td class = "price">
@@ -47,8 +47,8 @@
                 </tr>
             <tr>
                     <td class="service">
-                        <input type="checkbox" name="sparkPlug" id="sparkPlug" value = "$5,244.51 - $6,449.33">
-                        <label for="sparkPlug">Spark Plug</label>
+                        <input type="checkbox" name="tires" id="tires" value = "2050.98">
+                        <label for="tires">Spark Plug</label>
                     </td>
                     <td class = "price">
                     $5,244.51 - $6,449.33
@@ -56,8 +56,8 @@
                 </tr>
             <tr>
                     <td class="service">
-                        <input type="checkbox" name="belt_chain" id="belt_chain" value = "$9,355.07 - $1,1410.35">
-                        <label for="belt_chain">Timing Belt/Chain</label>
+                        <input type="checkbox" name="tires" id="tires" value = "2050.98">
+                        <label for="tires">Timing Belt/Chain</label>
                     </td>
                     <td class = "price">
                     $9,355.07 - $1,1410.35
@@ -65,8 +65,8 @@
                 </tr>
             <tr>
                     <td class="service">
-                        <input type="checkbox" name="belt_drive" id="belt_drive" value = "$3,685.33 - $4,323.18">
-                        <label for="belt_drive">Fan Belt/Drive Belt</label>
+                        <input type="checkbox" name="tires" id="tires" value = "2050.98">
+                        <label for="tires">Fan Belt/Drive Belt</label>
                     </td>
                     <td class = "price">
                     $3,685.33 - $4,323.18
@@ -74,8 +74,8 @@
                 </tr>
             <tr>
                     <td class="service">
-                        <input type="checkbox" name="radiatorHoseSet" id="radiatorHoseSet" value = "$7,228.92 - $8,858.97">
-                        <label for="radiatorHoseSet">Radiator Hose Set</label>
+                        <input type="checkbox" name="tires" id="tires" value = "2050.98">
+                        <label for="tires">Radiator Hose Set</label>
                     </td>
                     <td class = "price">
                     $7,228.92 - $8,858.97
@@ -83,11 +83,11 @@
                 </tr>
                 <tr>
                     <td class="service">
-                        <input type="checkbox" name="radiator" id="radiator" value = "$2,7214.74 - $3,3309.71">
-                        <label for="radiator">Radiator</label>
+                        <input type="checkbox" name="tires" id="tires" value = "2050.98">
+                        <label for="tires">Radiator</label>
                     </td>
                     <td class = "price">
-                    $27,214.74 - $33,309.71
+                    $2,7214.74 - $3,3309.71
                     </td>
                 </tr>
             </table>
@@ -112,8 +112,8 @@
                 <tr>
                     <td class="services-row">
                         
-                        <input type="checkbox" name="brakePads" id="brakePads" value="$18,922.75 - $23,104.18">
-                        <label for="brakePads">Front Brake Pads (set of 4)</label>
+                        <input type="checkbox" name="oil" id="oil" value="650.98">
+                        <label for="oil">Front Brake Pads (set of 4)</label>
                     </td>
                     <td class = "price">
                     $18,922.75 - $23,104.18
@@ -121,8 +121,8 @@
                 </tr>
                 <tr>
                     <td class="service">
-                        <input type="checkbox" name="brakeOil" id="brakeOil" value="$2,764.00 - $3,330.97">
-                        <label for="brakeOil">Brake Oil</label>
+                        <input type="checkbox" name="gas" id="gas" value="1050.98">
+                        <label for="gas">Brake Oil</label>
                     </td>
                     <td class = "price">
                     $2,764.00 - $3,330.97
@@ -130,8 +130,8 @@
                 </tr>
                 <tr>
                     <td class="service">
-                        <input type="checkbox" name="brakesCleaning" id="breaksCleaning" value = "$14,245.22 - $17,434.44">
-                        <label for="brakesCleaning">Front & Rear Brakes cleaning along with caliper greasing</label>
+                        <input type="checkbox" name="tires" id="tires" value = "2050.98">
+                        <label for="tires">Front & Rear Brakes cleaning along with caliper greasing</label>
                     </td>
                     <td class = "price">
                     $14,245.22 - $17,434.44
@@ -139,8 +139,8 @@
                 </tr>
             <tr>
                     <td class="service">
-                        <input type="checkbox" name="disc_drum" id="disc_drum" value = "$9,284.20 - $11,339.48">
-                        <label for="disc_drum">Front Brakes Disc/Drum</label>
+                        <input type="checkbox" name="tires" id="tires" value = "2050.98">
+                        <label for="tires">Front Brakes Disc/Drum</label>
                     </td>
                     <td class = "price">
                     $9,284.20 - $11,339.48
@@ -148,8 +148,8 @@
                 </tr>
             <tr>
                     <td class="service">
-                        <input type="checkbox" name="brakesOverHaul" id="brakesOverHaul" value = "$9,355.07 - $11,410.35">
-                        <label for="brakesOverHaul">Front Brakes Overhaul</label>
+                        <input type="checkbox" name="tires" id="tires" value = "2050.98">
+                        <label for="tires">Front Brakes Overhaul</label>
                     </td>
                     <td class = "price">
                     $9,355.07 - $1,1410.35
@@ -157,8 +157,8 @@
                 </tr>
             <tr>
                     <td class="service">
-                        <input type="checkbox" name="rearBrakesOverhaul" id="rearBrakesOverhaul" value = "$3,685.33 - $4,323.18">
-                        <label for="rearBrakesOverhaul">Rear Brakes Overhaul</label>
+                        <input type="checkbox" name="tires" id="tires" value = "2050.98">
+                        <label for="tires">Rear Brakes Overhaul</label>
                     </td>
                     <td class = "price">
                     $3,685.33 - $4,323.18
@@ -166,8 +166,8 @@
                 </tr>
             <tr>
                     <td class="service">
-                        <input type="checkbox" name="rad_hoseSet" id="rad_hoseSet" value = "$7,228.92 - $8,858.97">
-                        <label for="rad_hoseSet">Radiator Hose Set</label>
+                        <input type="checkbox" name="tires" id="tires" value = "2050.98">
+                        <label for="tires">Radiator Hose Set</label>
                     </td>
                     <td class = "price">
                     $7,228.92 - $8,858.97
@@ -175,11 +175,11 @@
                 </tr>
                 <tr>
                     <td class="service">
-                        <input type="checkbox" name="radiator" id="radiator" value = "$27,214.74 - $33,309.71">
-                        <label for="radiator">Radiator</label>
+                        <input type="checkbox" name="tires" id="tires" value = "2050.98">
+                        <label for="tires">Radiator</label>
                     </td>
                     <td class = "price">
-                    $27,214.74 - $33,309.71
+                    $2,7214.74 - $3,3309.71
                     </td>
                 </tr>
             </table>
@@ -207,17 +207,17 @@
                 <tr>
                     <td class="services-row">
                         
-                        <input type="checkbox" name="cluth_pressurePlate" id="cluth_pressurePlate" value="$32,530.12 - $39,759.04">
-                        <label for="cluth_pressurePlate">Clutch and Pressure Plate</label>
+                        <input type="checkbox" name="oil" id="oil" value="650.98">
+                        <label for="oil">Clutch and Pressure Plate</label>
                     </td>
                     <td class = "price">
-                    $32,530.12 - $39,759.04
+                    $3,2530.12 - $3,9759.04
                     </td>
                 </tr>
                 <tr>
                     <td class="service">
-                        <input type="checkbox" name="clutch_releaseBearing" id="clutch_releaseBearing" value="$7,299.79 - $8,929.84">
-                        <label for="clutch_releaseBearing">Clutch Release Bearing</label>
+                        <input type="checkbox" name="gas" id="gas" value="1050.98">
+                        <label for="gas">Clutch Release Bearing</label>
                     </td>
                     <td class = "price">
                     $7,299.79 - $8,929.84
@@ -226,11 +226,11 @@
         
                 <tr>
                     <td class="service">
-                        <input type="checkbox" name="clutch_overhaul" id="clutch_overhaul" value = "$24,238.13 - $29,624.38">
-                        <label for="clutch_overhaul">Clutch Overhaul</label>
+                        <input type="checkbox" name="tires" id="tires" value = "2050.98">
+                        <label for="tires">Clutch Overhaul</label>
                     </td>
                     <td class = "price">
-                    $24,238.13 - $29,624.38
+                    $24,238.13 - $2,9624.38
                     </td>
                 </tr>
             </table>
