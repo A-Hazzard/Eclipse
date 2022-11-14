@@ -136,16 +136,6 @@ let down = false;
               $("#input-container").hide().load("pages/states/servicePrices/carPrices.txt").fadeIn("slow");
               console.log("loaded car services");
 
-              document.querySelector('.vehicle').style.width = "10%";
-              document.querySelector('.flag').style.width = "5%";
-              console.log("Changed width of vehicle and flag to 10%");
-
-              $(".flag").css("margin-top", "-3.5%");
-              $(".flag").css("margin-left", "5%");
-
-              $(".flag").css("position", "absolute");
-
-              console.log("Changed position of flag to the left of the vehicle");
           }
 
             else if (truck == true){
@@ -162,6 +152,18 @@ let down = false;
               $("#input-container").hide().load("pages/states/servicePrices/bikePrices.txt").fadeIn("slow");
               console.log("loaded motorbike services");
             }
+            
+              document.querySelector('.vehicle').style.width = "10%";
+              document.querySelector('.flag').style.width = "5%";
+              console.log("Changed width of vehicle and flag to 10%");
+
+              $(".flag").css("margin-top", "-3.5%");
+              $(".flag").css("margin-left", "5%");
+
+              $(".flag").css("position", "absolute");
+
+              console.log("Changed position of flag to the left of the vehicle");
+
             //Estimate container
             const estimateCost = "<div id = 'estimateCost-container'></div>";
             const estimateCostH4 = "<h4 id = 'estimateCostH4'>ESTIMATE COST</h4> <br>"
@@ -186,7 +188,11 @@ let down = false;
            
             //Cheque Container
             const chequeContainer = "<div id = 'cheque-container'></div>";
+            const note = "<p style='color: grey;'>* This is an estimated cost collected from multiple sources. Actual prices may vary.</p>"
+            $("#subDisplay").append(note);
+
             $("#subDisplay").append(chequeContainer);
+                       // $("#cheque-container").load("pages/states/servicePrices/cheque.txt").fadeIn("fast");
 
 
 
