@@ -1,2 +1,0 @@
-<img src = 'https://th.bing.com/th/id/R.f2c6cf708e8168c6e0a1ed757f96cbd0?rik=iF7okc20hTSQag&riu=http%3a%2f%2fpurepng.com%2fpublic%2fuploads%2flarge%2fpurepng.com-trucktruckpickup-truckbig-trucktrucks-1701527681534kbj6m.png&ehk=Mxw2weEUP8OiAqgHp5PjaqShuqWe3zClcSsutkggAOo%3d&risl=&pid=ImgRaw&r=0' 
-alt='truck' id = "truckImg" />
