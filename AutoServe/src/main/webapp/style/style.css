@@ -516,10 +516,6 @@ body {
   margin-top: 2%;
   display: block;
 }
-#jobs-main #jobs-flex-container #job-status .electric {
-  height: 50% !important;
-  overflow: unset;
-}
 
 #bookings-form {
   margin-top: -20%;

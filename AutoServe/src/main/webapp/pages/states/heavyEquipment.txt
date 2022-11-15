@@ -10,9 +10,9 @@
     </div>
 
 
-<p> Type of employment: <br> Full time <br>
+<p> <b>Type of employment:</b> <br> Full time <br>
 
-    Job description 
+    <b>Job description</b> 
     <br>
         Auto Serve Inc. is looking for a heavy equipment mechanic with experience to inspect, service, and
     maintain a variety of heavy-duty construction equipment. You will be in charge of inspecting engines 
@@ -34,7 +34,7 @@
     notifying management of broken or malfunctioning equipment.
 
     <br><br>
-    Heavy Equipment Mechanic Requirements:
+    <b>Heavy Equipment Mechanic Requirements: </b>
     <br>
 
     High school diploma or GED. <br>
@@ -45,6 +45,6 @@
         Extensive knowledge of diesel engines and construction equipment.
     <br><br>
 
-    Powered by Intellisense Inc.
+    <b>Powered by</b> Intellisense Inc.
 </p>
             </div><!--End heavy-equipment information container-->
