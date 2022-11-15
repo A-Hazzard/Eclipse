@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Secular+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital@1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Vollkorn:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -602,11 +604,22 @@ body {
 #aboutUs-main-flex-container #content #information {
   flex: 1;
 }
+#aboutUs-main-flex-container #content #information h2 {
+  font-family: "Vollkorn", serif;
+}
 #aboutUs-main-flex-container #content #information #information-paragraph {
   width: 90%;
+  font-family: "Raleway", sans-serif;
 }
 #aboutUs-main-flex-container #location {
   flex: 0.5;
+}
+#aboutUs-main-flex-container #location b {
+  font-family: "Vollkorn", serif;
+}
+#aboutUs-main-flex-container #location span {
+  font-family: "Raleway", sans-serif;
+  font-size: 0.8em;
 }
 #aboutUs-main-flex-container #location #map iframe {
   position: absolute;
@@ -623,4 +636,52 @@ body {
 #flex-images .image-wrapper img {
   width: 80%;
   border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+footer {
+  font-family: "Robot", sans-serif;
+  border: 5px solid rgb(229, 36, 14);
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  background-color: rgb(43, 45, 73);
+  color: white;
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-top: 5%;
+}
+footer #flex-container {
+  display: flex;
+  flex-direction: column;
+}
+footer #flex-container #footer-nav {
+  width: 100%;
+}
+footer #flex-container #footer-nav h4 {
+  font-weight: 1000;
+  font-size: 1.3rem;
+}
+footer #flex-container #footer-nav ul li {
+  font-size: 1.2rem;
+  display: inline;
+  margin-right: 4%;
+  cursor: pointer;
+}
+footer #flex-container #footer-nav ul li:hover {
+  border: 2px solid rgb(229, 36, 14);
+  border-left: none;
+  border-right: none;
+  border-top: none;
+}
+footer #flex-container #footer-links #wrapper {
+  width: 100%;
+  display: flex;
+}
+footer #flex-container #footer-links #wrapper span {
+  flex: 1;
+  padding-top: 2%;
+}
+footer #flex-container #footer-links #wrapper span h5 {
+  font-size: 1rem;
 }/*# sourceMappingURL=style.css.map */
