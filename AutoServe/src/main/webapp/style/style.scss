@@ -722,18 +722,20 @@ border-right: none;
 
 //SERVICES
 #aboutUs-main-flex-container{
-    display: flex;
-    flex-direction: row;
     padding-top: 5%;
     padding-left: 15%;
     padding-right: 15%;
+    #content{
+        display: flex;
+        flex-direction: row;
+        #information{
+            flex: 1;
     
-    #information{
-        flex: 1;
-
-        #information-paragraph{
-            width: 90%;
+            #information-paragraph{
+                width: 90%;
+            }
         }
+    
     }
 
     #location{
@@ -745,6 +747,22 @@ border-right: none;
 
     }
 
-   
+}
+
+#flex-images{
+    display: flex;
+    flex-direction: row;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 5%;
+    text-align: center;
+    .image-wrapper{
+        img{
+            width: 80%;
+            border-radius: .5rem;
+            
+        }
+    }
 
 }
+

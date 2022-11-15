@@ -1,5 +1,5 @@
 body {
-  background-color: #ff6b81;
+  background-color: #0080FF;
   font: 1em Helvetica;
 }
 
@@ -20,7 +20,7 @@ body {
 }
 .whysignLogin
 {
-  float: left;
+	float: left;
   background-color: white;
   width: 480px;
   height: 347px;
@@ -79,7 +79,7 @@ body {
 }
 
 h1 {
-  color: #2f3542;
+  color: red;
   font-weight: 900;
   font-size: 2.5em;
 }
