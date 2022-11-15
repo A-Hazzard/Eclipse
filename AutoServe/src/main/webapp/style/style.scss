@@ -719,3 +719,32 @@ border-right: none;
 
 
 }
+
+//SERVICES
+#aboutUs-main-flex-container{
+    display: flex;
+    flex-direction: row;
+    padding-top: 5%;
+    padding-left: 15%;
+    padding-right: 15%;
+    
+    #information{
+        flex: 1;
+
+        #information-paragraph{
+            width: 90%;
+        }
+    }
+
+    #location{
+        flex: .5;
+
+        #map iframe{
+            position: absolute;
+        }
+
+    }
+
+   
+
+}

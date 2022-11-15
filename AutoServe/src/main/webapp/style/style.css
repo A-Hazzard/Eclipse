@@ -588,4 +588,24 @@ body {
 }
 #cheque-container #totalCost #totalHeading {
   font-size: 1.1rem;
+}
+
+#aboutUs-main-flex-container {
+  display: flex;
+  flex-direction: row;
+  padding-top: 5%;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+#aboutUs-main-flex-container #information {
+  flex: 1;
+}
+#aboutUs-main-flex-container #information #information-paragraph {
+  width: 90%;
+}
+#aboutUs-main-flex-container #location {
+  flex: 0.5;
+}
+#aboutUs-main-flex-container #location #map iframe {
+  position: absolute;
 }/*# sourceMappingURL=style.css.map */
