@@ -2,8 +2,8 @@
           <table>
             <tr>
               <td>
-                <label for="vehicleType">Vehicle:</label><br>
-                <select name="selectVehicleType" id="vehicleType">
+                <label for="vehicvarype">Vehicle:</label><br>
+                <select name="selectVehicvarype" id="vehicvarype">
                   <option value="" disabled selected hidden class="default-option">Select your Vehicle</option>
                   <option value="Car">Car</option>
                   <option value="Truck">Truck</option>
@@ -23,7 +23,7 @@
               </td>
             </tr>
           </table>  
-      </form>
+</form>
 
 <script>
 
@@ -31,33 +31,33 @@
         
             //Change vehicle images
             changedVehicle = false;
-                  $("#vehicleType").change(function() {
-                    let vehicleType = $("#vehicleType option:selected").val();
+                  $("#vehicvarype").change(function() {
+                    var vehicvarype = $("#vehicvarype option:selected").val();
                     changedVehicle = true;
                     console.log(changedVehicle);
 
 
-                    if (vehicleType === "Car"){
-                    console.log("Selected: " + vehicleType);
+                    if (vehicvarype === "Car"){
+                    console.log("Selected: " + vehicvarype);
                       $("#vehicleDisplay").hide().load("pages/states/vehicles/car.txt").fadeIn("fast");
                       car = true;
 
                     }
                     
-                      else if (vehicleType === "Truck"){
-                        console.log("Selected: " + vehicleType);
+                      else if (vehicvarype === "Truck"){
+                        console.log("Selected: " + vehicvarype);
                           $("#vehicleDisplay").hide().load("pages/states/vehicles/truck.txt").fadeIn("fast");
                             truck = true;
                       }
                       
-                        else if (vehicleType === "Van"){
-                          console.log("Selected: " + vehicleType);
+                        else if (vehicvarype === "Van"){
+                          console.log("Selected: " + vehicvarype);
                             $("#vehicleDisplay").hide().load("pages/states/vehicles/van.txt").fadeIn("fast");
                               van = true;
                         }
                     
-                          else if (vehicleType === "MotorBike"){
-                          console.log("Selected: " + vehicleType);
+                          else if (vehicvarype === "MotorBike"){
+                          console.log("Selected: " + vehicvarype);
                             $("#vehicleDisplay").hide().load("pages/states/vehicles/motorbike.txt").fadeIn("fast");
                               motorbike = true;
                           }
@@ -75,7 +75,7 @@
             changedFlag = false;
 
             $("#location").change(function() {
-              let location = $("#location option:selected").val();
+              var location = $("#location option:selected").val();
               changedFlag = true;
               console.log(changedFlag)
 

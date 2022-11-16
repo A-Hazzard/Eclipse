@@ -1,9 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vollkorn:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
 $headerFont: 'Segoe UI';
 $subHeader-font: 'Secular One', sans-serif;
 $paragraphFont: 'Ubuntu', sans-serif;
+$paragraphFont2: 'Vollkorn', serif;
+$paragraphFont3: 'Raleway', sans-serif;
+
 $orange: rgb(229,36,14);
 $white: rgb(255,255,255);
 $grey: rgb(245,245,245);
@@ -637,10 +644,7 @@ border-right: none;
                 }//end top-flex-portion
             }//end information
 
-            .electric{
-                height: 50% !important;
-                overflow: unset;
-            }
+        
         }//end job-status
     }//end jobs-flex-container
 }//end jobs main
@@ -721,4 +725,242 @@ border-right: none;
 
 
 
+}
+
+//SERVICES
+#aboutUs-main-flex-container{
+    padding-top: 5%;
+    padding-left: 15%;
+    padding-right: 15%;
+    #content{
+        display: flex;
+        flex-direction: row;
+        #information{
+            h2{
+                font-family: $paragraphFont2;
+
+            }
+            flex: 1;
+    
+            #information-paragraph{
+                width: 90%;
+                font-family: $paragraphFont3;
+
+            }
+        }
+    
+    }
+
+    #location{
+        flex: .5;
+
+        b{
+            font-family: $paragraphFont2
+        }
+        span{
+            font-family: $paragraphFont3;
+            font-size: .8em;
+        }
+        #map iframe{
+            position: absolute;
+        }
+
+    }
+
+}
+
+#flex-images{
+    display: flex;
+    flex-direction: row;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 5%;
+    text-align: center;
+    .image-wrapper{
+        img{
+            width: 80%;
+            border-radius: .5rem;
+            cursor: pointer;
+        }
+    }
+
+}
+
+footer{
+    font-family: 'Robot', sans-serif;
+    border: 5px solid $orange;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 5%;
+    color: white;
+    background-color: rgb(43,45,73);
+    height: 48vh;
+
+    
+    #flex-container{
+        display: flex;
+        flex-direction: column;
+
+        #footer-nav{
+        width: 100%;
+        h4{
+            font-weight: 1000;
+            font-size: 1.3rem;
+        }
+            ul li{
+                font-size: 1.2rem;
+                display: inline;
+                margin-right: 4%;
+                cursor: pointer;
+                color: rgb(205,206,224);
+                opacity: .5;
+            }
+
+            #cars{
+                color: white;
+                opacity: 1;
+                text-decoration: underline;
+            }
+
+            
+        }
+
+        #footer-links{
+
+            #wrapper{
+                width: 100%;
+                display: flex;
+                span{
+                    flex: 1;
+                    padding-top: 2%;
+                h5{
+                    font-size: 1rem;
+                    color: rgb(205,206,224);
+                }
+
+                a{
+                color: rgb(205,206,224);
+                text-decoration: none;
+                display: block;
+                }
+                    }
+            }
+        
+        }
+    }
+}
+
+
+#services-main-container{
+    #background-image{
+        background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.66),rgba(0, 0, 0, 0.605)) , url("https://www.assetworks.com/wp-content/uploads/2018/08/iStock-693170166.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        position: relative;
+        #cta{
+            margin-top: 20%;
+            margin-left: 20%;
+            position: absolute;
+            color: white;
+            
+            h2{
+                font-size: 3rem;
+                font-family: 'Playfair Display', serif;
+            }
+
+            p{
+                font-size: 1.5rem;
+                margin-top: -.3%;
+            }
+        }
+    } //end background-image
+
+    #information{
+        padding-top: 5%;
+        padding-left: 10%;
+        padding-right: 10%;
+
+        .container{
+            display: flex;
+        }
+
+        .cont1{
+            height: 80vh;
+            .img-container {
+                flex: 2;          
+
+                img{
+                    width: 70%;
+                    margin-left: 15%;
+                }
+                height: auto;
+            }
+
+            .information-text{
+                flex: 1;         
+            }
+        }//end cont1
+
+        .cont2{
+            height: 80vh;
+            .img-container {
+                flex: 1;          
+
+                img{
+                    width: 100%;
+                    margin-left: 5%;
+                }
+                height: auto;
+            }
+
+            .information-text{
+                flex: 1;         
+            }
+
+            margin-bottom: 35%;
+        }//end cont2
+
+        .cont2{
+            height: 80vh;
+            .img-container {
+                flex: 1;          
+
+                img{
+                    width: 100%;
+                    margin-left: 5%;
+                }
+                height: auto;
+            }
+
+            .information-text{
+                flex: 1;         
+            }
+
+            margin-bottom: 35%;
+        }//end cont2
+
+        .cont4{
+            margin-top: 10%;
+            height: 80vh;
+            .img-container {
+                flex: 2;          
+
+                img{
+                    width: 70%;
+                    margin-left: 15%;
+                }
+                height: auto;
+            }
+
+            .information-text{
+                flex: 1;         
+            }
+        }//end cont1
+    }
 }

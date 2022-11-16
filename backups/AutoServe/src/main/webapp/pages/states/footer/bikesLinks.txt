@@ -1,0 +1,30 @@
+ <div id="wrapper" class = "bikes-wrapper">
+                    <span>
+                        <h5>Top Bike Brands</h5> <br>
+                        <a href = "#">Bajaj</a> <br>
+                        <a href = "#">Honda</a> <br>
+                        <a href = "#">Hero</a> <br>
+                        <a href = "#">TVS</a> <br>
+                    </span>
+    
+                    <span>
+                        <h5>Bikes By Body Type</h5> <br>
+                        <a href = "#">Commuter Bikes</a> <br>
+                        <a href = "#">Cruiser Bikes</a> <br>
+                        <a href = "#">Sports Bikes</a> <br>
+                    </span>
+    
+                    <span><h5>Top Bikes</h5> <br>
+                        <a href = "#">Suzuki Gixxer SF</a> <br>
+                        <a href = "#">Bajaj Pulsar NS</a> <br>
+                        <a href = "#">Royal Enfield Classic</a> <br>
+                        <a href = "#">TVS Apache RTR</a> <br>
+                    </span>
+    
+                    <span><h5>On Road Price of Bikes</h5> <br>
+                       <a href = "#">Suzuki Gixxer SF</a> <br>
+                        <a href = "#">Bajaj Pulsar NS</a> <br>
+                        <a href = "#">Royal Enfield Classic</a> <br>
+                        <a href = "#">TVS Apache RTR</a> <br>
+                    </span>
+                </div>

@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Secular+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital@1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Vollkorn:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -516,10 +519,6 @@ body {
   margin-top: 2%;
   display: block;
 }
-#jobs-main #jobs-flex-container #job-status .electric {
-  height: 50% !important;
-  overflow: unset;
-}
 
 #bookings-form {
   margin-top: -20%;
@@ -592,4 +591,196 @@ body {
 }
 #cheque-container #totalCost #totalHeading {
   font-size: 1.1rem;
+}
+
+#aboutUs-main-flex-container {
+  padding-top: 5%;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+#aboutUs-main-flex-container #content {
+  display: flex;
+  flex-direction: row;
+}
+#aboutUs-main-flex-container #content #information {
+  flex: 1;
+}
+#aboutUs-main-flex-container #content #information h2 {
+  font-family: "Vollkorn", serif;
+}
+#aboutUs-main-flex-container #content #information #information-paragraph {
+  width: 90%;
+  font-family: "Raleway", sans-serif;
+}
+#aboutUs-main-flex-container #location {
+  flex: 0.5;
+}
+#aboutUs-main-flex-container #location b {
+  font-family: "Vollkorn", serif;
+}
+#aboutUs-main-flex-container #location span {
+  font-family: "Raleway", sans-serif;
+  font-size: 0.8em;
+}
+#aboutUs-main-flex-container #location #map iframe {
+  position: absolute;
+}
+
+#flex-images {
+  display: flex;
+  flex-direction: row;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 5%;
+  text-align: center;
+}
+#flex-images .image-wrapper img {
+  width: 80%;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+footer {
+  font-family: "Robot", sans-serif;
+  border: 5px solid rgb(229, 36, 14);
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-top: 5%;
+  color: white;
+  background-color: rgb(43, 45, 73);
+  height: 48vh;
+}
+footer #flex-container {
+  display: flex;
+  flex-direction: column;
+}
+footer #flex-container #footer-nav {
+  width: 100%;
+}
+footer #flex-container #footer-nav h4 {
+  font-weight: 1000;
+  font-size: 1.3rem;
+}
+footer #flex-container #footer-nav ul li {
+  font-size: 1.2rem;
+  display: inline;
+  margin-right: 4%;
+  cursor: pointer;
+  color: rgb(205, 206, 224);
+  opacity: 0.5;
+}
+footer #flex-container #footer-nav #cars {
+  color: white;
+  opacity: 1;
+  text-decoration: underline;
+}
+footer #flex-container #footer-links #wrapper {
+  width: 100%;
+  display: flex;
+}
+footer #flex-container #footer-links #wrapper span {
+  flex: 1;
+  padding-top: 2%;
+}
+footer #flex-container #footer-links #wrapper span h5 {
+  font-size: 1rem;
+  color: rgb(205, 206, 224);
+}
+footer #flex-container #footer-links #wrapper span a {
+  color: rgb(205, 206, 224);
+  text-decoration: none;
+  display: block;
+}
+
+#services-main-container #background-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.66), rgba(0, 0, 0, 0.605)), url("https://www.assetworks.com/wp-content/uploads/2018/08/iStock-693170166.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  position: relative;
+}
+#services-main-container #background-image #cta {
+  margin-top: 20%;
+  margin-left: 20%;
+  position: absolute;
+  color: white;
+}
+#services-main-container #background-image #cta h2 {
+  font-size: 3rem;
+  font-family: "Playfair Display", serif;
+}
+#services-main-container #background-image #cta p {
+  font-size: 1.5rem;
+  margin-top: -0.3%;
+}
+#services-main-container #information {
+  padding-top: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+#services-main-container #information .container {
+  display: flex;
+}
+#services-main-container #information .cont1 {
+  height: 80vh;
+}
+#services-main-container #information .cont1 .img-container {
+  flex: 2;
+  height: auto;
+}
+#services-main-container #information .cont1 .img-container img {
+  width: 70%;
+  margin-left: 15%;
+}
+#services-main-container #information .cont1 .information-text {
+  flex: 1;
+}
+#services-main-container #information .cont2 {
+  height: 80vh;
+  margin-bottom: 35%;
+}
+#services-main-container #information .cont2 .img-container {
+  flex: 1;
+  height: auto;
+}
+#services-main-container #information .cont2 .img-container img {
+  width: 100%;
+  margin-left: 5%;
+}
+#services-main-container #information .cont2 .information-text {
+  flex: 1;
+}
+#services-main-container #information .cont2 {
+  height: 80vh;
+  margin-bottom: 35%;
+}
+#services-main-container #information .cont2 .img-container {
+  flex: 1;
+  height: auto;
+}
+#services-main-container #information .cont2 .img-container img {
+  width: 100%;
+  margin-left: 5%;
+}
+#services-main-container #information .cont2 .information-text {
+  flex: 1;
+}
+#services-main-container #information .cont4 {
+  margin-top: 10%;
+  height: 80vh;
+}
+#services-main-container #information .cont4 .img-container {
+  flex: 2;
+  height: auto;
+}
+#services-main-container #information .cont4 .img-container img {
+  width: 70%;
+  margin-left: 15%;
+}
+#services-main-container #information .cont4 .information-text {
+  flex: 1;
 }/*# sourceMappingURL=style.css.map */

@@ -3,42 +3,48 @@
     <!--Top portion of container-->
     <div class="top-flex-portion">
         <span class="job-title">Heavy Equipment Mechanic</span> <br>
-        <p class="recruiter">Port to Port Immigration Services Inc.</p>
+        <p class="recruiter">Auto Serve Inc.</p>
         <p class="position">Port of Spain <br>
             <span>Published September 9</span>
         </p>
     </div>
 
 
-<p>Type of employment: <br> Full time <br>
+<p> <b>Type of employment:</b> <br> Full time <br>
 
-Job description <br>
-Port to Port Immigration Servicesare looking to hire an experienced heavy equipment mechanic to inspect, service, and maintain a range of heavy-duty construction equipment. You will be responsible for inspecting engines and equipment, carrying out services, conducting repairs, and providing routine maintenance to the construction fleet. To ensure success as a heavy equipment mechanic, you should have proven experience working with heavy machinery, be physically fit, and be able to troubleshoot issues on the job site. Heavy Equipment Mechanic Responsibilities:
-<br>
-</p> 
-<br>
-Inspecting trucks, cranes, bulldozers, and other heavy equipment for proper performance.
-Diagnosing faults using computerized testing equipment.
-Adjusting equipment and replacing faulty parts.
-Repairing damaged equipment parts.
-Cleaning, lubricating, and conducting routine services on heavy-duty vehicles.
-Cleaning and servicing of machine attachments like winches, blades, and side booms.
-Performing major repair work when necessary.
-Consulting with other mechanics on smaller jobs.
-Reporting damaged or faulty equipment to management.
+    <b>Job description</b> 
+    <br>
+        Auto Serve Inc. is looking for a heavy equipment mechanic with experience to inspect, service, and
+    maintain a variety of heavy-duty construction equipment. You will be in charge of inspecting engines 
+    and equipment, performing services, performing repairs, and performing routine maintenance on the 
+    construction fleet. To be a successful heavy equipment mechanic, you should have prior experience 
+    working with heavy machinery, be physically fit, and be able to troubleshoot problems on the job. 
+    Responsibilities of a Heavy Equipment Mechanic:<br>
+    </p> 
+    <br>
 
-<br><br>
-Heavy Equipment Mechanic Requirements:
-<br>
+        Checking the functionality of trucks, cranes, bulldozers, and other heavy machinery.
+    employing automated testing equipment to identify flaws
+    repairing damaged parts and adjusting machinery.
+        Fixing harmed equipment components.
+    Performing regular maintenance on heavy-duty vehicles, including cleaning and lubrication.
+    cleaning and maintenance of equipment attachments such side booms, wrenches, and blades.
+        Performing significant repairs when required.
+    On smaller jobs, consulting with other mechanics.
+    notifying management of broken or malfunctioning equipment.
 
-High school diploma or GED.
-Certification as a heavy equipment mechanic.
-Proven work experience as a diesel or heavy equipment mechanic.
-Understanding of computer testing technologies.
-Ability to lift heavy machinery.
-Extensive knowledge of diesel engines and construction equipment.
-<br><br>
+    <br><br>
+    <b>Heavy Equipment Mechanic Requirements: </b>
+    <br>
 
-Powered by JazzHRNl2aO0PzKU
+    High school diploma or GED. <br>
+        Certification as a heavy equipment mechanic.  <br>
+    Proven work experience as a diesel or heavy equipment mechanic.  <br>
+        Understanding of computer testing technologies.  <br>
+    Ability to lift heavy machinery.  <br>
+        Extensive knowledge of diesel engines and construction equipment.
+    <br><br>
+
+    <b>Powered by</b> Intellisense Inc.
 </p>
             </div><!--End heavy-equipment information container-->

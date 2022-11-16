@@ -2,18 +2,57 @@
 
 <!--Top portion of container-->
     <div class="top-flex-portion">
-       <span class="job-title">Electric Vehicle Technicians</span>
-        <p class="recruiter">The Industry's Professional Solution</p>
+       <span class="job-title">Automotive Service Manager</span>
+        <p class="recruiter">The Career Centre @ Auto Serve Inc.</p>
         <p class="position">Port-Of-Spain</p>
         <span>Published October 8</span>
     </div>
 
 
-<p>Type of employment: <br> Contract <br><br>
-    Job description <br>
-To qualify for this position, you should have been trained 
-to diagnose and repair Battery Powered Electric Vehicles and must possess 
-the ability to work outside of Trinidad and Tobago for up to three months at a time.
+<p><b>Type of employment:</b> <br> Contract <br><br>
+    <b>Job description</b> <br>
+    The Service Manager is in charge of effectively overseeing 
+    the Service Department's daily technical operations, ensuring that vehicles are
+     serviced and ensuring customer satisfaction while adhering to established
+      corporate policies and procedures. to build training plans to ensure that 
+      the technical staff's level of competence is elevated to meet these changes 
+      and to stay up to date with improvements in the brand's products/designs. 
+      to oversee the team of employees in charge of the workshop and the area. <br>
+
+    <br><br>
+    <b>Key Responsibilities</b>
+
+To oversee the diagnostics, servicing and repairs of all vehicles for the division to ensure manufacturers recommendations and standards are met. <br>
+Ensure all Technical staff are adequately trained on the DMS, have access to CDK and user activity monitored daily to ensure 100% compliance.  <br>
+To ensure the smooth flow of jobs and communication throughout the service department ensuring all parties are kept abreast of job status/progress.  <br>
+To oversee the removal of Parts from New Vehicles ensuring adherence to company policies.  <br>
+Ensure all Parts on Warranty are accurately tagged by Technicians.  <br>
+To manage outsourced work ensuring jobs are expedited to meet customer demands.  <br>
+To ensure an effective Quality Control process is instituted and maintained to ensure service/repairs are done right the first time and reduce customer dissatisfaction.  <br>
+To manage cross training/leave of all Technical staff to ensure workshop is fully operational at all times.  <br>
+To assist with the development of the division’s service strategy annually and monitor to ensure achievement.  <br>
+To monitor industry and environmental conditions.  <br>
+To recommend methods to gain and maintain a competitive advantage. <br>
+To review and set annual Key Performance Indicators (KPI’s) for your team and conduct quarterly Performance Management reviews. <br>
+Ensure that all established safety, security and housekeeping procedures, practices are followed at the Workshop. <br>
+
+<br><br>
+
+<b>Minimum Qualifications & Experience </b>
+
+Bachelor’s Degree in Mechanical Engineering
+Five (5) years supervisory experience in a customer experience environment
+Customer Service Experience within the Automotive Industry is Ideal
+Two (2) years’ experience leading a technical/mechanical team
+Strong leadership ability
+Strong attention to detail
+Excellent customer relations
+Good problem solving, analytical and reporting skills
+Excellent communication (written, oral, presenting and negotiating) skills
+Assertive with the ability to tactfully manage conflict and handle dissension
+Proven ability to meet tight deadlines, multi-task, and prioritize workload
+Ability to define processes that can scale even in ambiguous environments
+
 
 </p>
 
