@@ -3,7 +3,7 @@
                 <div id="information">
                     <h2><b>About Auto Serve Inc. Trinidad and Tobago</b></h2> <br>
                     <p id = "information-paragraph">
-                        Auto Serve open its doors in 2020, although we are a new mechanic shop
+                        Auto Serve open its doors in 2010, although we are a new mechanic shop
                         but we have a decade experience in the auto industry. Our main focus is great 
                         customer service. Our auto repair shop is conveniently located at 
                         Main Street Cocorite. <br><br>
@@ -67,18 +67,3 @@
         </section>
     
     </main>
-
-
-    
-<script>
-    $(function(){
-        $(".categories").hover(function(){
-            $(this).animate(
-                ("font-size: 3rem"),
-                "slow"
-            );
-            console.log("animted");
-        })
-    })
-</script>
-    

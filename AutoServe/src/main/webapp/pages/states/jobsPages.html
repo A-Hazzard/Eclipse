@@ -4,7 +4,7 @@
  <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/x-icon" href="../media/logo.jpg" />
+    <link rel="shortcut icon" type="image/x-icon" href="https://th.bing.com/th/id/OIP.cAA3eIjKFPQHSQJTSnmTMgHaHa?pid=ImgDet&rs=1" />
     <link rel="stylesheet" href="../../style/style.css">
 <title>Auto Serve Inc. Jobs</title>
 </head>
@@ -84,52 +84,16 @@
             <h4>Quick Links</h4> 
             <br>
                 <ul>
-                    <li class="categories">Cars</li>
-                    <li class="categories">Bikes</li>
-                    <li class="categories">Scooters</li>
+                    <li class="categories" id="cars">Cars</li>
+                    <li class="categories" id="bikes">Bikes</li>
+                    <li class="categories" id="scooters">Scooters</li>
                 </ul>
         </div>
-        <div id="footer-links">
-            <div id="wrapper">
-                <span>
-                    <h5>Top Car Brands</h5> <br>
-                    <p>Honda</p> <br>
-                    <p>Maruti Suzuki</p> <br>
-                    <p>BMW</p> <br>
-                    <p>Hyundai</p> <br>
-                </span>
-
-                <span>
-                    <h5>Cars By Body Type</h5> <br>
-                    <p>Honda</p> <br>
-                    <p>Maruti Suzuki</p> <br>
-                    <p>BMW</p> <br>
-                    <p>Hyundai</p> <br>
-                </span>
-
-                <span><h5>Cars By Fuel Type</h5> <br>
-                    <p>Honda</p> <br>
-                    <p>Maruti Suzuki</p> <br>
-                    <p>BMW</p> <br>
-                    <p>Hyundai</p> <br>
-                </span>
-
-                <span><h5>Top Cars</h5> <br>
-                    <p>Honda</p> <br>
-                    <p>Maruti Suzuki</p> <br>
-                    <p>BMW</p> <br>
-                    <p>Hyundai</p> <br>
-                </span>
-
-                <span><h5>Top Cars</h5> <br>
-                    <p>Honda</p> <br>
-                    <p>Maruti Suzuki</p> <br>
-                    <p>BMW</p> <br>
-                    <p>Hyundai</p> <br>
-                </span>
-            </div>
-        </div>
+        <!--LOAD LINKS FROM footer-nav using JQuery-->
+        <div id="footer-links"></div>
     </div>
+<br><br>
+<p id="copyright" style="text-align: center; opacity: .5;">Copyright © 2022 Auto Serve Inc. All Rights Reserved.</p>
 </footer>
 
 
@@ -138,6 +102,7 @@
 <script>
 
 $(function(){
+    $("#footer-links").load("footer/carLinks.txt");
 
 	//Loads jobs
 	$("#job1").click(function(){
@@ -155,6 +120,94 @@ $(function(){
 		    $("#job-status").hide().load("mechanicalSystem.txt").fadeIn("slow");
 		})
 		
+  //changes style of links in the footer on click
+  $(".categories").click(function(){
+        console.log("Underlined " + $(this).text());
+
+        let carClick = false;
+        let bikesClick = false;
+        let scootersClick = false;
+        if ( $(this).text() === "Cars" ) {
+            carClick = true;
+            bikesClick = false;
+            scootersClick = false;
+            if(carClick){
+                console.log($(this).text() + " link clicked");
+                $(this).css("text-decoration", "underline");
+                $(this).css("opacity", 1);
+                $(this).css("opacity", 1);
+                $(this).css("color", "white");
+
+                $("#scooters").css("opacity", .5);
+                $("#scooters").css("color", "rgb(205,206,224)");
+
+                $("#bikes").css("opacity", .5);
+                $("#bikes").css("color", "rgb(205,206,224)");
+
+                $("#bikes").css("text-decoration", "none");
+                $("#scooters").css("text-decoration", "none");
+
+                $("#footer-links").fadeOut(500);
+                setTimeout(function(){
+                    $("#footer-links").load("footer/carLinks.txt").fadeIn(1000);
+                }, 500)
+
+            }
+        }
+        else if ( $(this).text() === "Bikes" ) {
+            carClick = false;
+            scootersClick = false;
+            bikesClick = true;
+            if(bikesClick){ 
+                console.log($(this).text() + " link clicked");
+                $(this).css("text-decoration", "underline");
+                $("#cars").css("text-decoration", "none");
+                $(this).css("opacity", 1);
+                $(this).css("opacity", 1);
+                $(this).css("color", "white");
+
+                $("#cars").css("opacity", .5);
+                $("#cars").css("color", "rgb(205,206,224)");
+
+                $("#scooters").css("opacity", .5);
+                $("#scooters").css("color", "rgb(205,206,224)");
+
+                $("#scooters").css("text-decoration", "none");
+
+                
+                $("#footer-links").fadeOut(500);
+                setTimeout(function(){
+                    $("#footer-links").load("footer/bikesLinks.txt").fadeIn(1000);
+                }, 500)
+                
+            }
+        }
+        else if ( $(this).text() === "Scooters" ) {
+            carClick = false;
+            bikesClick = false;
+            scootersClick = true;
+            if(scootersClick){ 
+                console.log($(this).text() + " link clicked");
+                $(this).css("text-decoration", "underline");
+                $(this).css("opacity", 1);
+                $(this).css("color", "white");
+
+                $("#cars").css("opacity", .5);
+                $("#cars").css("color", "rgb(205,206,224)");
+
+                $("#bikes").css("opacity", .5);
+                $("#bikes").css("color", "rgb(205,206,224)");
+
+                $("#cars").css("text-decoration", "none");
+                $("#bikes").css("text-decoration", "none");
+
+                $("#footer-links").fadeOut(500);
+                setTimeout(function(){
+                    $("#footer-links").load("footer/scootersLinks.txt").fadeIn(1000);
+                }, 500)
+            }
+        }
+    });
 
 	})
 
