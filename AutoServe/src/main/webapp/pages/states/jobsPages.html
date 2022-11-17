@@ -253,15 +253,15 @@ AOS.init({
 
 
 
- $("button").click(function () {
-     var searchBox = $("#searchBox").val();
-     $('.flex-container').hide();
-     $('.flex-container').filter(function () {
-         if ($(this).attr('data-videotitle').toLowerCase().indexOf(searchBox.toLowerCase()) == 0) 
-             return true
-     }).show();
+    $("button").click(function () {
+        var searchBox = $("#searchBox").val();
+        $('.flex-container').hide();
+        $('.flex-container').filter(function () {
+            if ($(this).attr('data-videotitle').toLowerCase().indexOf(searchBox.toLowerCase()) == 0) 
+                return true
+        }).show();
 
- });
+});
 
 	})
 
