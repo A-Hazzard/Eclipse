@@ -1,4 +1,11 @@
-<div class="information">
+<div data-aos="zoom-in"
+                    data-aos-offset="-100"
+                    data-aos-delay="1"
+                    data-aos-duration="500"
+                    data-aos-easing="ease-in-out
+                    data-aos-mirror="true"
+                    data-aos-once="false"
+                    data-aos-anchor-placement="top" class="information">
 
     <div class="top-flex-portion">
         <span class="job-title">Mechanical System Engineer</span>
@@ -8,14 +15,14 @@
             </p>
     </div>
 
-    <p><b>Type of employment:</b> <br> Full Time <br><br>
-    <b>Job description</b> <br> <br>
+    <p><b class = "bold">Type of employment:</b> <br> <i class = "italic">Full Time</i> <br><br>
+    <b class = "bold">Job description</b> <br> <br>
 
-    <b>Job Purpose:</b> <br>
+    <b class = "bold">Job Purpose:</b> <br>
        To guarantee general compliance in the production of CSD and sensitive items. <br>
         To guarantee that all ISO regulations are faithfully followed and upheld throughout the plant.
 <br> <br>
-    <b>Key Result Areas:</b> <br>
+    <b class = "bold">Key Result Areas:</b> <br>
        Maintain all manufacturing lines and mechanical equipment in the plant.
 
         Upkeep is required for all plant utilities. <br>
@@ -81,7 +88,7 @@ performs tasks in accordance with the Company's Management System documents and 
 makes ensuring all pertinent systems and programs are compliant with ISO criteria.
         <br><br>
 
-        <b>Knowledge & Experience:-</b> 
+        <b class = "bold">Knowledge & Experience:-</b> 
         Technical knowledge in mechanical plant maintenance. <br>
         Having mechanical engineering and maintenance experience. <br>
         A minimum of five years' experience in a similar profession or sector. <br>
@@ -93,13 +100,13 @@ makes ensuring all pertinent systems and programs are compliant with ISO criteri
         Understanding of the processes for adhering to KORE and applicable regulatory requirements. <br>
                 <br>
         <br>
-        <b>Work Environment and physical demands:</b> <br>
+        <b class = "bold">Work Environment and physical demands:</b> <br>
        The majority of the work will be done in an office setting, but travel may be necessary to visit a customer's, supplier's, or a building site. Each location's working environment will be different.
         may be given a brief assignment to work at another building site or facility. <br>
         Long hours might be required depending on the workload. This could apply to weekdays, weekends, and legal holidays.
         occasionally be required to lift and move up to 50 pounds<br>
         <br><br>
-        <b>Education:</b> <br>
+        <b class = "bold">Education:</b> <br>
         A Bachelor’s Degree in Engineering or equivalent qualifications. <br>
 </p>
 </div>

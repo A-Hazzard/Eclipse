@@ -4,7 +4,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Vollkorn:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 $headerFont: 'Segoe UI';
 $subHeader-font: 'Secular One', sans-serif;
 $paragraphFont: 'Ubuntu', sans-serif;
@@ -17,6 +18,10 @@ $grey: rgb(245,245,245);
 *{
     margin: 0;
     padding: 0;
+}
+
+html{
+    scroll-behavior: smooth;
 }
 
 body{
@@ -611,31 +616,42 @@ border-right: none;
                 padding: 1%;
                 border-radius:.5rem;
                 box-shadow: 1rem 1rem 5rem rgb(223, 223, 223);
+                color: #323232;
+                
+                .bold{
+                font-family: 'Lora', serif;
+                font-size: 18px;
+                }
 
+                .italic{
+                    margin-left: .5%;
+                }
                 .top-flex-portion{
                     border: 1px solid rgba(198, 198, 198, 0.809);
                     border-top: none;
                     border-left: none;
                     border-right: none;
                     .job-title{
-                        font-family: Roboto, Helvetica, sans-serif;
+                        font-family: 'Roboto', sans-serif;
+                        
                         font-weight: 400;
                         font-style: normal;
                         font-size: 1.8rem;
                     }//end job-title
                     .recruiter{
-                        font-family: $paragraphFont;
+                        font-family: 'Roboto', sans-serif;
                         font-weight: 400;
                         margin-top: 1%;
                         margin-bottom: 1%;
+                        font-family: 'Lora', serif;
+
                     }//end recruiter
         
                     .position{
-                        font-family: $headerFont;
                         font-weight: 450;
                         span{
-                        opacity: 50%;
-                            font-size: .8rem;
+                            opacity: 70%;
+                            font-size: .9rem;
                             margin-bottom: 2%;
                             margin-top: 2%;
                             display: block;
@@ -855,6 +871,9 @@ footer{
 
 
 #services-main-container{
+    *{
+        box-sizing: border-box;
+    }
     #background-image{
         background-image: 
         linear-gradient(rgba(0, 0, 0, 0.66),rgba(0, 0, 0, 0.605)) , url("https://www.assetworks.com/wp-content/uploads/2018/08/iStock-693170166.jpg");
@@ -890,6 +909,19 @@ footer{
             display: flex;
         }
 
+        .information-text{
+            color: #323232;
+            .details, .serviceType{
+                font-family: 'Lora', serif;
+    
+            }
+    
+            .serviceNum{
+                font-family: 'Bebas Neue', cursive;
+            }
+        }
+            
+
         .cont1{
             height: 80vh;
             .img-container {
@@ -904,7 +936,32 @@ footer{
 
             .information-text{
                 flex: 1;         
+        
+                .serviceNum{
+                    font-size: 15px;
+                    line-height: 18px;
+        
+                }
+        
+                .serviceType{
+                    font-size: 40px;
+                    line-height: 48px;
+        
+                }
+        
+                .details{
+                    font-size: 15px;
+                    line-height: 30px;
+        
+                }
+        
+                .adjectives{
+                    font-size: 25px;
+                    line-height: 30px;
+                    
+                }
             }
+                
         }//end cont1
 
         .cont2{
@@ -920,33 +977,94 @@ footer{
             }
 
             .information-text{
-                flex: 1;         
+                flex: 1;       
+            
+            
+                    .serviceNum{
+                        font-size: 15px;
+                        line-height: 18px;
+            
+                    }
+            
+                    .serviceType{
+                        font-size: 40px;
+                        line-height: 48px;
+            
+                    }
+            
+                    .details{
+                        font-size: 15px;
+                        line-height: 30px;
+            
+                    }
+            
+                    .adjectives{
+                        font-size: 25px;
+                        line-height: 30px;
+                        
+                    }
+                
+                    
             }
+
+
+
+            
 
             margin-bottom: 35%;
         }//end cont2
 
-        .cont2{
+        .cont3{
+            margin-top: -25%;
             height: 80vh;
             .img-container {
-                flex: 1;          
+                flex: 1 ;          
 
                 img{
-                    width: 100%;
-                    margin-left: 5%;
+                    width: 70%;
+                    margin-left: 15%;
                 }
                 height: auto;
             }
 
             .information-text{
-                flex: 1;         
+                flex: .8;       
+            
+            
+                    .serviceNum{
+                        font-size: 15px;
+                        line-height: 18px;
+            
+                    }
+            
+                    .serviceType{
+                        font-size: 40px;
+                        line-height: 48px;
+            
+                    }
+            
+                    .details{
+                        font-size: 15px;
+                        line-height: 30px;
+            
+                    }
+            
+                    .adjectives{
+                        font-size: 25px;
+                        line-height: 30px;
+                        
+                    }
+                
+                    
             }
 
-            margin-bottom: 35%;
+
         }//end cont2
 
+        
+
         .cont4{
-            margin-top: 10%;
+            margin-top: 5%;
             height: 80vh;
             .img-container {
                 flex: 2;          
@@ -959,8 +1077,38 @@ footer{
             }
 
             .information-text{
-                flex: 1;         
+                flex: 1;       
+            
+            
+                    .serviceNum{
+                        font-size: 15px;
+                        line-height: 18px;
+            
+                    }
+            
+                    .serviceType{
+                        font-size: 40px;
+                        line-height: 48px;
+            
+                    }
+            
+                    .details{
+                        font-size: 15px;
+                        line-height: 30px;
+            
+                    }
+            
+                    .adjectives{
+                        font-size: 25px;
+                        line-height: 30px;
+                        
+                    }
+                
+                    
             }
+
+ 
         }//end cont1
+
     }
 }

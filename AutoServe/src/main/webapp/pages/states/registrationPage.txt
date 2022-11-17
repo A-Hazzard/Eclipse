@@ -1,9 +1,16 @@
   <!--Main content for login page-->
-    <div id = "access-main">
+    <div data-aos="zoom-in-down"
+                    data-aos-offset="-100"
+                    data-aos-delay="1"
+                    data-aos-duration="500"
+                    data-aos-easing="ease-in-out
+                    data-aos-mirror="true"
+                    data-aos-once="false"
+                    data-aos-anchor-placement="top" id = "access-main">
 <br><br>
 
         <h2>Sign Up</h2>
-        <p>Already a member? <a href = "#" id="loginPage">Log in.</a>
+        <p>Already a member? <a href = "#" id="loginPage2">Log in.</a>
 
 
         <form action="RegServlet" method="post" id="loginForm">
@@ -66,7 +73,7 @@
 
 <script>
     //loads loginPage on click
-    $("#loginPage").on('click', function(){
+    $("#loginPage2").on('click', function(){
         $("main").hide().load("pages/states/loginPage.txt").fadeIn("slow");
     })
 </script>

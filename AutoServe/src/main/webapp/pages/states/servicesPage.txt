@@ -1,0 +1,151 @@
+
+    <div id="services-main-container">
+        <div data-aos="zoom-in-up"
+            data-aos-offset="-100"
+            data-aos-delay="1"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="false"
+            data-aos-anchor-placement="top "id="background-image">
+            <div id="cta">
+                <h2>Quality Service</h2> 
+                <p>Experience the work of some of <i>the best</i> auto mechanics <br>and crafts men across Trinidad and Tobago.</p>
+            </div>
+        </div>
+        <div id="information">
+
+            <div class="container cont1">
+                <id class="img-container">
+                    <img data-aos="fade-up"
+                    data-aos-offset="-100"
+                    data-aos-delay="1"
+                    data-aos-duration="1000"
+                    data-aos-easing="ease-in-out"
+                    data-aos-mirror="true"
+                    data-aos-once="false"
+                    data-aos-anchor-placement="top " src="https://webstockreview.net/images/garage-clipart-mechanic-garage-8.png" alt="">
+                </id>
+            
+                <div data-aos="slide-left"
+                    data-aos-offset="-100"
+                    data-aos-delay="1"
+                    data-aos-duration="2000"
+                    data-aos-easing="ease-in-out
+                    data-aos-mirror="true"
+                    data-aos-once="false"
+                    data-aos-anchor-placement="top"class="information-text">
+                    <p class = "serviceNum">Service 01</p>
+                    <p class="serviceType">Engine Repair</p> <br>
+                    <p class="details">When you take care of your engine, your car has a better chance of lasting for the long haul. Engine maintenance is an important part of your vehicle’s overall health and longevity for all the driving adventures ahead. With something as important as car engine repair, trust the experts at Auto Serve Inc. </p>
+                </div>
+            </div>
+
+            <br><br>
+
+            <div class="container cont2">
+                <div data-aos="slide-right"
+                    data-aos-offset="-100"
+                    data-aos-delay="1"
+                    data-aos-duration="2000"
+                    data-aos-easing="ease-in-out
+                    data-aos-mirror="true"
+                    data-aos-once="false"
+                    data-aos-anchor-placement="top" class="information-text">
+                    <p class="serviceType adjectives">We Supply</p> <br> 
+                    <p class="details">We supply to a variety of mechanics, repair specialist, engineer designers & contractors. We deliver all over Trinidad and Tobago for your convenience.</p>
+                        <br><br>
+                    <p class="serviceType adjectives">We Install</p>
+                    <p class="details">Be it a single vehicle or of many types, our certified installers strive to provide quality and prompt handover.</p>
+                        <br><br>
+                    <p class="serviceType adjectives">Project & Site Management</p>
+                    <p class="details">We provide site and project related management of repair/create start from design stage till after handover maintenance and care service. Our extensive project team organization ensures delivery of quality paperwork and site progress.</p>
+                    <br>
+                    <p class="serviceType adjectives">Consultation & Training</p> 
+                    <p class="details">Never be busy to share, we acknowledge it is our responsible to pass on our knowledge and experience to new generation and industrial people. Monthly product training and installation lesson are provided to aspiring mechanics.</p>
+                </div>
+                <div class="img-container">
+                    
+                <img data-aos="fade-left"
+                data-aos-offset="-100"
+                data-aos-delay="500"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out"
+                data-aos-mirror="true"
+                data-aos-once="false"
+                data-aos-anchor-placement="top"src="https://easyimages.net/images/ready/3c4cd57a6202c7223a589ddb69111949.png" alt="">
+                </div>
+
+            </div>
+
+            <br><br>
+
+            <div class="container cont3">
+                <div data-aos="flip-up"
+                data-aos-offset="-100"
+                data-aos-delay="1000"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out"
+                data-aos-mirror="true"
+                data-aos-once="false"
+                data-aos-anchor-placement="top " class="img-container">
+                    <img src="pages/media/brakes.png" alt="">
+
+                </div>
+                <div data-aos="slide-left"
+                    data-aos-offset="-100"
+                    data-aos-delay="1"
+                    data-aos-duration="2000"
+                    data-aos-easing="ease-in-out
+                    data-aos-mirror="true"
+                    data-aos-once="false"
+                    data-aos-anchor-placement="top" class="information-text">
+                    <p class = "serviceNum">Service 02</p>
+                    <p class="serviceType">Breaks Repair</p> <br>
+                    <p class="details">Being metallic, brake discs generally last longer than brake pads, but replacing them both at the same time is an easy way to ensure maximum safety. If you don’t replace your brake discs and pads simultaneously – the discs may begin to wear out unevenly, and can become damaged. For this reason, garages will only fit new brake discs and brake pads together <br>
+                    No need to worry, Auto Serve will install new brake discs and pads for any make or model, all you need to do is order the parts.</p>
+                </div>
+            
+            
+            </div>
+
+            <br><br>
+
+            <div class="container cont4">
+        
+                <div data-aos="slide-right"
+                    data-aos-offset="-100"
+                    data-aos-delay="1"
+                    data-aos-duration="1000"
+                    data-aos-easing="ease-in-out
+                    data-aos-mirror="true"
+                    data-aos-once="false"
+                    data-aos-anchor-placement="top"class="information-text">
+                    <p class = "serviceNum">Service 03</p> <br>
+                    <p class="serviceType">Clutch Repair</p> <br> <br>
+                    <p class="details">If you have a slipping clutch or a heavy clutch pedal, or it's hard to change gear, we can help.
+
+                        Clutch repairs can be straightforward and ensure safety and car function, preventing much more extensive damage from occurring.
+                        
+                        If you need a full blown clutch replacement or require gearbox repairs too, there are thousands of specialists in our network who can complete the work to an excellent standard for an affordable price.</p>
+                </div>
+
+                <div class="img-container">
+                    <img data-aos="zoom-in"
+                    data-aos-offset="-100"
+                    data-aos-delay="500"
+                    data-aos-duration="1000"
+                    data-aos-easing="ease-in-out"
+                    data-aos-mirror="true"
+                    data-aos-once="false"
+                    data-aos-anchor-placement="top "src="https://secureservercdn.net/192.169.220.223/q73.543.myftpupload.com/wp-content/uploads/2018/08/Clutch-icon.png" alt="">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br><br>
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/18479e6558.js" crossorigin="anonymous"></script>

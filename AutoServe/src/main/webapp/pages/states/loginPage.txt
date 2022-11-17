@@ -1,5 +1,12 @@
   <!--Main content for login page-->
-    <div id = "access-main">
+    <div data-aos="zoom-in-up"
+                    data-aos-offset="-100"
+                    data-aos-delay="1"
+                    data-aos-duration="500"
+                    data-aos-easing="ease-in-out
+                    data-aos-mirror="true"
+                    data-aos-once="false"
+                    data-aos-anchor-placement="top" id = "access-main">
 <br><br>
         <h2>Log In</h2><br>
         <p>New to this site? <a href="#" id="registrationPage">Sign up</a> </p>

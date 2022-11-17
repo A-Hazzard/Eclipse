@@ -1,4 +1,11 @@
-<div class="information electric">
+<div data-aos="zoom-in"
+                    data-aos-offset="-100"
+                    data-aos-delay="1"
+                    data-aos-duration="500"
+                    data-aos-easing="ease-in-out
+                    data-aos-mirror="true"
+                    data-aos-once="false"
+                    data-aos-anchor-placement="top" class="information electric">
 
 <!--Top portion of container-->
     <div class="top-flex-portion">
@@ -9,8 +16,8 @@
     </div>
 
 
-<p><b>Type of employment:</b> <br> Contract <br><br>
-    <b>Job description</b> <br>
+<p><b class = "bold">Type of employment:</b> <br> <i class = "italic">Contract</i> <br><br>
+    <b class = "bold">Job description</b> <br>
     The Service Manager is in charge of effectively overseeing 
     the Service Department's daily technical operations, ensuring that vehicles are
      serviced and ensuring customer satisfaction while adhering to established
@@ -20,7 +27,7 @@
       to oversee the team of employees in charge of the workshop and the area. <br>
 
     <br><br>
-    <b>Key Responsibilities</b>
+    <b class = "bold">Key Responsibilities</b>
 
 To oversee the diagnostics, servicing and repairs of all vehicles for the division to ensure manufacturers recommendations and standards are met. <br>
 Ensure all Technical staff are adequately trained on the DMS, have access to CDK and user activity monitored daily to ensure 100% compliance.  <br>
@@ -38,7 +45,7 @@ Ensure that all established safety, security and housekeeping procedures, practi
 
 <br><br>
 
-<b>Minimum Qualifications & Experience </b>
+<b class = "bold">Minimum Qualifications & Experience </b>
 
 Bachelor’s Degree in Mechanical Engineering
 Five (5) years supervisory experience in a customer experience environment

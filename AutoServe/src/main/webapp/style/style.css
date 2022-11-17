@@ -4,9 +4,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Vollkorn:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
 * {
   margin: 0;
   padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -489,6 +495,14 @@ body {
   padding: 1%;
   border-radius: 0.5rem;
   box-shadow: 1rem 1rem 5rem rgb(223, 223, 223);
+  color: #323232;
+}
+#jobs-main #jobs-flex-container #job-status .information .bold {
+  font-family: "Lora", serif;
+  font-size: 18px;
+}
+#jobs-main #jobs-flex-container #job-status .information .italic {
+  margin-left: 0.5%;
 }
 #jobs-main #jobs-flex-container #job-status .information .top-flex-portion {
   border: 1px solid rgba(198, 198, 198, 0.809);
@@ -497,24 +511,24 @@ body {
   border-right: none;
 }
 #jobs-main #jobs-flex-container #job-status .information .top-flex-portion .job-title {
-  font-family: Roboto, Helvetica, sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 1.8rem;
 }
 #jobs-main #jobs-flex-container #job-status .information .top-flex-portion .recruiter {
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   margin-top: 1%;
   margin-bottom: 1%;
+  font-family: "Lora", serif;
 }
 #jobs-main #jobs-flex-container #job-status .information .top-flex-portion .position {
-  font-family: "Segoe UI";
   font-weight: 450;
 }
 #jobs-main #jobs-flex-container #job-status .information .top-flex-portion .position span {
-  opacity: 50%;
-  font-size: 0.8rem;
+  opacity: 70%;
+  font-size: 0.9rem;
   margin-bottom: 2%;
   margin-top: 2%;
   display: block;
@@ -695,6 +709,9 @@ footer #flex-container #footer-links #wrapper span a {
   display: block;
 }
 
+#services-main-container * {
+  box-sizing: border-box;
+}
 #services-main-container #background-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.66), rgba(0, 0, 0, 0.605)), url("https://www.assetworks.com/wp-content/uploads/2018/08/iStock-693170166.jpg");
   background-size: cover;
@@ -725,6 +742,15 @@ footer #flex-container #footer-links #wrapper span a {
 #services-main-container #information .container {
   display: flex;
 }
+#services-main-container #information .information-text {
+  color: #323232;
+}
+#services-main-container #information .information-text .details, #services-main-container #information .information-text .serviceType {
+  font-family: "Lora", serif;
+}
+#services-main-container #information .information-text .serviceNum {
+  font-family: "Bebas Neue", cursive;
+}
 #services-main-container #information .cont1 {
   height: 80vh;
 }
@@ -739,6 +765,22 @@ footer #flex-container #footer-links #wrapper span a {
 #services-main-container #information .cont1 .information-text {
   flex: 1;
 }
+#services-main-container #information .cont1 .information-text .serviceNum {
+  font-size: 15px;
+  line-height: 18px;
+}
+#services-main-container #information .cont1 .information-text .serviceType {
+  font-size: 40px;
+  line-height: 48px;
+}
+#services-main-container #information .cont1 .information-text .details {
+  font-size: 15px;
+  line-height: 30px;
+}
+#services-main-container #information .cont1 .information-text .adjectives {
+  font-size: 25px;
+  line-height: 30px;
+}
 #services-main-container #information .cont2 {
   height: 80vh;
   margin-bottom: 35%;
@@ -754,23 +796,55 @@ footer #flex-container #footer-links #wrapper span a {
 #services-main-container #information .cont2 .information-text {
   flex: 1;
 }
-#services-main-container #information .cont2 {
-  height: 80vh;
-  margin-bottom: 35%;
+#services-main-container #information .cont2 .information-text .serviceNum {
+  font-size: 15px;
+  line-height: 18px;
 }
-#services-main-container #information .cont2 .img-container {
+#services-main-container #information .cont2 .information-text .serviceType {
+  font-size: 40px;
+  line-height: 48px;
+}
+#services-main-container #information .cont2 .information-text .details {
+  font-size: 15px;
+  line-height: 30px;
+}
+#services-main-container #information .cont2 .information-text .adjectives {
+  font-size: 25px;
+  line-height: 30px;
+}
+#services-main-container #information .cont3 {
+  margin-top: -25%;
+  height: 80vh;
+}
+#services-main-container #information .cont3 .img-container {
   flex: 1;
   height: auto;
 }
-#services-main-container #information .cont2 .img-container img {
-  width: 100%;
-  margin-left: 5%;
+#services-main-container #information .cont3 .img-container img {
+  width: 70%;
+  margin-left: 15%;
 }
-#services-main-container #information .cont2 .information-text {
-  flex: 1;
+#services-main-container #information .cont3 .information-text {
+  flex: 0.8;
+}
+#services-main-container #information .cont3 .information-text .serviceNum {
+  font-size: 15px;
+  line-height: 18px;
+}
+#services-main-container #information .cont3 .information-text .serviceType {
+  font-size: 40px;
+  line-height: 48px;
+}
+#services-main-container #information .cont3 .information-text .details {
+  font-size: 15px;
+  line-height: 30px;
+}
+#services-main-container #information .cont3 .information-text .adjectives {
+  font-size: 25px;
+  line-height: 30px;
 }
 #services-main-container #information .cont4 {
-  margin-top: 10%;
+  margin-top: 5%;
   height: 80vh;
 }
 #services-main-container #information .cont4 .img-container {
@@ -783,4 +857,20 @@ footer #flex-container #footer-links #wrapper span a {
 }
 #services-main-container #information .cont4 .information-text {
   flex: 1;
+}
+#services-main-container #information .cont4 .information-text .serviceNum {
+  font-size: 15px;
+  line-height: 18px;
+}
+#services-main-container #information .cont4 .information-text .serviceType {
+  font-size: 40px;
+  line-height: 48px;
+}
+#services-main-container #information .cont4 .information-text .details {
+  font-size: 15px;
+  line-height: 30px;
+}
+#services-main-container #information .cont4 .information-text .adjectives {
+  font-size: 25px;
+  line-height: 30px;
 }/*# sourceMappingURL=style.css.map */

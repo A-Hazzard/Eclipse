@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="https://th.bing.com/th/id/OIP.cAA3eIjKFPQHSQJTSnmTMgHaHa?pid=ImgDet&rs=1" />
     <link rel="stylesheet" href="../../style/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
 <title>Auto Serve Inc. Jobs</title>
 </head>
 <body>
@@ -21,7 +23,14 @@
         </nav>
 
     </header>
-  <main>
+  <main data-aos="zoom-out-up"
+        data-aos-offset="-100"
+        data-aos-delay="1"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out
+        data-aos-mirror="true"
+        data-aos-once="false"
+        data-aos-anchor-placement="top">
   
   
 
@@ -32,6 +41,9 @@
               <li>Jobs</li>
             </ul>      
         </div>
+        <input type="text" placeholder="Search Song Titles" id="searchBox" />
+<br>
+        <button id="hide" type="submit" class="postfix">Search</button>
 
         <section id="jobs-flex-container">
 
@@ -46,7 +58,7 @@
                     </p>
                 </div>
                     
-                <div class="flex-container" id = "job2">
+                <div class="flex-container" id = "job2" data-videotitle="electric vehicle technician">
                     <span class="job-title">Electric Vehicle Technicians</span>
                     <p class="recruiter">The Industry's Professional Solution</p>
                     <p class="position">Point Fortin · Contract <br> 
@@ -99,6 +111,8 @@
 
 <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/18479e6558.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
 <script>
 
 $(function(){
@@ -208,6 +222,46 @@ $(function(){
             }
         }
     });
+
+
+    AOS.init();
+
+// You can also pass an optional settings object
+// below listed default settings
+AOS.init({
+  // Global settings:
+  disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+  startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+  initClassName: 'aos-init', // class applied after initialization
+  animatedClassName: 'aos-animate', // class applied on animation
+  useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+  disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+  debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+  throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+  
+
+  // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+  offset: 120, // offset (in px) from the original trigger point
+  delay: 0, // values from 0 to 3000, with step 50ms
+  duration: 400, // values from 0 to 3000, with step 50ms
+  easing: 'ease', // default easing for AOS animations
+  once: false, // whether animation should happen only once - while scrolling down
+  mirror: false, // whether elements should animate out while scrolling past them
+  anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+
+});
+
+
+
+ $("button").click(function () {
+     var searchBox = $("#searchBox").val();
+     $('.flex-container').hide();
+     $('.flex-container').filter(function () {
+         if ($(this).attr('data-videotitle').toLowerCase().indexOf(searchBox.toLowerCase()) == 0) 
+             return true
+     }).show();
+
+ });
 
 	})
 
