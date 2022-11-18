@@ -46,7 +46,7 @@ public class ResetPassword extends HttpServlet {
 		PreparedStatement ps = con.prepareStatement(sqlStatement);
 		ps.setString(1, pwd);//likewise for the password
 		ps.setString(2, email);//set's the first question mark in the sql statement to the user email
-		
+
 		ResultSet rs = ps.executeQuery();
 		
 		//checks if there is a record

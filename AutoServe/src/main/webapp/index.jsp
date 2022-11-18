@@ -1,5 +1,14 @@
-<!DOCTYPE html>
+
 <html lang="en">
+<% 
+
+		Object email = session.getAttribute("Email");
+		Object fname=session.getAttribute("FirstName");
+		Object lname=session.getAttribute("LastName");
+		Object phone =session.getAttribute("Phone");
+		
+		
+%>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,11 +23,12 @@
 
         <h1 id="logo">Auto Serve Inc.</h1><!--Logo-->
         
+        <h2>User Name: <% out.print(fname + " " + lname);%></h2>
         <nav class="navbar"><!--NAVIGATION BAR-->
             <ul class="link-container">
                 <li><a href="#" id="homePage" class="links">Home</a></li>
                 <li><a href="#" id="calculatorPage" class="links">Calculator</a></li>
-                <li><a href="pages/states/jobsPages.html" id="jobsPage" class="links">Jobs</a></li>
+                <li><a href="pages/jobsPages.html" id="jobsPage" class="links">Jobs</a></li>
                 <li><a href="#" id="aboutUsPage" class="links">About</a></li>
                 <li><a href="#" id = "servicesPage" class="links">Services</a></li>
                 <li><a href="pages/clients.html" class="links">Clients</a></li>

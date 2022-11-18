@@ -3,7 +3,7 @@
                     data-aos-offset="-100"
                     data-aos-delay="1"
                     data-aos-duration="500"
-                    data-aos-easing="ease-in-out
+                    data-aos-easing="ease-in-out"
                     data-aos-mirror="true"
                     data-aos-once="false"
                     data-aos-anchor-placement="top" id = "access-main">
@@ -13,7 +13,7 @@
         <p>Already a member? <a href = "#" id="loginPage2">Log in.</a>
 
 
-        <form action="RegServlet" method="post" id="loginForm">
+        <form action="RegServlet" method="post" class="Form">
             <table id="loginFormTable">
                 <tr>
                     <td> 

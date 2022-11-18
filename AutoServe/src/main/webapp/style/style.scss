@@ -225,7 +225,7 @@ border-right: none;
 
 
 //Main container to hold main content
-#access-main{
+#access-main, .forpassword-main{
 
     height: 80vh;
 
@@ -245,7 +245,7 @@ border-right: none;
         }
     }
 
-    #loginForm{
+    .Form{
     
     padding-left: 38%;
     padding-top: 2%;    

@@ -26,9 +26,15 @@ int k = 0;
     try{
         Connection con = ConnectionProvider.getConnection();
         Statement state = con.createStatement();
-        ResultSet result = state.executeQuery("select * from products where name like '%" + search+ "%' or catagory");
+        String search= null;
+       ResultSet result = state.executeQuery("select * from products where name like '%" + search+ "%' + or catagory");
         
         while(result.next()){
+        	//to do
+        }
+       }catch(Exception ex){
+    	   //to do
+       }
  %>
           <tr>
             <td></td>

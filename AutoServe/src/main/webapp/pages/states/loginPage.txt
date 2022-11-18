@@ -3,15 +3,16 @@
                     data-aos-offset="-100"
                     data-aos-delay="1"
                     data-aos-duration="500"
-                    data-aos-easing="ease-in-out
+                    data-aos-easing="ease-in-out"
                     data-aos-mirror="true"
                     data-aos-once="false"
                     data-aos-anchor-placement="top" id = "access-main">
 <br><br>
         <h2>Log In</h2><br>
         <p>New to this site? <a href="#" id="registrationPage">Sign up</a> </p>
+
         <!--Form used for logging in-->
-        <form action="LoginServlet" method="post" id="loginForm">
+        <form action="../../jsp/LoginAction.jsp" method="post" class="Form">
             <table id="loginFormTable">
             
                 <tr>
@@ -44,30 +45,33 @@
     </div>
 
     <script>
-    //loads registrationPage on click
-    $("#registrationPage").on('click', function(){
-        $("main").hide().load("pages/states/registrationPage.txt").fadeIn("slow");
-    })
 
-    //changes password to Text
-    $(function(){
-  let viewPwd = false;
+    alert('hi');
+            //loads registrationPage on click
+            $("#registrationPage").on('click', function(){
+            
+                $("main").hide().load("pages/states/registrationPage.txt").fadeIn("slow");
+            })
 
-    $("#viewPwd").on('click', function(){
-      let getPwdType = $("#password");
-      if(viewPwd === false) {
-        console.log('checked, changed password field to text')
-        getPwdType.attr('type', 'text');
-        viewPwd = true;
-      
-      }
-      else if(viewPwd === true){
-        console.log("Unchecked, changed password field back to password")
-        getPwdType.attr('type', 'password');
-        viewPwd = false;
-      }
-    })
-})
+            //changes password to Text
+            $(function(){
+        let viewPwd = false;
+
+            $("#viewPwd").on('click', function(){
+            let getPwdType = $("#password");
+            if(viewPwd === false) {
+                console.log('checked, changed password field to text')
+                getPwdType.attr('type', 'text');
+                viewPwd = true;
+            
+            }
+            else if(viewPwd === true){
+                console.log("Unchecked, changed password field back to password")
+                getPwdType.attr('type', 'password');
+                viewPwd = false;
+            }
+            })
+        })
     </script>
    
    
