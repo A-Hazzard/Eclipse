@@ -1,0 +1,112 @@
+<div data-aos="zoom-in"
+                    data-aos-offset="-100"
+                    data-aos-delay="1"
+                    data-aos-duration="500"
+                    data-aos-easing="ease-in-out"
+                    data-aos-mirror="true"
+                    data-aos-once="false"
+                    data-aos-anchor-placement="top" class="information">
+
+    <div class="top-flex-portion">
+        <span class="job-title">Mechanical System Engineer</span>
+            <p class="recruiter">Progressive Recruitment Specialists @ Auto Serve Inc.</p>
+            <p class="position">Tunapuna<br>
+                <span>Published August 20</span>
+            </p>
+    </div>
+
+    <p><b class = "bold">Type of employment:</b> <br> <i class = "italic">Full Time</i> <br><br>
+    <b class = "bold">Job description</b> <br> <br>
+
+    <b class = "bold">Job Purpose:</b> <br>
+       To guarantee general compliance in the production of CSD and sensitive items. <br>
+        To guarantee that all ISO regulations are faithfully followed and upheld throughout the plant.
+<br> <br>
+    <b class = "bold">Key Result Areas:</b> <br>
+       Maintain all manufacturing lines and mechanical equipment in the plant.
+
+        Upkeep is required for all plant utilities. <br>
+
+        Upkeep all plant structures and resources. <br>
+
+
+        Manage and maintain the software used for building, equipment, and machine maintenance.
+<br>
+        Manage and maintain the building's inventory, spare parts, and machinery.
+
+
+For all PM, CM, conditional maintenance, and inventory, provide accounting records.
+<br>
+As required, supervise and provide team members with mechanical maintenance, troubleshooting, and repair training.
+<br>
+Make sure that all mechanical safety regulations are up to date and adhered to strictly.
+
+<br>
+Maintain the lockout tag out system's documentation, policies, and procedures in accordance with ISO standards.
+<br>
+Maintain the documentation, rules, and procedures, and perform all mechanical safety inspections in accordance with ISO standards. <br>
+       To guarantee compliance with mechanical design requirements and adherence to operational and safety standards, inspect installations and monitor operations.
+
+launch federal regulatory specifications for system audits and certifications. <br>
+
+
+Keep thorough records of mechanical distribution system usage (raw water, treated water, air, CO2, CTW, CW, waste etc)
+Gather information to assess the operational effectiveness of all mechanical systems. <br>
+
+available for call-in production interruptions caused by mechanical problems. <br>
+
+Coordinate and carry out all plant mechanical corrective actions and repairs. Complete assignments on your own after receiving instructions on the basic outcomes desired and assistance with difficult challenges from the department manager or an engineering specialist. <br>
+        
+       Investigate customer or public complaints, ascertain the nature and scope of the issue, and suggest corrective action.
+<br>
+aid in creating capital project plans for expensive repairs and new equipment.
+<br>
+Create budgets by calculating the costs of labor, materials, and building.
+<br>
+Compile information and create reports on engineering research and projects that are currently underway and in the works.
+<br>
+
+On projects, assist and project engineer.
+<br>
+Perform the tasks the maintenance manager has specified for plant improvement.
+<br>
+Plan, schedule, carry out, and coordinate the assigned engineering projects and work.
+<br>
+Report up to six performance KPIs relating to the aims and objectives of the firm.
+<br>
+Manage and report on meetings and logs.
+<br>
+As needed, head the IMS (Integrated Management Systems) team.
+<br>
+Maintain Good Manufacturing Practices (GMP) Programs, Contractors, Plant Hygiene, Sanitation, and Contractors in accordance with Company Requirements.
+<br>
+lead the technical and maintenance team's ISO effort. 
+     Conduct internal audits in accordance with KORE and ISO requirements. <br>
+Know the requirements for HACCP, ISO, PAS 220, KORE, and GMP. <br>
+Instruction on HACCP, ISO, PAS 220, KORE, and GMP standards for maintenance personnel <br>
+performs tasks in accordance with the Company's Management System documents and supports the team's efforts by completing pertinent tasks as needed. <br>
+makes ensuring all pertinent systems and programs are compliant with ISO criteria.
+        <br><br>
+
+        <b class = "bold">Knowledge & Experience:-</b> 
+        Technical knowledge in mechanical plant maintenance. <br>
+        Having mechanical engineering and maintenance experience. <br>
+        A minimum of five years' experience in a similar profession or sector. <br>
+        The ability to utilize a drawing program or AutoCAD
+        outstanding computer abilities, particularly with Microsoft Office and other reporting programs. <br>
+        Knowledge of how to use and administer computerized maintenance systems. <br>
+        Understanding of Trinidad and Tobago safety regulations. <br>
+        Understanding ISO Standards and putting a management system in place can help you achieve operational controls. <br>
+        Understanding of the processes for adhering to KORE and applicable regulatory requirements. <br>
+                <br>
+        <br>
+        <b class = "bold">Work Environment and physical demands:</b> <br>
+       The majority of the work will be done in an office setting, but travel may be necessary to visit a customer's, supplier's, or a building site. Each location's working environment will be different.
+        may be given a brief assignment to work at another building site or facility. <br>
+        Long hours might be required depending on the workload. This could apply to weekdays, weekends, and legal holidays.
+        occasionally be required to lift and move up to 50 pounds<br>
+        <br><br>
+        <b class = "bold">Education:</b> <br>
+        A Bachelor’s Degree in Engineering or equivalent qualifications. <br>
+</p>
+</div>
