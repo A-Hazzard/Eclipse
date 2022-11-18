@@ -1,11 +1,11 @@
-
 <html lang="en">
 <% 
 
-		Object email = session.getAttribute("Email");
-		Object fname=session.getAttribute("FirstName");
-		Object lname=session.getAttribute("LastName");
-		Object phone =session.getAttribute("Phone");
+		//getting credentail attributes from loginAction.jsp
+		Object sessionEmail = session.getAttribute("Email");
+		Object sessionFname = session.getAttribute("FirstName");
+		Object sessionLname = session.getAttribute("LastName");
+		Object sessionPhone = session.getAttribute("Phone");
 		
 		
 %>
@@ -24,7 +24,7 @@
 
         <h1 id="logo">Auto Serve Inc.</h1><!--Logo-->
         
-        <h2>User Name: <% out.print(fname + " " + lname);%></h2>
+       
         <nav class="navbar"><!--NAVIGATION BAR-->
             <ul class="link-container">
                 <li><a href="#" id="homePage" class="links">Home</a></li>
@@ -34,6 +34,34 @@
                 <li><a href="#" id = "servicesPage" class="links">Services</a></li>
                 <li><a href="pages/clients.html" class="links">Clients</a></li>
                 <li><a href="#" id="loginPage" class="links">Login/Sign-Up</a></li>
+                <li><a href="jsp/logoutAction.jsp" class = "Links"> 
+                <%
+		                if(sessionFname == null){
+		                	System.out.println("Logout button hidden");
+		                }
+		                else{
+		                	%>
+		                	Logout
+		                	<%
+		                }
+		                
+		                %>
+		                </a></li>
+                <li style = "
+                	
+             		text-align: center;
+             		font-size: 2rem;
+                "><span class = "profile-name"> 
+                <% out.print(sessionFname);
+                		/*if(sessionFname == null){
+                			System.out.println("Username hidden\n");
+                			
+                		}else{
+                			
+                			System.out.println("Logged in as " + sessionFname + "\n");
+                		}*/
+                		%> </span></li>
+
             </ul>
         </nav>
 

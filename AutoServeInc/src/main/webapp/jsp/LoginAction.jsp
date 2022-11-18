@@ -2,44 +2,50 @@
 <%@ page import = "java.sql.*" %>
 
 
-
 <%
-	String Email = request.getParameter("email");
-	String password = request.getParameter("password");
-	System.out.println("hi");
- if("admin@gmail.com".equals(Email)&& "admin".equals(password)){
-      session.setAttribute("email",Email);
-      //redirects admin to jobs page
-      response.sendRedirect("jobsPages.html");
-  }
-  else{
-      boolean test = false;
 
-	try{
-		Connection con = ConnectionProvider.getConnection();
-		Statement state = con.createStatement();
-		ResultSet result = state.executeQuery("select * from person where email = '" + Email +"' and password = '"+ password + "'" );
-		
+		String loginEmail = request.getParameter("email");
+		String loginPassword = request.getParameter("password");
 	
-		while(result.next()){
-		   	test = true;
-		   	
-		    String fname=result.getString(1);
-			String lname=result.getString(2);
-			String email = result.getString(4);
-			String phone = result.getString(5);
+		System.out.println("Stage 2) LoginAction executed\n");
 		
-			session.setAttribute("FirstName",fname);
-			session.setAttribute("LastName",lname);
-			session.setAttribute("Fmail",email);
-			session.setAttribute("Phone",phone);
-			//redirects client to home page
-		    response.sendRedirect("index.jsp");
-		}
-	if(test == false) response.sendRedirect("index.html");
+	//if admin logs in, redirect to jobsPage	
+	 if(loginEmail.equals("winston.fields@admin.autoserve.com")&& loginPassword.equals("winstonfields")){
+	      session.setAttribute("email",loginEmail);
+	      //redirects admin to jobs page
+	      response.sendRedirect("../admin/admin.jsp");
+	  }
+	  else{
+	      boolean test = false;
 	
-	}//end try block
-	catch(Exception e){ System.out.print(e); }
-  
-  }
+		try{
+			Connection con = ConnectionProvider.getConnection();
+			Statement state = con.createStatement();
+			ResultSet result = state.executeQuery("select * from person where email = '" + loginEmail +"' and password = '"+ loginPassword + "'" );
+			
+		
+			while(result.next()){
+			   	test = true;
+			   	
+			   	//fetch the column name by their index from the person table
+			    String sessionFname = result.getString(2);//colum firstname as an index of 2
+				String sessionLname = result.getString(3);
+				String sessionEmail = result.getString(4);
+				String sessionPhone = result.getString(5);
+			
+				//set attributes to share vairable to another file to access
+				session.setAttribute("FirstName",sessionFname);
+				session.setAttribute("LastName",sessionLname);
+				session.setAttribute("Fmail",sessionEmail);
+				session.setAttribute("Phone",sessionPhone);
+				
+				//redirects client to home page
+			    response.sendRedirect("../index.jsp");
+			}
+		if(test == false) response.sendRedirect("../index.jsp");
+		
+		}//end try block
+		catch(Exception e){ System.out.print(e); }
+	  
+	  }
 %>

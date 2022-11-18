@@ -1,4 +1,4 @@
-  <!--Main content for login page-->
+<!--Main content for login page-->
     <div data-aos="zoom-in-up"
                     data-aos-offset="-100"
                     data-aos-delay="1"
@@ -12,7 +12,7 @@
         <p>New to this site? <a href="#" id="registrationPage">Sign up</a> </p>
 
         <!--Form used for logging in-->
-        <form action="../../jsp/LoginAction.jsp" method="post" class="Form">
+        <form action="jsp/LoginAction.jsp" method="post" class="Form">
             <table id="loginFormTable">
             
                 <tr>
