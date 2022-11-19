@@ -1,0 +1,2 @@
+<img src = 'https://th.bing.com/th/id/OIP.JR_oyT8Xy8E2mzxNcHPFpAHaFl?pid=ImgDet&w=2309&h=1741&rs=1' 
+alt='truck' class = "vehicle" id = "vanImg" />

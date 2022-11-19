@@ -1,0 +1,33 @@
+<form action='bookingServlet' method = 'post' id="bookings-form">
+    <table>
+        <tr>
+            <td>
+                <label for="name">Name</label> <br>
+                <input type="text" name="name" id="name" class="userInput" required/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="email">Email</label> <br>
+                <input type="email" name="email" id="email" class="userInput" required/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="phone">Phone no.</label> <br>
+                <input type="text" name="phone" id="phone" class="userInput" required/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="address">Address</label> <br>
+                <input type="text" name="address" id="address" class="userInput" required/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type = "submit" value="Book Now!" />
+            </td>
+        </tr>
+    </table>
+</form>
