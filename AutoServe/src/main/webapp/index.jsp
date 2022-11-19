@@ -50,10 +50,10 @@
     <!--Horizontal Header of the web page-->
     <header class="header "><!--FLEXBOX-->
 
-        <h1 id="logo">Auto Serve Inc.</h1><!--Logo-->
+        <h1 id="logo" class ="admin-logo">Auto Serve Inc.</h1><!--Logo-->
         
        
-        <nav class="navbar"><!--NAVIGATION BAR-->
+        <nav class="navbar admin-navbar"><!--NAVIGATION BAR-->
             <ul class="link-container">
                 <li><a href="#" id="homePage" class="links">Home</a></li>
                 <li><a href="#" id="calculatorPage" class="links">Calculator</a></li>
@@ -62,7 +62,7 @@
                 <li><a href="#" id = "servicesPage" class="links">Services</a></li>
                 
                 
-                <li><a href="pages/clients.html" class="links jsp-links">
+                <li><a href="pages/clientApplications.jsp" class="links jsp-links">
                 	<% //Display  clients button only if user is either staff or admin
                 	if(position.equals(staff) || position.equals(admin))
                 		%> Client Applications <% 
@@ -76,12 +76,20 @@
                 		%> Login/Sign-Up <%
                 	 else System.out.println("(index.jsp)Hid Login/Sign-Up button for client/staff"); %>
                 </a></li>
-                <li><a href="jsp/logoutAction.jsp" class = "Links jsp-linnks"> 
+
+                <li><a href="#" id="loginPage" class="links jsp-links">
+                            <% if(position.equals("Admin")) 
+                                %> Admin Portal <%
+                                else System.out.println("(login.jsp) Admin Portal Link hidden. Not Admin\n"); %>
+                        </a></li>
+
+                <li class = "index-jsp-list-items"><a href="jsp/logoutAction.jsp" class = "Links jsp-linnks"> 
 		                <% //Display logout buttong only if user is logged in 
 		                if(sessionFname == null) 
 		                	System.out.println("(index.jsp)Logout button hidden");         
 				        else %> Logout 
 				</a></li>
+
                 <li style = "text-align: center;font-size: 2rem;">
                 <span class = "profile-name jsp-userName">         
                 <% //Display client button only if user is admin/staff 

@@ -48,6 +48,17 @@ border-right: none;
     height: 2rem;
     flex: .4;//flex used to help center navbar
     }
+
+    .client-logo{
+      
+        
+        margin-left: unset;
+        font-size: 1.6rem;
+        margin-top: .3%;
+        height: 2rem;
+        flex: .4;//flex used to help center navbar
+        
+    }
     //Styles the navigation bar's content
     .navbar{
         width: 45%;
@@ -66,10 +77,31 @@ border-right: none;
                     font-size: 1.3rem;
                     font-family: $headerFont;
                 }
-
-                
             }
+            .clients-jsp-list-items{
+                margin-left: 65%;
+            
+            }
+        
+
         }
+
+        .clients-navbar{
+            width: 70%;
+            border: 1px solid;
+        }
+
+        .admin-navbar{
+            flex: 2;
+            width: 100%;
+        }
+
+        .admin-logo{
+            font-size: 1.9rem;
+            margin-top: .8%;
+        }
+
+        .admin{font-size: 1.5rem;}
 
     }
    
@@ -1136,4 +1168,11 @@ footer{
         }//end cont1
 
     }
+}
+
+
+#client-main{
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
 }

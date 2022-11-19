@@ -37,6 +37,13 @@ body {
   height: 2rem;
   flex: 0.4;
 }
+.header .client-logo {
+  margin-left: unset;
+  font-size: 1.6rem;
+  margin-top: 0.3%;
+  height: 2rem;
+  flex: 0.4;
+}
 .header .navbar {
   width: 45%;
   flex: 1;
@@ -54,6 +61,24 @@ body {
   color: hsl(0deg, 0%, 13%);
   font-size: 1.3rem;
   font-family: "Segoe UI";
+}
+.header .navbar .clients-jsp-list-items {
+  margin-left: 65%;
+}
+.header .clients-navbar {
+  width: 70%;
+  border: 1px solid;
+}
+.header .admin-navbar {
+  flex: 2;
+  width: 100%;
+}
+.header .admin-logo {
+  font-size: 1.9rem;
+  margin-top: 0.8%;
+}
+.header .admin {
+  font-size: 1.5rem;
 }
 
 .access-header {
@@ -894,4 +919,10 @@ footer #flex-container #footer-links #wrapper span a {
 #services-main-container #information .cont4 .information-text .adjectives {
   font-size: 25px;
   line-height: 30px;
+}
+
+#client-main {
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
 }/*# sourceMappingURL=style.css.map */

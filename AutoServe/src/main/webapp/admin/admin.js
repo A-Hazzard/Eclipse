@@ -1,4 +1,5 @@
 $(function(){
+	
 	let viewPwd = false;
 
             $("#viewPwd").on('click', function(){
@@ -32,7 +33,8 @@ $("#footer-links").load("../pages/states/footer/carLinks.txt");
 
         //loads calculatorPage on click
         $("#calculatorPage").on('click', function(){
-            $("main").hide().load("../pages/states/adminCalculatorPage.txt").fadeIn("slow");
+	
+            $("main").hide().load("../pages/states/calculatorPage.txt").fadeIn("slow");
         })
 
             //loads jobsPage on click
