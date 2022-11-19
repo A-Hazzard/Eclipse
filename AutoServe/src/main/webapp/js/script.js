@@ -127,7 +127,7 @@ $("#footer-links").load("pages/states/footer/carLinks.txt");
     });
 
 
-    AOS.init();
+   
 
     // You can also pass an optional settings object
     // below listed default settings
