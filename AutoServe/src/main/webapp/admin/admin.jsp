@@ -22,7 +22,7 @@
             System.out.println("(index.jsp)Username hidden\n");
             System.out.println("(index.jsp)Not logged in\n");
         }else{
-           
+        
             System.out.println("(index.jsp)Logged in as " + sessionFname + "\n");
         }
 		
@@ -105,83 +105,39 @@
         </nav>
 
     </header>
-    <main id="admin-main">
-          <!--Main content for login page-->
-    <div id = "access-main">
-<br><br>
 
-        <h2>Welcome Admin</h2>
-        <p>Register your new staff members</p>
-
-
-        <form action="../RegServlet" method="post" class="Form">
-            <table id="loginFormTable">
-                <tr>
-                    <td> 
-                        <label for="firstname">First Name:</label><br>
-                        <input type = "text" name = "firstname" id="firstname" />
-                    </td>
-                </tr>
-
-                <tr>
-                    <td> 
-                        <label for="lastname">Last Name:</label><br>
-                        <input type = "text" name = "lastname" id= "lastname" />
-                    </td>
-                </tr>
-
-               
-                <tr>
-                    <td>
-                        <label for="email">Email:</label><br>
-                        <input type="email" name="email" id="email" >
-                    </td>
-                </tr>
-                
-                 <tr>
-                    <td>
-                        <label for="phone">Phone: </label><br>
-                        <input type="text" name="phone" id="phone" >
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="position">Position: </label><br>
-                        <select name = "position" id = "position">
-                        	<option value = "Staff" class = "role">Staff</option>
-                        	<option value = "Mechanic" class = "role">Mechanic</option>
-                        </select>
-                    </td>
-                </tr>
-                
-                <tr>
-                    <td>
-                        <label for="password">Password: </label><br>
-                        <input type="password" name="password" id="password" >
-                        <div id="viewPassword-container"><input type="checkbox" id="viewPwd"><label for="viewPwd">Show Password</label></div>
-                    </td>
-                </tr>
-                
-                <tr>
-                    <td>
-                        <br>
-                        <a href = "pages/forgotPassword.html" id="forgotpassword">Forgot Password</a>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td><input type="submit" value="Sign Up" id="submit"/></td>
-                </tr>
-            </table>
-        </form>
-
-		
-</div>
+    <!--Content loaded using AJAX with JQuery-->
+    <main data-aos="zoom-in"
+        data-aos-offset="0"
+        data-aos-delay="1"
+        data-aos-duration="500"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="true"
+        data-aos-once="false"
+        data-aos-anchor-placement="top" id = "admin-main">
     </main>
-
+    
+    <br><br>
+    
+    <footer>
+        <div id="flex-container">
+            <div id="footer-nav">
+                <h4>Quick Links</h4> 
+                <br>
+                    <ul>
+                        <li class="categories" id="cars">Cars</li>
+                        <li class="categories" id="bikes">Bikes</li>
+                        <li class="categories" id="scooters">Scooters</li>
+                    </ul>
+            </div>
+            <!--LOAD LINKS FROM footer-nav using JQuery-->
+            <div id="footer-links"></div>
+        </div>
+            <br><br>
+            <p id="copyright" style="text-align: center; opacity: .5;">Copyright © 2022 Auto Serve Inc. All Rights Reserved.</p>
+    </footer>
+    
 <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/18479e6558.js" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script src = "admin.js"></script>
-</body>
-</html>
+<script src="admin.js"></script>
