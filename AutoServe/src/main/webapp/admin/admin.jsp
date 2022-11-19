@@ -1,64 +1,110 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
 <html lang="en">
 <% 
 
 		//getting credentail attributes from loginAction.jsp
-		Object sessionEmail = session.getAttribute("email");
-		Object sessionFname = session.getAttribute("firstName");
-		//Object sessionLname = session.getAttribute("LastName");
-		//Object sessionPhone = session.getAttribute("Phone");
+		Object sessionEmail = session.getAttribute("Email");
+		Object sessionFname = session.getAttribute("FirstName");
+		Object sessionLname = session.getAttribute("LastName");
+		Object sessionPhone = session.getAttribute("Phone");
+		Object sessionPosition = session.getAttribute("Position");
+
 		
-		 if(sessionFname == null){
-                        System.out.println("Username hidden\n");
-                        
-                    }else{
-                       
-                        System.out.println("Logged in as " + sessionFname + "\n");
-                    }
+		String email = String.valueOf(sessionEmail);
+		String firstName = String.valueOf(sessionFname);
+		String lastName = String.valueOf(sessionLname);
+		String phone = String.valueOf(sessionPhone);
+		String position = String.valueOf(sessionPosition);
+
+
+		String staff = "Staff", admin = "Admin";
+		
+		if(sessionFname == null){
+            System.out.println("(index.jsp)Username hidden\n");
+            System.out.println("(index.jsp)Not logged in\n");
+        }else{
+           
+            System.out.println("(index.jsp)Logged in as " + sessionFname + "\n");
+        }
+		
 %>
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../style/style.css">
-        <link rel="shortcut icon" type="image/x-icon" href="https://th.bing.com/th/id/OIP.cAA3eIjKFPQHSQJTSnmTMgHaHa?pid=ImgDet&rs=1    " />
-        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-        <title>Auto Serve ADMIN</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="https://th.bing.com/th/id/OIP.cAA3eIjKFPQHSQJTSnmTMgHaHa?pid=ImgDet&rs=1    " />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+    	.jsp-userName{ color: blue;
+    	 			display: inline;
+                    text-decoration: none;
+                    color: hsl(0, 0%, 13%);
+                    font-size: 1.1rem;
+                    font-family: 'Roboto';
+                    }
+    </style>
+    
+    <title>Auto Serve ADMIN</title>
 </head>
 <body>
+    <!--Horizontal Header of the web page-->
+    <header class="header "><!--FLEXBOX-->
 
-  <!--Horizontal Header of the web page-->
-  <header class="header "><!--FLEXBOX-->
+        <h1 id="logo">Auto Serve ADMIN</h1><!--Logo-->
+        
+       
+        <nav class="navbar"><!--NAVIGATION BAR-->
+            <ul class="link-container">
+                <li><a href="../index.jsp" id="homePage" class="links">Home</a></li>
+                <li><a href="#" id="calculatorPage" class="links">Calculator</a></li>
+                <li><a href="../pages/jobsPages.html" id="jobsPage" class="links">Jobs</a></li>
+                <li><a href="#" id="aboutUsPage" class="links">About</a></li>
+                <li><a href="#" id = "servicesPage" class="links">Services</a></li>
+                
+                
+                <li><a href="../pages/clients.html" class="links jsp-links">
+                	<% //Display  clients button only if user is either staff or admin
+                	if(position.equals(staff) || position.equals(admin))
+                		%> Client Applications <% 
+                	   else System.out.println("(index.jsp)Not an admin or staff. Hid Clients link. Email: " + email); %>
+                	
+                </a></li>
+                
+                <li><a href="#" id="loginPage" class="links jsp-links">
+                	<% //Display login/signup button if user is not logged in
+                	if (sessionFname == null) 
+                		%> Login/Sign-Up <%
+                	 else System.out.println("(index.jsp)Hid Login/Sign-Up button for client/staff"); %>
+                </a></li>
+                <li><a href="../jsp/logoutAction.jsp" class = "Links jsp-linnks"> 
+		                <% //Display logout buttong only if user is logged in 
+		                if(sessionFname == null) 
+		                	System.out.println("(index.jsp)Logout button hidden");         
+				        else %> Logout 
+				</a></li>
+                <li style = "text-align: center;font-size: 2rem;">
+                <span class = "profile-name jsp-userName">         
+                <% //Display client button only if user is admin/staff 
+                if(sessionFname == null)
+                	System.out.println("(index.jsp)Username hidden\n");
+                else {
+                	if(position.equals(admin))
+                		out.print(firstName + "("+position+")");
+                			else if (position.equals(staff))
+                				out.print(firstName + "("+position+")");
+                				else
+                					out.print(firstName + "("+position+")");
+                	
+                	System.out.println("(index.jsp)Logged in as " + firstName + "\n");
+                	}
+                %>
 
-    <h1 id="logo">Auto Serve Inc.</h1><!--Logo-->
-    
+  				 </span></li>
 
-    <nav class="navbar"><!--NAVIGATION BAR-->
-        <ul class="link-container">
-            <li><a href="#" id="homePage" class="links">Home</a></li>
-            <li><a href="#" id="calculatorPage" class="links">Calculator</a></li>
-            <li><a href="pages/jobsPages.html" id="jobsPage" class="links">Jobs</a></li>
-            <li><a href="#" id="aboutUsPage" class="links">About</a></li>
-            <li><a href="#" id = "servicesPage" class="links">Services</a></li>
-            <li><a href="pages/clients.html" class="links">Clients</a></li>
-            <li><a href="#" id="loginPage" class="links">
-            		<% if(sessionFname == null)
-            			%> Login/Sign-Up <%
-            			else System.out.println("Login/Sign-Up Button hidden");
-            			%>
-            		</a></li>
-            <li><a href="../jsp/logoutAction.jsp" class = "links"> 
-            <% if(sessionFname == null)
-                  System.out.println("Logout button hidden");    
-                    		else %> Logout <% %> 
-                    </a></li>
+            </ul>
+        </nav>
 
-        </ul>
-    </nav>
-
-</header>
+    </header>
     <main id="admin-main">
           <!--Main content for login page-->
     <div id = "access-main">
