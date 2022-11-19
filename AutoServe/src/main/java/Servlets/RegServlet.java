@@ -26,12 +26,12 @@ public class RegServlet extends HttpServlet {
 			String lastname = request.getParameter("lastname");
 			String email = request.getParameter("email");
 			String phone = request.getParameter("phone");
-			//String position = request.getParameter("position");
+			String position = request.getParameter("position");
 			String password = request.getParameter("password");
 			
 
 			//put user info into a class to process
-			userInfo credentials = new userInfo(firstname, lastname, email, phone, password);
+			userInfo credentials = new userInfo(firstname, lastname, email, phone, position, password);
 			
 	    	out.println("Gathered information into our java servlet, please wait...");
 	    	
