@@ -1,0 +1,322 @@
+<div data-aos="flip-up"
+                    data-aos-offset="-100"
+                    data-aos-delay="1"
+                    data-aos-duration="2000"
+                    data-aos-easing="ease-in-out"
+                    data-aos-mirror="true"
+                    data-aos-once="false"
+                    data-aos-anchor-placement="top" id = "calculator-main">
+        <!--RESEARCH LINE HEIGHT, JUSTIFY CONTENT-->
+
+        <div class="sub-navbar">
+          <ul>
+            <li><a href="../index.html"> Home </a> > </li>
+            <li>Calculator</li>
+          </ul>
+
+        </div>
+
+        <div id="calc-info">
+        <h2>Repair Estimate Calculator</h2>
+
+          <p>
+            Repair Estimate tool helps you find out the estimated repair cost of your 
+            vehicle. Just enter the details of your vehicle and select <br> the type of services
+            you wish to avail and instantly get a quote for free. Additionally, you can 
+            book repair services on our platform.
+          </p>
+        </div>
+
+          <div id="progress">
+            <div id="progress-bar"></div>
+            <ul id="progress-num">
+              <li class="step active">1</li>
+              <li class="step">2</li>
+              <li class="step">3</li>
+            </ul>
+          </div>
+
+          <!--Sections that contains the calculator, also a flexbox-->
+          <section id="calculator">
+
+        <div class="wrapper">
+            <div id="input-container">
+            
+            </div>
+
+            <button type = "button" id="progress-prev" class="btn" disabled>Prev</button>
+            <button type = "button" id="progress-next" class="btn" disabled>Next</button> 
+
+        </div>
+
+            <div id="display-container">
+              <div id = "vehicleDisplay">
+                <img src="pages/media/carImg.png" 
+                alt="picture of a car" id = "defaultImg">
+              </div>
+                <div id="subDisplay">
+                  <p id="display-header">Estimated cost</p>
+                  <p id="display-note">Your estimated price will be displayed here</p>
+                  <p id="code"></p>
+                </div>
+              
+            </div>
+          </section>
+</div>
+
+<script>
+
+  //Vanilla js code
+  var progressBar = document.getElementById("progress-bar");
+  var progressNext = document.getElementById("progress-next");
+  var progressPrev = document.getElementById("progress-prev");
+  var steps = document.querySelectorAll(".step");
+  var active = 1;
+
+  progressNext.addEventListener("click", () => {
+    active++;
+    if (active > steps.length) {
+      active = steps.length;
+    }
+    updateProgress();
+  });
+
+  progressPrev.addEventListener("click", () => {
+    active--;
+    if (active < 1) {
+      active = 1;
+    }
+    updateProgress();
+  });
+
+  var updateProgress = () => {
+    steps.forEach((step, i) => {
+      if (i < active) {
+        step.classList.add("active");
+      } else {
+        step.classList.remove("active");
+      }
+    });
+    progressBar.style.width = ((active - 1) / (steps.length - 1)) * 100 + "%";
+    if (active === 1) {
+      progressPrev.disabled = true;
+    } else if (active === steps.length) {
+      progressNext.disabled = true;
+    } else {
+      progressPrev.disabled = false;
+      progressNext.disabled = false;
+    }
+  };
+
+
+  //JQUERY CODE
+var car = false;
+var truck = false;
+var van = false;
+var motorbike = false;
+var down = false;
+
+  $("#input-container").load("pages/states/vehicleInfo.txt").fadeIn("slow");
+  var step = 1;
+
+      $("#progress-prev").on('click', function(){
+        step--;
+        console.log("Step" + step);
+
+          if(step === 1){
+            car = false;
+            truck = false;
+            van = false;
+            motorbike = false;
+            $("#input-container").hide().load("pages/states/vehicleInfo.txt").fadeIn("slow");
+            $("#vehicleDisplay").hide().load("pages/media/carImg.txt").fadeIn("slow");
+            console.log("loaded image on step 1");
+          }
+      });
+
+  //loads PRICES on click
+   $("#progress-next").on('click', function(){
+    step++;
+    console.log("Step " + step);
+       if(step === 2){
+          if (car == true){
+              $("#input-container").hide().load("pages/states/servicePrices/carPrices.txt").fadeIn("slow");
+              console.log("loaded car services");
+          }
+
+            else if (truck == true){
+              $("#input-container").hide().load("pages/states/servicePrices/truckPrices.txt").fadeIn("slow");
+              console.log("loaded truck services");
+            }
+
+            else if (van == true){
+              $("#input-container").hide().load("pages/states/servicePrices/vanPrices.txt").fadeIn("slow");
+              console.log("loaded van services");
+            }
+
+            else if (motorbike == true){
+              $("#input-container").hide().load("pages/states/servicePrices/bikePrices.txt").fadeIn("slow");
+              console.log("loaded motorbike services");
+            }
+            
+              document.querySelector('.vehicle').style.width = "10%";
+              document.querySelector('.flag').style.width = "5%";
+              console.log("Changed width of vehicle and flag to 10%");
+
+              $(".flag").css("margin-top", "-3.5%");
+              $(".flag").css("margin-left", "5%");
+
+              $(".flag").css("position", "absolute");
+
+              console.log("Changed position of flag to the left of the vehicle");
+
+            //Estimate container
+            var estimateCost = "<div id = 'estimateCost-container'></div>";
+            var estimateCostH4 = "<h4 id = 'estimateCostH4'>ESTIMATE COST</h4> <br>"
+            var priceTaG = "<p id = 'priceTaG'>$ 0 - 0</p>"
+            $("#subDisplay").append(estimateCost);
+            $("#estimateCost-container").append(estimateCostH4);                   
+            $("#estimateCost-container").append(priceTaG);
+
+            //css 
+            $("#estimateCost-container").css("padding-top", "2%");
+            $("#estimateCost-container").css("text-align", "center");
+
+            $("#estimateCostH4").css("font-size", "2rem");
+            $("#estimateCostH4").css("font-family", "sans-serif");
+            $("#priceTaG").css("font-family", "sans-serif");
+            $("#priceTaG").css("font-size", "1.5rem");
+           
+
+            $(".flag").css("margin-left", "12%");
+            $(".carImg").css("margin-left", "2%");
+
+           
+            //Cheque Container
+            var chequeContainer = "<div id = 'cheque-container'></div>";
+            var note = "<p style='color: grey;'>* This is an estimated cost collected from multiple sources. Actual prices may vary.</p>"
+            $("#subDisplay").append(note);
+
+            $("#subDisplay").append(chequeContainer);
+                       // $("#cheque-container").load("pages/states/servicePrices/cheque.txt").fadeIn("fast");
+
+          }//end else if
+
+      else if(step === 3){
+        $("#input-container").hide().load("pages/states/bookings.txt").fadeIn("slow");
+        $("#progress-prev").hide();
+       $("#progress-next").hide();
+        console.log("hid both buttons");
+
+      }
+  })
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //-------------------ADMIN LOGIN----------------
+  $("#input-container").load("pages/states/vehicleInfo.txt").fadeIn("slow");
+  var step = 1;
+
+      $("#progress-prev").on('click', function(){
+        step--;
+        console.log("Step" + step);
+
+          if(step === 1){
+            car = false;
+            truck = false;
+            van = false;
+            motorbike = false;
+            $("#input-container").hide().load("pages/states/vehicleInfo.txt").fadeIn("slow");
+            $("#vehicleDisplay").hide().load("pages/media/carImg.txt").fadeIn("slow");
+            console.log("loaded image on step 1");
+          }
+      });
+
+  //loads PRICES on click
+   $("#progress-next").on('click', function(){
+    step++;
+    console.log("Step " + step);
+       if(step === 2){
+          if (car == true){
+              $("#input-container").hide().load("pages/states/servicePrices/carPrices.txt").fadeIn("slow");
+              console.log("loaded car services");
+          }
+
+            else if (truck == true){
+              $("#input-container").hide().load("pages/states/servicePrices/truckPrices.txt").fadeIn("slow");
+              console.log("loaded truck services");
+            }
+
+            else if (van == true){
+              $("#input-container").hide().load("pages/states/servicePrices/vanPrices.txt").fadeIn("slow");
+              console.log("loaded van services");
+            }
+
+            else if (motorbike == true){
+              $("#input-container").hide().load("pages/states/servicePrices/bikePrices.txt").fadeIn("slow");
+              console.log("loaded motorbike services");
+            }
+            
+              document.querySelector('.vehicle').style.width = "10%";
+              document.querySelector('.flag').style.width = "5%";
+              console.log("Changed width of vehicle and flag to 10%");
+
+              $(".flag").css("margin-top", "-3.5%");
+              $(".flag").css("margin-left", "5%");
+
+              $(".flag").css("position", "absolute");
+
+              console.log("Changed position of flag to the left of the vehicle");
+
+            //Estimate container
+            var estimateCost = "<div id = 'estimateCost-container'></div>";
+            var estimateCostH4 = "<h4 id = 'estimateCostH4'>ESTIMATE COST</h4> <br>"
+            var priceTaG = "<p id = 'priceTaG'>$ 0 - 0</p>"
+            $("#subDisplay").append(estimateCost);
+            $("#estimateCost-container").append(estimateCostH4);                   
+            $("#estimateCost-container").append(priceTaG);
+
+            //css 
+            $("#estimateCost-container").css("padding-top", "2%");
+            $("#estimateCost-container").css("text-align", "center");
+
+            $("#estimateCostH4").css("font-size", "2rem");
+            $("#estimateCostH4").css("font-family", "sans-serif");
+            $("#priceTaG").css("font-family", "sans-serif");
+            $("#priceTaG").css("font-size", "1.5rem");
+           
+
+            $(".flag").css("margin-left", "12%");
+            $(".carImg").css("margin-left", "2%");
+
+           
+            //Cheque Container
+            var chequeContainer = "<div id = 'cheque-container'></div>";
+            var note = "<p style='color: grey;'>* This is an estimated cost collected from multiple sources. Actual prices may vary.</p>"
+            $("#subDisplay").append(note);
+
+            $("#subDisplay").append(chequeContainer);
+                       // $("#cheque-container").load("pages/states/servicePrices/cheque.txt").fadeIn("fast");
+
+          }//end else if
+
+      else if(step === 3){
+        $("#input-container").hide().load("pages/states/bookings.txt").fadeIn("slow");
+        $("#progress-prev").hide();
+       $("#progress-next").hide();
+        console.log("hid both buttons");
+
+      }
+  })
+
+</script>

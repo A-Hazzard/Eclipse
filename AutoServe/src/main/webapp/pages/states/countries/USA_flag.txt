@@ -1,0 +1,2 @@
+<img src="https://th.bing.com/th/id/OIP.QigL_PihS-47-4AOeb_RkQHaDK?pid=ImgDet&rs=1" 
+alt="USA flag" class = "flag" id = "USA_flag"  width = "35%" />
