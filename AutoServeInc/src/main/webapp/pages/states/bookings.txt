@@ -1,0 +1,47 @@
+<form action="jsp/bookingAction.jsp" method = 'post' id="bookings-form">
+    <table>
+   				 <tr>
+                    <td>
+                        <label for="firstName">First Name</label><br>
+                        <input type="text" name="firstName" id="bookFirstName" required>
+                    </td>
+                </tr>
+                <tr>
+              <td>
+                <label for="vehicleType">Type of Vehicle:</label><br>
+                <select name="selectVehicleType" id="vehicleType">
+                  <option value="" disabled selected hidden class="default-option">Select your Vehicle</option>
+                  <option value="Car">Car</option>
+                  <option value="Truck">Truck</option>
+                  <option value="Van">Van</option>
+                  <option value="MotorBike">MotorBike</option>
+                </select>
+              </td>
+            </tr>
+            
+            
+                 <tr>
+                    <td>
+                        <label for="plateNum">Plate Number: </label><br>
+                        <input type="text" name="plateNumber" id="plateNum" required>
+                    </td>
+                </tr>
+        <tr>
+            <td>
+                <input type = "submit" value="Book Now!" />
+            </td>
+        </tr>
+    </table>
+</form>
+
+<script>
+ /*checked to see if user logged in by checking for a first name value, the appending that name to the firstname input
+                  field in the calculator form*/
+
+                  if($("#bookFirstName").val() == null) console.log("Please enter a value for first name. Current Value: " + $("#bookFirstName").val());
+                  else{
+                    $("#bookFirstName").val(fName);
+                    console.log("The value for first name: " + $("#bookFirstName").val());
+                  }
+                  
+</script>
