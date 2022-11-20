@@ -1,22 +1,15 @@
-<form action='bookingServlet' method = 'post' id="bookings-form">
+<form action='../bookingServlet' method = 'post' id="bookings-form">
     <table>
-        <tr>
+        <tr id = "firstRow">
             <td>
-                <label for="name">Name</label> <br>
-                <input type="text" name="firstName" id="name" class="userInput" required/>
+                <label for="firstName">First Name:</label> <br>
+                <input type="text" name="firstName" id="firstName" class="userInput" required/>
             </td>
         </tr>
         
-                <tr>
-                    <td> 
-                        <label for="lastName">Last Name:</label><br>
-                        <input type = "text" name = "lastName" id= "lastName" required/>
-                    </td>
-                </tr>
-        
         <tr>
             <td>
-                <label for="email">Email</label> <br>
+                <label for="email">Email:</label> <br>
                 <input type="email" name="email" id="email" class="userInput" required/>
             </td>
         </tr>

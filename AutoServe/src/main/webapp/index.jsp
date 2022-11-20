@@ -85,11 +85,11 @@
 		                <% //Display logout link only if user is logged in 
                             if(sessionFname == null) 
                                 System.out.println("(index.jsp)Logout button hidden");         
-                            else %><li class = "index-jsp-list-items">
+                            else { %><li class = "index-jsp-list-items">
                                     <a href="jsp/logoutAction.jsp" class = "Links jsp-linnks">Logout</a>
                                     </li>
-			
-				
+								
+								<% } %>
                 <!--Display user name if logged in-->
                 <% if (firstName != null) { %>
                     <li style = "text-align: center;font-size: 2rem;">
@@ -103,7 +103,7 @@
                                         else if (position.equals(staff))
                                             out.print(firstName + "("+position+")");
                                             else
-                                                out.print(firstName + "("+position+")");
+                                                out.print(firstName);
                                 
                                 System.out.println("(index.jsp)Logged in as " + firstName + "\n");
                                 }
@@ -146,120 +146,24 @@
 <p id="copyright" style="text-align: center; opacity: .5;">Copyright © 2022 Auto Serve Inc. All Rights Reserved.</p>
     </footer>
     
-<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-<script src="https://kit.fontawesome.com/18479e6558.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script src="https://kit.fontawesome.com/18479e6558.js"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script src="js/script.js"></script>
 
 <script>
-
+var position = $(".jsp-userName").text();
+console.log(position);
 var car = false;
 var truck = false;
 var van = false;
 var motorbike = false;
 var down = false;
-
+let fName = $(".profile-name").text();
 var step = 1;
-
-
-  //-------------------ADMIN LOGIN----------------
-  /*
-        $("#input-container").load("pages/states/vehicleInfo.txt").fadeIn("slow");
-        var step = 1;
-
-            $("#progress-prev").on('click', function(){
-                step--;
-                console.log("Step" + step);
-
-                if(step === 1){
-                    car = false;
-                    truck = false;
-                    van = false;
-                    motorbike = false;
-                    $("#input-container").hide().load("pages/states/vehicleInfo.txt").fadeIn("slow");
-                    $("#vehicleDisplay").hide().load("pages/media/carImg.txt").fadeIn("slow");
-                    console.log("loaded image on step 1");
-                }
-            });
-
-        //loads PRICES on click
-        $("#progress-next").on('click', function(){
-            step++;
-            console.log("Step " + step);
-            if(step === 2){
-                if (car == true){
-                    $("#input-container").hide().load("pages/states/servicePrices/carPrices.txt").fadeIn("slow");
-                    console.log("loaded car services");
-                }
-
-                    else if (truck == true){
-                    $("#input-container").hide().load("pages/states/servicePrices/truckPrices.txt").fadeIn("slow");
-                    console.log("loaded truck services");
-                    }
-
-                    else if (van == true){
-                    $("#input-container").hide().load("pages/states/servicePrices/vanPrices.txt").fadeIn("slow");
-                    console.log("loaded van services");
-                    }
-
-                    else if (motorbike == true){
-                    $("#input-container").hide().load("pages/states/servicePrices/bikePrices.txt").fadeIn("slow");
-                    console.log("loaded motorbike services");
-                    }
-                    
-                    document.querySelector('.vehicle').style.width = "10%";
-                    document.querySelector('.flag').style.width = "5%";
-                    console.log("Changed width of vehicle and flag to 10%");
-
-                    $(".flag").css("margin-top", "-3.5%");
-                    $(".flag").css("margin-left", "5%");
-
-                    $(".flag").css("position", "absolute");
-
-                    console.log("Changed position of flag to the left of the vehicle");
-
-                    //Estimate container
-                    var estimateCost = "<div id = 'estimateCost-container'></div>";
-                    var estimateCostH4 = "<h4 id = 'estimateCostH4'>ESTIMATE COST</h4> <br>"
-                    var priceTaG = "<p id = 'priceTaG'>$ 0 - 0</p>"
-                    $("#subDisplay").append(estimateCost);
-                    $("#estimateCost-container").append(estimateCostH4);                   
-                    $("#estimateCost-container").append(priceTaG);
-
-                    //css 
-                    $("#estimateCost-container").css("padding-top", "2%");
-                    $("#estimateCost-container").css("text-align", "center");
-
-                    $("#estimateCostH4").css("font-size", "2rem");
-                    $("#estimateCostH4").css("font-family", "sans-serif");
-                    $("#priceTaG").css("font-family", "sans-serif");
-                    $("#priceTaG").css("font-size", "1.5rem");
-                
-
-                    $(".flag").css("margin-left", "12%");
-                    $(".carImg").css("margin-left", "2%");
-
-                
-                    //Cheque Container
-                    var chequeContainer = "<div id = 'cheque-container'></div>";
-                    var note = "<p style='color: grey;'>* This is an estimated cost collected from multiple sources. Actual prices may vary.</p>"
-                    $("#subDisplay").append(note);
-
-                    $("#subDisplay").append(chequeContainer);
-                            // $("#cheque-container").load("pages/states/servicePrices/cheque.txt").fadeIn("fast");
-
-                }//end else if
-
-            else if(step === 3){
-                $("#input-container").hide().load("pages/states/bookings.txt").fadeIn("slow");
-                $("#progress-prev").hide();
-            $("#progress-next").hide();
-                console.log("hid both buttons");
-
-            }
-        })
-  */
-
+if($("#firstName").val("")) console.log("Please enter a value for first name");
+else
+$("#firstName").val(fName);
 </script>
 </body>
 </html>

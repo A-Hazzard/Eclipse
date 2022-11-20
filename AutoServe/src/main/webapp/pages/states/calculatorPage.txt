@@ -1,11 +1,11 @@
 <div data-aos="zoom-in-up"
-                    data-aos-offset="-100"
+                    data-aos-offset="1"
                     data-aos-delay="1"
                     data-aos-duration="500"
-                    data-aos-easing="ease-in-out"
+                    data-aos-easing="ease-in"
                     data-aos-mirror="true"
-                    data-aos-once="false"
-                    data-aos-anchor-placement="top" id = "calculator-main">
+                    data-aos-once="true"
+                    data-aos-anchor-placement="bottom" id = "calculator-main">
         <!--RESEARCH LINE HEIGHT, JUSTIFY CONTENT-->
 
         <div class="sub-navbar">
@@ -50,7 +50,7 @@
 
             <div id="display-container">
               <div id = "vehicleDisplay">
-                <img src="pages/media/carImg.png" 
+                <img src="#" 
                 alt="picture of a car" id = "defaultImg">
               </div>
                 <div id="subDisplay">
@@ -67,11 +67,19 @@
 
 
   //JQUERY CODE
-   
-  
+if(position.includes("Admin"))
+    $("#defaultImg").attr("src", "../pages/media/carImg.png")
+ else
+ 	$("#defaultImg").attr("src", "pages/media/carImg.png")
   //loads user interaction items 
-    $("#input-container").load("pages/states/vehicleInfo.txt").fadeIn("slow");
-
+	if(position.includes("Admin")) {
+	                    $("#input-container").load("../pages/states/vehicleInfo.txt").fadeIn("slow");
+	                console.log("Logged in as Admin, loaded vehicle information");
+	                }
+	                else{
+	                    $("#input-container").load("pages/states/vehicleInfo.txt").fadeIn("slow");
+	                
+	                }
 
    //Vanilla js code for the progress bar
    var progressBar = document.getElementById("progress-bar");
@@ -124,8 +132,16 @@
                 truck = false;
                 van = false;
                 motorbike = false;
-                $("#input-container").hide().load("pages/states/vehicleInfo.txt").fadeIn("slow");
-                $("#vehicleDisplay").hide().load("pages/media/carImg.txt").fadeIn("slow");
+                
+                if(position.includes("Admin")) {
+	                $("#input-container").attr("src", "../pages/states/vehicleInfo.txt");
+	                $("#vehicleDisplay").attr("src", "../pages/media/carImg.txt");
+				}else{
+					$("#input-container").hide().load("pages/states/vehicleInfo.txt").fadeIn("slow");
+                	$("#vehicleDisplay").hide().load("pages/media/carImg.txt").fadeIn("slow");
+                
+				}
+                
                 console.log("loaded image on step 1");
             }
         });
@@ -137,21 +153,45 @@
         if(step === 2){
             if (car == true){
                 $("#input-container").hide().load("pages/states/servicePrices/carPrices.txt").fadeIn("slow");
+                if(position.includes("Admin")) {
+                	$("#input-container").hide().load("../pages/states/servicePrices/carPrices.txt").fadeIn("slow");
+                	
+                }
                 console.log("loaded car services");
             }
 
                 else if (truck == true){
-                $("#input-container").hide().load("pages/states/servicePrices/truckPrices.txt").fadeIn("slow");
+                if(position.includes("Admin")) {
+               		$("#input-container").hide().load("../pages/states/servicePrices/truckPrices.txt").fadeIn("slow");
+                
+                }
+                else{
+					$("#input-container").hide().load("pages/states/servicePrices/truckPrices.txt").fadeIn("slow");
+					
+				}
                 console.log("loaded truck services");
                 }
 
                 else if (van == true){
-                $("#input-container").hide().load("pages/states/servicePrices/vanPrices.txt").fadeIn("slow");
+                if(position.includes("Admin")) {
+                	                $("#input-container").hide().load("../pages/states/servicePrices/vanPrices.txt").fadeIn("slow");
+                	
+                }
+                
+                else{
+					$("#input-container").hide().load("pages/states/servicePrices/vanPrices.txt").fadeIn("slow");
+					
+				}
                 console.log("loaded van services");
                 }
 
                 else if (motorbike == true){
-                $("#input-container").hide().load("pages/states/servicePrices/bikePrices.txt").fadeIn("slow");
+                if(position.includes("Admin")) 
+                    $("#input-container").hide().load("../pages/states/servicePrices/bikePrices.txt").fadeIn("slow");
+                else
+                	$("#input-container").hide().load("pages/states/servicePrices/bikePrices.txt").fadeIn("slow");
+                	
+                
                 console.log("loaded motorbike services");
                 }
                 
@@ -194,12 +234,20 @@
                 $("#subDisplay").append(note);
 
                 $("#subDisplay").append(chequeContainer);
-                        // $("#cheque-container").load("pages/states/servicePrices/cheque.txt").fadeIn("fast");
+                  
 
             }//end else if
 
         else if(step === 3){
-            $("#input-container").hide().load("pages/states/bookings.txt").fadeIn("slow");
+            if(position.includes("Admin")) 
+                   $("#input-container").hide().load("../pages/states/bookings.txt").fadeIn("slow");
+                else
+                	$("#input-container").hide().load("pages/states/bookings.txt").fadeIn("slow");
+                	
+				$("footer").css("margin-top","30%");
+				console.log("Changed margin of footer");
+
+                
             $("#progress-prev").hide();
         $("#progress-next").hide();
             console.log("hid both buttons");

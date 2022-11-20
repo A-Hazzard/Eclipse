@@ -49,7 +49,7 @@
    <!--Horizontal Header of the web page-->
     <header class="header "><!--FLEXBOX-->
 
-        <h1 id="logo" class ="admin-logo"><a href = "index.jsp" 
+        <h1 id="logo" class ="admin-logo"><a href = "../index.jsp" 
         style = "text-decoration: none; color: black;">Auto Serve Inc.</a></h1><!--Logo-->
         
        
@@ -85,7 +85,7 @@
                             if(sessionFname == null) 
                                 System.out.println("(index.jsp)Logout button hidden");         
                             else %><li class = "index-jsp-list-items">
-                                    <a href="jsp/logoutAction.jsp" class = "Links jsp-linnks">Logout</a>
+                                    <a href="../jsp/logoutAction.jsp" class = "Links jsp-linnks">Logout</a>
                                     </li>
 			
 				
@@ -124,7 +124,7 @@
         data-aos-once="false"
         data-aos-anchor-placement="top" id = "admin-main" style = "height: 100vh;">
         <br><br><br><br>
-        <center><h2>ADMIN PAGE, COMING SOON...</h2></center>
+        <h2 style = "text-align: center;">ADMIN PAGE, COMING SOON...</h2>
     </main>
     
     <br><br>
@@ -153,7 +153,20 @@
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script src="admin.js"></script>
 
+<script>
+//stores user position in variable(client/staff/admin)
+var position = $(".jsp-userName").text();
+console.log(position);
+var car = false;
+var truck = false;
+var van = false;
+var motorbike = false;
+var down = false;
 
+var step = 1;
+
+
+</script>
 
 
 <!-- 

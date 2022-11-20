@@ -3,7 +3,7 @@ package Servlets;
 public class bookingMembers {
 	protected String firstName, lastName, email, phone, address, vehicleType, plateNumber;
 	
-	bookingMembers(String name, String email, String phone, String address, String vehicleType, String plateNumber) {
+	bookingMembers(String firstName,String lastName, String email, String phone, String address, String vehicleType, String plateNumber) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
