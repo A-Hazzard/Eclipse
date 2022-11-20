@@ -3,9 +3,17 @@
         <tr>
             <td>
                 <label for="name">Name</label> <br>
-                <input type="text" name="name" id="name" class="userInput" required/>
+                <input type="text" name="firstName" id="name" class="userInput" required/>
             </td>
         </tr>
+        
+                <tr>
+                    <td> 
+                        <label for="lastName">Last Name:</label><br>
+                        <input type = "text" name = "lastName" id= "lastName" required/>
+                    </td>
+                </tr>
+        
         <tr>
             <td>
                 <label for="email">Email</label> <br>
@@ -24,6 +32,27 @@
                 <input type="text" name="address" id="address" class="userInput" required/>
             </td>
         </tr>
+        
+                <tr>
+              <td>
+                <label for="vehicleType">Type of Vehicle:</label><br>
+                <select name="selectVehicleType" id="vehicleType">
+                  <option value="" disabled selected hidden class="default-option">Select your Vehicle</option>
+                  <option value="Car">Car</option>
+                  <option value="Truck">Truck</option>
+                  <option value="Van">Van</option>
+                  <option value="MotorBike">MotorBike</option>
+                </select>
+              </td>
+            </tr>
+            
+            
+                 <tr>
+                    <td>
+                        <label for="plateNum">Plate Number: </label><br>
+                        <input type="text" name="plateNum" id="plateNum" required>
+                    </td>
+                </tr>
         <tr>
             <td>
                 <input type = "submit" value="Book Now!" />

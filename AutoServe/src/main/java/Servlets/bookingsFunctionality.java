@@ -33,16 +33,20 @@ public class bookingsFunctionality {
 		loadDriver(dbDriver);
 		Connection con = getConnection();
 		String result = "Data entered successfully. <a href = \"registration.html\">Register again.</a>";
-		String sql = "INSERT INTO Booking VALUES(?,?,?,?)";
+		String clientID = "SELECT ID FROM clients WHERE firstName = '" + firstName + "'";
+		String sql = "INSERT INTO registrationQ VALUES(regQ_ID.nextval,?,?,?,?,?)";
 		
 		PreparedStatement ps;
 		try {
 			ps = con.prepareStatement(sql);
-			ps.setString(1, credentials.getName());
-			ps.setString(2, credentials.getEmail());
-			ps.setString(3, credentials.getPhone());
-			ps.setString(4, credentials.getAddress());
-			
+			ps.setString(1, credentials.getfirstName());
+			ps.setString(2, credentials.getlastName());
+			ps.setString(3, credentials.getEmail());
+			ps.setString(4, credentials.getPhone());
+			ps.setString(5, credentials.getAddress());
+			ps.setString(5, credentials.getvehicleType());
+			ps.setString(6, credentials.getplateNumber());
+
 			ps.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();

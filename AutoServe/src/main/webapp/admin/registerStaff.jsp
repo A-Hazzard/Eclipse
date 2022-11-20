@@ -1,3 +1,4 @@
+<html lang="en">
 <% 
 
 		//getting credentail attributes from loginAction.jsp
@@ -113,23 +114,86 @@
 
     </header>
 
-
-    <!--Content loaded using AJAX with JQuery-->
-    <main data-aos="zoom-in"
+        <main data-aos="zoom-in-down"
         data-aos-offset="0"
         data-aos-delay="1"
         data-aos-duration="500"
         data-aos-easing="ease-in-out"
         data-aos-mirror="true"
         data-aos-once="false"
-        data-aos-anchor-placement="top" id = "admin-main" style = "height: 100vh;">
-        <br><br><br><br>
-        <center><h2>ADMIN PAGE, COMING SOON...</h2></center>
+        data-aos-anchor-placement="top" id = "access-main" style = "margin-bottom: 20%;">
+<br><br>
+
+        <h2>Welcome Admin</h2>
+        <p>Register your new staff members</p>
+
+
+        <form action="../adminRegServlet" method="post" class="Form">
+            <table id="loginFormTable">
+                <tr>
+                    <td> 
+                        <label for="firstname">First Name:</label><br>
+                        <input type = "text" name = "firstname" id="firstname" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> 
+                        <label for="lastname">Last Name:</label><br>
+                        <input type = "text" name = "lastname" id= "lastname" />
+                    </td>
+                </tr>
+
+               
+                <tr>
+                    <td>
+                        <label for="email">Email:</label><br>
+                        <input type="email" name="email" id="email" >
+                    </td>
+                </tr>
+                
+                 <tr>
+                    <td>
+                        <label for="phone">Phone: </label><br>
+                        <input type="text" name="phone" id="phone" >
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="position">Position: </label><br>
+                        <select name = "position" id = "position">
+                        	<option value = "Staff">Staff</option>
+                        	<option value = "Mechanic">Mechanic</option>
+                        </select>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <label for="password">Password: </label><br>
+                        <input type="password" name="password" id="password" >
+                        <div id="viewPassword-container"><input type="checkbox" id="viewPwd"><label for="viewPwd">Show Password</label></div>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <br>
+                        <a href = "../pages/forgotPassword.html" id="forgotpassword">Forgot Password</a>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><input type="submit" value="Sign Up" id="submit"/></td>
+                </tr>
+            </table>
+        </form>
+
+		
+
     </main>
-    
     <br><br>
-    
-    <footer>
+     <footer>
         <div id="flex-container">
             <div id="footer-nav">
                 <h4>Quick Links</h4> 
@@ -146,23 +210,10 @@
             <br><br>
             <p id="copyright" style="text-align: center; opacity: .5;">Copyright © 2022 Auto Serve Inc. All Rights Reserved.</p>
     </footer>
- </body> 
 <script src="https://code.jquery.com/jquery-3.6.1.min.js" ></script>
 <script src="https://kit.fontawesome.com/18479e6558.js" ></script>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js" ></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script src="admin.js"></script>
-
-
-
-
-<!-- 
-TO DO:
-IF USER POSITION = ADMIN
-> DISPLAY ADMIN CONTENT
-ELSE IF USER POSITION = STAFF/CLIENT
-> DISPLAY ONLY ADMIN CANT VIEW THIS CONTENT
-ELSE IF POSITION === NULL
-> DISPLAY ADMIN LOGIN PAGE
-
--->
+</body>
+</html>

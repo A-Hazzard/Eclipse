@@ -24,12 +24,16 @@ public class bookingServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		System.out.print("started");
 		try {	
-			String name = request.getParameter("name");
+			String firstName = request.getParameter("firstName");
+			String lastName = request.getParameter("lastName");
 			String email = request.getParameter("email");
 			String phone = request.getParameter("phone");
 			String address = request.getParameter("address");
+			String vehicleType = request.getParameter("selectVehicleType");
+			String plateNumber = request.getParameter("plateNumber");
+
 			
-			bookingMembers credentials = new bookingMembers(name, email, phone, address);
+			bookingMembers credentials = new bookingMembers(firstName, lastName, email, phone, address, vehicleType, plateNumber);
 			
 			out.println("Gathered information into our java servlet, please wait...");
 	    	bookingsFunctionality bookings = new bookingsFunctionality();

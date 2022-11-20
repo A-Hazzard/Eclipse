@@ -50,69 +50,70 @@
     <!--Horizontal Header of the web page-->
     <header class="header "><!--FLEXBOX-->
 
-        <h1 id="logo" class ="admin-logo">Auto Serve Inc.</h1><!--Logo-->
+        <h1 id="logo" class ="admin-logo"><a href = "index.jsp" 
+        style = "text-decoration: none; color: black;">Auto Serve Inc.</a></h1><!--Logo-->
         
        
         <nav class="navbar admin-navbar"><!--NAVIGATION BAR-->
             <ul class="link-container">
-                <li><a href="#" id="homePage" class="links">Home</a></li>
+                
                 <li><a href="#" id="calculatorPage" class="links">Calculator</a></li>
                 <li><a href="pages/jobsPages.html" id="jobsPage" class="links">Jobs</a></li>
                 <li><a href="#" id="aboutUsPage" class="links">About</a></li>
-                <li><a href="#" id = "servicesPage" class="links">Services</a></li>
-                
-                
-                <li><a href="pages/clientApplications.jsp" class="links jsp-links">
-                	<% //Display  clients button only if user is either staff or admin
-                	if(position.equals(staff) || position.equals(admin))
-                		%> Client Applications <% 
-                	   else System.out.println("(index.jsp)Not an admin or staff. Hid Clients link. Email: " + email); %>
-                	
-                </a></li>
-                
-                <li><a href="#" id="loginPage" class="links jsp-links">
-                	<% //Display login/signup button if user is not logged in
-                	if (sessionFname == null) 
-                		%> Login/Sign-Up <%
-                	 else System.out.println("(index.jsp)Hid Login/Sign-Up button for client/staff"); %>
-                </a></li>
+                <li><a href="#" id = "servicesPage" class="links">Services</a></li> 
+                	<% //Display  clients link only if user is either staff or admin
+                        if(position.equals(staff) || position.equals(admin)) {
+                            %> <li>
+                            <a href="pages/clientApplications.jsp" class="links jsp-links">Client Applications </a>
+                            </li> <% }
+                        else System.out.println("(index.jsp)Not an admin or staff. Hid Clients link. Email: " + email); 
+                    %>
 
-                <li><a href="#" id="loginPage" class="links jsp-links">
-                            <% if(position.equals("Admin")) 
-                                %> Admin Portal <%
-                                else System.out.println("(login.jsp) Admin Portal Link hidden. Not Admin\n"); %>
-                        </a></li>
+                	<% //Display login/signup link if user is not logged in
+                        if (sessionFname == null){ 
+                        %> <li><a href="#" id="loginPage" class="links jsp-links">Login/Sign-Up</a>
+                            </li> <% }
+                        else System.out.println("(index.jsp)Hid Login/Sign-Up button for client/staff"); 
+                    %>
 
-                <li class = "index-jsp-list-items"><a href="jsp/logoutAction.jsp" class = "Links jsp-linnks"> 
-		                <% //Display logout buttong only if user is logged in 
-		                if(sessionFname == null) 
-		                	System.out.println("(index.jsp)Logout button hidden");         
-				        else %> Logout 
-				</a></li>
-
-                <li style = "text-align: center;font-size: 2rem;">
-                <span class = "profile-name jsp-userName">         
-                <% //Display client button only if user is admin/staff 
-                if(sessionFname == null)
-                	System.out.println("(index.jsp)Username hidden\n");
-                else {
-                	if(position.equals(admin))
-                		out.print(firstName + "("+position+")");
-                			else if (position.equals(staff))
-                				out.print(firstName + "("+position+")");
-                				else
-                					out.print(firstName + "("+position+")");
-                	
-                	System.out.println("(index.jsp)Logged in as " + firstName + "\n");
-                	}
-                %>
-
-  				 </span></li>
-
+                    <% //Display admin portal link if user position = admin
+                        if(position.equals("Admin")) {
+                        %><li><a href="admin/admin.jsp" id="adminPortal" class="links jsp-links">Admin Portal</a>
+                        </li> <% }
+                        else System.out.println("(login.jsp) Admin Portal Link hidden. Not Admin\n");
+                    %>
+		                <% //Display logout link only if user is logged in 
+                            if(sessionFname == null) 
+                                System.out.println("(index.jsp)Logout button hidden");         
+                            else %><li class = "index-jsp-list-items">
+                                    <a href="jsp/logoutAction.jsp" class = "Links jsp-linnks">Logout</a>
+                                    </li>
+			
+				
+                <!--Display user name if logged in-->
+                <% if (firstName != null) { %>
+                    <li style = "text-align: center;font-size: 2rem;">
+                        <span class = "profile-name jsp-userName">         
+                        <% //Display client link only if user is admin/staff 
+                            if(sessionFname == null)
+                                System.out.println("(index.jsp)Username hidden\n");
+                            else {
+                                if(position.equals(admin))
+                                    out.print(firstName + "("+position+")");
+                                        else if (position.equals(staff))
+                                            out.print(firstName + "("+position+")");
+                                            else
+                                                out.print(firstName + "("+position+")");
+                                
+                                System.out.println("(index.jsp)Logged in as " + firstName + "\n");
+                                }
+                    %></span></li>
+                <% } %>
             </ul>
         </nav>
 
     </header>
+       
 
     <!--Content loaded using AJAX with JQuery-->
     <main data-aos="zoom-in"
