@@ -161,7 +161,7 @@
                 <tr>
                     <td>
                         <label for="position">Position: </label><br>
-                        <select name = "position" id = "position">
+                        <select name = "position" id = "position" class = "position">
                         	<option value = "Staff">Staff</option>
                         	<option value = "Mechanic">Mechanic</option>
                         </select>

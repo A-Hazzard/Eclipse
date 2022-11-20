@@ -2,10 +2,8 @@
 <%@ page import = "java.sql.*" %>
 
 <%
-
-	
-	System.out.println("(bookingAction.jsp) Form sent");
-		int clientID = request.getParameter("clientID");
+try{
+		int clientID = Integer.parseInt(request.getParameter("clientID_input").trim());
 		String firstName = request.getParameter("firstName");
 		String vehicleType = request.getParameter("selectVehicleType");
 		String plateNumber = request.getParameter("plateNumber");
@@ -22,10 +20,18 @@
 			
 			//Will write information to table in database
 			ps.executeUpdate();
-			
+			System.out.println("(bookingAction.jsp) Form sent");
+
 			response.sendRedirect("../index.jsp");
 		
-		
+
+}catch(NumberFormatException nfe){
+    System.out.println("NumberFormat Exception: invalid input string");
+
+}catch(SQLException sqlExp){
+	System.out.println(sqlExp);
+}
+	
     	
 	
 	

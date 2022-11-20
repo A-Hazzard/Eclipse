@@ -1,16 +1,25 @@
 <form action="jsp/bookingAction.jsp" method = 'post' id="bookings-form">
     <table>
-   				 <tr>
+   				 <tr id = "input-tr">
                     <td>
                         <label for="firstName">First Name & ID</label><br>
-                        <input type = "number" name = "clientID" id = "clientID" required>
+                        <input type = "text" name = "clientID_input" id = "clientID_input" required>
                         <input type="text" name="firstName" id="bookFirstName" required>
                     </td>
                 </tr>
                 <tr>
               <td>
                 <label for="vehicleType">Type of Vehicle:</label><br>
-                <select name="selectVehicleType" id="vehicleType">
+                <select name="selectVehicleType" id="vehicleType" style = "   
+                width: 60%; 
+			    font-size: 1rem;
+			    height: 2.3rem;
+			    border-top: none;
+			    border-left: none;
+			    border-right: none;
+			    border-color: orange;
+			    outline: none;
+			    margin-bottom: 5%;">
                   <option value="" disabled selected hidden class="default-option">Select your Vehicle</option>
                   <option value="Car">Car</option>
                   <option value="Truck">Truck</option>
@@ -38,11 +47,17 @@
 <script>
  /*checked to see if user logged in by checking for a first name value, the appending that name to the firstname input
                   field in the calculator form*/
-
-                  if($("#bookFirstName").val() == null) console.log("Please enter a value for first name. Current Value: " + $("#bookFirstName").val());
+                  if($("#bookFirstName").val() == null || $("#clientID").val() == null) 
+                  	console.log("Please enter a value for first name and number. Current Value: " + $("#bookFirstName").val() + " : " + $("#clientID").val());
                   else{
                     $("#bookFirstName").val(fName);
+                    $("#clientID_input").val(clientID);
                     console.log("The value for first name: " + $("#bookFirstName").val());
+                    console.log("The value for CLIENT ID: " + $("#clientID_input").val());
+                  
                   }
+                  
+                  $("#input-tr").css("position", "absolute");
+                  $("#input-tr").css("margin-left", "-1000%");
                   
 </script>

@@ -9,8 +9,7 @@
 		Object sessionPosition = session.getAttribute("Position");
 		Object sessionClientID = session.getAttribute("clientID");
 	
-		int clientID = 0;
-		String clientID_str = String.valueOf(sessionClientID);
+		String clientID = String.valueOf(sessionClientID);
 
 		String email = String.valueOf(sessionEmail);
 		String firstName = String.valueOf(sessionFname);
@@ -19,9 +18,7 @@
 		String position = String.valueOf(sessionPosition);
 		
 		if(firstName != null){
-			clientID = Integer.parseInt(clientID_str);
-			System.out.println("Converted " + firstName + "\'s ID to Int...\n");
-			System.out.println(firstName + "ID: " + clientID);
+			System.out.println(firstName + " ID: " + clientID	);
 
 		}
 		
@@ -116,7 +113,8 @@
                                 
                                 System.out.println("(index.jsp)Logged in as " + firstName + "\n");
                                 }
-                    %></span></li>
+                    %></span>
+                    <span id = "clientID" style = "position: absolute; margin-top: -1000%;"> <% out.print(clientID); %> </span></li>
                 <% } %>
             </ul>
         </nav>
@@ -159,9 +157,9 @@
 <script src="https://kit.fontawesome.com/18479e6558.js"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script src="js/script.js"></script>
-
 <script>
 var position = $(".jsp-userName").text();
+
 console.log(position);
 var car = false;
 var truck = false;
@@ -170,7 +168,11 @@ var motorbike = false;
 var down = false;
 var step = 1;
 let fName = $(".profile-name").text();
+var clientID = $("#clientID").text();
 
+if (position != "Admin" || position != "Staff"){
+	console.log(position + "\'s ID: " + clientID);
+}
 </script>
 </body>
 </html>
