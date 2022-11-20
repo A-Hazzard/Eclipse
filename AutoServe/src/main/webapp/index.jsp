@@ -7,15 +7,24 @@
 		Object sessionLname = session.getAttribute("LastName");
 		Object sessionPhone = session.getAttribute("Phone");
 		Object sessionPosition = session.getAttribute("Position");
+		Object sessionClientID = session.getAttribute("clientID");
+	
+		int clientID = 0;
+		String clientID_str = String.valueOf(sessionClientID);
 
-		
 		String email = String.valueOf(sessionEmail);
 		String firstName = String.valueOf(sessionFname);
 		String lastName = String.valueOf(sessionLname);
 		String phone = String.valueOf(sessionPhone);
 		String position = String.valueOf(sessionPosition);
+		
+		if(firstName != null){
+			clientID = Integer.parseInt(clientID_str);
+			System.out.println("Converted " + firstName + "\'s ID to Int...\n");
+			System.out.println(firstName + "ID: " + clientID);
 
-
+		}
+		
 		String staff = "Staff", admin = "Admin";
 		
 		if(sessionFname == null){

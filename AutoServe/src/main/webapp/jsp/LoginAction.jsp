@@ -14,10 +14,10 @@
 		 Connection con = ConnectionProvider.getConnection();
 			Statement state = con.createStatement(); 
 		 ResultSet result = state.executeQuery("select * from employee where email = '" + loginEmail +"' and password = '"+ loginPassword + "'" );
-		 int sessionClientID = 0;
+		 int sessionID = 0;
 		 while(result.next()){
 				//fetch the column name by their index from the person table
-			    sessionClientID = result.getInt(1);
+			    sessionID = result.getInt(1);
 				String sessionFname = result.getString(2);//colum firstname as an index of 2
 				String sessionLname = result.getString(3);
 				String sessionEmail = result.getString(4);
@@ -25,14 +25,14 @@
 				String sessionPosition = result.getString(7);
 			
 				//set attributes to share vairable to another file to access
-				session.setAttribute("clientID", sessionClientID);
+				session.setAttribute("clientID", sessionID);
 				session.setAttribute("FirstName",sessionFname);
 				session.setAttribute("LastName",sessionLname);
 				session.setAttribute("Email",sessionEmail);
 				session.setAttribute("Phone",sessionPhone);
 				session.setAttribute("Position", sessionPosition);
 		 }
-		 System.out.println("Your ID = " + sessionClientID);
+		 System.out.println("Your ID = " + sessionID);
 	      
 	      //redirects admin to jobs page
 	      response.sendRedirect("../admin/admin.jsp");
@@ -57,29 +57,34 @@
 				Statement state = con.createStatement();
 				ResultSet result = state.executeQuery("select * from employee where email = '" + loginEmail +"' and password = '"+ loginPassword + "'" );
 				
-				System.out.println("Client member Logged in(LoginAction.jsp)");
-				while(result.next()){
-				   	test = true;
-				   	
-				   	//fetch the column name by their index from the person table
-				    String sessionFname = result.getString(2);//colum firstname as an index of 2
-					String sessionLname = result.getString(3);
-					String sessionEmail = result.getString(4);
-					String sessionPhone = result.getString(5);
-					String sessionPosition = result.getString(7);
+				System.out.println("Staff member Logged in(LoginAction.jsp)");
+				 int sessionID = 0;
+				 while(result.next()){
+						//fetch the column name by their index from the person table
+					    			   	test = true;
 
-					//set attributes to share vairable to another file to access
-					session.setAttribute("FirstName",sessionFname);
-					session.setAttribute("LastName",sessionLname);
-					session.setAttribute("Email",sessionEmail);
-					session.setAttribute("Phone",sessionPhone);
-					session.setAttribute("Position",sessionPosition);
+						sessionID = result.getInt(1);
+						String sessionFname = result.getString(2);//colum firstname as an index of 2
+						String sessionLname = result.getString(3);
+						String sessionEmail = result.getString(4);
+						String sessionPhone = result.getString(5);
+						String sessionPosition = result.getString(7);
+					
+						//set attributes to share vairable to another file to access
+						session.setAttribute("clientID", sessionID);
+						session.setAttribute("FirstName",sessionFname);
+						session.setAttribute("LastName",sessionLname);
+						session.setAttribute("Email",sessionEmail);
+						session.setAttribute("Phone",sessionPhone);
+						session.setAttribute("Position", sessionPosition);
+						
+						//redirects client to home page
+					    response.sendRedirect("../index.jsp");
+				 }
+				 
+					
+				 System.out.println("Your ID = " + sessionID);
 
-					
-					
-					//redirects client to home page
-				    response.sendRedirect("../index.jsp");
-				}//end while
 			if(test == false) {
 				System.out.println("Incorrect username or password(LoginAction.jsp)");
 				response.sendRedirect("../index.jsp");
@@ -99,27 +104,33 @@
 			ResultSet result = state.executeQuery("select * from clients where email = '" + loginEmail +"' and password = '"+ loginPassword + "'" );
 			
 			System.out.println("Client member Logged in(LoginAction.jsp)");
-			while(result.next()){
-			   	test = true;
-			   	
-			   	//fetch the column name by their index from the person table
-			    String sessionFname = result.getString(2);//colum firstname as an index of 2
-				String sessionLname = result.getString(3);
-				String sessionEmail = result.getString(4);
-				String sessionPhone = result.getString(5);
-				String sessionPosition = result.getString(7);
+			 
+			 int sessionID = 0;
+			 while(result.next()){
+					//fetch the column name by their index from the person table
+				    test = true;
 
-				//set attributes to share vairable to another file to access
-				session.setAttribute("FirstName",sessionFname);
-				session.setAttribute("LastName",sessionLname);
-				session.setAttribute("Fmail",sessionEmail);
-				session.setAttribute("Phone",sessionPhone);
-				session.setAttribute("Position",sessionPosition);
-
+					sessionID = result.getInt(1);
+					String sessionFname = result.getString(2);//colum firstname as an index of 2
+					String sessionLname = result.getString(3);
+					String sessionEmail = result.getString(4);
+					String sessionPhone = result.getString(5);
+					String sessionPosition = result.getString(7);
 				
-				//redirects client to home page
-			    response.sendRedirect("../index.jsp");
-			}
+					//set attributes to share vairable to another file to access
+					session.setAttribute("clientID", sessionID);
+					session.setAttribute("FirstName",sessionFname);
+					session.setAttribute("LastName",sessionLname);
+					session.setAttribute("Email",sessionEmail);
+					session.setAttribute("Phone",sessionPhone);
+					session.setAttribute("Position", sessionPosition);
+					
+					//redirects client to home page
+				    response.sendRedirect("../index.jsp");
+			 }
+			 
+			 System.out.println("Your ID = " + sessionID);
+
 		if(test == false) {
 			System.out.println("Incorrect username or password(LoginAction.jsp)");
 			response.sendRedirect("../index.jsp");
