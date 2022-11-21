@@ -64,6 +64,8 @@
             <ul class="link-container">
                 
                 <li><a href="#" id="calculatorPage" class="links">Calculator</a></li>
+                                    <li><a href="pages/products.jsp" id="productsPage" class="links">Products</a></li>
+                
                 <li><a href="pages/jobsPages.html" id="jobsPage" class="links">Jobs</a></li>
                 <li><a href="#" id="aboutUsPage" class="links">About</a></li>
                 <li><a href="#" id = "servicesPage" class="links">Services</a></li> 
