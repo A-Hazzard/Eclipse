@@ -2,12 +2,19 @@
 
         <div id="CTA-container">
 
-            <div id="backgroundImage"></div>
+            <div id="backgroundImage">
+             <video autoplay muted loop>
+			  <source src = "pages/media/bannerVideo.mp4" type = "video/mp4"/>
+            <video  >
+            </div>
             
             <!--A MECHANIC YOU CAN TRUST CALL TO ACTION-->
             <div id="CTA">
                 <h2>A MECHANIC</h2>
-                <span>YOU CAN TRUST</span>
+                <span>YOU CAN TRUST</span> <br>
+                <p style = "text-align: center;"><button data-aos="zoom-in"  data-aos-delay="10"
+																	        data-aos-duration="500"
+																	        data-aos-easing="ease-in-out"type = "button" id = "CTA-btn" value = "Register Your Vehicle!">Register Your Vehicle!</button></p>
             </div><!--END OF CTA-->
         
             <div id="flex-banner">
@@ -31,3 +38,15 @@
 
         </div><!--END OF CTA CONTAINER-->
 </div>
+<script>
+let CTA_btn = $("#CTA-btn");
+
+	CTA_btn.hover(function(){
+		$(this).toggleClass("buttonPadding", function(){
+			console.log("toggled class");
+			
+		});
+			
+		
+	});
+</script>

@@ -64,7 +64,7 @@ border-right: none;
     .navbar{
         width: 45%;
         flex: 1;//flex used to help center navbar
-        
+        z-index: 2;
             ul{
                 padding-top: 3%;
             }
@@ -146,6 +146,8 @@ border-right: none;
                             font-family: $headerFont;
                         }
                     }
+
+                  
                 }
         
             }
@@ -171,7 +173,7 @@ border-right: none;
 
 }
 #index-main, #admin-main {
- 
+
 
 
     //padding centers items
@@ -190,11 +192,11 @@ border-right: none;
         }
     #backgroundImage{
         //darkens image
-        background-image: 
+        /*background-image: 
         linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url("../pages/media/homeBackgroundImage.png");
         background-repeat: no-repeat;
         background-size: cover;
-        background-position: center;
+       */ background-position: center;
         opacity: 92%;
         height: 100vh;
         
@@ -213,7 +215,37 @@ border-right: none;
                 text-align: center;
                 font-family: $headerFont;
             }
+
+            button{
+                padding: 3%;
+                color: black;
+                font-size: 1rem;
+                font-style: bold;
+                font-family: $headerFont;
+                background-color: white;
+                border: none;
+                border-radius: .5rem;
+            
+            }
+
+            .buttonPadding{
+                animation-name: pad;
+                animation-duration: .4s;
+                animation-timing-function: ease-in-out;  // ease-in;
+                animation-fill-mode: forwards;
+                background-color: rgb(237, 237, 237);
+            }
+
+            @keyframes pad {
+                from{
+                    padding: 3%;
+                }
+                to{
+                    padding: 4%;
+                }
+
         }//end CTA
+    }
 
         #flex-banner{
             display: flex;
@@ -945,13 +977,7 @@ footer{
         box-sizing: border-box;
     }
     #background-image{
-        background-image: 
-        linear-gradient(rgba(0, 0, 0, 0.66),rgba(0, 0, 0, 0.605)) , url("https://www.assetworks.com/wp-content/uploads/2018/08/iStock-693170166.jpg");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        height: 100vh;
-        position: relative;
+       
         #cta{
             margin-top: 20%;
             margin-left: 20%;
@@ -1183,6 +1209,27 @@ footer{
     }
 }
 
+#index{
+    background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.66),rgba(0, 0, 0, 0.605)) , url("https://www.assetworks.com/wp-content/uploads/2018/08/iStock-693170166.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    video {
+        object-fit: cover;
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        z-index: 1;
+        margin-left: -3%;
+        margin-top: 0%;
+      }
+}
+
 
 #client-main{
     height: 100vh;
@@ -1270,3 +1317,5 @@ footer{
         }//end login form
     
 }
+
+

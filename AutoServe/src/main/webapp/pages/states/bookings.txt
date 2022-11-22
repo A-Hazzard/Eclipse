@@ -1,4 +1,4 @@
-<form action="jsp/bookingAction.jsp" method = 'post' id="bookings-form">
+<form action="jsp/bookingAction.jsp" method = 'post' id="bookings-form" onsubmit="submitForm(event)">
     <table>
    				 <tr id = "input-tr">
                     <td>
@@ -38,13 +38,14 @@
                 </tr>
         <tr>
             <td>
-                <input type = "submit" value="Book Now!" />
+                <input type = "submit" value="Book Now!" id = "bookNow-btn" />
             </td>
         </tr>
     </table>
 </form>
 
 <script>
+var bookNowBtn = $("#bookNow-btn");
  /*checked to see if user logged in by checking for a first name value, the appending that name to the firstname input
                   field in the calculator form*/
                   if($("#bookFirstName").val() == null || $("#clientID").val() == null) 
@@ -59,5 +60,43 @@
                   
                   $("#input-tr").css("position", "absolute");
                   $("#input-tr").css("margin-left", "-1000%");
+                  
+                  $(".bookNow-btn").on('click', function(){
+                  	if(firstName === null){
+                  	alert("Please login to register your vehicle");
+                  	}
+                  });
+                  
+      
+  					
+  					if(userFirstName == "null") {
+  						disableButton()
+  						console.log("Please login/sign-up to register your vehicle");
+  						bookNowBtn.val("Please login/sign-up to register your vehicle");
+  						
+  						}
+  						if(userPosition == "Admin" || userPosition == "Staff"){
+	  						disableButton();
+	  						console.log("To prevent database conflicts. Please register client vehicles via the DBMS");
+	  						bookNowBtn.val("To prevent database conflicts. Please register client vehicles via the DBMS");
+	  						bookNowBtn.css("padding-top", "5%");
+	  						bookNowBtn.css("padding-bottom", "5%");
+	  						bookNowBtn.css("padding-left", "1%");
+	  						bookNowBtn.css("padding-right", "1%");
+	  						bookNowBtn.css("width", "110%");
+	  						bookNowBtn.css("margin-left", "-6%");
+  						
+  						
+  						}
+  						function disableButton(){
+  						$("#vehicleType, #plateNum, #bookNow-btn").prop("disabled", true);
+  					
+	  						bookNowBtn.prop("disabled", true);
+	  						bookNowBtn.css("opacity", "50%");
+	  						bookNowBtn.css("background-color", "grey");
+	  						bookNowBtn.css("cursor", "unset");
+	  						
+	  						
+  						}
                   
 </script>

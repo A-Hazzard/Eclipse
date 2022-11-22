@@ -46,6 +46,13 @@
     <title>Auto Serve ADMIN</title>
 </head>
 <body>
+<!-- Accessing java variables -->
+	<span id = "userEmail" class = "getVariables"><% out.print(email); %></span>
+	<span id = "userFirstName" class =  getVariables><% out.print(firstName); %></span>
+	<span id = "userLastName" class =  getVariables><% out.print(lastName); %></span>
+	<span id = "userPhone" class =  getVariables><% out.print(phone); %></span>
+	<span id = "userPosition" class = getVariables><% out.print(position); %></span>
+	<!-- --------------------------- -->
    <!--Horizontal Header of the web page-->
     <header class="header "><!--FLEXBOX-->
 
@@ -154,18 +161,86 @@
 <script src="admin.js"></script>
 
 <script>
-//stores user position in variable(client/staff/admin)
-var position = $(".jsp-userName").text();
-console.log(position);
+
 var car = false;
 var truck = false;
 var van = false;
 var motorbike = false;
 var down = false;
-
 var step = 1;
+var clientID = $("#clientID").text();
+var fName = $(".profile-name").text();
+
+var userEmail = $("#userEmail").text();
+var userFirstName = document.getElementById("userFirstName").innerHTML;
+var userLastName = document.getElementById("userLastName").innerHTML;
+var userFullName = userFirstName.concat(userLastName);
+var userPhone = $("#userPhone").text();
+var userPosition = $("#userPosition").text();
+
+var fNameContainer_text = $(".profile-name-container").text();
+var getVariables = $(".getVariables");
+var fNameContainer = $(".profile-name-container");
+var nameStr = parseInt(userFirstName.length);
 
 
+console.log("Position: " + userPosition);
+getVariables.css("position", "absolute");
+getVariables.css("margin-top", "-100%");
+
+
+if (userPosition != "Admin" || userPosition != "Staff"){
+	console.log(userPosition + "\'s ID: " + clientID);
+}
+
+if(userFullName != 4){
+	if(userFullName != "nullnull") setStyle();
+    console.log("Logged in. Length: " + fNameContainer_text.length);
+
+}
+else if(userFullName.length = 4){
+    unsetStyle();
+	console.log("Logged out now. Length: " + fNameContainer_text.length);
+}
+
+
+
+function setStyle(){
+    fNameContainer.css("border", "1px solid black");
+    fNameContainer.css("border-radius", "50%");
+    fNameContainer.css("margin-top", "-2.5%");
+    fNameContainer.css("width", "30px");
+    fNameContainer.css("height", "30px");
+    fNameContainer.css("text-align", "center");
+    fNameContainer.css("display", "flex");
+    fNameContainer.css("align-items", "center");
+    fNameContainer.css("justify-content", "center");
+	
+	if(userPosition == "Staff") {
+		console.log("staff styling now");
+		fNameContainer.css("margin-left", "70%");
+	}
+	else if (userPosition == "Client"){
+		console.log("Client styling now");
+		fNameContainer.css("margin-left", "51%");
+	}
+	
+}
+
+function unsetStyle(){
+	console.log("unsetting");
+    fNameContainer.css("border", "none");
+    fNameContainer.css("color", "red");
+    fNameContainer.css("border-radius", "unset");
+    fNameContainer.css("margin-left", "unset");
+    fNameContainer.css("margin-top", "unset");
+    fNameContainer.css("width","unset");
+    fNameContainer.css("height", "unset");
+    fNameContainer.css("text-align", "unset");
+    fNameContainer.css("display", "unset");
+    fNameContainer.css("align-items", "unset");
+    fNameContainer.css("justify-content", "unset");
+}
 </script>
 
 

@@ -67,12 +67,12 @@
 
 
   //JQUERY CODE
-if(position.includes("Admin"))
+if(userPosition = "Admin")
     $("#defaultImg").attr("src", "../pages/media/carImg.png")
  else
  	$("#defaultImg").attr("src", "pages/media/carImg.png")
   //loads user interaction items 
-	if(position.includes("Admin")) {
+	if(userPosition = "Admin") {
 	                    $("#input-container").load("../pages/states/vehicleInfo.txt").fadeIn("slow");
 	                console.log("Logged in as Admin, loaded vehicle information");
 	                }
@@ -133,7 +133,7 @@ if(position.includes("Admin"))
                 van = false;
                 motorbike = false;
                 
-                if(position.includes("Admin")) {
+                if(userPosition = "Admin") {
 	                $("#input-container").attr("src", "../pages/states/vehicleInfo.txt");
 	                $("#vehicleDisplay").attr("src", "../pages/media/carImg.txt");
 				}else{
@@ -152,16 +152,19 @@ if(position.includes("Admin"))
         console.log("Step " + step);
         if(step === 2){
             if (car == true){
-                $("#input-container").hide().load("pages/states/servicePrices/carPrices.txt").fadeIn("slow");
-                if(position.includes("Admin")) {
+               
+                if(userPosition = "Admin") {
                 	$("#input-container").hide().load("../pages/states/servicePrices/carPrices.txt").fadeIn("slow");
                 	
-                }
+                }else{
+                 $("#input-container").hide().load("pages/states/servicePrices/carPrices.txt").fadeIn("slow");
+                 }
+                 
                 console.log("loaded car services");
             }
 
                 else if (truck == true){
-                if(position.includes("Admin")) {
+                if(userPosition = "Admin") {
                		$("#input-container").hide().load("../pages/states/servicePrices/truckPrices.txt").fadeIn("slow");
                 
                 }
@@ -173,8 +176,8 @@ if(position.includes("Admin"))
                 }
 
                 else if (van == true){
-                if(position.includes("Admin")) {
-                	                $("#input-container").hide().load("../pages/states/servicePrices/vanPrices.txt").fadeIn("slow");
+                if(userPosition = "Admin") {
+                	$("#input-container").hide().load("../pages/states/servicePrices/vanPrices.txt").fadeIn("slow");
                 	
                 }
                 
@@ -186,7 +189,7 @@ if(position.includes("Admin"))
                 }
 
                 else if (motorbike == true){
-                if(position.includes("Admin")) 
+                if(userPosition = "Admin") 
                     $("#input-container").hide().load("../pages/states/servicePrices/bikePrices.txt").fadeIn("slow");
                 else
                 	$("#input-container").hide().load("pages/states/servicePrices/bikePrices.txt").fadeIn("slow");
@@ -239,12 +242,11 @@ if(position.includes("Admin"))
             }//end else if
 
         else if(step === 3){
-            if(position.includes("Admin")) 
+            if(userPosition = "Admin") 
                    $("#input-container").hide().load("../pages/states/bookings.txt").fadeIn("slow");
                 else
                 	$("#input-container").hide().load("pages/states/bookings.txt").fadeIn("slow");
 
-                 
 
   
 				$("footer").css("margin-top","30%");
