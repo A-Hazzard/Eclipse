@@ -225,7 +225,21 @@ border-right: none;
                 background-color: white;
                 border: none;
                 border-radius: .5rem;
-            
+                
+                    animation-name: pad_out;
+                    animation-duration: .4s;
+                    animation-timing-function: ease-out;  // ease-in;
+                    animation-fill-mode: forwards;
+
+            }
+
+            @keyframes pad_out {
+                from{
+                    padding: 5%;
+                }
+                to{
+                    padding: 3%;
+                }
             }
 
             .buttonPadding{

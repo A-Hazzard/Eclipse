@@ -190,6 +190,30 @@ input[type=submit], button {
   background-color: white;
   border: none;
   border-radius: 0.5rem;
+  -webkit-animation-name: pad_out;
+          animation-name: pad_out;
+  -webkit-animation-duration: 0.4s;
+          animation-duration: 0.4s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+@-webkit-keyframes pad_out {
+  from {
+    padding: 5%;
+  }
+  to {
+    padding: 3%;
+  }
+}
+@keyframes pad_out {
+  from {
+    padding: 5%;
+  }
+  to {
+    padding: 3%;
+  }
 }
 #index-main #CTA-container #CTA .buttonPadding, #admin-main #CTA-container #CTA .buttonPadding {
   -webkit-animation-name: pad;

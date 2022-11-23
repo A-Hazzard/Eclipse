@@ -7,7 +7,7 @@
             data-aos-easing="ease-in-out"
             data-aos-mirror="true"
             data-aos-once="false"
-            data-aos-anchor-placement="top" id="background-image">
+            data-aos-anchor-placement="top" id="background-image">z
             <div id="cta">
                 <h2>Quality Service</h2> 
                 <p>Experience the work of some of <i>the best</i> auto mechanics <br>and crafts men across Trinidad and Tobago.</p>

@@ -246,7 +246,13 @@ function unsetStyle(){
     fNameContainer.css("display", "unset");
     fNameContainer.css("align-items", "unset");
     fNameContainer.css("justify-content", "unset");
+
+
+
+    //TO DO
+    //FIX ALL PAGES
 }
 </script>
 </body>
 </html>
+
