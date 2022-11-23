@@ -178,6 +178,43 @@ input[type=submit], button {
   text-align: center;
   font-family: "Segoe UI";
 }
+#index-main #CTA-container #CTA button, #admin-main #CTA-container #CTA button {
+  padding: 3%;
+  color: black;
+  font-size: 1rem;
+  font-style: bold;
+  font-family: "Segoe UI";
+  background-color: white;
+  border: none;
+  border-radius: 0.5rem;
+}
+#index-main #CTA-container #CTA .buttonPadding, #admin-main #CTA-container #CTA .buttonPadding {
+  -webkit-animation-name: pad;
+          animation-name: pad;
+  -webkit-animation-duration: 0.4s;
+          animation-duration: 0.4s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  background-color: rgb(237, 237, 237);
+}
+@-webkit-keyframes pad {
+  from {
+    padding: 3%;
+  }
+  to {
+    padding: 4%;
+  }
+}
+@keyframes pad {
+  from {
+    padding: 3%;
+  }
+  to {
+    padding: 4%;
+  }
+}
 #index-main #CTA-container #flex-banner, #admin-main #CTA-container #flex-banner {
   display: flex;
   width: 70%;
