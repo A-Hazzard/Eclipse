@@ -43,8 +43,14 @@ $("#footer-links").load("../pages/states/footer/carLinks.txt");
 
                 //loads memberPage on click
                 $("#loginPage").on('click', function(){
-	
-                    $("main").hide().load("../pages/states/loginPage.txt").fadeIn("slow");
+					if(userPosition != "Admin"){
+						$("main").hide().load("../pages/states/adminLoginPage.txt").fadeIn("slow");
+						console.log("Loaded admin login page");
+                    }
+                    else{
+                      $("main").hide().load("../pages/states/loginPage.txt").fadeIn("slow");
+                    	console.log("Loaded user login page")
+					}
                 })
 
                     //loads obutUsPage on click

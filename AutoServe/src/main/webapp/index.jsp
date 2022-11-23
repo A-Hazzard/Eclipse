@@ -54,10 +54,10 @@
 <body>
 	<!-- Accessing java variables -->
 	<span id = "userEmail" class = "getVariables"><% out.print(email); %></span>
-	<span id = "userFirstName" class =  getVariables><% out.print(firstName); %></span>
-	<span id = "userLastName" class =  getVariables><% out.print(lastName); %></span>
-	<span id = "userPhone" class =  getVariables><% out.print(phone); %></span>
-	<span id = "userPosition" class = getVariables><% out.print(position); %></span>
+	<span id = "userFirstName" class =  "getVariables"><% out.print(firstName); %></span>
+	<span id = "userLastName" class =  "getVariables"><% out.print(lastName); %></span>
+	<span id = "userPhone" class =  "getVariables"><% out.print(phone); %></span>
+	<span id = "userPosition" class = "getVariables"><% out.print(position); %></span>
 	<!-- --------------------------- -->
     <!--Horizontal Header of the web page-->
     <header class="header "><!--FLEXBOX-->
@@ -113,7 +113,7 @@
                                 System.out.println("(index.jsp)Username hidden\n");
                             else {
                                 if(position.equals(admin))
-                                    out.print(firstName + "("+position+")");                 
+                                    out.print(firstName.charAt(0));
                                             else
                                                 out.print(firstName.charAt(0));
                                 
@@ -223,6 +223,10 @@ function setStyle(){
 	if(userPosition == "Staff") {
 		console.log("staff styling now");
 		fNameContainer.css("margin-left", "70%");
+	}
+	else if(userPosition == "Admin") {
+		console.log("Admin styling now");
+		fNameContainer.css("margin-left", "75%");
 	}
 	else if (userPosition == "Client"){
 		console.log("Client styling now");

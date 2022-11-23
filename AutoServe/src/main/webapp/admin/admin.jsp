@@ -1,29 +1,36 @@
 <% 
 
-		//getting credentail attributes from loginAction.jsp
-		Object sessionEmail = session.getAttribute("Email");
-		Object sessionFname = session.getAttribute("FirstName");
-		Object sessionLname = session.getAttribute("LastName");
-		Object sessionPhone = session.getAttribute("Phone");
-		Object sessionPosition = session.getAttribute("Position");
+	
+	//getting credentail attributes from loginAction.jsp
+	Object sessionEmail = session.getAttribute("Email");
+	Object sessionFname = session.getAttribute("FirstName");
+	Object sessionLname = session.getAttribute("LastName");
+	Object sessionPhone = session.getAttribute("Phone");
+	Object sessionPosition = session.getAttribute("Position");
+	Object sessionUserID = session.getAttribute("userID");
+	
+	String userID = String.valueOf(sessionUserID);
+	
+	String email = String.valueOf(sessionEmail);
+	String firstName = String.valueOf(sessionFname);
+	String lastName = String.valueOf(sessionLname);
+	String phone = String.valueOf(sessionPhone);
+	String position = String.valueOf(sessionPosition);
+	
+	if(firstName != null){
+		System.out.println(firstName + " ID: " + userID);
+	}
+	
+	String staff = "Staff", admin = "Admin";
+	
+	if(sessionFname == null){
+	    System.out.println("(index.jsp)Username hidden\n");
+	    System.out.println("(index.jsp)Not logged in\n");
+	}else{
+	   
+	    System.out.println("(index.jsp)Logged in as " + sessionFname + "\n");
+	}
 
-		
-		String email = String.valueOf(sessionEmail);
-		String firstName = String.valueOf(sessionFname);
-		String lastName = String.valueOf(sessionLname);
-		String phone = String.valueOf(sessionPhone);
-		String position = String.valueOf(sessionPosition);
-
-
-		String staff = "Staff", admin = "Admin";
-		
-		if(sessionFname == null){
-            System.out.println("(index.jsp)Username hidden\n");
-            System.out.println("(index.jsp)Not logged in\n");
-        }else{
-        
-            System.out.println("(index.jsp)Logged in as " + sessionFname + "\n");
-        }
 		
 %>
 <head>
@@ -48,10 +55,10 @@
 <body>
 <!-- Accessing java variables -->
 	<span id = "userEmail" class = "getVariables"><% out.print(email); %></span>
-	<span id = "userFirstName" class =  getVariables><% out.print(firstName); %></span>
-	<span id = "userLastName" class =  getVariables><% out.print(lastName); %></span>
-	<span id = "userPhone" class =  getVariables><% out.print(phone); %></span>
-	<span id = "userPosition" class = getVariables><% out.print(position); %></span>
+	<span id = "userFirstName" class =  "getVariables"><% out.print(firstName); %></span>
+	<span id = "userLastName" class =  "getVariables"><% out.print(lastName); %></span>
+	<span id = "userPhone" class =  "getVariables"><% out.print(phone); %></span>
+	<span id = "userPosition" class = "getVariables"><% out.print(position); %></span>
    <!--Horizontal Header of the web page-->
     <header class="header "><!--FLEXBOX-->
 
@@ -80,7 +87,6 @@
                             </li> <% }
                         else System.out.println("(index.jsp)Hid Login/Sign-Up button for client/staff"); 
                     %>
-
                     <% //Display admin portal link if user position = admin
                         if(position.equals("Admin")) {
                         %><li><a href="admin/admin.jsp" id="adminPortal" class="links jsp-links">Admin Portal</a>
@@ -90,9 +96,11 @@
 		                <% //Display logout link only if user is logged in 
                             if(sessionFname == null) 
                                 System.out.println("(index.jsp)Logout button hidden");         
-                            else %><li class = "index-jsp-list-items">
-                                    <a href="../jsp/logoutAction.jsp" class = "Links jsp-linnks">Logout</a>
+                            else { %><li class = "index-jsp-list-items">
+                                    <a href="../jsp/logoutAction.jsp" class = "Links jsp-linnks logout">Logout</a>
                                     </li>
+								
+								<% } %>
 			
 				
                 <!--Display user name if logged in-->
@@ -103,12 +111,10 @@
                             if(sessionFname == null)
                                 System.out.println("(index.jsp)Username hidden\n");
                             else {
-                                if(position.equals(admin))
-                                    out.print(firstName + "("+position+")");
-                                        else if (position.equals(staff))
-                                            out.print(firstName + "("+position+")");
-                                            else
-                                                out.print(firstName + "("+position+")");
+                            	 if(position.equals(admin))
+                                     out.print(firstName + "("+position+")");                 
+                                             else
+                                                 out.print(firstName.charAt(0));
                                 
                                 System.out.println("(index.jsp)Logged in as " + firstName + "\n");
                                 }
@@ -130,7 +136,14 @@
         data-aos-once="false"
         data-aos-anchor-placement="top" id = "admin-main" style = "height: 100vh;">
         <br><br><br><br>
-        <h2 style = "text-align: center;">ADMIN PAGE, COMING SOON...</h2>
+        <% 
+        	if (position.equals("Admin")){
+        		System.out.println("You have admin privilage to admin page");
+        	%> <h2 style = "text-align: center;">ADMIN PAGE, COMING SOON...</h2>
+       <% } if (position.equals("Staff") || position.equals("Client") || position.equals("null"))
+    	   System.out.println("Sorry but you do not have admin privilage to view this page");
+       %>  <h2 style = "text-align: center;">Sorry but you do not have Admin privilege to view this page...<br>LOGIN AS ADMIN</h2>
+
     </main>
     
     <br><br>
@@ -171,7 +184,7 @@ var down = false;
 var step = 1;
 
 
-+var clientID = $("#clientID").text();
+var userID = $("#userID").text();
 var fName = $(".profile-name").text();
 
 var userEmail = $("#userEmail").text();
@@ -193,7 +206,7 @@ getVariables.css("margin-top", "-100%");
 
 
 if (userPosition != "Admin" || userPosition != "Staff"){
-	console.log(userPosition + "\'s ID: " + clientID);
+	console.log(userPosition + "\'s ID: " + userID);
 }
 
 if(userFullName != 4){
