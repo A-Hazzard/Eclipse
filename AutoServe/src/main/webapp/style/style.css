@@ -51,7 +51,6 @@ input[type=submit], button {
 .header .navbar {
   width: 45%;
   flex: 1;
-  z-index: 2;
 }
 .header .navbar ul {
   padding-top: 3%;
@@ -161,11 +160,9 @@ input[type=submit], button {
   left: 0;
 }
 #index-main #CTA-container #backgroundImage, #admin-main #CTA-container #backgroundImage {
-  /*background-image: 
-   linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url("../pages/media/homeBackgroundImage.png");
-   background-repeat: no-repeat;
-   background-size: cover;
-  */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)), url("../pages/media/homeBackgroundImage.png");
+  background-repeat: no-repeat;
+  background-size: cover;
   background-position: center;
   opacity: 92%;
   height: 100vh;
@@ -180,43 +177,6 @@ input[type=submit], button {
   font-size: 5rem;
   text-align: center;
   font-family: "Segoe UI";
-}
-#index-main #CTA-container #CTA button, #admin-main #CTA-container #CTA button {
-  padding: 3%;
-  color: black;
-  font-size: 1rem;
-  font-style: bold;
-  font-family: "Segoe UI";
-  background-color: white;
-  border: none;
-  border-radius: 0.5rem;
-}
-#index-main #CTA-container #CTA .buttonPadding, #admin-main #CTA-container #CTA .buttonPadding {
-  -webkit-animation-name: pad;
-          animation-name: pad;
-  -webkit-animation-duration: 0.4s;
-          animation-duration: 0.4s;
-  -webkit-animation-timing-function: ease-in-out;
-          animation-timing-function: ease-in-out;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  background-color: rgb(237, 237, 237);
-}
-@-webkit-keyframes pad {
-  from {
-    padding: 3%;
-  }
-  to {
-    padding: 4%;
-  }
-}
-@keyframes pad {
-  from {
-    padding: 3%;
-  }
-  to {
-    padding: 4%;
-  }
 }
 #index-main #CTA-container #flex-banner, #admin-main #CTA-container #flex-banner {
   display: flex;
@@ -813,6 +773,14 @@ footer #flex-container #footer-links #wrapper span a {
 #services-main-container * {
   box-sizing: border-box;
 }
+#services-main-container #background-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.66), rgba(0, 0, 0, 0.605)), url("https://www.assetworks.com/wp-content/uploads/2018/08/iStock-693170166.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  position: relative;
+}
 #services-main-container #background-image #cta {
   margin-top: 20%;
   margin-left: 20%;
@@ -966,27 +934,6 @@ footer #flex-container #footer-links #wrapper span a {
 #services-main-container #information .cont4 .information-text .adjectives {
   font-size: 25px;
   line-height: 30px;
-}
-
-#index {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.66), rgba(0, 0, 0, 0.605)), url("https://www.assetworks.com/wp-content/uploads/2018/08/iStock-693170166.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
-  width: 100vw;
-  position: relative;
-}
-#index video {
-  -o-object-fit: cover;
-     object-fit: cover;
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  z-index: 1;
-  margin-left: -3%;
-  margin-top: 0%;
 }
 
 #client-main {

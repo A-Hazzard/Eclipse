@@ -18,7 +18,7 @@
 		String position = String.valueOf(sessionPosition);
 		
 		if(firstName != null){
-			System.out.println(firstName + " ID: " + clientID);
+			System.out.println(firstName + " ID: " + clientID	);
 
 		}
 		
@@ -51,16 +51,8 @@
     </style>
     
     <title>Auto Serve Inc.</title>
-    
 </head>
 <body>
-	<!-- Accessing java variables -->
-	<span id = "userEmail" class = "getVariables"><% out.print(email); %></span>
-	<span id = "userFirstName" class =  getVariables><% out.print(firstName); %></span>
-	<span id = "userLastName" class =  getVariables><% out.print(lastName); %></span>
-	<span id = "userPhone" class =  getVariables><% out.print(phone); %></span>
-	<span id = "userPosition" class = getVariables><% out.print(position); %></span>
-	<!-- --------------------------- -->
     <!--Horizontal Header of the web page-->
     <header class="header "><!--FLEXBOX-->
 
@@ -72,8 +64,7 @@
             <ul class="link-container">
                 
                 <li><a href="#" id="calculatorPage" class="links">Calculator</a></li>
-                                    <li><a href="pages/products.jsp" id="productsPage" class="links">Products</a></li>
-                
+                 <li><a href="pages/products.jsp" id="productsPage" class="links">Products</a></li>
                 <li><a href="pages/jobsPages.html" id="jobsPage" class="links">Jobs</a></li>
                 <li><a href="#" id="aboutUsPage" class="links">About</a></li>
                 <li><a href="#" id = "servicesPage" class="links">Services</a></li> 
@@ -102,23 +93,24 @@
                             if(sessionFname == null) 
                                 System.out.println("(index.jsp)Logout button hidden");         
                             else { %><li class = "index-jsp-list-items">
-                                    <a href="jsp/logoutAction.jsp" class = "Links jsp-linnks logout">Logout</a>
+                                    <a href="jsp/logoutAction.jsp" class = "Links jsp-linnks">Logout</a>
                                     </li>
 								
 								<% } %>
                 <!--Display user name if logged in-->
-                <% 
-                if (firstName != null) { %>
-                    <li class = "profile-name-container">
+                <% if (firstName != null) { %>
+                    <li style = "text-align: center;font-size: 2rem;">
                         <span class = "profile-name jsp-userName">         
                         <% //Display client link only if user is admin/staff 
                             if(sessionFname == null)
                                 System.out.println("(index.jsp)Username hidden\n");
                             else {
                                 if(position.equals(admin))
-                                    out.print(firstName + "("+position+")");                 
+                                    out.print(firstName + "("+position+")");
+                                        else if (position.equals(staff))
+                                            out.print(firstName + "("+position+")");
                                             else
-                                                out.print(firstName.charAt(0));
+                                                out.print(firstName);
                                 
                                 System.out.println("(index.jsp)Logged in as " + firstName + "\n");
                                 }
@@ -139,7 +131,7 @@
         data-aos-easing="ease-in-out"
         data-aos-mirror="true"
         data-aos-once="false"
-        data-aos-anchor-placement="top" id = "index">
+        data-aos-anchor-placement="top">
     </main>
     
     <br><br>
@@ -167,85 +159,20 @@
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script src="js/script.js"></script>
 <script>
+var position = $(".jsp-userName").text();
 
+console.log(position);
 var car = false;
 var truck = false;
 var van = false;
 var motorbike = false;
 var down = false;
 var step = 1;
+let fName = $(".profile-name").text();
 var clientID = $("#clientID").text();
-var fName = $(".profile-name").text();
 
-var userEmail = $("#userEmail").text();
-var userFirstName = document.getElementById("userFirstName").innerHTML;
-var userLastName = document.getElementById("userLastName").innerHTML;
-var userFullName = userFirstName.concat(userLastName);
-var userPhone = $("#userPhone").text();
-var userPosition = $("#userPosition").text();
-
-var fNameContainer_text = $(".profile-name-container").text();
-var getVariables = $(".getVariables");
-var fNameContainer = $(".profile-name-container");
-var nameStr = parseInt(userFirstName.length);
-
-
-console.log("Position: " + userPosition);
-getVariables.css("position", "absolute");
-getVariables.css("margin-top", "-100%");
-
-
-if (userPosition != "Admin" || userPosition != "Staff"){
-	console.log(userPosition + "\'s ID: " + clientID);
-}
-
-if(userFullName != 4){
-	if(userFullName != "nullnull") setStyle();
-    console.log("Logged in. Length: " + fNameContainer_text.length);
-
-}
-else if(userFullName.length = 4){
-    unsetStyle();
-	console.log("Logged out now. Length: " + fNameContainer_text.length);
-}
-
-
-
-function setStyle(){
-    fNameContainer.css("border", "1px solid black");
-    fNameContainer.css("border-radius", "50%");
-    fNameContainer.css("margin-top", "-2.5%");
-    fNameContainer.css("width", "30px");
-    fNameContainer.css("height", "30px");
-    fNameContainer.css("text-align", "center");
-    fNameContainer.css("display", "flex");
-    fNameContainer.css("align-items", "center");
-    fNameContainer.css("justify-content", "center");
-	
-	if(userPosition == "Staff") {
-		console.log("staff styling now");
-		fNameContainer.css("margin-left", "70%");
-	}
-	else if (userPosition == "Client"){
-		console.log("Client styling now");
-		fNameContainer.css("margin-left", "51%");
-	}
-	
-}
-
-function unsetStyle(){
-	console.log("unsetting");
-    fNameContainer.css("border", "none");
-    fNameContainer.css("color", "red");
-    fNameContainer.css("border-radius", "unset");
-    fNameContainer.css("margin-left", "unset");
-    fNameContainer.css("margin-top", "unset");
-    fNameContainer.css("width","unset");
-    fNameContainer.css("height", "unset");
-    fNameContainer.css("text-align", "unset");
-    fNameContainer.css("display", "unset");
-    fNameContainer.css("align-items", "unset");
-    fNameContainer.css("justify-content", "unset");
+if (position != "Admin" || position != "Staff"){
+	console.log(position + "\'s ID: " + clientID);
 }
 </script>
 </body>
