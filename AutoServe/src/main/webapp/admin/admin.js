@@ -1,5 +1,6 @@
 $(function(){
-	
+	/*$("header").on('click', function() { $(this).slideToggle("slow");
+console.log("slide")})*/
 	let viewPwd = false;
 
             $("#viewPwd").on('click', function(){
