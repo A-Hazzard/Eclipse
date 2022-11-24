@@ -24,7 +24,7 @@
             <a href="logout.jsp">Logout <i class='fas fa-share-square'></i></a>
             <div class="search-container">
              
-            <form action = "serachHome.jsp" method = "post">
+            <form action = "searchHome.jsp" method = "post">
             	<input type = "text" name ="search" placeholder = "Search" required>
             	<button type = "submit"> Search <i class='fa fa-search'></i></button>
             </form>	 
