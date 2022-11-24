@@ -60,10 +60,10 @@ if("invalid".equals(message))
 		while(result.next()){
 %>
           <tr>
-            <td><%=result.getString(1)%></td>
+            <td name = "id"><%=result.getString(1)%></td>
             <td><%=result.getString(2)%></td>
             <td><%=result.getString(3)%></td>
-            <td><i class="fa fa-inr"></i><%=result.getString(4) %> </i></td>
+            <td><i class="fa fa-inr"><%=result.getString(4) %> </i></td>
             <td><a href="addToCartAction.jsp?=<%=result.getString(1)%>">Add to cart <i class='fas fa-cart-plus'></i></a></td>
           </tr>
 <%
