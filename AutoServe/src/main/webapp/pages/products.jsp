@@ -141,7 +141,8 @@
         data-aos-mirror="true"
         data-aos-once="false"
         data-aos-anchor-placement="top" 
-        id = "products">Products Page</main>
+        id = "products">
+        <center><h1>Products Page<h1></center></main>
     
     <br><br>
     
