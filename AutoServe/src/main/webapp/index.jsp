@@ -7,9 +7,9 @@
 		Object sessionLname = session.getAttribute("LastName");
 		Object sessionPhone = session.getAttribute("Phone");
 		Object sessionPosition = session.getAttribute("Position");
-		Object sessionClientID = session.getAttribute("clientID");
+		Object sessionUserID = session.getAttribute("userID");
 	
-		String clientID = String.valueOf(sessionClientID);
+		String userID = String.valueOf(sessionUserID);
 
 		String email = String.valueOf(sessionEmail);
 		String firstName = String.valueOf(sessionFname);
@@ -18,7 +18,7 @@
 		String position = String.valueOf(sessionPosition);
 		
 		if(firstName != null){
-			System.out.println(firstName + " ID: " + clientID);
+			System.out.println(firstName + " ID: " + userID);
 		}
 		
 		String staff = "Staff", admin = "Admin";
@@ -54,10 +54,10 @@
 <body>
 	<!-- Accessing java variables -->
 	<span id = "userEmail" class = "getVariables"><% out.print(email); %></span>
-	<span id = "userFirstName" class =  getVariables><% out.print(firstName); %></span>
-	<span id = "userLastName" class =  getVariables><% out.print(lastName); %></span>
-	<span id = "userPhone" class =  getVariables><% out.print(phone); %></span>
-	<span id = "userPosition" class = getVariables><% out.print(position); %></span>
+	<span id = "userFirstName" class =  "getVariables"><% out.print(firstName); %></span>
+	<span id = "userLastName" class =  "getVariables"><% out.print(lastName); %></span>
+	<span id = "userPhone" class =  "getVariables"><% out.print(phone); %></span>
+	<span id = "userPosition" class = "getVariables"><% out.print(position); %></span>
 	<!-- --------------------------- -->
     <!--Horizontal Header of the web page-->
     <header class="header "><!--FLEXBOX-->
@@ -65,12 +65,12 @@
         <h1 id="logo" class ="admin-logo"><a href = "index.jsp" 
         style = "text-decoration: none; color: black;">Auto Serve Inc.</a></h1><!--Logo-->
         
-       
-        <nav class="navbar admin-navbar"><!--NAVIGATION BAR-->
+    
+        <nav class="navbar"><!--NAVIGATION BAR-->
             <ul class="link-container">
                 
                 <li><a href="#" id="calculatorPage" class="links">Calculator</a></li>
-                 <li><a href="pages/products.jsp" id="productsPage" class="links">Products</a></li>
+                <li><a href="pages/products.jsp" id="productsPage" class="links">Products</a></li>
                 <li><a href="pages/jobsPages.html" id="jobsPage" class="links">Jobs</a></li>
                 <li><a href="#" id="aboutUsPage" class="links">About</a></li>
                 <li><a href="#" id = "servicesPage" class="links">Services</a></li> 
@@ -113,20 +113,19 @@
                                 System.out.println("(index.jsp)Username hidden\n");
                             else {
                                 if(position.equals(admin))
-                                    out.print(firstName + "("+position+")");                 
+                                    out.print(firstName.charAt(0));
                                             else
                                                 out.print(firstName.charAt(0));
                                 
                                 System.out.println("(index.jsp)Logged in as " + firstName + "\n");
                                 }
                     %></span>
-                    <span id = "clientID" style = "position: absolute; margin-top: -1000%;"> <% out.print(clientID); %> </span></li>
+                    <span id = "userID" style = "position: absolute; margin-top: -1000%;"> <% out.print(userID); %> </span></li>
                 <% } %>
             </ul>
         </nav>
 
     </header>
-       
 
     <!--Content loaded using AJAX with JQuery-->
     <main data-aos="zoom-in"
@@ -136,8 +135,8 @@
         data-aos-easing="ease-in-out"
         data-aos-mirror="true"
         data-aos-once="false"
-        data-aos-anchor-placement="top" id = "index">
-    </main>
+        data-aos-anchor-placement="top" 
+        id = "index"></main>
     
     <br><br>
     
@@ -165,13 +164,14 @@
 <script src="js/script.js"></script>
 <script>
 
+
 var car = false;
 var truck = false;
 var van = false;
 var motorbike = false;
 var down = false;
 var step = 1;
-var clientID = $("#clientID").text();
+var userID = $("#userID").text();
 
 var fName = $(".profile-name").text();
 
@@ -192,59 +192,6 @@ console.log("Position: " + userPosition);
 getVariables.css("position", "absolute");
 getVariables.css("margin-top", "-100%");
 
-
-if (userPosition != "Admin" || userPosition != "Staff"){
-	console.log(userPosition + "\'s ID: " + clientID);
-}
-
-if(userFullName != 4){
-	if(userFullName != "nullnull") setStyle();
-    console.log("Logged in. Length: " + fNameContainer_text.length);
-
-}
-else if(userFullName.length = 4){
-    unsetStyle();
-	console.log("Logged out now. Length: " + fNameContainer_text.length);
-}
-
-
-
-function setStyle(){
-    fNameContainer.css("border", "1px solid black");
-    fNameContainer.css("border-radius", "50%");
-    fNameContainer.css("margin-top", "-2.5%");
-    fNameContainer.css("width", "30px");
-    fNameContainer.css("height", "30px");
-    fNameContainer.css("text-align", "center");
-    fNameContainer.css("display", "flex");
-    fNameContainer.css("align-items", "center");
-    fNameContainer.css("justify-content", "center");
-	
-	if(userPosition == "Staff") {
-		console.log("staff styling now");
-		fNameContainer.css("margin-left", "70%");
-	}
-	else if (userPosition == "Client"){
-		console.log("Client styling now");
-		fNameContainer.css("margin-left", "51%");
-	}
-	
-}
-
-function unsetStyle(){
-	console.log("unsetting");
-    fNameContainer.css("border", "none");
-    fNameContainer.css("color", "red");
-    fNameContainer.css("border-radius", "unset");
-    fNameContainer.css("margin-left", "unset");
-    fNameContainer.css("margin-top", "unset");
-    fNameContainer.css("width","unset");
-    fNameContainer.css("height", "unset");
-    fNameContainer.css("text-align", "unset");
-    fNameContainer.css("display", "unset");
-    fNameContainer.css("align-items", "unset");
-    fNameContainer.css("justify-content", "unset");
-}
 </script>
 </body>
 </html>

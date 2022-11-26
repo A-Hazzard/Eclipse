@@ -23,7 +23,7 @@ input[type=submit], button {
   cursor: pointer;
 }
 
-.header {
+.header:not(.admin-header) {
   background-color: white;
   height: 5rem;
   color: black;
@@ -33,7 +33,7 @@ input[type=submit], button {
   border-left: none;
   border-right: none;
 }
-.header #logo {
+.header:not(.admin-header) #logo {
   font-family: "Segoe UI";
   position: relative;
   margin-left: 10%;
@@ -41,47 +41,47 @@ input[type=submit], button {
   height: 2rem;
   flex: 0.4;
 }
-.header .client-logo {
+.header:not(.admin-header) .client-logo {
   margin-left: unset;
   font-size: 1.6rem;
   margin-top: 0.3%;
   height: 2rem;
   flex: 0.4;
 }
-.header .navbar {
+.header:not(.admin-header) .navbar {
   width: 45%;
   flex: 1;
 }
-.header .navbar ul {
+.header:not(.admin-header) .navbar ul {
   padding-top: 3%;
 }
-.header .navbar li {
+.header:not(.admin-header) .navbar li {
   display: inline;
   margin-left: 2%;
 }
-.header .navbar li .links {
+.header:not(.admin-header) .navbar li .links {
   display: inline;
   text-decoration: none;
   color: hsl(0deg, 0%, 13%);
   font-size: 1.3rem;
   font-family: "Segoe UI";
 }
-.header .navbar .clients-jsp-list-items {
+.header:not(.admin-header) .navbar .clients-jsp-list-items {
   margin-left: 65%;
 }
-.header .clients-navbar {
+.header:not(.admin-header) .clients-navbar {
   width: 70%;
   border: 1px solid;
 }
-.header .admin-navbar {
+.header:not(.admin-header) .admin-navbar {
   flex: 2;
   width: 100%;
 }
-.header .admin-logo {
+.header:not(.admin-header) .admin-logo {
   font-size: 1.9rem;
   margin-top: 0.8%;
 }
-.header .admin {
+.header:not(.admin-header) .admin {
   font-size: 1.5rem;
 }
 
@@ -144,14 +144,14 @@ input[type=submit], button {
   border: none !important;
 }
 
-#index-main, #admin-main {
+#index-main {
   padding-left: 2%;
   padding-right: 2%;
 }
-#index-main #CTA-container, #admin-main #CTA-container {
+#index-main #CTA-container {
   position: relative;
 }
-#index-main #CTA-container .link-span, #admin-main #CTA-container .link-span {
+#index-main #CTA-container .link-span {
   position: absolute;
   width: 100vw;
   height: 100vh;
@@ -159,26 +159,37 @@ input[type=submit], button {
   top: 0;
   left: 0;
 }
-#index-main #CTA-container #backgroundImage, #admin-main #CTA-container #backgroundImage {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)), url("../pages/media/homeBackgroundImage.png");
+#index-main #CTA-container #backgroundImage {
+  /*background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url("../pages/media/homeBackgroundImage.png");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: center;*/
   opacity: 92%;
   height: 100vh;
 }
-#index-main #CTA-container #CTA, #admin-main #CTA-container #CTA {
+#index-main #CTA-container #backgroundImage video {
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 1;
+  margin-left: -2%;
+  margin-top: 0%;
+}
+#index-main #CTA-container #CTA {
   margin-left: 30%;
   position: absolute;
   margin-top: -35%;
 }
-#index-main #CTA-container #CTA h2, #index-main #CTA-container #CTA span, #admin-main #CTA-container #CTA h2, #admin-main #CTA-container #CTA span {
+#index-main #CTA-container #CTA h2, #index-main #CTA-container #CTA span {
   color: white;
   font-size: 5rem;
   text-align: center;
   font-family: "Segoe UI";
 }
-#index-main #CTA-container #CTA button, #admin-main #CTA-container #CTA button {
+#index-main #CTA-container #CTA button {
   padding: 3%;
   color: black;
   font-size: 1rem;
@@ -188,7 +199,7 @@ input[type=submit], button {
   border: none;
   border-radius: 0.5rem;
 }
-#index-main #CTA-container #CTA .buttonPadding, #admin-main #CTA-container #CTA .buttonPadding {
+#index-main #CTA-container #CTA .buttonPadding {
   -webkit-animation-name: pad;
           animation-name: pad;
   -webkit-animation-duration: 0.4s;
@@ -215,36 +226,120 @@ input[type=submit], button {
     padding: 4%;
   }
 }
-#index-main #CTA-container #flex-banner, #admin-main #CTA-container #flex-banner {
+#index-main #CTA-container #flex-banner {
   display: flex;
   width: 70%;
   height: 11rem;
   position: absolute;
   margin-top: -15%;
-  margin-left: 15%;
+  margin-left: 16%;
 }
-#index-main #CTA-container #flex-banner :first-child, #admin-main #CTA-container #flex-banner :first-child {
+#index-main #CTA-container #flex-banner :first-child {
   background-color: rgb(255, 255, 255);
 }
-#index-main #CTA-container #flex-banner :nth-child(2), #admin-main #CTA-container #flex-banner :nth-child(2) {
+#index-main #CTA-container #flex-banner :nth-child(2) {
   background-color: rgb(237, 237, 237);
 }
-#index-main #CTA-container #flex-banner :last-child, #admin-main #CTA-container #flex-banner :last-child {
+#index-main #CTA-container #flex-banner :last-child {
   background-color: rgb(214, 214, 214);
 }
-#index-main #CTA-container #flex-banner .banner, #admin-main #CTA-container #flex-banner .banner {
+#index-main #CTA-container #flex-banner .banner {
   flex: 1;
   text-align: center;
   padding-top: 3%;
 }
-#index-main #CTA-container #flex-banner .banner .fa-solid, #admin-main #CTA-container #flex-banner .banner .fa-solid {
+#index-main #CTA-container #flex-banner .banner .fa-solid {
   font-size: 2rem;
   background-color: transparent;
 }
-#index-main #CTA-container #flex-banner .banner .credits, #admin-main #CTA-container #flex-banner .banner .credits {
+#index-main #CTA-container #flex-banner .banner .credits {
   background-color: transparent;
   padding-top: 10%;
   font-size: 1.5rem;
+}
+
+.admin-header {
+  position: relative;
+  z-index: 1;
+  top: 0;
+  background-color: white;
+  height: 1000vh;
+  color: black;
+  position: fixed;
+  border: 2.5px solid rgb(229, 36, 14);
+  border-top: none;
+  border-left: none;
+  border-bottom: none;
+  width: 10vw;
+}
+.admin-header #logo {
+  font-family: "Segoe UI";
+  position: relative;
+  text-align: center;
+  top: 0.3%;
+}
+.admin-header .navbar {
+  width: 100%;
+  margin-top: 40%;
+}
+.admin-header .navbar li {
+  display: block;
+  text-align: center;
+  margin-bottom: 15%;
+}
+.admin-header .navbar li .links {
+  display: block;
+  text-decoration: none;
+  color: hsl(0deg, 0%, 13%);
+  font-size: 1.3rem;
+  font-family: "Segoe UI";
+}
+
+#admin-main {
+  padding-left: 10.1%;
+  position: relative;
+  z-index: -1;
+  background-color: rgb(245, 245, 245);
+}
+#admin-main #admin-top-nav {
+  position: relative;
+  width: 100vw;
+  height: 8%;
+  background-color: white;
+  color: black;
+  z-index: 2;
+  border: 2.5px solid rgb(229, 36, 14);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+#admin-main #admin-top-nav ul {
+  margin-left: 60%;
+  margin-top: 2%;
+}
+#admin-main #admin-top-nav ul li {
+  display: inline;
+  margin-left: 5%;
+  margin-top: -1%;
+}
+#admin-main #admin-top-nav ul li .links {
+  display: inline;
+  text-decoration: none;
+  color: hsl(0deg, 0%, 13%);
+  font-size: 1rem;
+  font-family: "Segoe UI";
+}
+#admin-main #admin-top-nav ul #language-flag {
+  position: absolute;
+  margin-top: 0.1%;
+  margin-left: -1.5%;
+}
+#admin-main #admin-top-nav ul #profile-picture img {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  margin-top: -1%;
+  border-radius: 50%;
 }
 
 #access-main, .forpassword-main {
@@ -1040,4 +1135,9 @@ footer #flex-container #footer-links #wrapper span a {
 #registerStaff-form .Form table #forgotpassword {
   margin-bottom: 15%;
   color: grey;
+}
+
+#products {
+  height: 100vh;
+  width: 100vw;
 }/*# sourceMappingURL=style.css.map */

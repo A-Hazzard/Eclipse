@@ -35,7 +35,7 @@
 		 System.out.println("Your ID = " + sessionID);
 	      
 	      //redirects admin to jobs page
-	      response.sendRedirect("../admin/admin.jsp");
+	      response.sendRedirect("../index.jsp");
 	      System.out.println("Logged in as Winston Fields(ADMIN)(LoginAction.jsp)");
 			System.out.println("-------------\nREDIRECTED TO ADMIN PAGE\n-------------");
 
