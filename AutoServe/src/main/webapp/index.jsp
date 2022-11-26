@@ -164,6 +164,7 @@
 <script src="js/script.js"></script>
 <script>
 
+
 var car = false;
 var truck = false;
 var van = false;
@@ -191,75 +192,6 @@ console.log("Position: " + userPosition);
 getVariables.css("position", "absolute");
 getVariables.css("margin-top", "-100%");
 
-
-if (userPosition != "Admin" || userPosition != "Staff"){
-	console.log(userPosition + "\'s ID: " + userID);
-    $(".navbar").css("flex", "1.5");
-            $(".navbar > ul").css("width", "100vw");
-    console.log("Navbar flex changed to 1.5");
-}
- if(userPosition == "Admin") {
-	$(".navbar").css("flex", "2");
-	console.log("Changed flex to 3");
-}
-
-if(userFullName != 4){
-	if(userFullName != "nullnull") setStyle();
-    console.log("Logged in. Length: " + fNameContainer_text.length);
-
-}
-else if(userFullName.length = 4){
-    unsetStyle();
-	console.log("Logged out now. Length: " + fNameContainer_text.length);
-}
-
-
-
-function setStyle(){
-    fNameContainer.css("border", "1px solid black");
-    fNameContainer.css("border-radius", "50%");
-    fNameContainer.css("margin-top", "-2.5%");
-    fNameContainer.css("width", "30px");
-    fNameContainer.css("height", "30px");
-    fNameContainer.css("text-align", "center");
-    fNameContainer.css("display", "flex");
-    fNameContainer.css("align-items", "center");
-    fNameContainer.css("justify-content", "center");
-	
-	if(userPosition == "Staff") {
-		console.log("staff styling now");
-		fNameContainer.css("margin-left", "56%");
-		fNameContainer.css("margin-top", "-2%");
-
-		
-	}
-	else if(userPosition == "Admin") {
-		console.log("Admin styling now");
-		fNameContainer.css("margin-left", "66%");
-		fNameContainer.css("margin-top", "-2%");
-
-	}
-	else if (userPosition == "Client"){
-		console.log("Client styling now");
-		fNameContainer.css("margin-left", "51%");
-	}
-	
-}
-
-function unsetStyle(){
-	console.log("unsetting");
-    fNameContainer.css("border", "none");
-    fNameContainer.css("color", "red");
-    fNameContainer.css("border-radius", "unset");
-    fNameContainer.css("margin-left", "unset");
-    fNameContainer.css("margin-top", "unset");
-    fNameContainer.css("width","unset");
-    fNameContainer.css("height", "unset");
-    fNameContainer.css("text-align", "unset");
-    fNameContainer.css("display", "unset");
-    fNameContainer.css("align-items", "unset");
-    fNameContainer.css("justify-content", "unset");
-}
 </script>
 </body>
 </html>

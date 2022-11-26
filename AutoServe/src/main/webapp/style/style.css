@@ -1135,4 +1135,9 @@ footer #flex-container #footer-links #wrapper span a {
 #registerStaff-form .Form table #forgotpassword {
   margin-bottom: 15%;
   color: grey;
+}
+
+#products {
+  height: 100vh;
+  width: 100vw;
 }/*# sourceMappingURL=style.css.map */
