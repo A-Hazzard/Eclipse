@@ -160,10 +160,10 @@ input[type=submit], button {
   left: 0;
 }
 #index-main #CTA-container #backgroundImage {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)), url("../pages/media/homeBackgroundImage.png");
+  /*background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url("../pages/media/homeBackgroundImage.png");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: center;*/
   opacity: 92%;
   height: 100vh;
 }

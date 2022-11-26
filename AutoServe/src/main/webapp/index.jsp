@@ -7,9 +7,9 @@
 		Object sessionLname = session.getAttribute("LastName");
 		Object sessionPhone = session.getAttribute("Phone");
 		Object sessionPosition = session.getAttribute("Position");
-		Object sessionClientID = session.getAttribute("clientID");
+		Object sessionUserID = session.getAttribute("userID");
 	
-		String clientID = String.valueOf(sessionClientID);
+		String userID = String.valueOf(sessionUserID);
 
 		String email = String.valueOf(sessionEmail);
 		String firstName = String.valueOf(sessionFname);
@@ -18,7 +18,7 @@
 		String position = String.valueOf(sessionPosition);
 		
 		if(firstName != null){
-			System.out.println(firstName + " ID: " + clientID);
+			System.out.println(firstName + " ID: " + userID);
 		}
 		
 		String staff = "Staff", admin = "Admin";
@@ -65,12 +65,12 @@
         <h1 id="logo" class ="admin-logo"><a href = "index.jsp" 
         style = "text-decoration: none; color: black;">Auto Serve Inc.</a></h1><!--Logo-->
         
-       
-        <nav class="navbar admin-navbar"><!--NAVIGATION BAR-->
+    
+        <nav class="navbar"><!--NAVIGATION BAR-->
             <ul class="link-container">
                 
                 <li><a href="#" id="calculatorPage" class="links">Calculator</a></li>
-                 <li><a href="pages/products.jsp" id="productsPage" class="links">Products</a></li>
+                <li><a href="pages/products.jsp" id="productsPage" class="links">Products</a></li>
                 <li><a href="pages/jobsPages.html" id="jobsPage" class="links">Jobs</a></li>
                 <li><a href="#" id="aboutUsPage" class="links">About</a></li>
                 <li><a href="#" id = "servicesPage" class="links">Services</a></li> 
@@ -120,13 +120,12 @@
                                 System.out.println("(index.jsp)Logged in as " + firstName + "\n");
                                 }
                     %></span>
-                    <span id = "clientID" style = "position: absolute; margin-top: -1000%;"> <% out.print(clientID); %> </span></li>
+                    <span id = "userID" style = "position: absolute; margin-top: -1000%;"> <% out.print(userID); %> </span></li>
                 <% } %>
             </ul>
         </nav>
 
     </header>
-       
 
     <!--Content loaded using AJAX with JQuery-->
     <main data-aos="zoom-in"
@@ -136,8 +135,8 @@
         data-aos-easing="ease-in-out"
         data-aos-mirror="true"
         data-aos-once="false"
-        data-aos-anchor-placement="top" id = "index">
-    </main>
+        data-aos-anchor-placement="top" 
+        id = "index"></main>
     
     <br><br>
     
@@ -171,7 +170,7 @@ var van = false;
 var motorbike = false;
 var down = false;
 var step = 1;
-var clientID = $("#clientID").text();
+var userID = $("#userID").text();
 
 var fName = $(".profile-name").text();
 
@@ -194,7 +193,14 @@ getVariables.css("margin-top", "-100%");
 
 
 if (userPosition != "Admin" || userPosition != "Staff"){
-	console.log(userPosition + "\'s ID: " + clientID);
+	console.log(userPosition + "\'s ID: " + userID);
+    $(".navbar").css("flex", "1.5");
+            $(".navbar > ul").css("width", "100vw");
+    console.log("Navbar flex changed to 1.5");
+}
+ if(userPosition == "Admin") {
+	$(".navbar").css("flex", "2");
+	console.log("Changed flex to 3");
 }
 
 if(userFullName != 4){
@@ -222,11 +228,16 @@ function setStyle(){
 	
 	if(userPosition == "Staff") {
 		console.log("staff styling now");
-		fNameContainer.css("margin-left", "70%");
+		fNameContainer.css("margin-left", "56%");
+		fNameContainer.css("margin-top", "-2%");
+
+		
 	}
 	else if(userPosition == "Admin") {
 		console.log("Admin styling now");
-		fNameContainer.css("margin-left", "75%");
+		fNameContainer.css("margin-left", "66%");
+		fNameContainer.css("margin-top", "-2%");
+
 	}
 	else if (userPosition == "Client"){
 		console.log("Client styling now");
