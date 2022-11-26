@@ -167,6 +167,17 @@ input[type=submit], button {
   opacity: 92%;
   height: 100vh;
 }
+#index-main #CTA-container #backgroundImage video {
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 1;
+  margin-left: -2%;
+  margin-top: 0%;
+}
 #index-main #CTA-container #CTA {
   margin-left: 30%;
   position: absolute;
@@ -221,7 +232,7 @@ input[type=submit], button {
   height: 11rem;
   position: absolute;
   margin-top: -15%;
-  margin-left: 15%;
+  margin-left: 16%;
 }
 #index-main #CTA-container #flex-banner :first-child {
   background-color: rgb(255, 255, 255);
