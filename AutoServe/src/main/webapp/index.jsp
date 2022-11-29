@@ -70,7 +70,7 @@
             <ul class="link-container">
                 
                 <li><a href="#" id="calculatorPage" class="links">Calculator</a></li>
-                <li><a href="pages/products.jsp" id="productsPage" class="links">Products</a></li>
+                <li><a href="#" id="productsPage" class="links">Products</a></li>
                 <li><a href="pages/jobsPages.html" id="jobsPage" class="links">Jobs</a></li>
                 <li><a href="#" id="aboutUsPage" class="links">About</a></li>
                 <li><a href="#" id = "servicesPage" class="links">Services</a></li> 
@@ -158,6 +158,7 @@
 <p id="copyright" style="text-align: center; opacity: .5;">Copyright © 2022 Auto Serve Inc. All Rights Reserved.</p>
     </footer>
     
+    
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script src="https://kit.fontawesome.com/18479e6558.js"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
@@ -170,6 +171,10 @@ var truck = false;
 var van = false;
 var motorbike = false;
 var down = false;
+//var isClicked = false;
+let num = 0;
+let btnValue = "";
+let val = "";
 var step = 1;
 var userID = $("#userID").text();
 

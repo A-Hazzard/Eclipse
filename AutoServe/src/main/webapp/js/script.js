@@ -50,7 +50,9 @@ function setStyle(){
 	}
 	else if (userPosition == "Client"){
 		console.log("Client styling now");
-		fNameContainer.css("margin-left", "51%");
+		fNameContainer.css("margin-left", "42%");
+				fNameContainer.css("margin-top", "-2%");
+
 	}
 	
 }
@@ -76,35 +78,53 @@ $("main").load("pages/states/homePage.txt");
 $("#footer-links").load("pages/states/footer/carLinks.txt");
 
 
-
+	
     //loads home page on click
     $("#homePage").on('click', function(){
         $("main").hide().load("pages/states/homePage.txt").fadeIn("slow");
+                        	            $("footer").css("margin-top", "5%");
+
     })
 
         //loads calculatorPage on click
         $("#calculatorPage").on('click', function(){
             $("main").hide().load("pages/states/calculatorPage.txt").fadeIn("fast");
+                            	            $("footer").css("margin-top", "5%");
+
         })
+        
+        	//loads calculatorPage on click
+	        $("#productsPage").on('click', function(){
+	            $("main").hide().load("pages/states/productsPage.txt").fadeIn("fast");
+	            $("footer").css("margin-top", "-2.2%");
+	        })
 
             //loads jobsPage on click
             $("#jobsPage").on('click', function(){
                 $("main").hide().load("pages/states/jobsPage.txt").fadeIn("slow");
+                	            $("footer").css("margin-top", "5%");
+
             })
 
                 //loads memberPage on click
                 $("#loginPage").on('click', function(){
 	
                     $("main").hide().load("pages/states/loginPage.txt").fadeIn("slow");
+                                    	            $("footer").css("margin-top", "5%");
+
                 })
 
                     //loads obutUsPage on click
                     $("#aboutUsPage").on('click', function(){
                         $("main").hide().load("pages/states/aboutUsPage.txt").fadeIn("slow");
+                                        	            $("footer").css("margin-top", "5%");
+
                     });
                         //loads servicesPage on click
                     $("#servicesPage").on('click', function(){
                         $("main").hide().load("pages/states/servicesPage.txt").fadeIn("fast");
+                                        	            $("footer").css("margin-top", "5%");
+
                     });
 
     //changes style of links in the footer on click

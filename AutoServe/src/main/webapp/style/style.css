@@ -1140,4 +1140,138 @@ footer #flex-container #footer-links #wrapper span a {
 #products {
   height: 100vh;
   width: 100vw;
+}
+
+#products-section {
+  position: relative;
+}
+#products-section #addedItems {
+  position: fixed;
+  margin-left: 89%;
+  font-family: "Raleway", sans-serif;
+}
+#products-section .category-navbar {
+  position: relative;
+  z-index: 1;
+  margin-top: -5%;
+  padding-top: 5%;
+  background-color: white;
+  height: 100%;
+  color: black;
+  position: fixed;
+  border: 2.5px solid rgb(229, 36, 14);
+  border-top: none;
+  border-left: none;
+  border-bottom: none;
+  width: 12vw;
+}
+#products-section .category-navbar .fa-bag-shopping {
+  font-size: 3rem;
+  color: rgb(229, 36, 14);
+  cursor: pointer;
+}
+#products-section .category-navbar li {
+  font-size: 1rem;
+  font-family: "Segoe UI";
+  list-style: none;
+  padding: 8px 20px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  display: block;
+  margin-bottom: 2%;
+}
+#products-section .category-navbar li #count-cart {
+  font-size: 1.5rem;
+  position: absolute;
+  margin-left: -15%;
+  margin-top: 9%;
+  color: white;
+  cursor: pointer;
+}
+#products-section .category-navbar .cart-icon {
+  cursor: unset;
+  text-align: center;
+  margin-top: -10%;
+}
+#products-section .category-navbar .active {
+  background: #03a9f4;
+  color: #fff;
+}
+#products-section .product {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 15%;
+  margin-top: 5%;
+}
+#products-section .product .itemBox {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 5px;
+  margin-left: 5%;
+  margin-bottom: 12%;
+}
+#products-section .product .itemBox img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  top: 0;
+  left: 0;
+  border-radius: 0.5rem;
+}
+#products-section .product .itemBox p {
+  font-family: "Ubuntu", sans-serif;
+}
+#products-section .product .itemBox .product-name {
+  font-size: 1rem;
+}
+#products-section .product .itemBox .product-category {
+  font-size: 0.8rem;
+}
+#products-section .product .itemBox .rating {
+  color: grey;
+}
+#products-section .product .itemBox .fa-star {
+  font-size: 0.7rem;
+  color: gold;
+}
+#products-section .product .itemBox .product-price {
+  display: inline-block;
+}
+#products-section .product .itemBox .cart-btn {
+  display: inline;
+  margin-left: 3%;
+  padding: 2%;
+  background: rgb(229, 36, 14);
+  font-family: "Vollkorn", serif;
+  border: none;
+  border-radius: 0.5rem;
+  color: white;
+}
+#products-section .product .itemBox .cart-btn:hover {
+  -webkit-animation-name: padding;
+          animation-name: padding;
+  -webkit-animation-duration: 0.4s;
+          animation-duration: 0.4s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+@-webkit-keyframes padding {
+  from {
+    padding: 2%;
+  }
+  to {
+    padding: 3.5%;
+  }
+}
+@keyframes padding {
+  from {
+    padding: 2%;
+  }
+  to {
+    padding: 3.5%;
+  }
 }/*# sourceMappingURL=style.css.map */
