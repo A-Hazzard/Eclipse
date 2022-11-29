@@ -1,9 +1,0 @@
-<div id = "vehicleDisplay">
-              <img src="pages/media/carImg.png"
-              alt="picture of a car" id = "defaultImg">
-            </div>
-            <div id="subDisplay">
-               <p id="display-header">Estimated cost</p>
-              <p id="display-note">Your estimated price will be displayed here</p>
-              <p id="code"></p>
-            </div>
