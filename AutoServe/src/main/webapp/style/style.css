@@ -1145,6 +1145,11 @@ footer #flex-container #footer-links #wrapper span a {
 #products-section {
   position: relative;
 }
+#products-section #addedItems {
+  position: absolute;
+  margin-left: 89%;
+  font-family: "Raleway", sans-serif;
+}
 #products-section .category-navbar {
   position: relative;
   z-index: 1;

@@ -1,14 +1,6 @@
-    <section data-aos="fade-in"
-        data-aos-offset="0"
-        data-aos-delay="1"
-        data-aos-duration="1000"
-        data-aos-easing="ease-in-out"
-        data-aos-mirror="true"
-        data-aos-once="false"
-        data-aos-anchor-placement="top" 
-		id="products-section">
+    <section data-aos="fade-in" data-aos-offset="0" data-aos-delay="1" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top"  id="products-section">
 	
-		<nav class="category-navbar">
+		<aside class="category-navbar">
             <ul class = "link-container">
                 <li class = "list cart-icon"><i class="fa-solid fa-bag-shopping"></i><span id = "count-cart"></span></li>
                 <li class = "list active" data-filter = "all">All</li>
@@ -17,9 +9,14 @@
                 <li class = "list" data-filter = "body">Body Parts Accessories</li>
                 <li class = "list" data-filter = "gps">GPS Accessories</li>
 			</ul>
-        </nav>
+        </aside>
+
+<aside id = "addedItems">
+        <h2>Added Items</h2>
+           <ul id = "itemsList"></ul>
+        </aside>
         
-        <div class="product">
+        <section class="product">
             
                         <!--Interior Accessories-->
                         <div class="itemBox interior">
@@ -32,7 +29,8 @@
                             
 
                     
-                        <button type = "button" class = "cart-btn">Add to Cart</button></div>
+                            <button type = "button" class = "cart-btn">Add to Cart</button>
+                        </div>
                         
                         
 
@@ -45,7 +43,8 @@
                             <i class="fa-solid fa-star"></i>
                             <span class = "rating" style = "color = grey">(102)</span>
                             <br><p class = "product-price">TTD $84.54</p>
-                        <button type = "button" class = "cart-btn">Add to Cart</button></div>
+                            <button type = "button" class = "cart-btn">Add to Cart</button>
+                        </div>
 
 
                         <div class="itemBox interior">
@@ -58,7 +57,8 @@
                             <i class="fa-solid fa-star"></i>
                             <span class = "rating" style = "color = grey">(500)</span>
                             <br><p class = "product-price">TTD $25.40</p>
-                        <button type = "button" class = "cart-btn">Add to Cart</button></div>
+                            <button type = "button" class = "cart-btn">Add to Cart</button>
+                        </div>
                         
                         <div class="itemBox exterior">
                                 <img src="https://m.media-amazon.com/images/I/81oxvsPdZkL._AC_UL480_FMwebp_QL65_.jpg" alt="">
@@ -70,7 +70,7 @@
                             <span class = "rating" style = "color = grey">(250)</span>
                             <br><p class = "product-price">TTD $230.00</p>
 
-                        <button type = "button" class = "cart-btn">Add to Cart</button></div>
+                            <button type = "button" class = "cart-btn">Add to Cart</button></div>
 
                         <div class="itemBox interior">
                             <img src="https://m.media-amazon.com/images/I/71PPuRQ317L._AC_UL480_FMwebp_QL65_.jpg" alt="">
@@ -82,7 +82,7 @@
                             <span class = "rating" style = "color = grey">(560)</span>
                             <br><p class = "product-price">TTD $906.98</p>
 
-                        <button type = "button" class = "cart-btn">Add to Cart</button></div>
+                            <button type = "button" class = "cart-btn">Add to Cart</button></div>
                         
                         <div class="itemBox interior">
                             <img src="https://m.media-amazon.com/images/I/71poekM9iAL._AC_UL480_FMwebp_QL65_.jpg" alt="">
@@ -95,7 +95,7 @@
                             <br><p class = "product-price">TTD $340.56</p>
 
                     
-                        <button type = "button" class = "cart-btn">Add to Cart</button></div>
+                            <button type = "button" class = "cart-btn">Add to Cart</button></div>
 
                         <div class="itemBox gps">
                                 <img src="https://m.media-amazon.com/images/I/71-em00WXIL._AC_UY327_FMwebp_QL65_.jpg" alt="">
@@ -106,7 +106,7 @@
                             <i class="fa-solid fa-star"></i>
                             <span class = "rating" style = "color = grey">(20)</span>
                             <br><p class = "product-price">TTD $100.00</p>
-                        <button type = "button" class = "cart-btn">Add to Cart</button></div>
+                            <button type = "button" class = "cart-btn">Add to Cart</button></div>
                         
                         <div class="itemBox interior">
                             <img src="https://m.media-amazon.com/images/I/716MvGJzXoL._AC_UL480_FMwebp_QL65_.jpg" alt="">
@@ -122,7 +122,7 @@
                             <br><p class = "product-price">TTD $1200.54</p>
 
                     
-                        <button type = "button" class = "cart-btn">Add to Cart</button></div>
+                            <button type = "button" class = "cart-btn">Add to Cart</button></div>
 
                         
                         <div class="itemBox exterior">
@@ -137,7 +137,7 @@
                                 <br><p class = "product-price">TTD $50.00</p>
 
                     
-                        <button type = "button" class = "cart-btn">Add to Cart</button></div>
+                                <button type = "button" class = "cart-btn">Add to Cart</button></div>
 
                         
                     
@@ -153,7 +153,7 @@
                             <br><p class = "product-price">TTD $160.89</p>
 
                     
-                        <button type = "button" class = "cart-btn">Add to Cart</button></div>
+                            <button type = "button" class = "cart-btn">Add to Cart</button></div>
                         
                         <div class="itemBox interior">
                             <img src="https://m.media-amazon.com/images/I/61hpo17ix3L._AC_UL480_FMwebp_QL65_.jpg" alt="">
@@ -167,7 +167,7 @@
                             <br><p class = "product-price">TTD $59.76</p>
 
                     
-                        <button type = "button" class = "cart-btn">Add to Cart</button></div>
+                            <button type = "button" class = "cart-btn">Add to Cart</button></div>
                         
                         <div class="itemBox interior">
                             <img src="https://m.media-amazon.com/images/I/71tzfkqJwFL._AC_UL480_FMwebp_QL65_.jpg" alt="">
@@ -181,7 +181,7 @@
                             <br><p class = "product-price">TTD $89.67</p>
 
                     
-                        <button type = "button" class = "cart-btn">Add to Cart</button></div>
+                            <button type = "button" class = "cart-btn">Add to Cart</button></div>
 
                         
                         <div class="itemBox exterior">
@@ -197,7 +197,7 @@
                             <br><p class = "product-price">TTD $230.65</p>
 
                     
-                        <button type = "button" class = "cart-btn">Add to Cart</button></div>
+                            <button type = "button" class = "cart-btn">Add to Cart</button></div>
                         
                         <div class="itemBox interior">
                             <img src="https://m.media-amazon.com/images/I/71PfojDgC4L._AC_UL480_FMwebp_QL65_.jpg" alt="">
@@ -211,7 +211,7 @@
                             <br><p class = "product-price">TTD $45.98</p>
 
                     
-                        <button type = "button" class = "cart-btn">Add to Cart</button></div>
+                            <button type = "button" class = "cart-btn">Add to Cart</button></div>
 
                         <div class="itemBox exterior">
                                 <img src="https://m.media-amazon.com/images/I/61ubA7DccpL._AC_UL480_FMwebp_QL65_.jpg" alt="">
@@ -226,7 +226,7 @@
                             <br><p class = "product-price">TTD $156.99</p>
 
                 
-                        <button type = "button" class = "cart-btn">Add to Cart</button></div>
+                            <button type = "button" class = "cart-btn">Add to Cart</button></div>
                         
                         <div class="itemBox interior">
                             <img src="https://m.media-amazon.com/images/I/61dQ7cylC8L._AC_UL480_FMwebp_QL65_.jpg" alt="">
@@ -239,7 +239,7 @@
                             <span class = "rating" style = "color = grey">(310)</span>
                             <br><p class = "product-price">TTD $70.00</p>
 
-                        <button type = "button" class = "cart-btn">Add to Cart</button></div>
+                            <button type = "button" class = "cart-btn">Add to Cart</button></div>
 
                         <div class="itemBox exterior">
                                     <img src="https://m.media-amazon.com/images/I/61ORkX5NHhL._AC_UL480_FMwebp_QL65_.jpg" alt="">
@@ -252,7 +252,7 @@
                             <span class = "rating" style = "color = grey">(15)</span>
                             <br><p class = "product-price">TTD $69.99</p>
                     
-                        <button type = "button" class = "cart-btn">Add to Cart</button></div>
+                        <button  type = "button" class = "cart-btn">Add to Cart</button></div>
 
                         <div class="itemBox interior">
                             <img src="https://m.media-amazon.com/images/I/71p8e8ccjiL._AC_UL480_FMwebp_QL65_.jpg" alt="">
@@ -266,7 +266,7 @@
                             <br><p class = "product-price">TTD $878.98</p>
 
                     
-                        <button type = "button" class = "cart-btn">Add to Cart</button></div>
+                        <button  type = "button" class = "cart-btn">Add to Cart</button></div>
                         
 
                         <div class="itemBox exterior">
@@ -282,7 +282,7 @@
                                 <br><p class = "product-price">TTD $69.65</p>
 
                     
-                        <button type = "button" class = "cart-btn">Add to Cart</button></div>
+                        <button  type = "button" class = "cart-btn">Add to Cart</button></div>
 
 
                         <div class="itemBox interior">
@@ -298,7 +298,7 @@
                             <br><p class = "product-price">TTD $103.60</p>
 
                     
-                        <button type = "button" class = "cart-btn">Add to Cart</button></div>
+                        <button  type = "button" class = "cart-btn">Add to Cart</button></div>
 
                         <div class="itemBox exterior">
                                 <img src="https://m.media-amazon.com/images/I/713VbkNhBdL._AC_UL480_FMwebp_QL65_.jpg" alt="">
@@ -312,7 +312,7 @@
                             <br><p class = "product-price">TTD $230.45</p>
 
                     
-                        <button type = "button" class = "cart-btn">Add to Cart</button></div>
+                        <button  type = "button" class = "cart-btn">Add to Cart</button></div>
 
                         <div class="itemBox exterior">
                                 <img src="https://m.media-amazon.com/images/I/71yb20I9XiL._AC_UL480_FMwebp_QL65_.jpg" alt="">
@@ -327,7 +327,7 @@
                             <br><p class = "product-price">TTD $90.00</p>
 
                     
-                        <button type = "button" class = "cart-btn">Add to Cart</button></div>
+                        <button  type = "button" class = "cart-btn">Add to Cart</button></div>
 
                         <div class="itemBox exterior">
                                 <img src="https://m.media-amazon.com/images/I/81L8uyPd95L._AC_UL480_FMwebp_QL65_.jpg" alt="">
@@ -341,7 +341,7 @@
                                 <br><p class = "product-price">TTD $97.17</p>
 
                     
-                        <button type = "button" class = "cart-btn">Add to Cart</button></div>
+                        <button  type = "button" class = "cart-btn">Add to Cart</button></div>
 
                     
 
@@ -357,7 +357,7 @@
                                 <br><p class = "product-price">TTD $40.97</p>
 
                     
-                        <button type = "button" class = "cart-btn">Add to Cart</button></div>
+                        <button  type = "button" class = "cart-btn">Add to Cart</button></div>
 
                         <div class="itemBox exterior">
                                 <img src="https://m.media-amazon.com/images/I/71iD+gZgmxL._AC_UL480_FMwebp_QL65_.jpg" alt="">
@@ -367,7 +367,7 @@
                                 <br><p class = "product-price">TTD $345.90</p>
 
                     
-                        <button type = "button" class = "cart-btn">Add to Cart</button></div>
+                        <button  type = "button" class = "cart-btn">Add to Cart</button></div>
 
                         <div class="itemBox exterior">
                                 <img src="https://m.media-amazon.com/images/I/61H-oDBA9yL._AC_UL480_FMwebp_QL65_.jpg" alt="">
@@ -381,7 +381,7 @@
                                 <br><p class = "product-price">TTD $310.54</p>
 
                     
-                        <button type = "button" class = "cart-btn">Add to Cart</button></div>
+                        <button  type = "button" class = "cart-btn">Add to Cart</button></div>
 
                         <div class="itemBox interior"> 
                             <img src="https://m.media-amazon.com/images/I/71BB-UFUajL._AC_UL480_FMwebp_QL65_.jpg" alt="">
@@ -397,7 +397,7 @@
                             <br><p class = "product-price">TTD $490.65</p>
 
                     
-                        <button type = "button" class = "cart-btn">Add to Cart</button></div>
+                        <button  type = "button" class = "cart-btn">Add to Cart</button></div>
 
                         <div class="itemBox body">
                                 <img src="https://m.media-amazon.com/images/I/71uQora1mAL._AC_UL480_FMwebp_QL65_.jpg" alt="">
@@ -411,7 +411,7 @@
                             <br><p class = "product-price">TTD $1077.65</p>
 
                     
-                        <button type = "button" class = "cart-btn">Add to Cart</button></div>
+                        <button  type = "button" class = "cart-btn">Add to Cart</button></div>
 
                         <div class="itemBox body">
                                 <img src="https://m.media-amazon.com/images/I/71FitzYQdcL._AC_UL480_FMwebp_QL65_.jpg" alt="">
@@ -427,7 +427,7 @@
                                 <br><p class = "product-price">TTD $52.98</p>
 
                     
-                        <button type = "button" class = "cart-btn">Add to Cart</button></div>
+                        <button  type = "button" class = "cart-btn">Add to Cart</button></div>
 
                         <div class="itemBox exterior">
                                 <img src="https://m.media-amazon.com/images/I/71VL5IirDsL._AC_UL480_FMwebp_QL65_.jpg" alt="">
@@ -440,7 +440,7 @@
                                 <br><p class = "product-price">TTD $69.95</p>
 
                     
-                        <button type = "button" class = "cart-btn">Add to Cart</button></div>
+                        <button  type = "button" class = "cart-btn">Add to Cart</button></div>
 
                         <div class="itemBox exterior">
                                 <img src="https://m.media-amazon.com/images/I/71eLsmEq5XL._AC_UL480_FMwebp_QL65_.jpg" alt="">
@@ -455,7 +455,7 @@
                                 <br><p class = "product-price">TTD $45.76</p>
 
                     
-                        <button type = "button" class = "cart-btn">Add to Cart</button></div>
+                        <button  type = "button" class = "cart-btn">Add to Cart</button></div>
 
                         <div class="itemBox body">
                                 <img src="https://m.media-amazon.com/images/I/71ysmeW2tzL._AC_UL480_FMwebp_QL65_.jpg" alt="">
@@ -470,7 +470,7 @@
                                 <br><p class = "product-price">TTD $239.65</p>
 
                     
-                        <button type = "button" class = "cart-btn">Add to Cart</button></div>
+                        <button  type = "button" class = "cart-btn">Add to Cart</button></div>
 
                         <div class="itemBox exterior">
                                 <img src="https://m.media-amazon.com/images/I/71Hz9qwLc0L._AC_UL480_FMwebp_QL65_.jpg" alt="">
@@ -480,7 +480,7 @@
                                 <br><p class = "product-price">TTD $49.00</p>
 
                     
-                        <button type = "button" class = "cart-btn">Add to Cart</button></div>
+                        <button  type = "button" class = "cart-btn">Add to Cart</button></div>
 
 
                         <div class="itemBox gps">
@@ -497,7 +497,7 @@
                                 <span class = "rating" style = "color = grey">(1,900)</span>
                                 <br><p class = "product-price">TTD $304.98</p>
 
-                        <button type = "button" class = "cart-btn">Add to Cart</button></div>
+                        <button  type = "button" class = "cart-btn">Add to Cart</button></div>
 
                         <div class="itemBox body">
                                 <img src="https://m.media-amazon.com/images/I/81EiBGdPkcL._AC_UL480_FMwebp_QL65_.jpg" alt="">
@@ -512,7 +512,7 @@
                                 <br><p class = "product-price">TTD $8,8709.90</p>
 
                     
-                        <button type = "button" class = "cart-btn">Add to Cart</button></div>
+                        <button  type = "button" class = "cart-btn">Add to Cart</button></div>
 
                         <div class="itemBox interior">
                             <img src="https://m.media-amazon.com/images/I/71fDQvX-77L._AC_UL480_FMwebp_QL65_.jpg" alt="">
@@ -526,7 +526,7 @@
                             <br><p class = "product-price">TTD $39.65</p>
 
                     
-                        <button type = "button" class = "cart-btn">Add to Cart</button></div>
+                        <button  type = "button" class = "cart-btn">Add to Cart</button></div>
                         
 
                         <div class="itemBox exterior">
@@ -540,7 +540,7 @@
                                 <br><p class = "product-price">TTD $71.87</p>
 
                     
-                        <button type = "button" class = "cart-btn">Add to Cart</button></div>
+                        <button  type = "button" class = "cart-btn">Add to Cart</button></div>
 
                         <div class="itemBox exterior">
                                 <img src="https://m.media-amazon.com/images/I/71q2X6wJYNL._AC_UL480_FMwebp_QL65_.jpg" alt="">
@@ -552,7 +552,7 @@
 
                                 <span class = "rating" style = "color = grey">(160)</span>
                                 <br><p class = "product-price">TTD $480.76</p>
-                        <button type = "button" class = "cart-btn">Add to Cart</button></div>
+                        <button  type = "button" class = "cart-btn">Add to Cart</button></div>
 
 
 
@@ -569,7 +569,7 @@
                                 <br><p class = "product-price">TTD $470.56</p>
 
                     
-                    <button type = "button" class = "cart-btn">Add to Cart</button></div>
+                    <button  type = "button" class = "cart-btn">Add to Cart</button></div>
 
                     <div class="itemBox gps">
                             <img src="https://m.media-amazon.com/images/I/61At7gphbsL._AC_UL480_FMwebp_QL65_.jpg" alt="">
@@ -583,7 +583,7 @@
                             <br><p class = "product-price">TTD $170.00</p>
 
                 
-                    <button type = "button" class = "cart-btn">Add to Cart</button></div>
+                    <button  type = "button" class = "cart-btn">Add to Cart</button></div>
 
                     <div class="itemBox gps">
                             <img src="https://m.media-amazon.com/images/I/71TXL9T7RfL._AC_UL480_FMwebp_QL65_.jpg" alt="">
@@ -599,7 +599,7 @@
                             <br><p class = "product-price">TTD $80.00</p>
 
                     
-                    <button type = "button" class = "cart-btn">Add to Cart</button></div>
+                    <button  type = "button" class = "cart-btn">Add to Cart</button></div>
 
                     
                     <div class="itemBox exterior">
@@ -614,7 +614,7 @@
                             <br><p class = "product-price">TTD $120.65</p>
 
                 
-                    <button type = "button" class = "cart-btn">Add to Cart</button></div>
+                    <button  type = "button" class = "cart-btn">Add to Cart</button></div>
 
 
                     <div class="itemBox gps">
@@ -629,7 +629,7 @@
                         <br><p class = "product-price">TTD $210.76</p>
 
                     
-                    <button type = "button" class = "cart-btn">Add to Cart</button></div>
+                    <button  type = "button" class = "cart-btn">Add to Cart</button></div>
 
                         
                         <div class="itemBox body">
@@ -644,7 +644,7 @@
                                 <br><p class = "product-price">TTD $1,754.93</p>
 
                     
-                        <button type = "button" class = "cart-btn">Add to Cart</button></div>
+                        <button  type = "button" class = "cart-btn">Add to Cart</button></div>
 
 
                         <div class="itemBox gps">
@@ -659,7 +659,7 @@
                                 <br><p class = "product-price">TTD $150.64</p>
 
                     
-                        <button type = "button" class = "cart-btn">Add to Cart</button></div>
+                        <button  type = "button" class = "cart-btn">Add to Cart</button></div>
 
                         <div class="itemBox exterior">
                                 <img src="https://m.media-amazon.com/images/I/61jRPfxGHvL._AC_UL480_QL65_.jpg" alt="">
@@ -669,7 +669,7 @@
                                 <br><p class = "product-price">TTD $450.56</p>
 
                     
-                        <button type = "button" class = "cart-btn">Add to Cart</button></div>
+                        <button  type = "button" class = "cart-btn">Add to Cart</button></div>
 
                         <div class="itemBox exterior">
                                 <img src="https://m.media-amazon.com/images/I/713nL-tMNZL._AC_UL480_FMwebp_QL65_.jpg" alt="">
@@ -683,7 +683,7 @@
                                 <br><p class = "product-price">TTD $470.56</p>
 
                     
-                        <button type = "button" class = "cart-btn">Add to Cart</button></div>
+                        <button  type = "button" class = "cart-btn">Add to Cart</button></div>
 
                         <div class="itemBox gps">
                                 <img src="https://m.media-amazon.com/images/I/51W1V0pj1-L._AC_UL480_FMwebp_QL65_.jpg" alt="">
@@ -697,8 +697,11 @@
                                 <br><p class = "product-price">TTD $340.56</p>
 
                     
-                        <button type = "button" class = "cart-btn">Add to Cart</button></div>
-        </div> <!--END PRODUCT-->
+                        <button  type = "button" class = "cart-btn">Add to Cart</button></div>
+        </section> <!--END PRODUCT-->
+
+        
+
     </section>
 
 <script>
@@ -741,19 +744,39 @@
             });
         })//end anonymous ready function
 
+
+
+
+
+
+
+
+
+
+
     $("#count-cart").text(num);
 
     $(".cart-btn").each(function(btn){
         var isClicked = false;
-
+        let productName = $(this).closest("div").find(".product-name").text();
+       
         $(this).on('click', function(){
+
+		//checks if items hasnt been added, then add the item
         if(isClicked == false){
             $(this).text("Remove from Cart");
             console.log("Added to cart");
             num+=1;
             $("#count-cart").text(num);
-    
+         
+   
+            $(this).attr("value", productName);
+                console.log($(this).attr("value") )
+            	let btnValue = $(this).attr("value");
 
+            	$("#itemsList").append("<li class = 'item'>"+btnValue+"</li>");
+        		console.log("Appeneded " + btnValue + " to itemList");
+               
             if(num >= 10 && num <= 99){ 
                 console.log("num >= 10 && <= 99");
                 $("#count-cart").css("margin-left", "-20%");
@@ -769,6 +792,8 @@
             console.log(isClicked);
 
         }
+
+		//checks if item has already been added, then remove the item
         else if(isClicked == true){
             $(this).text("Add to Cart");
             console.log("Removed from Cart");
@@ -777,10 +802,25 @@
                     num-=1;
                     $("#count-cart").text(num);
                     }
+ 			btnValue = $(this).attr("value");
+           
+    
+            	
+                val = $(".item");
+                val.each(function(){
+                   console.log("Items in cart: " + $(this).text());
+					if($(this).text() == btnValue) $(this).remove();
+                })
+				console.log("Removed " + btnValue + " to itemList");
+            	
+               
 
             isClicked = false;
             console.log(isClicked);
         }
         })
+
+
+  
     })
 </script>

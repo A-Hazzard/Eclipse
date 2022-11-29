@@ -173,8 +173,8 @@ var motorbike = false;
 var down = false;
 //var isClicked = false;
 let num = 0;
-
-
+let btnValue = "";
+let val = "";
 var step = 1;
 var userID = $("#userID").text();
 
