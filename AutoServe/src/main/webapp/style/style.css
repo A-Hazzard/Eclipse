@@ -1354,15 +1354,25 @@ footer #flex-container #footer-links #wrapper span a {
   }
 }
 
-#clientApplication-main #header-wrapper {
+#clientApplication-main {
+  width: 100vw;
+  height: 100vh;
+  padding-top: 5%;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
 }
-#clientApplication-main #header-wrapper #clientApplication-h2 {
+#clientApplication-main #applications {
+  width: 70%;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+#clientApplication-main #applications #container {
+  margin: 0 auto;
+  width: 70%;
+}
+#clientApplication-main #applications #clientApplication-h2 {
   margin-right: 2%;
 }
-#clientApplication-main #header-wrapper #refreshApplications-btn {
+#clientApplication-main #applications #refreshApplications-btn {
   padding: 0.5%;
   color: white;
   font-size: 0.8rem;
@@ -1371,4 +1381,59 @@ footer #flex-container #footer-links #wrapper span a {
   background-color: rgb(229, 36, 14);
   border: none;
   border-radius: 0.3rem;
+}
+#clientApplication-main #applications .client-info {
+  position: relative;
+}
+#clientApplication-main #registered-bookings-form {
+  width: 100%;
+  height: 100vh;
+}
+#clientApplication-main #registered-bookings-form h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: -1px;
+  color: rgb(229, 36, 14);
+  font-size: 2rem;
+}
+#clientApplication-main #registered-bookings-form label {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1rem;
+}
+#clientApplication-main #registered-bookings-form input[type=text], #clientApplication-main #registered-bookings-form input[type=email] {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  outline: none;
+}
+#clientApplication-main #registered-bookings-form input[type=text] {
+  width: 60%;
+  height: 2rem;
+}
+#clientApplication-main #registered-bookings-form input[type=submit] {
+  background-color: rgb(229, 36, 14);
+  color: white;
+  border: none;
+  border-color: orange;
+  border-radius: 0.5rem;
+  padding: 3%;
+  width: 60%;
+  cursor: pointer;
+}
+#clientApplication-main #registered-bookings-form input[type=submit]:hover {
+  -webkit-animation-name: padding2;
+          animation-name: padding2;
+  -webkit-animation-duration: 0.4s;
+          animation-duration: 0.4s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+@keyframes padding2 {
+  from {
+    padding: 3%;
+  }
+  to {
+    padding: 4%;
+  }
 }/*# sourceMappingURL=style.css.map */

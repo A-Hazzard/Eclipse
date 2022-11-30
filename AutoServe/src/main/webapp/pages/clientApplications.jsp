@@ -115,11 +115,15 @@
     <!--Content loaded using AJAX with JQuery-->
     <main id = "clientApplication-main">
     <br><br>
-       <div id ="header-wrapper">
-	        <h2 id = "clientApplication-h2" style = "color: rgb(229,36,14); font-family: $headerFont; font-size: 1.5rem; text-align: center;">Client Applications</h2> 
-	        <button type = "button" id = "refreshApplications-btn" style = "display: inline;">Refresh</button>
-		</div>
+	
 		<br><br>
+		<div id = "applications">
+		 <br>
+			<div id = "container">
+			<h2 id = "clientApplication-h2" style = "color: rgb(229,36,14); font-family: $headerFont; font-size: 1.5rem; display: inline; margin-left: 25%">Client Applications</h2> 
+	        <button type = "button" id = "refreshApplications-btn" style = "display: inline;">Refresh</button>
+	        
+		
 		<% 
 			try{
 				//Geting connection to display client applications
@@ -144,16 +148,17 @@
 				%>
 					<div class = "client-info" style = "
 					background: rgb(239 239 239);
-					display: inline-block;
 					border-radius: .5rem;
 					padding: 1%;
-					width: 25%;
-					text-align: center;
+					width: 100%;
+					text-align: left;
 					box-shadow: .2rem .1rem .4rem rgb(223, 223, 223);
-	">
-							<p class = "reg_clientID">Client ID: <%out.print(reg_clientID); %></p>
-							<P class = "reg_VehicleType">Type of Vehicle: <%out.print(reg_vehicleType); %></P>
-							<p class = "reg_plateNum">Vehicle Plate Number: <%out.print(reg_plateNum); %></p>
+					cursor: pointer;
+					">
+					
+							<p class = "reg_clientID">Client ID: <span id = "ID"><%out.print(reg_clientID); %></span></p>
+							<P class = "reg_VehicleType">Type of Vehicle:  <span id = "type"><%out.print(reg_vehicleType); %></span></P>
+							<p class = "reg_plateNum">Vehicle Plate Number:  <span id = "pNum"><%out.print(reg_plateNum); %></span></p>
 						</div>
 					
 				<%	System.out.println("Client ID:" +reg_clientID+ " | Vehicle Type: "+reg_vehicleType+ " | Plate Number: " + reg_plateNum+ "\n");
@@ -163,6 +168,31 @@
 		}catch(SQLException e){
 			System.out.println("Problem returning registration info. SQL Error: " + e);
 		}%>
+		</div>
+		</div>
+		
+		 <form action="../jsp/bookingAction.jsp" method = 'post' id="registered-bookings-form">
+ 						<h2>Register Client #<span id = "span-client-ID"></span></h2>
+ 						<br>
+        
+                        <label class = "input-hidden" for="userID_input">ID:</label>
+                        <input class = "input-hidden" type = "text" name = "userID_input" id = "userID_input" required>
+
+
+                <label for="vehicleType">Type of Vehicle:</label><br> 
+				<input name="selectVehicleType" id="vehicleType" required>
+				<br>
+            
+                <label for="plateNum">Plate Number: </label><br>
+                <input type="text" name="plateNumber" id="plateNum" required><br><br>
+                
+                <label for="plateNum">Mechanic ID: </label><br>
+                <input type="text" name="mechID" id="mechID" required><br><br>
+                
+            <input type = "submit" value="Book Now!" id = "bookNow-btn" />
+
+</form>
+        
 </main>
 
  <footer>
@@ -212,8 +242,9 @@
 	var getVariables = $(".getVariables");
 	var fNameContainer = $(".profile-name-container");
 	var clientInfo_container = $(".client-info");
-	clientInfo_container.css("margin-left", "36%");
-	clientInfo_container.css("margin-bottom", "1%");
+	var refreshBtn = $("#refreshApplications-btn");
+	clientInfo_container.css("margin-left", "20%");
+	clientInfo_container.css("margin-bottom", "5%");
 	var nameStr = parseInt(userFirstName.length);
 	
 	
@@ -221,10 +252,32 @@
 	getVariables.css("position", "absolute");
 	getVariables.css("margin-top", "-100%");
 	
-	$("#refreshApplications-btn").on('click', function(){
-		location.reload();
-	})
+	//refreshes the applications
 
+	refreshBtn.on('click', ()=>location.reload());
+		
+	clientInfo_container.each(function(){
+		//Variables for each div
+		let ID = $(this).find("#ID").text();
+		let type = $(this).find("#type").text();
+		let pNum = $(this).find("#pNum").text();
+		let clientInfoArray = [ID, type, pNum];
+		
+		
+		//On click event for each div
+        $(this).on('click', function(){
+        	
+			for(let i = 1; i <= clientInfoArray.length; i++){ 
+				console.log("Info: " + clientInfoArray[i]);
+				if (i == clientInfoArray.length)console.log("-------------------")
+			}
+			
+			//Stores the current client ID into the span tag for the form header
+			$("#span-client-ID").text(ID);
+
+	})
+  })
+	
 </script>
 </body>
 </html>
