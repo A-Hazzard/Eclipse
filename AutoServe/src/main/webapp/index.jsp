@@ -41,7 +41,7 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
     	.jsp-userName{ color: blue;
-    	 			display: inline;
+                    display: inline;
                     text-decoration: none;
                     color: hsl(0, 0%, 13%);
                     font-size: 1.1rem;

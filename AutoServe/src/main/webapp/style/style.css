@@ -552,6 +552,7 @@ input[type=submit], button {
   outline: none;
   -webkit-appearance: none;
   -moz-appearance: none;
+  appearance: none;
   font-size: 0.9rem;
   font-family: "Secular One", sans-serif;
 }
@@ -1351,4 +1352,23 @@ footer #flex-container #footer-links #wrapper span a {
   to {
     padding: 3.5%;
   }
+}
+
+#clientApplication-main #header-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#clientApplication-main #header-wrapper #clientApplication-h2 {
+  margin-right: 2%;
+}
+#clientApplication-main #header-wrapper #refreshApplications-btn {
+  padding: 0.5%;
+  color: white;
+  font-size: 0.8rem;
+  font-style: bold;
+  font-family: "Segoe UI";
+  background-color: rgb(229, 36, 14);
+  border: none;
+  border-radius: 0.3rem;
 }/*# sourceMappingURL=style.css.map */
