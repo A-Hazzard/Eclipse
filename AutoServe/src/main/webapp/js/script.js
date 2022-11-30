@@ -85,6 +85,8 @@ $("#footer-links").load("pages/states/footer/carLinks.txt");
                         	            $("footer").css("margin-top", "5%");
 
     })
+    
+   
 
         //loads calculatorPage on click
         $("#calculatorPage").on('click', function(){

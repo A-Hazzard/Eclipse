@@ -7,8 +7,8 @@
 		Object sessionLname = session.getAttribute("LastName");
 		Object sessionPhone = session.getAttribute("Phone");
 		Object sessionPosition = session.getAttribute("Position");
-		Object sessionUserID = session.getAttribute("userID");
-	
+		Object sessionUserID = session.getAttribute("UserID");
+
 		String userID = String.valueOf(sessionUserID);
 
 		String email = String.valueOf(sessionEmail);

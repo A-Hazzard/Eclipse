@@ -25,7 +25,7 @@
 				String sessionPosition = result.getString(7);
 			
 				//set attributes to share vairable to another file to access
-				session.setAttribute("clientID", sessionID);
+				session.setAttribute("UserID", sessionID);
 				session.setAttribute("FirstName",sessionFname);
 				session.setAttribute("LastName",sessionLname);
 				session.setAttribute("Email",sessionEmail);
@@ -71,7 +71,7 @@
 						String sessionPosition = result.getString(7);
 					
 						//set attributes to share vairable to another file to access
-						session.setAttribute("clientID", sessionID);
+						session.setAttribute("UserID", sessionID);
 						session.setAttribute("FirstName",sessionFname);
 						session.setAttribute("LastName",sessionLname);
 						session.setAttribute("Email",sessionEmail);
@@ -118,7 +118,7 @@
 					String sessionPosition = result.getString(7);
 				
 					//set attributes to share vairable to another file to access
-					session.setAttribute("clientID", sessionID);
+					session.setAttribute("UserID", sessionID);
 					session.setAttribute("FirstName",sessionFname);
 					session.setAttribute("LastName",sessionLname);
 					session.setAttribute("Email",sessionEmail);

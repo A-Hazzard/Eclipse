@@ -762,6 +762,39 @@ input[type=submit], button {
   cursor: pointer;
 }
 
+#vehicle-main {
+  padding: 0 auto;
+}
+#vehicle-main #CTA-bookings-form {
+  margin: 0 auto;
+  padding-left: 25%;
+  padding-top: 10%;
+  height: 100vh;
+  width: 50%;
+}
+#vehicle-main #CTA-bookings-form label {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1rem;
+}
+#vehicle-main #CTA-bookings-form input[type=text], #vehicle-main #CTA-bookings-form input[type=email] {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  outline: none;
+}
+#vehicle-main #CTA-bookings-form table {
+  width: 90%;
+}
+#vehicle-main #CTA-bookings-form input[type=submit] {
+  background-color: rgb(229, 36, 14);
+  color: white;
+  border: none;
+  border-color: orange;
+  border-radius: 0.5rem;
+  padding: 5%;
+  cursor: pointer;
+}
+
 #cheque-container, #typeofService, #totalCost {
   display: flex;
 }

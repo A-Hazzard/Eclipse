@@ -2,8 +2,10 @@
 <%@ page import = "java.sql.*" %>
 
 <%
+
+
 try{
-		int clientID = Integer.parseInt(request.getParameter("clientID_input").trim());
+		int clientID = Integer.parseInt(request.getParameter("userID_input").trim());
 		String firstName = request.getParameter("firstName");
 		String vehicleType = request.getParameter("selectVehicleType");
 		String plateNumber = request.getParameter("plateNumber");
