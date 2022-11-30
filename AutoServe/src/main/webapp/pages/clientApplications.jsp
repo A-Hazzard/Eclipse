@@ -7,22 +7,27 @@
 		Object sessionLname = session.getAttribute("LastName");
 		Object sessionPhone = session.getAttribute("Phone");
 		Object sessionPosition = session.getAttribute("Position");
+		Object sessionUserID = session.getAttribute("UserID");
 
-		
+		String userID = String.valueOf(sessionUserID);
+
 		String email = String.valueOf(sessionEmail);
 		String firstName = String.valueOf(sessionFname);
 		String lastName = String.valueOf(sessionLname);
 		String phone = String.valueOf(sessionPhone);
 		String position = String.valueOf(sessionPosition);
-
-
+		
+		if(firstName != null){
+			System.out.println(firstName + " ID: " + userID);
+		}
+		
 		String staff = "Staff", admin = "Admin";
 		
 		if(sessionFname == null){
             System.out.println("(index.jsp)Username hidden\n");
             System.out.println("(index.jsp)Not logged in\n");
         }else{
-        
+           
             System.out.println("(index.jsp)Logged in as " + sessionFname + "\n");
         }
 		
@@ -47,6 +52,14 @@
     <title>Client Applications</title>
 </head>
 <body>
+	<!-- Accessing java variables -->
+	<span id = "userEmail" class = "getVariables"><% out.print(email); %></span>
+	<span id = "userFirstName" class =  "getVariables"><% out.print(firstName); %></span>
+	<span id = "userLastName" class =  "getVariables"><% out.print(lastName); %></span>
+	<span id = "userPhone" class =  "getVariables"><% out.print(phone); %></span>
+	<span id = "userPosition" class = "getVariables"><% out.print(position); %></span>
+	<span id = "userID" class = "getVariables"><% out.print(userID); %></span>
+	
     <!--Horizontal Header of the web page-->
     <header class="header "><!--FLEXBOX-->
 
@@ -65,7 +78,7 @@
                 </a></li>
 
                 <li class = "clients-jsp-list-items">
-                <a href="jsp/logoutAction.jsp" class = "Links jsp-linnks"> 
+                <a href="../jsp/logoutAction.jsp" class = "Links jsp-linnks"> 
 		            <% 
                     //Display logout buttong only if user is logged in 
 		                if(sessionFname == null) 
@@ -127,5 +140,42 @@
         <br><br>
         <p id="copyright" style="text-align: center; opacity: .5;">Copyright © 2022 Auto Serve Inc. All Rights Reserved.</p>
 </footer>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script src="https://kit.fontawesome.com/18479e6558.js"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+	
+	var car = false;
+	var truck = false;
+	var van = false;
+	var motorbike = false;
+	var down = false;
+	//var isClicked = false;
+	let num = 0;
+	let btnValue = "";
+	let val = "";
+	var step = 1;
+	var userID = $("#userID").text();
+	
+	var fName = $(".profile-name").text();
+	
+	var userEmail = $("#userEmail").text();
+	var userFirstName = document.getElementById("userFirstName").innerHTML;
+	var userLastName = document.getElementById("userLastName").innerHTML;
+	var userFullName = userFirstName.concat(userLastName);
+	var userPhone = $("#userPhone").text();
+	var userPosition = $("#userPosition").text();
+	
+	var fNameContainer_text = $(".profile-name-container").text();
+	var getVariables = $(".getVariables");
+	var fNameContainer = $(".profile-name-container");
+	var nameStr = parseInt(userFirstName.length);
+	
+	
+	console.log("Position: " + userPosition);
+	getVariables.css("position", "absolute");
+	getVariables.css("margin-top", "-100%");
+
+</script>
 </body>
 </html>

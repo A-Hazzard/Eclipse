@@ -772,6 +772,22 @@ input[type=submit], button {
   height: 100vh;
   width: 50%;
 }
+#vehicle-main #CTA-bookings-form h2, #vehicle-main #CTA-bookings-form p {
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: -1px;
+  color: rgb(229, 36, 14);
+}
+#vehicle-main #CTA-bookings-form h2 {
+  font-size: 2rem;
+}
+#vehicle-main #CTA-bookings-form p {
+  font-size: 2.3rem;
+  text-align: left;
+  color: grey;
+}
+#vehicle-main #CTA-bookings-form p a {
+  color: rgb(229, 36, 14);
+}
 #vehicle-main #CTA-bookings-form label {
   font-family: "Ubuntu", sans-serif;
   font-size: 1rem;
@@ -782,8 +798,9 @@ input[type=submit], button {
   border-left: none;
   outline: none;
 }
-#vehicle-main #CTA-bookings-form table {
-  width: 90%;
+#vehicle-main #CTA-bookings-form input[type=text] {
+  width: 60%;
+  height: 2rem;
 }
 #vehicle-main #CTA-bookings-form input[type=submit] {
   background-color: rgb(229, 36, 14);
@@ -791,8 +808,35 @@ input[type=submit], button {
   border: none;
   border-color: orange;
   border-radius: 0.5rem;
-  padding: 5%;
+  padding: 3%;
+  width: 60%;
   cursor: pointer;
+}
+#vehicle-main #CTA-bookings-form input[type=submit]:hover {
+  -webkit-animation-name: padding2;
+          animation-name: padding2;
+  -webkit-animation-duration: 0.4s;
+          animation-duration: 0.4s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+@-webkit-keyframes padding2 {
+  from {
+    padding: 3%;
+  }
+  to {
+    padding: 4%;
+  }
+}
+@keyframes padding2 {
+  from {
+    padding: 3%;
+  }
+  to {
+    padding: 4%;
+  }
 }
 
 #cheque-container, #typeofService, #totalCost {

@@ -88,7 +88,8 @@
         
         
         <form action="../jsp/bookingAction.jsp" method = 'post' id="CTA-bookings-form" onsubmit="submitForm(event)">
-
+ 									<h2>Need to service your Vehicle?</h2><br>
+       						 <p>Book Now!</p>
         
                         <label class = "input-hidden" for="userID_input">ID</label><br>
                         <input class = "input-hidden" type = "text" name = "userID_input" id = "userID_input" required>
@@ -181,9 +182,10 @@ getVariables.css("position", "absolute");
 getVariables.css("margin-top", "-100%");
 let homePageLink = $("#homePage");
 let footerTag = $("footer");
-
-homePageLink.css("margin-left", "-15%");
-
+let logoTag = $("#logo");
+homePageLink.css("margin-left", "90%");
+homePageLink.css("z-index", "2");
+logoTag.css("margin-left", "2%");
 $("#footer-links").load("states/footer/carLinks.txt");
 
 
