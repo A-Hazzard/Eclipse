@@ -171,25 +171,25 @@
 		</div>
 		</div>
 		
-		 <form action="../jsp/bookingAction.jsp" method = 'post' id="registered-bookings-form">
- 						<h2>Register Client #<span id = "span-client-ID"></span></h2>
- 						<br>
+		<form action="../jsp/bookingAction.jsp" method = 'post' id="registered-bookings-form">
+					<h2>Register Client #<span class = "span-client-ID"></span></h2>
+					<br>
         
-                        <label class = "input-hidden" for="userID_input">ID:</label>
-                        <input class = "input-hidden" type = "text" name = "userID_input" id = "userID_input" required>
+				<label class = "input-hidden" for="userID_input">ID: <span class = "span-client-ID"></span></label><br>
+				<input class = "input-hidden" type = "text" name = "userID_input" id = "userID_input"  readonly="readonly" required>
+<br><br>
 
-
-                <label for="vehicleType">Type of Vehicle:</label><br> 
-				<input name="selectVehicleType" id="vehicleType" required>
+                <label for="vehicleType">Type of Vehicle: <span class = "span-client-vehicleType"></span></label><br> 
+				<input type = "text" name="selectVehicleType" id="vehicleType_input"  readonly="readonly" required>
 				<br>
             
-                <label for="plateNum">Plate Number: </label><br>
-                <input type="text" name="plateNumber" id="plateNum" required><br><br>
+                <label for="plateNum">Plate Number: <span class = "span-client-plateNum"></span></label><br>
+                <input type="text" name="plateNumber" id="plateNum_input"  readonly="readonly" required><br><br>
                 
                 <label for="plateNum">Mechanic ID: </label><br>
                 <input type="text" name="mechID" id="mechID" required><br><br>
                 
-            <input type = "submit" value="Book Now!" id = "bookNow-btn" />
+            <input type = "submit" value="Register Client" id = "bookNow-btn" />
 
 </form>
         
@@ -253,7 +253,6 @@
 	getVariables.css("margin-top", "-100%");
 	
 	//refreshes the applications
-
 	refreshBtn.on('click', ()=>location.reload());
 		
 	clientInfo_container.each(function(){
@@ -261,19 +260,30 @@
 		let ID = $(this).find("#ID").text();
 		let type = $(this).find("#type").text();
 		let pNum = $(this).find("#pNum").text();
-		let clientInfoArray = [ID, type, pNum];
-		
-		
 		//On click event for each div
         $(this).on('click', function(){
-        	
-			for(let i = 1; i <= clientInfoArray.length; i++){ 
-				console.log("Info: " + clientInfoArray[i]);
-				if (i == clientInfoArray.length)console.log("-------------------")
-			}
+				
+			//Initialize empty tag values
+			let spanClient_ID = $(".span-client-ID");
+			let spanClient_vehicleType = $(".span-client-vehicleType");
+			let spanClient_plateNum = $(".span-client-plateNum");
 			
-			//Stores the current client ID into the span tag for the form header
-			$("#span-client-ID").text(ID);
+			//Init empy input field values
+			let plateNum_input = $("#plateNum_input");
+			let vehicleType_input = $("#vehicleType_input");
+			let userID_input = $("#userID_input");
+			
+			//Append values stored in array to tags
+			spanClient_ID.text(ID);
+				spanClient_vehicleType.text(type);
+					spanClient_plateNum.text(pNum);
+				
+			//Append values stored in span tags to input fields	
+			userID_input.val(ID);
+				plateNum_input.val(pNum);
+					vehicleType_input.val(type);
+				
+
 
 	})
   })
