@@ -17,7 +17,7 @@ public class ConnectionProvider {
 		
 		//Enters information to connect to database
 		Connection con = DriverManager.getConnection(url, connectionName, connectionPassword);
-		System.out.println("-----------------------------\nconnected to " + connectionName);
+		System.out.println("-----------------------------\nConnected to " + connectionName);
 		return con;
 	}
 	catch(Exception exp) {

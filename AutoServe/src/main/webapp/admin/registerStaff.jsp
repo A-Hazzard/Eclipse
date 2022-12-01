@@ -51,9 +51,6 @@
                     font-size: 1.1rem;
                     font-family: 'Roboto';
                     }
-                    
-                    main{height: 140vh;}
-                   
     </style>
     
     <title>Employee Registration</title>
@@ -89,10 +86,10 @@
 
     <!--Content loaded using AJAX with JQuery-->
     <main data-aos="zoom-in" data-aos-offset="0" data-aos-delay="1" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top" 
-    id = "admin-main" >
+    id = "admin-main" class = "registerStaff-main">
 
         <div id = "admin-top-nav">
-        	<ul class="link-container">
+        <ul class="link-container">
                 
                 <li><a href="../pages/jobsPages.html" id="jobsPage" class="links">Reports <i class="fa-sharp fa-solid fa-caret-down"></i></a></li>
                 <li><a href="../pages/clientApplications.jsp" class="links jsp-links">Project <i class="fa-sharp fa-solid fa-caret-down"></i></a></li>
@@ -101,22 +98,11 @@
                 
             </ul>
         </div>
+        <br><br>
+        <h2>Register Employees</h2>
+          <br>
+          <form action="../jsp/employeeRegAction.jsp" method="post" class="Form">
         
-       <div data-aos="zoom-in-down"
-        data-aos-offset="0"
-        data-aos-delay="1"
-        data-aos-duration="500"
-        data-aos-easing="ease-in-out"
-        data-aos-mirror="true"
-        data-aos-once="false"
-        data-aos-anchor-placement="top" id = "access-main" style = "margin-bottom: 20%;">
-\
-<br><br>
-        <h2>Welcome Admin</h2>
-        <p>Register your new staff members</p>
-
-
-        <form action="../jsp/employeeRegAction.jsp" method="post" class="Form">
             <table id="loginFormTable">
                 <tr>
                     <td> 
@@ -178,16 +164,11 @@
         </form>
 
 		
-
-    </div>
-      
     </main>
-  
-  
     
+
     
     <footer>
-    
         <div id="flex-container">
             <div id="footer-nav">
                 <h4>Quick Links</h4> 
@@ -202,14 +183,14 @@
             <div id="footer-links"></div>
         </div>
             <br><br>
-            <p id="copyright" style="text-align: center; opacity: .5;">Copyright © 2022 Auto Serve Inc. All Rights Reserved.</p>
+            <p id="copyright" style="text-align: center; opacity: .5;">Copyright � 2022 Auto Serve Inc. All Rights Reserved.</p>
     </footer>
 
 <script src="https://code.jquery.com/jquery-3.6.1.min.js" ></script>
 <script src="https://kit.fontawesome.com/18479e6558.js" ></script>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" ></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script src="admin.js"></script>
-
 <script>
         //stores user position in variable(client/staff/admin)
 

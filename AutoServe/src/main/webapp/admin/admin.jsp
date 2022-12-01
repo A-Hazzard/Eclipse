@@ -75,7 +75,7 @@
                 <li><a href="../pages/jobsPages.html" id="jobsPage" class="links">Jobs</a></li>
                 <li><a href="../pages/clientApplications.jsp" class="links jsp-links">Client Applications </a>
                 <li><a href="admin.jsp" id="adminPortal" class="links jsp-links">Admin Portal</a>
-                <li><a href="#" id="employeeForm" class="links jsp-links">Forms</a>
+                <li><a href="registerStaff.jsp" id="employeeForm" class="links jsp-links">Forms</a>
                 <li><a href="../jsp/logoutAction.jsp" class = "Links jsp-linnks logout">Logout</a>
                 
             </ul>
@@ -104,7 +104,6 @@
     <br><br>
     
     <footer>
-    
         <div id="flex-container">
             <div id="footer-nav">
                 <h4>Quick Links</h4> 
@@ -119,14 +118,14 @@
             <div id="footer-links"></div>
         </div>
             <br><br>
-            <p id="copyright" style="text-align: center; opacity: .5;">Copyright Â© 2022 Auto Serve Inc. All Rights Reserved.</p>
+            <p id="copyright" style="text-align: center; opacity: .5;">Copyright © 2022 Auto Serve Inc. All Rights Reserved.</p>
     </footer>
 
 <script src="https://code.jquery.com/jquery-3.6.1.min.js" ></script>
 <script src="https://kit.fontawesome.com/18479e6558.js" ></script>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" ></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script src="admin.js"></script>
-
 <script>
         //stores user position in variable(client/staff/admin)
 

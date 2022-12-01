@@ -10,16 +10,13 @@
 		System.out.println("Stage 2) LoginAction executed(LoginAction.jsp)\n");
 		
 	//checks to if user is admin
-	 if(loginEmail.contains("@admin")&& loginPassword.equals("winstonfields")){
+	 if(loginEmail.contains("@admin")&& loginPassword.equals("admin")){
 		 Connection con = ConnectionProvider.getConnection();
-			Statement state = con.createStatement();
-			String query = "select * from employee where email = '" + loginEmail +"' and password = '"+ loginPassword + "'";
-		 ResultSet result = state.executeQuery(query);
-		 System.out.println(query);
+			Statement state = con.createStatement(); 
+		 ResultSet result = state.executeQuery("select * from employee where email = '" + loginEmail +"' and password = '"+ loginPassword + "'" );
 		 int sessionID = 0;
 		 while(result.next()){
-			System.out.println("results");	
-			 //fetch the column name by their index from the person table
+				//fetch the column name by their index from the person table
 			    sessionID = result.getInt(1);
 				String sessionFname = result.getString(2);//colum firstname as an index of 2
 				String sessionLname = result.getString(3);

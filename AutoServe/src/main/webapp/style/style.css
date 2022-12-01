@@ -1436,4 +1436,77 @@ footer #flex-container #footer-links #wrapper span a {
   to {
     padding: 4%;
   }
+}
+
+.registerStaff-main {
+  height: 120vh;
+}
+.registerStaff-main h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: -1px;
+  font-size: 3.5rem;
+  text-align: center;
+}
+.registerStaff-main .Form {
+  padding-left: 38%;
+  padding-top: 2%;
+  margin-bottom: 15%;
+}
+.registerStaff-main .Form table {
+  width: 70%;
+}
+.registerStaff-main .Form table label {
+  font-size: 1rem;
+  color: grey;
+}
+.registerStaff-main .Form table input[type=email], .registerStaff-main .Form table input[type=password], .registerStaff-main .Form table input[type=text] {
+  width: 60%;
+  height: 2rem;
+  font-size: 1rem;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-color: grey;
+  margin-bottom: 5%;
+  outline: none;
+}
+.registerStaff-main .Form table #position {
+  width: 60%;
+  font-size: 1rem;
+  height: 2.3rem;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-color: orange;
+  outline: none;
+  margin-bottom: 5%;
+}
+.registerStaff-main .Form table #position .role {
+  width: 100%;
+  height: 3rem;
+  font-size: 1.2rem;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-color: orange;
+  outline: none;
+}
+.registerStaff-main .Form table input[type=submit] {
+  width: 60%;
+  height: 3rem;
+  background-color: rgb(229, 36, 14);
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  margin-top: 2%;
+}
+.registerStaff-main .Form table input[type=checkbox] {
+  margin-right: 2%;
+}
+.registerStaff-main .Form table #viewPassword-container {
+  margin-top: -3%;
+}
+.registerStaff-main .Form table #forgotpassword {
+  margin-bottom: 15%;
+  color: grey;
 }/*# sourceMappingURL=style.css.map */
