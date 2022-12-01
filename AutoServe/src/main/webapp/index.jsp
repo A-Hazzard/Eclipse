@@ -21,7 +21,7 @@
 			System.out.println(firstName + " ID: " + userID);
 		}
 		
-		String staff = "Staff", admin = "Admin";
+		String staff = "Staff", mechanic = "Mechanic", admin = "Admin";
 		
 		if(sessionFname == null){
             System.out.println("(index.jsp)Username hidden\n");
@@ -75,7 +75,7 @@
                 <li><a href="#" id="aboutUsPage" class="links">About</a></li>
                 <li><a href="#" id = "servicesPage" class="links">Services</a></li> 
                 	<% //Display  clients link only if user is either staff or admin
-                        if(position.equals(staff) || position.equals(admin)) {
+                        if(position.equals(staff) || position.equals(admin)){
                             %> <li>
                             <a href="pages/clientApplications.jsp" class="links jsp-links">Client Applications </a>
                             </li> <% }
@@ -113,9 +113,9 @@
                                 System.out.println("(index.jsp)Username hidden\n");
                             else {
                                 if(position.equals(admin))
-                                    out.print(firstName.charAt(0));
+                                    out.print(firstName.toUpperCase().charAt(0));
                                             else
-                                                out.print(firstName.charAt(0));
+                                                out.print(firstName.toUpperCase().charAt(0));
                                 
                                 System.out.println("(index.jsp)Logged in as " + firstName + "\n");
                                 }

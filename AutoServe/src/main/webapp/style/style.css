@@ -298,7 +298,6 @@ input[type=submit], button {
 #admin-main {
   padding-left: 10.1%;
   position: relative;
-  z-index: -1;
   background-color: rgb(245, 245, 245);
 }
 #admin-main #admin-top-nav {
@@ -363,6 +362,7 @@ input[type=submit], button {
 #access-main .Form, .forpassword-main .Form {
   padding-left: 38%;
   padding-top: 2%;
+  margin-bottom: 15%;
 }
 #access-main .Form table, .forpassword-main .Form table {
   width: 70%;

@@ -48,7 +48,7 @@ function setStyle(){
 		fNameContainer.css("margin-top", "-2%");
 
 	}
-	else if (userPosition == "Client"){
+	else if (userPosition == "Client"  || userPosition == "Mechanic"){
 		console.log("Client styling now");
 		fNameContainer.css("margin-left", "42%");
 				fNameContainer.css("margin-top", "-2%");

@@ -15,7 +15,7 @@ try{
 		String msg = "Data entered successfully. <a href = \"registration.html\">Register again.</a>";
 		Connection con = ConnectionProvider.getConnection();
 			
-			PreparedStatement ps = con.prepareStatement("INSERT INTO RegistrationQ VALUES(regQ_ID.nextval,"+clientID+",?,?)");
+			PreparedStatement ps = con.prepareStatement("INSERT INTO registrationq VALUES(regQ_ID.nextval,"+clientID+",?,?)");
 			
 			ps.setString(1,vehicleType);
 			ps.setString(2,plateNumber);

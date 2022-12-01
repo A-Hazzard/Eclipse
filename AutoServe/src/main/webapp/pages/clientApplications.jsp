@@ -72,22 +72,6 @@
         <nav class="navbar"><!--NAVIGATION BAR-->
             <ul class="link-container">
                 <li><a href="../index.jsp" id="homePage" class="links">Home</a></li>
-                
-                <li><a href="#" id="loginPage" class="links jsp-links">
-                	<% //Display login/signup button if user is not logged in
-                	if (sessionFname == null) 
-                		%> Login/Sign-Up <%
-                	else System.out.println("(index.jsp)Hid Login/Sign-Up button for client/staff"); %>
-                </a></li>
-
-                <li class = "clients-jsp-list-items">
-                <a href="../jsp/logoutAction.jsp" class = "Links jsp-linnks"> 
-		            <% 
-                    //Display logout buttong only if user is logged in 
-		                if(sessionFname == null) 
-		                	System.out.println("(index.jsp)Logout button hidden");         
-				        else %> Logout 
-				</a></li>
 
                 <li style = "text-align: center;font-size: 2rem;">
                 <span class = "profile-name jsp-userName">         
@@ -171,22 +155,27 @@
 		</div>
 		</div>
 		
-		<form action="../jsp/bookingAction.jsp" method = 'post' id="registered-bookings-form">
+		<form action="../jsp/registeredVehicles.jsp" method = 'post' id="registered-bookings-form">
 					<h2>Register Client #<span class = "span-client-ID"></span></h2>
 					<br>
+			<div id ="hidden">
+				<label class = "input-hidden" for="staffID_input">Staff ID: <span class = "span-staff-ID"></span></label><br>
+				<input type = "text" name = "staffID_input" id = "staffID_input"  required>
+				
+				</div>	
         
 				<label class = "input-hidden" for="userID_input">ID: <span class = "span-client-ID"></span></label><br>
-				<input class = "input-hidden" type = "text" name = "userID_input" id = "userID_input"  readonly="readonly" required>
+				<input class = "input-hidden" type = "text" name = "userID_input" id = "userID_input"   required>
 <br><br>
 
-                <label for="vehicleType">Type of Vehicle: <span class = "span-client-vehicleType"></span></label><br> 
-				<input type = "text" name="selectVehicleType" id="vehicleType_input"  readonly="readonly" required>
+                <label for="vehicleType_input">Type of Vehicle: <span class = "span-client-vehicleType"></span></label><br> 
+				<input type = "text" name="selectVehicleType" id="vehicleType_input"   required>
 				<br>
             
-                <label for="plateNum">Plate Number: <span class = "span-client-plateNum"></span></label><br>
-                <input type="text" name="plateNumber" id="plateNum_input"  readonly="readonly" required><br><br>
+                <label for="plateNum_input">Plate Number: <span class = "span-client-plateNum"></span></label><br>
+                <input type="text" name="plateNumber" id="plateNum_input"   required><br><br>
                 
-                <label for="plateNum">Mechanic ID: </label><br>
+                <label for="mechID">Mechanic ID: </label><br>
                 <input type="text" name="mechID" id="mechID" required><br><br>
                 
             <input type = "submit" value="Register Client" id = "bookNow-btn" />
@@ -246,7 +235,8 @@
 	clientInfo_container.css("margin-left", "20%");
 	clientInfo_container.css("margin-bottom", "5%");
 	var nameStr = parseInt(userFirstName.length);
-	
+    $("#staffID_input").val(userID);
+
 	
 	console.log("Position: " + userPosition);
 	getVariables.css("position", "absolute");
