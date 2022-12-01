@@ -13,7 +13,7 @@
 		Object sessionUserID = session.getAttribute("UserID");
 
 		String userID = String.valueOf(sessionUserID);
-
+		String userEmail = String.valueOf(sessionEmail);
 		String email = String.valueOf(sessionEmail);
 		String firstName = String.valueOf(sessionFname);
 		String lastName = String.valueOf(sessionLname);
@@ -77,17 +77,17 @@
                 <span class = "profile-name jsp-userName">         
                 <% //Display client button only if user is admin/staff 
                 if(sessionFname == null)
-                	System.out.println("(index.jsp)Username hidden\n");
-                else {
-                	if(position.equals(admin))
-                		out.print(firstName + "("+position+")");
-                			else if (position.equals(staff))
-                				out.print(firstName + "("+position+")");
-                				else
-                					out.print(firstName + "("+position+")");
-                	
-                	System.out.println("(index.jsp)Logged in as " + firstName + "\n");
-                	}
+					System.out.println("(index.jsp)Username hidden\n");
+				else {
+					if(position.equals(admin))
+						out.print(firstName + "("+position+")");
+							else if (position.equals(staff))
+								out.print(firstName + "("+position+")");
+								else
+									out.print(firstName + "("+position+")");
+					
+					System.out.println("(index.jsp)Logged in as " + firstName + "\n");
+					}
                 %>
 </span></li>
 
@@ -98,91 +98,94 @@
 
     <!--Content loaded using AJAX with JQuery-->
     <main id = "clientApplication-main">
-    <br><br>
-	
 		<br><br>
-		<div id = "applications">
-		 <br>
-			<div id = "container">
-			<h2 id = "clientApplication-h2" style = "color: rgb(229,36,14); font-family: $headerFont; font-size: 1.5rem; display: inline; margin-left: 25%">Client Applications</h2> 
-	        <button type = "button" id = "refreshApplications-btn" style = "display: inline;">Refresh</button>
-	        
 		
-		<% 
-			try{
-				//Geting connection to display client applications
-				Connection con = ConnectionProvider.getConnection();
-				//Create a statement using the connection provider
-				Statement state = con.createStatement();
-				//Create a result set to return the results from the statement
-				String sqlQuery = "SELECT clientID, vehicletype, platenumber FROM registrationQ";
-				ResultSet result = state.executeQuery(sqlQuery);
-				
-				int reg_clientID = 0;
-				String reg_vehicleType = "";
-				String reg_plateNum = "";
-				System.out.println("RegistrationQ TABLE : ");
-				//Fetches the data columns and returns the values
-				while(result.next()){
-					//Session variables
-					reg_clientID = result.getInt(1);
-					reg_vehicleType = result.getString(2);
-					reg_plateNum = result.getString(3);
-					
-				%>
-					<div class = "client-info" style = "
-					background: rgb(239 239 239);
-					border-radius: .5rem;
-					padding: 1%;
-					width: 100%;
-					text-align: left;
-					box-shadow: .2rem .1rem .4rem rgb(223, 223, 223);
-					cursor: pointer;
-					">
-					
-							<p class = "reg_clientID">Client ID: <span id = "ID"><%out.print(reg_clientID); %></span></p>
-							<P class = "reg_VehicleType">Type of Vehicle:  <span id = "type"><%out.print(reg_vehicleType); %></span></P>
-							<p class = "reg_plateNum">Vehicle Plate Number:  <span id = "pNum"><%out.print(reg_plateNum); %></span></p>
-						</div>
-					
-				<%	System.out.println("Client ID:" +reg_clientID+ " | Vehicle Type: "+reg_vehicleType+ " | Plate Number: " + reg_plateNum+ "\n");
-				}
-				
-				
-		}catch(SQLException e){
-			System.out.println("Problem returning registration info. SQL Error: " + e);
-		}%>
-		</div>
-		</div>
-		
-		<form action="../jsp/registeredVehicles.jsp" method = 'post' id="registered-bookings-form">
-					<h2>Register Client #<span class = "span-client-ID"></span></h2>
-					<br>
-			<div id ="hidden">
-				<label class = "input-hidden" for="staffID_input">Staff ID: <span class = "span-staff-ID"></span></label><br>
-				<input type = "text" name = "staffID_input" id = "staffID_input"  required>
-				
-				</div>	
-        
-				<label class = "input-hidden" for="userID_input">ID: <span class = "span-client-ID"></span></label><br>
-				<input class = "input-hidden" type = "text" name = "userID_input" id = "userID_input"   required>
-<br><br>
-
-                <label for="vehicleType_input">Type of Vehicle: <span class = "span-client-vehicleType"></span></label><br> 
-				<input type = "text" name="selectVehicleType" id="vehicleType_input"   required>
+			<br><br>
+			<div id = "applications">
 				<br>
-            
-                <label for="plateNum_input">Plate Number: <span class = "span-client-plateNum"></span></label><br>
-                <input type="text" name="plateNumber" id="plateNum_input"   required><br><br>
-                
-                <label for="mechID">Mechanic ID: </label><br>
-                <input type="text" name="mechID" id="mechID" required><br><br>
-                
-            <input type = "submit" value="Register Client" id = "bookNow-btn" />
+					<div id = "container">
+					<h2 id = "clientApplication-h2" style = "color: rgb(229,36,14); font-family: $headerFont; font-size: 1.5rem; display: inline; margin-left: 25%">Client Applications</h2> 
+					<button type = "button" id = "refreshApplications-btn" style = "display: inline;">Refresh</button>
+					
+				
+				<% 
+					try{
+						//Geting connection to display client applications
+						Connection con = ConnectionProvider.getConnection();
+						//Create a statement using the connection provider
+						Statement state = con.createStatement();
+						//Create a result set to return the results from the statement
+						String sqlQuery = "SELECT clientID, vehicletype, platenumber FROM registrationQ";
+						ResultSet result = state.executeQuery(sqlQuery);
+						
+						int reg_clientID = 0;
+						String reg_vehicleType = "";
+						String reg_plateNum = "";
+						System.out.println("RegistrationQ TABLE : ");
+						//Fetches the data columns and returns the values
+						while(result.next()){
+							//Session variables
+							reg_clientID = result.getInt(1);
+							reg_vehicleType = result.getString(2);
+							reg_plateNum = result.getString(3);
+							
+						%>
+							<div class = "client-info" style = "
+							background: rgb(239 239 239);
+							border-radius: .5rem;
+							padding: 1%;
+							width: 100%;
+							text-align: left;
+							box-shadow: .2rem .1rem .4rem rgb(223, 223, 223);
+							cursor: pointer;
+							">
+							
+									<p class = "reg_clientID">Client ID: <span id = "ID"><%out.print(reg_clientID); %></span></p>
+									<P class = "reg_VehicleType">Type of Vehicle:  <span id = "type"><%out.print(reg_vehicleType); %></span></P>
+									<p class = "reg_plateNum">Vehicle Plate Number:  <span id = "pNum"><%out.print(reg_plateNum); %></span></p>
+								</div>
+							
+						<%	System.out.println("Client ID:" +reg_clientID+ " | Vehicle Type: "+reg_vehicleType+ " | Plate Number: " + reg_plateNum+ "\n");
+						}
+						
+						
+				}catch(SQLException e){
+					System.out.println("Problem returning registration info. SQL Error: " + e);
+				}%>
+					</div>
+				</div>
+			
+			
+			
+			
+			<form action="../jsp/registeredVehicles.jsp" method = 'post' id="registered-bookings-form">
+						<h2>Register Client #<span class = "span-client-ID"></span></h2>
+						<br>
+				<div class ="hidden">
+					<label class = "input-hidden" for="staffID_input">Staff Email: <span class = "span-staff-ID"></span></label><br>
+					<input type = "text" name = "staffEmail_input" id = "staffEmail_input"  required>
+					
+				</div>	
+			
+					<label class = "input-hidden" for="userID_input">ID: <span class = "span-client-ID"></span></label><br>
+					<input class = "input-hidden hidden" type = "text" name = "userID_input" id = "userID_input"   required>
+				<br>
 
-</form>
+					<label for="vehicleType_input">Type of Vehicle: <span class = "span-client-vehicleType"></span></label><br> 
+					<input type = "text" name="selectVehicleType" id="vehicleType_input" class = "hidden"   required>
+					<br>
+				
+					<label for="plateNum_input">Plate Number: <span class = "span-client-plateNum"></span></label><br>
+					<input type="text" name="plateNumber" id="plateNum_input" class = "hidden"  required><br>
+					
+					<label for="mechEmail">Mechanic Email: </label><br>
+					<input type="text" name="mechEmail" id="mechEmail" readonly = "readonly" placeholder = "Select a client" required><br><br>
+					
+				<input type = "submit" value="Select Client Application" id = "bookNow-btn" disabled/>
+
+			</form>
         
-</main>
+	</main>
 
  <footer>
     <div id="flex-container">
@@ -232,10 +235,17 @@
 	var fNameContainer = $(".profile-name-container");
 	var clientInfo_container = $(".client-info");
 	var refreshBtn = $("#refreshApplications-btn");
+	const orange = "rgb(229,36,14)";
+	let bookNowBtn = $("#bookNow-btn"); 
+	bookNowBtn.css("background", "grey");
+	bookNowBtn.css("opacity", ".5");
+	bookNowBtn.css("animation", "none");
+	bookNowBtn.css("cursor", "unset");
+
 	clientInfo_container.css("margin-left", "20%");
 	clientInfo_container.css("margin-bottom", "5%");
 	var nameStr = parseInt(userFirstName.length);
-    $("#staffID_input").val(userID);
+    $("#staffEmail_input").val(userEmail);
 
 	
 	console.log("Position: " + userPosition);
@@ -244,15 +254,15 @@
 	
 	//refreshes the applications
 	refreshBtn.on('click', ()=>location.reload());
-		
-	clientInfo_container.each(function(){
-		//Variables for each div
-		let ID = $(this).find("#ID").text();
-		let type = $(this).find("#type").text();
-		let pNum = $(this).find("#pNum").text();
-		//On click event for each div
-        $(this).on('click', function(){
-				
+
+
+		//For each client application that loads on the website, display their information
+		clientInfo_container.each(function(){
+			//Variables for each div
+			let ID = $(this).find("#ID").text();
+			let type = $(this).find("#type").text();
+			let pNum = $(this).find("#pNum").text();
+
 			//Initialize empty tag values
 			let spanClient_ID = $(".span-client-ID");
 			let spanClient_vehicleType = $(".span-client-vehicleType");
@@ -262,21 +272,30 @@
 			let plateNum_input = $("#plateNum_input");
 			let vehicleType_input = $("#vehicleType_input");
 			let userID_input = $("#userID_input");
-			
-			//Append values stored in array to tags
-			spanClient_ID.text(ID);
-				spanClient_vehicleType.text(type);
-					spanClient_plateNum.text(pNum);
-				
-			//Append values stored in span tags to input fields	
-			userID_input.val(ID);
-				plateNum_input.val(pNum);
-					vehicleType_input.val(type);
-				
+			let mechEmail_input = $("#mechEmail");
+
+			//On click event for each div
+			$(this).on('click', function(){
+				//Append values stored in array to tags
+				spanClient_ID.text(ID);
+					spanClient_vehicleType.text(type);
+						spanClient_plateNum.text(pNum);
+					
+				//Append values stored in span tags to input fields	
+				userID_input.val(ID);
+					plateNum_input.val(pNum);
+						vehicleType_input.val(type);
+							mechEmail_input.attr("readonly", false);
+								mechEmail_input.attr("placeholder", "");
+									bookNowBtn.attr("disabled", false);
+										bookNowBtn.css("background", orange);
+											bookNowBtn.css("opacity", "1");
+												bookNowBtn.css("animation-name", "padding2");
+													bookNowBtn.css("cursor", "pointer");
 
 
-	})
-  })
+		})//End this.click method
+})//End clientInfo_container method
 	
 </script>
 </body>

@@ -44,12 +44,12 @@ function setStyle(){
 	}
 	else if(userPosition == "Admin") {
 		console.log("Admin styling now");
-		fNameContainer.css("margin-left", "66%");
-		fNameContainer.css("margin-top", "-2%");
+		fNameContainer.css("margin-left", "60%");
+		fNameContainer.css("margin-top", "-1.7%");
 
 	}
 	else if (userPosition == "Client"  || userPosition == "Mechanic"){
-		console.log("Client styling now");
+		console.log(userPosition + " styling now");
 		fNameContainer.css("margin-left", "42%");
 				fNameContainer.css("margin-top", "-2%");
 
