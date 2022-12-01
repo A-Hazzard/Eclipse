@@ -1,5 +1,6 @@
 <% 
 
+
 	
 	//getting credentail attributes from loginAction.jsp
 	Object sessionEmail = session.getAttribute("Email");
@@ -7,7 +8,7 @@
 	Object sessionLname = session.getAttribute("LastName");
 	Object sessionPhone = session.getAttribute("Phone");
 	Object sessionPosition = session.getAttribute("Position");
-	Object sessionUserID = session.getAttribute("userID");
+	Object sessionUserID = session.getAttribute("UserID");
 	
 	String userID = String.valueOf(sessionUserID);
 	
@@ -27,11 +28,10 @@
 	    System.out.println("(index.jsp)Username hidden\n");
 	    System.out.println("(index.jsp)Not logged in\n");
 	}else{
-	   
+	
 	    System.out.println("(index.jsp)Logged in as " + sessionFname + "\n");
 	}
 
-		
 %>
 <html lang = "en">
 <head>
