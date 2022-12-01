@@ -10,7 +10,7 @@
 		System.out.println("Stage 2) LoginAction executed(LoginAction.jsp)\n");
 		
 	//checks to if user is admin
-	 if(loginEmail.contains("@admin")&& loginPassword.equals("winstonfields")){
+	 if(loginEmail.contains("@admin")&& loginPassword.equals("admin")){
 		 Connection con = ConnectionProvider.getConnection();
 			Statement state = con.createStatement(); 
 		 ResultSet result = state.executeQuery("select * from employee where email = '" + loginEmail +"' and password = '"+ loginPassword + "'" );

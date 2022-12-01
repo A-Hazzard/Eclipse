@@ -1,6 +1,5 @@
 <% 
 
-
 	
 	//getting credentail attributes from loginAction.jsp
 	Object sessionEmail = session.getAttribute("Email");
@@ -8,7 +7,7 @@
 	Object sessionLname = session.getAttribute("LastName");
 	Object sessionPhone = session.getAttribute("Phone");
 	Object sessionPosition = session.getAttribute("Position");
-	Object sessionUserID = session.getAttribute("UserID");
+	Object sessionUserID = session.getAttribute("userID");
 	
 	String userID = String.valueOf(sessionUserID);
 	
@@ -28,10 +27,11 @@
 	    System.out.println("(index.jsp)Username hidden\n");
 	    System.out.println("(index.jsp)Not logged in\n");
 	}else{
-	
+	   
 	    System.out.println("(index.jsp)Logged in as " + sessionFname + "\n");
 	}
 
+		
 %>
 <html lang = "en">
 <head>
@@ -75,7 +75,6 @@
                 <li><a href="../pages/jobsPages.html" id="jobsPage" class="links">Jobs</a></li>
                 <li><a href="../pages/clientApplications.jsp" class="links jsp-links">Client Applications </a>
                 <li><a href="admin.jsp" id="adminPortal" class="links jsp-links">Admin Portal</a>
-                <li><a href="#" id="employeeForm" class="links jsp-links">Forms</a>
                 <li><a href="../jsp/logoutAction.jsp" class = "Links jsp-linnks logout">Logout</a>
                 
             </ul>
