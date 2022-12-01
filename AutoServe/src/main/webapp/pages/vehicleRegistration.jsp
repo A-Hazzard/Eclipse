@@ -49,7 +49,7 @@
                     }
     </style>
     
-    <title>Vechile Registration</title>
+    <title>Vehicle Registration</title>
 </head>
 <body>
 	<!-- Accessing java variables -->
