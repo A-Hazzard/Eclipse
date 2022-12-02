@@ -82,6 +82,7 @@ $("#footer-links").load("pages/states/footer/carLinks.txt");
     //loads home page on click
     $("#homePage").on('click', function(){
         $("main").hide().load("pages/states/homePage.txt").fadeIn("slow");
+                        	            $("footer").css("margin-top", "5%");
 
     })
     
@@ -90,7 +91,7 @@ $("#footer-links").load("pages/states/footer/carLinks.txt");
         //loads calculatorPage on click
         $("#calculatorPage").on('click', function(){
             $("main").hide().load("pages/states/calculatorPage.txt").fadeIn("fast");
-
+                            	            $("footer").css("margin-top", "5%");
 
         })
         
@@ -111,20 +112,20 @@ $("#footer-links").load("pages/states/footer/carLinks.txt");
                 $("#loginPage").on('click', function(){
 	
                     $("main").hide().load("pages/states/loginPage.txt").fadeIn("slow");
-        
+                                    	            $("main").css("height", "100vh");
 
                 })
 
                     //loads obutUsPage on click
                     $("#aboutUsPage").on('click', function(){
                         $("main").hide().load("pages/states/aboutUsPage.txt").fadeIn("slow");
-            
+                                        	            $("footer").css("margin-top", "5%");
 
                     });
                         //loads servicesPage on click
                     $("#servicesPage").on('click', function(){
                         $("main").hide().load("pages/states/servicesPage.txt").fadeIn("fast");
-            
+                                        	            $("footer").css("margin-top", "5%");
 
                     });
 

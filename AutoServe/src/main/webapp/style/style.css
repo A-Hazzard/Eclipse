@@ -351,6 +351,7 @@ input[type=submit], button {
 }
 #access-main h2, .forpassword-main h2 {
   font-size: 3.5rem;
+  margin-top: 5%;
 }
 #access-main p, .forpassword-main p {
   font-size: 1.1rem;
@@ -899,7 +900,7 @@ input[type=submit], button {
 }
 
 #aboutUs-main-flex-container {
-  padding-top: 5%;
+  padding-top: 7%;
   padding-left: 15%;
   padding-right: 15%;
 }
@@ -1554,7 +1555,7 @@ footer #flex-container #footer-links #wrapper span a {
   height: 100vh;
   width: 50%;
 }
-#CTA-bookings-form .input-hidden {
+#CTA-bookings-form .hidden {
   position: absolute;
   margin-left: -1000%;
 }

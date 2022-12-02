@@ -138,8 +138,7 @@
         data-aos-anchor-placement="top" 
         id = "index"></main>
     
-    <br><br>
-    
+   
     <footer>
         <div id="flex-container">
             <div id="footer-nav">
