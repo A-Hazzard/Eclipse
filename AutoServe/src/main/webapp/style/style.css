@@ -1389,6 +1389,10 @@ footer #flex-container #footer-links #wrapper span a {
   width: 100%;
   height: 100vh;
 }
+#clientApplication-main #registered-bookings-form .hidden {
+  position: absolute;
+  margin-left: -1000%;
+}
 #clientApplication-main #registered-bookings-form h2 {
   font-family: Arial, Helvetica, sans-serif;
   letter-spacing: -1px;

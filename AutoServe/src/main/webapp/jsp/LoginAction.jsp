@@ -99,7 +99,7 @@
 		//checks to see if user is staffmember
 	 else if(loginEmail.contains("@mechanic"))
 	 {
-		 System.out.println("Staff member logged in(LoginAction.jsp)");
+		 System.out.println("Mechanic logged in(LoginAction.jsp)");
 		      boolean test = false;
 		
 			try{

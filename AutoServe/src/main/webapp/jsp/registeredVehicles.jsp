@@ -15,7 +15,7 @@
 		
 	try{	
 		Connection con = ConnectionProvider.getConnection();
-			String sql = "INSERT INTO registered_vehicles VALUES(1,?,?,?,?,?)";
+			String sql = "INSERT INTO registered_vehicles VALUES(regID.nextval,?,?,?,?,?)";
 			PreparedStatement ps;
 			ps = con.prepareStatement(sql);
 				ps.setInt(1, clientID);
@@ -27,7 +27,7 @@
 			ps.executeUpdate();
 			System.out.println("(registeredVehicle.jsp) Form sent");
 
-			response.sendRedirect("../index.jsp");
+			response.sendRedirect("../pages/clientApplications.jsp");
 			String msg = "(registeredVehicles.jsp) Data entered successfully. <a href = \"registration.html\">Register again.</a>";
 
 		} catch (SQLException e) {

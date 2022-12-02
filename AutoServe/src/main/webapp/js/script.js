@@ -37,8 +37,8 @@ function setStyle(){
 	
 	if(userPosition == "Staff") {
 		console.log("staff styling now");
-		fNameContainer.css("margin-left", "56%");
-		fNameContainer.css("margin-top", "-2%");
+		fNameContainer.css("margin-left", "50%");
+		fNameContainer.css("margin-top", "-1.8%");
 
 		
 	}
@@ -50,8 +50,8 @@ function setStyle(){
 	}
 	else if (userPosition == "Client"  || userPosition == "Mechanic"){
 		console.log(userPosition + " styling now");
-		fNameContainer.css("margin-left", "42%");
-				fNameContainer.css("margin-top", "-2%");
+		fNameContainer.css("margin-left", "38%");
+				fNameContainer.css("margin-top", "-1.8%");
 
 	}
 	
