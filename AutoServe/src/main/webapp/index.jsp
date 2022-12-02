@@ -77,7 +77,7 @@
                 	<% //Display  clients link only if user is either staff or admin
                         if(position.equals(staff) || position.equals(admin)){
                             %> <li>
-                            <a href="pages/clientApplications.jsp" class="links jsp-links">Client Applications </a>
+                            <a href="pages/jobApplications.jsp" class="links jsp-links">Job Applications </a>
                             </li> <% }
                         else System.out.println("(index.jsp)Not an admin or staff. Hid Clients link. Email: " + email); 
                     %>

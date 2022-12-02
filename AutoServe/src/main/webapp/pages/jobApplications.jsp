@@ -42,6 +42,10 @@
     <link rel="stylesheet" href="../style/style.css">
     <link rel="shortcut icon" type="image/x-icon" href="https://th.bing.com/th/id/OIP.cAA3eIjKFPQHSQJTSnmTMgHaHa?pid=ImgDet&rs=1    " />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lora&family=Secular+One&display=swap" rel="stylesheet">
+
     <style>
     	.jsp-userName{ color: blue;
     	 			display: inline;
@@ -50,9 +54,11 @@
                     font-size: 1.1rem;
                     font-family: 'Roboto';
                     }
+		.info {font-family: "Secular One", Roboto; font-weight: 350;}
+		.sub-info {font-family: "Segoe UI", Roboto; font-weight: 400;}
     </style>
     
-    <title>Client Applications</title>
+    <title>Job Applications</title>
 </head>
 <body>
 	<!-- Accessing java variables -->
@@ -98,15 +104,16 @@
 
     <!--Content loaded using AJAX with JQuery-->
     <main id = "clientApplication-main">
-		<br><br>
 		
+			<div id = "header-container">	
+					<h2 id = "clientApplication-h2">Job Applications</h2> 
+					<button type = "button" id = "refreshApplications-btn">Refresh</button>
+				</div>
 			<br><br>
 			<div id = "applications">
 				<br>
 					<div id = "container">
-					<h2 id = "clientApplication-h2" style = "color: rgb(229,36,14); font-family: $headerFont; font-size: 1.5rem; display: inline; margin-left: 25%">Client Applications</h2> 
-					<button type = "button" id = "refreshApplications-btn" style = "display: inline;">Refresh</button>
-					
+			
 				
 				<% 
 					try{
@@ -134,15 +141,15 @@
 							background: rgb(239 239 239);
 							border-radius: .5rem;
 							padding: 1%;
-							width: 100%;
+							
 							text-align: left;
 							box-shadow: .2rem .1rem .4rem rgb(223, 223, 223);
 							cursor: pointer;
 							">
 							
-									<p class = "reg_clientID">Client ID: <span id = "ID"><%out.print(reg_clientID); %></span></p>
-									<P class = "reg_VehicleType">Type of Vehicle:  <span id = "type"><%out.print(reg_vehicleType); %></span></P>
-									<p class = "reg_plateNum">Vehicle Plate Number:  <span id = "pNum"><%out.print(reg_plateNum); %></span></p>
+									<p class = "reg_clientID info">Client ID: <span id = "ID" class = "sub-info"><%out.print(reg_clientID); %></span></p>
+									<P class = "reg_VehicleType info">Type of Vehicle:  <span id = "type" class = "sub-info"><%out.print(reg_vehicleType); %></span></P>
+									<p class = "reg_plateNum info">Vehicle Plate Number:  <span id = "pNum" class = "sub-info"><%out.print(reg_plateNum); %></span></p>
 								</div>
 							
 						<%	System.out.println("Client ID:" +reg_clientID+ " | Vehicle Type: "+reg_vehicleType+ " | Plate Number: " + reg_plateNum+ "\n");
@@ -162,23 +169,23 @@
 						<h2>Register Client #<span class = "span-client-ID"></span></h2>
 						<br>
 				<div class ="hidden">
-					<label class = "input-hidden" for="staffID_input">Staff Email: <span class = "span-staff-ID"></span></label><br>
+					<label class = "input-hidden info" for="staffID_input">Staff Email: <span class = "span-staff-ID"></span></label><br>
 					<input type = "text" name = "staffEmail_input" id = "staffEmail_input"  required>
 					
 				</div>	
 			
-					<label class = "input-hidden" for="userID_input">ID: <span class = "span-client-ID"></span></label><br>
-					<input class = "input-hidden hidden" type = "text" name = "userID_input" id = "userID_input"   required>
+					<label class = "input-hidden info" for="userID_input">ID: <span class = "span-client-ID sub-info"></span></label><br>
+					<input class = "input-hidden hidden" type = "text" name = "userID_input" id = "userID_input"  required>
 				<br>
 
-					<label for="vehicleType_input">Type of Vehicle: <span class = "span-client-vehicleType"></span></label><br> 
+					<label for="vehicleType_input" class = "info">Type of Vehicle: <span class = "span-client-vehicleType sub-info"></span></label><br> 
 					<input type = "text" name="selectVehicleType" id="vehicleType_input" class = "hidden"   required>
 					<br>
 				
-					<label for="plateNum_input">Plate Number: <span class = "span-client-plateNum"></span></label><br>
+					<label for="plateNum_input" class = "info">Plate Number: <span class = "span-client-plateNum sub-info"></span></label><br>
 					<input type="text" name="plateNumber" id="plateNum_input" class = "hidden"  required><br>
 					
-					<label for="mechEmail">Mechanic Email: </label><br>
+					<label for="mechEmail" class = "info">Mechanic Email: </label><br>
 					<input type="text" name="mechEmail" id="mechEmail" readonly = "readonly" placeholder = "Select a client" required><br><br>
 					
 				<input type = "submit" value="Select Client Application" id = "bookNow-btn" disabled/>
@@ -242,8 +249,12 @@
 	bookNowBtn.css("animation", "none");
 	bookNowBtn.css("cursor", "unset");
 
-	clientInfo_container.css("margin-left", "20%");
+	//clientInfo_container.css("margin-left", "20%");
 	clientInfo_container.css("margin-bottom", "5%");
+	$(".client-info > .info").css("fontSize","1.5rem");
+	$(".client-info").find("span").css("fontSize", "1rem");
+
+
 	var nameStr = parseInt(userFirstName.length);
     $("#staffEmail_input").val(userEmail);
 
@@ -286,13 +297,19 @@
 					plateNum_input.val(pNum);
 						vehicleType_input.val(type);
 							mechEmail_input.attr("readonly", false);
-								mechEmail_input.attr("placeholder", "");
-									bookNowBtn.attr("disabled", false);
-										bookNowBtn.css("background", orange);
-											bookNowBtn.css("opacity", "1");
-												bookNowBtn.css("animation-name", "padding2");
-													bookNowBtn.css("cursor", "pointer");
-
+									mechEmail_input.attr("placeholder", "");
+										bookNowBtn.val("Enter mechanic's Email");
+				mechEmail_input.on("input", function() {
+					console.log("Email entered");
+						bookNowBtn.attr("disabled", false);
+							bookNowBtn.val("Assign mechanic to job");
+								bookNowBtn.css("background", orange);
+									bookNowBtn.css("opacity", "1");
+											bookNowBtn.css("cursor", "pointer");
+				})
+					
+				
+				
 
 		})//End this.click method
 })//End clientInfo_container method

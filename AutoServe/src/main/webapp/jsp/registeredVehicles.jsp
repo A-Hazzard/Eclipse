@@ -27,7 +27,7 @@
 			ps.executeUpdate();
 			System.out.println("(registeredVehicle.jsp) Form sent");
 
-			response.sendRedirect("../pages/clientApplications.jsp");
+			response.sendRedirect("../pages/jobApplications.jsp");
 			String msg = "(registeredVehicles.jsp) Data entered successfully. <a href = \"registration.html\">Register again.</a>";
 
 		} catch (SQLException e) {

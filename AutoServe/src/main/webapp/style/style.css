@@ -1357,35 +1357,46 @@ footer #flex-container #footer-links #wrapper span a {
 #clientApplication-main {
   width: 100vw;
   height: 100vh;
-  padding-top: 5%;
+  padding-top: 10%;
   display: flex;
+  position: relative;
 }
-#clientApplication-main #applications {
-  width: 70%;
-  padding-left: 10%;
-  padding-right: 10%;
+#clientApplication-main #header-container {
+  position: absolute;
+  margin-top: -10%;
+  width: 100vw;
+  padding-left: 6.5%;
+  padding-top: 2%;
 }
-#clientApplication-main #applications #container {
-  margin: 0 auto;
-  width: 70%;
+#clientApplication-main #header-container #clientApplication-h2 {
+  margin-bottom: 1%;
+  color: rgb(229, 36, 14);
+  font-family: "Segoe UI";
+  font-size: 1.5rem;
 }
-#clientApplication-main #applications #clientApplication-h2 {
-  margin-right: 2%;
-}
-#clientApplication-main #applications #refreshApplications-btn {
-  padding: 0.5%;
+#clientApplication-main #header-container #refreshApplications-btn {
+  display: block;
+  padding: 0.8%;
   color: white;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-style: bold;
   font-family: "Segoe UI";
   background-color: rgb(229, 36, 14);
   border: none;
   border-radius: 0.3rem;
 }
+#clientApplication-main #applications {
+  width: 70%;
+}
+#clientApplication-main #applications #container {
+  margin: 0% auto;
+  width: 70%;
+}
 #clientApplication-main #applications .client-info {
   position: relative;
 }
 #clientApplication-main #registered-bookings-form {
+  padding-top: 1%;
   width: 100%;
   height: 100vh;
 }
@@ -1400,8 +1411,9 @@ footer #flex-container #footer-links #wrapper span a {
   font-size: 2rem;
 }
 #clientApplication-main #registered-bookings-form label {
-  font-family: "Ubuntu", sans-serif;
   font-size: 1rem;
+  font-family: "Secular One", Roboto;
+  font-weight: 350;
 }
 #clientApplication-main #registered-bookings-form input[type=text], #clientApplication-main #registered-bookings-form input[type=email] {
   border-top: none;
