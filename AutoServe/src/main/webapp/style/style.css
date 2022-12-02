@@ -823,6 +823,26 @@ input[type=submit], button {
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
+#vehicle-main #CTA-bookings-form select {
+  width: 60%;
+  font-size: 1rem;
+  height: 2.3rem;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-color: orange;
+  outline: none;
+  margin-bottom: 5%;
+}
+#vehicle-main #CTA-bookings-form textarea {
+  border-radius: 0.5rem;
+  padding: 1%;
+}
+#vehicle-main #CTA-bookings-form textarea:focus {
+  outline: none !important;
+  border-color: rgb(229, 36, 14);
+  box-shadow: 0 0 3px rgb(229, 36, 14);
+}
 @-webkit-keyframes padding2 {
   from {
     padding: 3%;

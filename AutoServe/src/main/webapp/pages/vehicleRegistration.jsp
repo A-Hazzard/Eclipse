@@ -87,7 +87,7 @@
         id = "vehicle-main">
         
         
-        <form action="../jsp/bookingAction.jsp" method = 'post' id="CTA-bookings-form" onsubmit="submitForm(event)">
+        <form action="../jsp/bookingAction.jsp" method = 'post' id="CTA-bookings-form">
  									<h2>Need to service your Vehicle?</h2><br>
        						 <p>Book Now!</p>
         
@@ -115,6 +115,19 @@
             
                 <label for="plateNum">Plate Number: </label><br>
                 <input type="text" name="plateNumber" id="plateNum" required><br><br>
+                
+                <label for="category">Category: </label><br>
+                        <select name = "category" id = "category" class = "category">
+                            <option selected disabled hidden>Select the type of job</option>
+                        	<option value = "Engine">Engine Repair & Service</option>
+                        	<option value = "Breaks">Breaks Repair & Service</option>
+                        	<option value = "Clutch">Clutch Repair & Service</option>
+                        </select>
+                 <br><br>
+                        
+                <label for="issues">Issues with Vehicle</label><br><br>
+    			<textarea id="issues" name="issues" placeholder="Issues.." style="height:200px; width: 60%;"></textarea>
+    			<br><br>
             <input type = "submit" value="Book Now!" id = "bookNow-btn" />
 
 </form>
