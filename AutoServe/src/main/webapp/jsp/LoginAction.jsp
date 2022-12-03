@@ -8,15 +8,18 @@
 		String loginPassword = request.getParameter("password");
 	
 		System.out.println("Stage 2) LoginAction executed(LoginAction.jsp)\n");
-		
+	
 	//checks to if user is admin
 	 if(loginEmail.contains("@admin")&& loginPassword.equals("admin")){
-		 Connection con = ConnectionProvider.getConnection();
-			Statement state = con.createStatement(); 
+try{	 Connection con = ConnectionProvider.getConnection();
+		 Statement state = con.createStatement(); 
 		 ResultSet result = state.executeQuery("select * from employee where email = '" + loginEmail +"' and password = '"+ loginPassword + "'" );
 		 int sessionID = 0;
+		 
+		 boolean loginSuccess = false;
 		 while(result.next()){
 				//fetch the column name by their index from the person table
+				loginSuccess = true;
 			    sessionID = result.getInt(1);
 				String sessionFname = result.getString(2);//colum firstname as an index of 2
 				String sessionLname = result.getString(3);
@@ -31,15 +34,24 @@
 				session.setAttribute("Email",sessionEmail);
 				session.setAttribute("Phone",sessionPhone);
 				session.setAttribute("Position", sessionPosition);
-		 }
-		 System.out.println("Your ID = " + sessionID);
-	      
-	      //redirects admin to jobs page
-	      response.sendRedirect("../index.jsp");
-	      System.out.println("Logged in as Winston Fields(ADMIN)(LoginAction.jsp)");
-			System.out.println("-------------\nREDIRECTED TO ADMIN PAGE\n-------------");
+				
+				 response.sendRedirect("../index.jsp?msg=validLogin");
+			      System.out.println("Logged in as Winston Fields(ADMIN)(LoginAction.jsp)");
+					System.out.println("-------------\nREDIRECTED TO ADMIN PAGE\n-------------");
 
-	  }
+				
+		 }
+		 if(loginSuccess == false){
+			 	response.sendRedirect("../login.jsp?msg=invalidLogin");
+		 		System.out.println("Invalid Login Credentials");
+		 }
+	 
+	 }
+	catch(SQLException exp){
+		exp.printStackTrace();
+		response.sendRedirect("../login.jsp?msg=error");
+	}
+	  }//End admin logic
 	
 	
 	
@@ -59,11 +71,12 @@
 				
 				System.out.println("Staff member Logged in(LoginAction.jsp)");
 				 int sessionID = 0;
+				 
+				 boolean loginSuccess = false;
 				 while(result.next()){
 						//fetch the column name by their index from the person table
-					    			   	test = true;
-
-						sessionID = result.getInt(1);
+						loginSuccess = true;
+					    sessionID = result.getInt(1);
 						String sessionFname = result.getString(2);//colum firstname as an index of 2
 						String sessionLname = result.getString(3);
 						String sessionEmail = result.getString(4);
@@ -78,22 +91,23 @@
 						session.setAttribute("Phone",sessionPhone);
 						session.setAttribute("Position", sessionPosition);
 						
-						//redirects client to home page
-					    response.sendRedirect("../index.jsp");
-				 }
-				 
-					
-				 System.out.println("Your ID = " + sessionID);
+						 response.sendRedirect("../index.jsp?msg=invalidLogin");
+					      System.out.println("Logged in as Winston Fields(ADMIN)(LoginAction.jsp)");
+							System.out.println("-------------\nREDIRECTED TO ADMIN PAGE\n-------------");
 
-			if(test == false) {
-				System.out.println("Incorrect username or password(LoginAction.jsp)");
-				response.sendRedirect("../index.jsp");
-				}//end if
-			}//end try
-			catch(SQLException sqlExp){
-				System.out.println("Problem executing SQL Query(LoginAction.jsp)");
+						
+				 }
+				 if(loginSuccess == false){
+					 	response.sendRedirect("../login.jsp?msg=invalidLogin");
+				 		System.out.println("Invalid Login Credentials");
+				 }
+			 
+			 }
+			catch(SQLException exp){
+				exp.printStackTrace();
+				response.sendRedirect("../login.jsp?msg=error");
 			}
-	 }//end else if
+			  }//End admin logic
 	 
 
 		//checks to see if user is staffmember
@@ -109,11 +123,12 @@
 				
 				System.out.println("Mechanic Logged in(LoginAction.jsp)");
 				 int sessionID = 0;
+				 
+				 boolean loginSuccess = false;
 				 while(result.next()){
 						//fetch the column name by their index from the person table
-					    			   	test = true;
-
-						sessionID = result.getInt(1);
+						loginSuccess = true;
+					    sessionID = result.getInt(1);
 						String sessionFname = result.getString(2);//colum firstname as an index of 2
 						String sessionLname = result.getString(3);
 						String sessionEmail = result.getString(4);
@@ -128,22 +143,23 @@
 						session.setAttribute("Phone",sessionPhone);
 						session.setAttribute("Position", sessionPosition);
 						
-						//redirects client to home page
-					    response.sendRedirect("../index.jsp");
-				 }
-				 
-					
-				 System.out.println("Your ID = " + sessionID);
+						 response.sendRedirect("../index.jsp?msg=invalidLogin");
+					      System.out.println("Logged in as Winston Fields(ADMIN)(LoginAction.jsp)");
+							System.out.println("-------------\nREDIRECTED TO ADMIN PAGE\n-------------");
 
-			if(test == false) {
-				System.out.println("Incorrect username or password(LoginAction.jsp)");
-				response.sendRedirect("../index.jsp");
-				}//end if
-			}//end try
-			catch(SQLException sqlExp){
-				System.out.println("Problem executing SQL Query(LoginAction.jsp)");
+						
+				 }
+				 if(loginSuccess == false){
+					 	response.sendRedirect("../login.jsp?msg=invalidLogin");
+				 		System.out.println("Invalid Login Credentials");
+				 }
+			 
+			 }
+			catch(SQLException exp){
+				exp.printStackTrace();
+				response.sendRedirect("../login.jsp?msg=error");
 			}
-	 }//end else if
+			  }//End admin logic
 	 
 	 //any email that doesn't contain @autoserve/@admin....Clients accounts
 	  else{
@@ -156,11 +172,12 @@
 			System.out.println("Client member Logged in(LoginAction.jsp)");
 			 
 			 int sessionID = 0;
+			 
+			 boolean loginSuccess = false;
 			 while(result.next()){
 					//fetch the column name by their index from the person table
-				    test = true;
-
-					sessionID = result.getInt(1);
+					loginSuccess = true;
+				    sessionID = result.getInt(1);
 					String sessionFname = result.getString(2);//colum firstname as an index of 2
 					String sessionLname = result.getString(3);
 					String sessionEmail = result.getString(4);
@@ -175,21 +192,21 @@
 					session.setAttribute("Phone",sessionPhone);
 					session.setAttribute("Position", sessionPosition);
 					
-					//redirects client to home page
-				    response.sendRedirect("../index.jsp");
-			 }
-			 
-			 System.out.println("Your ID = " + sessionID);
+					 response.sendRedirect("../index.jsp?msg=invalidLogin");
+				      System.out.println("Logged in as Winston Fields(ADMIN)(LoginAction.jsp)");
+						System.out.println("-------------\nREDIRECTED TO ADMIN PAGE\n-------------");
 
-		if(test == false) {
-			System.out.println("Incorrect username or password(LoginAction.jsp)");
-			response.sendRedirect("../index.jsp");
+					
+			 }
+			 if(loginSuccess == false){
+				 	response.sendRedirect("../login.jsp?msg=invalidLogin");
+			 		System.out.println("Invalid Login Credentials");
+			 }
+		 
+		 }
+		catch(SQLException exp){
+			exp.printStackTrace();
+			response.sendRedirect("../login.jsp?msg=error");
 		}
-		
-		}//end try block
-		catch(SQLException sqlExp){
-			System.out.println("Problem executing SQL Query(LoginAction.jsp)");
-		}
-	  
-	  }
+		  }//End admin logic
 %>

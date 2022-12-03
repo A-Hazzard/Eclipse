@@ -17,6 +17,7 @@
 		String phone = String.valueOf(sessionPhone);
 		String position = String.valueOf(sessionPosition);
 		String msg = request.getParameter("msg");
+		String errorMsg = "";
 		if(firstName != null){
 			System.out.println(firstName + " ID: " + userID);
 		}
@@ -67,76 +68,67 @@
         
     
         <nav class="navbar"><!--NAVIGATION BAR-->
-            <ul class="link-container">
-                
-                <li><a href="#" id="calculatorPage" class="links">Calculator</a></li>
-                <li><a href="#" id="productsPage" class="links">Products</a></li>
-                <li><a href="pages/jobsPages.html" id="jobsPage" class="links">Jobs</a></li>
-                <li><a href="#" id="aboutUsPage" class="links">About</a></li>
-                <li><a href="#" id = "servicesPage" class="links">Services</a></li> 
-                	<% //Display  clients link only if user is either staff or admin
-                        if(position.equals(staff) || position.equals(admin)){
-                            %> <li>
-                            <a href="pages/jobApplications.jsp" class="links jsp-links">Job Applications </a>
-                            </li> <% }
-                        else System.out.println("(index.jsp)Not an admin or staff. Hid Clients link. Email: " + email); 
-                    %>
-
-                	<% //Display login/signup link if user is not logged in
-                        if (sessionFname == null){ 
-                        %> <li><a href="login.jsp" id="loginPage" class="links jsp-links">Login/Sign-Up</a>
-                            </li> <% }
-                        else System.out.println("(index.jsp)Hid Login/Sign-Up button for client/staff"); 
-                    %>
-
-                    <% //Display admin portal link if user position = admin
-                        if(position.equals("Admin")) {
-                        %><li><a href="admin/admin.jsp" id="adminPortal" class="links jsp-links">Admin Portal</a>
-                        </li> <% }
-                        else System.out.println("(login.jsp) Admin Portal Link hidden. Not Admin\n");
-                    %>
-		                <% //Display logout link only if user is logged in 
-                            if(sessionFname == null) 
-                                System.out.println("(index.jsp)Logout button hidden");         
-                            else { %><li class = "index-jsp-list-items">
-                                    <a href="jsp/logoutAction.jsp" class = "Links jsp-linnks logout">Logout</a>
-                                    </li>
-								
-								<% } %>
-                <!--Display user name if logged in-->
-                <% 
-                if (firstName != null) { %>
-                    <li class = "profile-name-container">
-                        <span class = "profile-name jsp-userName">         
-                        <% //Display client link only if user is admin/staff 
-                            if(sessionFname == null)
-                                System.out.println("(index.jsp)Username hidden\n");
-                            else {
-                                if(position.equals(admin))
-                                    out.print(firstName.toUpperCase().charAt(0));
-                                            else
-                                                out.print(firstName.toUpperCase().charAt(0));
-                                
-                                System.out.println("(index.jsp)Logged in as " + firstName + "\n");
-                                }
-                    %></span>
-                    <span id = "userID" style = "position: absolute; margin-top: -1000%;"> <% out.print(userID); %> </span></li>
-                <% } %>
+            <ul class="link-container" style = "margin-left: 90%;">
+                <li><a href="index.jsp" id="homePage" class="links">Home</a></li>
             </ul>
         </nav>
 
     </header>
 
     <!--Content loaded using AJAX with JQuery-->
-    <main data-aos="zoom-in"
-        data-aos-offset="0"
-        data-aos-delay="1"
-        data-aos-duration="500"
-        data-aos-easing="ease-in-out"
-        data-aos-mirror="true"
-        data-aos-once="false"
-        data-aos-anchor-placement="top" 
-        id = "index"></main>
+    <main id = "index">
+        <!--Main content for login page-->
+    <div  data-aos="zoom-in-up"
+                    data-aos-offset="-100"
+                    data-aos-delay="1"
+                    data-aos-duration="500"
+                    data-aos-easing="ease-in"
+                    data-aos-mirror="true"
+                    data-aos-once="false"
+                    data-aos-anchor-placement="top"  id = "access-main">
+<br><br>
+        <h2>Log In</h2><br>
+        <p>New to this site? <a href="signup.jsp" id="registrationPage">Sign up</a> </p>
+
+        <!--Form used for logging in-->
+        <form action="jsp/LoginAction.jsp" method="post" class="Form">
+            <table id="loginFormTable">
+            
+                <tr>
+                    <td>     	
+                    <% if("invalidLogin".equals(msg)){ %>
+                    	<p id = "errorMsg" style = "text-align: left; color: red;">Invalid Email/Password. Try again</p>
+                        <%} %>
+                        <label for="email">Email: </label><br>
+                        <input type="email" name="email" id="email" required>
+                        	
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="password">Password: </label><br>
+                        <input type="password" name="password" id="password" autocomplete required> <br>
+                        <div id="viewPassword-container"><input type="checkbox" id="viewPwd"><label for="viewPwd">Show Password</label></div>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <br>
+                        <a href = "pages/forgotPassword.html" id="forgotpassword">Forgot Password</a>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><input type="submit" value="Login" id="submit"/>
+                    </td>
+                </tr>
+            </table>
+        </form>
+       
+    </div>
+        
+        </main>
     
    
     <footer>
@@ -161,7 +153,7 @@
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script src="https://kit.fontawesome.com/18479e6558.js"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script src="js/script.js"></script>
+
 <script>
 
 
@@ -191,11 +183,61 @@ var getVariables = $(".getVariables");
 var fNameContainer = $(".profile-name-container");
 var nameStr = parseInt(userFirstName.length);
 
-
 console.log("Position: " + userPosition);
 getVariables.css("position", "absolute");
 getVariables.css("margin-top", "-100%");
 
+
+//loads registrationPage on click
+$("#registrationPage").on('click', function(){
+
+    $("main").hide().load("pages/states/registrationPage.txt").fadeIn("slow");
+})
+
+//changes password to Text
+$(function(){
+let viewPwd = false;
+
+$("#viewPwd").on('click', function(){
+let getPwdType = $("#password");
+if(viewPwd === false) {
+    console.log('checked, changed password field to text')
+    getPwdType.attr('type', 'text');
+    viewPwd = true;
+
+}
+else if(viewPwd === true){
+    console.log("Unchecked, changed password field back to password")
+    getPwdType.attr('type', 'password');
+    viewPwd = false;
+}
+})
+})
+
+// You can also pass an optional settings object
+// below listed default settings
+AOS.init({
+  // Global settings:
+  disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+  startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+  initClassName: 'aos-init', // class applied after initialization
+  animatedClassName: 'aos-animate', // class applied on animation
+  useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+  disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+  debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+  throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+  
+
+  // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+  offset: 120, // offset (in px) from the original trigger point
+  delay: 0, // values from 0 to 3000, with step 50ms
+  duration: 400, // values from 0 to 3000, with step 50ms
+  easing: 'ease', // default easing for AOS animations
+  once: false, // whether animation should happen only once - while scrolling down
+  mirror: false, // whether elements should animate out while scrolling past them
+  anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+
+});
 </script>
 </body>
 </html>

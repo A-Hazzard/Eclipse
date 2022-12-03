@@ -122,13 +122,14 @@
 						//Create a statement using the connection provider
 						Statement state = con.createStatement();
 						//Create a result set to return the results from the statement
-						String sqlQuery = "SELECT clientID, vehicletype, platenumber, issues FROM registrationQ";
+						String sqlQuery = "SELECT clientID, vehicletype, platenumber, issues, category FROM registrationQ";
 						ResultSet result = state.executeQuery(sqlQuery);
 						
 						int reg_clientID = 0;
 						String reg_vehicleType = "";
 						String reg_plateNum = "";
 						String reg_issues = "";
+						String reg_category = "";
 						System.out.println("RegistrationQ TABLE : ");
 						//Fetches the data columns and returns the values
 						while(result.next()){
@@ -137,6 +138,7 @@
 							reg_vehicleType = result.getString(2);
 							reg_plateNum = result.getString(3);
 							reg_issues = result.getString(4);
+							reg_category = result.getString(5);
 							
 						%>
 							<div class = "client-info" style = "
@@ -153,11 +155,11 @@
 									<P class = "reg_VehicleType info">Type of Vehicle:  <span id = "type" class = "sub-info"><%out.print(reg_vehicleType); %></span></P>
 									<p class = "reg_plateNum info">Vehicle Plate Number:  <span id = "pNum" class = "sub-info"><%out.print(reg_plateNum); %></span></p>
 									<p class = "reg_issues info">Issues:  <span id = "issues" class = "sub-info"><%out.print(reg_issues); %></span></p>
-									<p class = "reg_issues info">Issues:  <span id = "issues" class = "sub-info"><%out.print(reg_issues); %></span></p>
+									<p class = "reg_category info">Category:  <span id = "category" class = "sub-info"><%out.print(reg_category); %></span></p>
   								
 								</div>
 							
-						<%	System.out.println("Client ID:" +reg_clientID+ " | Vehicle Type: "+reg_vehicleType+ " | Plate Number: " + reg_plateNum+ "\nIssues: " + reg_issues);
+						<%	System.out.println("Client ID:" +reg_clientID+ " | Vehicle Type: "+reg_vehicleType+ " | Plate Number: " + reg_plateNum+ "\nIssues: " + reg_issues+ "\nCategory: " + reg_category);
 						}
 						
 						
@@ -193,6 +195,9 @@
 					
 					<label for="issues_input" class = "info">Issues: <span class = "span-client-issues sub-info"></span></label><br>
 					<input type="text" name="issues_input" id="issues_input" class = "hidden"  required><br>
+					
+					<label for="category_input" class = "info">Category: <span class = "span-client-category sub-info"></span></label><br>
+					<input type="text" name="category_input" id="category_input" class = "hidden"  required><br>
 					
 					<label for="mechEmail" class = "info">Mechanic Email: </label><br>
 					<input type="text" name="mechEmail" id="mechEmail" readonly = "readonly" placeholder = "Select a client" required><br><br>
@@ -285,20 +290,20 @@
 			let type = $(this).find("#type").text();
 			let pNum = $(this).find("#pNum").text();
 			let issues = $(this).find("#issues").text();
-
+			let category = $(this).find("#category").text();
 			//Initialize empty tag values
 			let spanClient_ID = $(".span-client-ID");
 			let spanClient_vehicleType = $(".span-client-vehicleType");
 			let spanClient_plateNum = $(".span-client-plateNum");
 			let spanClient_Issues = $(".span-client-issues");
-			
+			let spanClient_Category = $(".span-client-category");
 			//Init empy input field values
 			let plateNum_input = $("#plateNum_input");
 			let vehicleType_input = $("#vehicleType_input");
 			let userID_input = $("#userID_input");
 			let mechEmail_input = $("#mechEmail");
 			let issues_input = $("#issues_input");
-
+			let category_input = $("#category_input");
 			//On click event for each div
 			$(this).on('click', function(){
 				//Append values stored in array to tags
@@ -306,15 +311,17 @@
 					spanClient_vehicleType.text(type);
 						spanClient_plateNum.text(pNum);
 							spanClient_Issues.text(issues);
+								spanClient_Category.text(category);
 					
 				//Append values stored in span tags to input fields	
 				userID_input.val(ID);
 					plateNum_input.val(pNum);
 						vehicleType_input.val(type);
 							issues_input.val(issues);
-								mechEmail_input.attr("readonly", false);
-										mechEmail_input.attr("placeholder", "");
-											bookNowBtn.val("Enter mechanic's Email");
+								category_input.val(category);
+									mechEmail_input.attr("readonly", false);
+											mechEmail_input.attr("placeholder", "");
+												bookNowBtn.val("Enter mechanic's Email");
 				mechEmail_input.on("input", function() {
 					console.log("Email entered");
 						bookNowBtn.attr("disabled", false);
