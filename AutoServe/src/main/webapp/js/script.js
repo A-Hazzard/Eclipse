@@ -37,21 +37,21 @@ function setStyle(){
 	
 	if(userPosition == "Staff") {
 		console.log("staff styling now");
-		fNameContainer.css("margin-left", "56%");
-		fNameContainer.css("margin-top", "-2%");
+		fNameContainer.css("margin-left", "50%");
+		fNameContainer.css("margin-top", "-1.8%");
 
 		
 	}
 	else if(userPosition == "Admin") {
 		console.log("Admin styling now");
-		fNameContainer.css("margin-left", "66%");
-		fNameContainer.css("margin-top", "-2%");
+		fNameContainer.css("margin-left", "60%");
+		fNameContainer.css("margin-top", "-1.7%");
 
 	}
-	else if (userPosition == "Client"){
-		console.log("Client styling now");
-		fNameContainer.css("margin-left", "42%");
-				fNameContainer.css("margin-top", "-2%");
+	else if (userPosition == "Client"  || userPosition == "Mechanic"){
+		console.log(userPosition + " styling now");
+		fNameContainer.css("margin-left", "38%");
+				fNameContainer.css("margin-top", "-1.8%");
 
 	}
 	
@@ -85,6 +85,8 @@ $("#footer-links").load("pages/states/footer/carLinks.txt");
                         	            $("footer").css("margin-top", "5%");
 
     })
+    
+   
 
         //loads calculatorPage on click
         $("#calculatorPage").on('click', function(){
@@ -110,7 +112,7 @@ $("#footer-links").load("pages/states/footer/carLinks.txt");
                 $("#loginPage").on('click', function(){
 	
                     $("main").hide().load("pages/states/loginPage.txt").fadeIn("slow");
-                                    	            $("footer").css("margin-top", "5%");
+                                    	            $("main").css("height", "100vh");
 
                 })
 

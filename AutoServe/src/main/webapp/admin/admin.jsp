@@ -1,5 +1,6 @@
 <% 
 
+
 	
 	//getting credentail attributes from loginAction.jsp
 	Object sessionEmail = session.getAttribute("Email");
@@ -7,7 +8,7 @@
 	Object sessionLname = session.getAttribute("LastName");
 	Object sessionPhone = session.getAttribute("Phone");
 	Object sessionPosition = session.getAttribute("Position");
-	Object sessionUserID = session.getAttribute("userID");
+	Object sessionUserID = session.getAttribute("UserID");
 	
 	String userID = String.valueOf(sessionUserID);
 	
@@ -27,11 +28,10 @@
 	    System.out.println("(index.jsp)Username hidden\n");
 	    System.out.println("(index.jsp)Not logged in\n");
 	}else{
-	   
+	
 	    System.out.println("(index.jsp)Logged in as " + sessionFname + "\n");
 	}
 
-		
 %>
 <html lang = "en">
 <head>
@@ -73,8 +73,9 @@
             <ul class="link-container">
                 
                 <li><a href="../pages/jobsPages.html" id="jobsPage" class="links">Jobs</a></li>
-                <li><a href="../pages/clientApplications.jsp" class="links jsp-links">Client Applications </a>
+                <li><a href="../pages/jobApplications.jsp" class="links jsp-links">Job Applications </a>
                 <li><a href="admin.jsp" id="adminPortal" class="links jsp-links">Admin Portal</a>
+                <li><a href="registerStaff.jsp" id="employeeForm" class="links jsp-links">Forms</a>
                 <li><a href="../jsp/logoutAction.jsp" class = "Links jsp-linnks logout">Logout</a>
                 
             </ul>
@@ -91,7 +92,7 @@
         	<ul class="link-container">
                 
                 <li><a href="../pages/jobsPages.html" id="jobsPage" class="links">Reports <i class="fa-sharp fa-solid fa-caret-down"></i></a></li>
-                <li><a href="../pages/clientApplications.jsp" class="links jsp-links">Project <i class="fa-sharp fa-solid fa-caret-down"></i></a></li>
+                <li><a href="../pages/jobApplications.jsp" class="links jsp-links">Project <i class="fa-sharp fa-solid fa-caret-down"></i></a></li>
                 <li><a href="admin.jsp" id="adminPortal" class="links jsp-links"><img src = "../pages/media/US-FLAG.png" width = "20px" height = "20px" alt = "language-flag" id = "language-flag"/> English <i class="fa-sharp fa-solid fa-caret-down"></i></a></li>
                 <li id = "profile-picture"><img src = "../pages/media/winsstonFields.jpeg"  alt = "profile-picture"/></li>
                 
@@ -117,7 +118,7 @@
             <div id="footer-links"></div>
         </div>
             <br><br>
-            <p id="copyright" style="text-align: center; opacity: .5;">Copyright © 2022 Auto Serve Inc. All Rights Reserved.</p>
+            <p id="copyright" style="text-align: center; opacity: .5;">Copyright � 2022 Auto Serve Inc. All Rights Reserved.</p>
     </footer>
 
 <script src="https://code.jquery.com/jquery-3.6.1.min.js" ></script>

@@ -7,8 +7,8 @@
 		Object sessionLname = session.getAttribute("LastName");
 		Object sessionPhone = session.getAttribute("Phone");
 		Object sessionPosition = session.getAttribute("Position");
-		Object sessionUserID = session.getAttribute("userID");
-	
+		Object sessionUserID = session.getAttribute("UserID");
+
 		String userID = String.valueOf(sessionUserID);
 
 		String email = String.valueOf(sessionEmail);
@@ -16,12 +16,12 @@
 		String lastName = String.valueOf(sessionLname);
 		String phone = String.valueOf(sessionPhone);
 		String position = String.valueOf(sessionPosition);
-		
+		String msg = request.getParameter("msg");
 		if(firstName != null){
 			System.out.println(firstName + " ID: " + userID);
 		}
 		
-		String staff = "Staff", admin = "Admin";
+		String staff = "Staff", mechanic = "Mechanic", admin = "Admin";
 		
 		if(sessionFname == null){
             System.out.println("(index.jsp)Username hidden\n");
@@ -41,7 +41,7 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
     	.jsp-userName{ color: blue;
-    	 			display: inline;
+                    display: inline;
                     text-decoration: none;
                     color: hsl(0, 0%, 13%);
                     font-size: 1.1rem;
@@ -75,16 +75,16 @@
                 <li><a href="#" id="aboutUsPage" class="links">About</a></li>
                 <li><a href="#" id = "servicesPage" class="links">Services</a></li> 
                 	<% //Display  clients link only if user is either staff or admin
-                        if(position.equals(staff) || position.equals(admin)) {
+                        if(position.equals(staff) || position.equals(admin)){
                             %> <li>
-                            <a href="pages/clientApplications.jsp" class="links jsp-links">Client Applications </a>
+                            <a href="pages/jobApplications.jsp" class="links jsp-links">Job Applications </a>
                             </li> <% }
                         else System.out.println("(index.jsp)Not an admin or staff. Hid Clients link. Email: " + email); 
                     %>
 
                 	<% //Display login/signup link if user is not logged in
                         if (sessionFname == null){ 
-                        %> <li><a href="#" id="loginPage" class="links jsp-links">Login/Sign-Up</a>
+                        %> <li><a href="login.jsp" id="loginPage" class="links jsp-links">Login/Sign-Up</a>
                             </li> <% }
                         else System.out.println("(index.jsp)Hid Login/Sign-Up button for client/staff"); 
                     %>
@@ -113,9 +113,9 @@
                                 System.out.println("(index.jsp)Username hidden\n");
                             else {
                                 if(position.equals(admin))
-                                    out.print(firstName.charAt(0));
+                                    out.print(firstName.toUpperCase().charAt(0));
                                             else
-                                                out.print(firstName.charAt(0));
+                                                out.print(firstName.toUpperCase().charAt(0));
                                 
                                 System.out.println("(index.jsp)Logged in as " + firstName + "\n");
                                 }
@@ -138,8 +138,7 @@
         data-aos-anchor-placement="top" 
         id = "index"></main>
     
-    <br><br>
-    
+   
     <footer>
         <div id="flex-container">
             <div id="footer-nav">

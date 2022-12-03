@@ -20,6 +20,7 @@ h3
 
 <% 
 String message = request.getParameter("msg");
+
 if("added".equals(message))
 {
 %>

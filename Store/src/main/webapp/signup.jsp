@@ -10,7 +10,7 @@
   	<form action = signupAction.jsp method = "post">
   		<input type = "text" name = "name" placeholder = "Enter Name" required>
   		<input type = "email" name = "email" placeholder = "Enter Email" required>
-  		<input type = "number" name = "mobile" placeholder = "Enter Mobile Number" required>
+  		<input type = "text" name = "mobile" placeholder = "Enter Mobile Number" required>
   		<select name = "securityQuestion" required>
   			<option value = "Where were you born?"> Where were you born? </option>
   			<option value = "What was your first pet?"> What was your first pet? </option>
