@@ -106,7 +106,7 @@
     <main id = "clientApplication-main">
 		
 			<div id = "header-container">	
-					<h2 id = "clientApplication-h2">Job Applications</h2> 
+					<h2 id = "jobApplication-h2">Job Applications</h2> 
 					<button type = "button" id = "refreshApplications-btn">Refresh</button>
 				</div>
 			<br><br>
@@ -153,7 +153,8 @@
 									<P class = "reg_VehicleType info">Type of Vehicle:  <span id = "type" class = "sub-info"><%out.print(reg_vehicleType); %></span></P>
 									<p class = "reg_plateNum info">Vehicle Plate Number:  <span id = "pNum" class = "sub-info"><%out.print(reg_plateNum); %></span></p>
 									<p class = "reg_issues info">Issues:  <span id = "issues" class = "sub-info"><%out.print(reg_issues); %></span></p>
-								
+									<p class = "reg_issues info">Issues:  <span id = "issues" class = "sub-info"><%out.print(reg_issues); %></span></p>
+  								
 								</div>
 							
 						<%	System.out.println("Client ID:" +reg_clientID+ " | Vehicle Type: "+reg_vehicleType+ " | Plate Number: " + reg_plateNum+ "\nIssues: " + reg_issues);
@@ -169,7 +170,7 @@
 			
 			
 			
-			<form action="../jsp/jobs.jsp" method = 'post' id="registered-bookings-form">
+			<form action="../jsp/jobsAction.jsp" method = 'post' id="registered-bookings-form">
 						<h2>Register Client #<span class = "span-client-ID"></span></h2>
 						<br>
 				<div class ="hidden">

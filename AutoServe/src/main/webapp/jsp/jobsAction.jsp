@@ -11,12 +11,14 @@
 		String vehicleType = request.getParameter("selectVehicleType").trim();
 		String plateNumber = request.getParameter("plateNumber").trim();
 		String issues = request.getParameter("issues_input").trim();
+		String category = request.getParameter("category").trim();
+
 		
 		System.out.println("(registeredVehicles.jsp)Info entered in registered vechile table:\nClient ID: " + clientID + "\nvehicleType " + vehicleType + "\nPlate number" + plateNumber + "\nMechanic Email: " + mechEmail);
 		
 	try{	
 		Connection con = ConnectionProvider.getConnection();
-			String sql = "INSERT INTO registered_vehicles VALUES(regID.nextval,?,?,?,?,?,?)";
+			String sql = "INSERT INTO registered_vehicles VALUES(regID.nextval,?,?,?,?,?,?,?)";
 			PreparedStatement ps;
 			ps = con.prepareStatement(sql);
 				ps.setInt(1, clientID);
@@ -25,6 +27,8 @@
 				ps.setString(4, issues);
 				ps.setString(5, staffEmail);
 				ps.setString(6, mechEmail);
+				ps.setString(7, category);
+
 
 			//Will write information to table in database
 			ps.executeUpdate();
