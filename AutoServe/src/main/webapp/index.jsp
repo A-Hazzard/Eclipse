@@ -114,9 +114,9 @@
                                 System.out.println("(index.jsp)Username hidden\n");
                             else {
                                 if(position.equals(admin))
-                                    out.print(firstName.toUpperCase().charAt(0));
+                                    out.print(firstName.toUpperCase().charAt(0) + "." + lastName.toUpperCase().charAt(0));
                                             else
-                                                out.print(firstName.toUpperCase().charAt(0));
+                                            	out.print(firstName.toUpperCase().charAt(0) + "." + lastName.toUpperCase().charAt(0));
                                 
                                 System.out.println("(index.jsp)Logged in as " + firstName + "\n");
                                 }

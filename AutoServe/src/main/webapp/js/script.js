@@ -35,9 +35,16 @@ function setStyle(){
     fNameContainer.css("align-items", "center");
     fNameContainer.css("justify-content", "center");
 	
-	if(userPosition == "Staff" || userPosition == "Mechanic") {
+	if(userPosition == "Staff") {
 		console.log("staff styling now");
-		fNameContainer.css("margin-left", "50%");
+		fNameContainer.css("margin-left", "55%");
+		fNameContainer.css("margin-top", "-1.8%");
+
+		
+	}
+	else if(userPosition == "Mechanic") {
+		console.log("staff styling now");
+		fNameContainer.css("margin-left", "52%");
 		fNameContainer.css("margin-top", "-1.8%");
 
 		
@@ -50,7 +57,7 @@ function setStyle(){
 	}
 	else if (userPosition == "Client"  || userPosition == "Mechanic"){
 		console.log(userPosition + " styling now");
-		fNameContainer.css("margin-left", "38%");
+		fNameContainer.css("margin-left", "42%");
 				fNameContainer.css("margin-top", "-1.8%");
 
 	}

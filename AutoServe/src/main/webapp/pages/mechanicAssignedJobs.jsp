@@ -170,7 +170,7 @@
 					cursor: pointer;">
 					
 							<p class = "reg_clientID info">Client ID: <span id = "ID" class = "sub-info"><%out.print(reg_clientID); %></span></p>
-							<P class = "reg_staffEmail info">Staff's Email:  <span id = "type" class = "sub-info"><%out.print(reg_vehicleType); %></span></P>
+							<P class = "reg_staffEmail info">Staff's Email:  <span id = "staffEmail" class = "sub-info"><%out.print(reg_staffEmail); %></span></P>
 							<P class = "reg_VehicleType info">Type of Vehicle:  <span id = "type" class = "sub-info"><%out.print(reg_vehicleType); %></span></P>
 							<p class = "reg_plateNum info">Vehicle Plate Number:  <span id = "pNum" class = "sub-info"><%out.print(reg_plateNum); %></span></p>
 							<p class = "reg_issues info">Issues:  <span id = "issues" class = "sub-info"><%out.print(reg_issues); %></span></p>
@@ -206,7 +206,7 @@
 					cursor: pointer;">
 					
 							<p class = "reg_clientID info">Client ID: <span id = "ID" class = "sub-info"><%out.print(reg_clientID); %></span></p>
-							<P class = "reg_staffEmail info">Staff's Email:  <span id = "type" class = "sub-info"><%out.print(reg_vehicleType); %></span></P>
+							<P class = "reg_staffEmail info">Staff's Email:  <span id = "staffEmail" class = "sub-info"><%out.print(reg_staffEmail); %></span></P>
 							<P class = "reg_VehicleType info">Type of Vehicle:  <span id = "type" class = "sub-info"><%out.print(reg_vehicleType); %></span></P>
 							<p class = "reg_plateNum info">Vehicle Plate Number:  <span id = "pNum" class = "sub-info"><%out.print(reg_plateNum); %></span></p>
 							<p class = "reg_issues info">Issues:  <span id = "issues" class = "sub-info"><%out.print(reg_issues); %></span></p>
@@ -242,11 +242,11 @@
 					cursor: pointer;">
 					
 							<p class = "reg_clientID info">Client ID: <span id = "ID" class = "sub-info"><%out.print(reg_clientID); %></span></p>
-							<P class = "reg_staffEmail info">Staff's Email:  <span id = "type" class = "sub-info"><%out.print(reg_vehicleType); %></span></P>
+							<P class = "reg_staffEmail info">Staff's Email:  <span id = "staffEmail" class = "sub-info"><%out.print(reg_staffEmail); %></span></P>
 							<P class = "reg_VehicleType info">Type of Vehicle:  <span id = "type" class = "sub-info"><%out.print(reg_vehicleType); %></span></P>
 							<p class = "reg_plateNum info">Vehicle Plate Number:  <span id = "pNum" class = "sub-info"><%out.print(reg_plateNum); %></span></p>
 							<p class = "reg_issues info">Issues:  <span id = "issues" class = "sub-info"><%out.print(reg_issues); %></span></p>
-							<p class = "reg_status info">Status:  <span id = "category" class = "sub-info"><%out.print(reg_status); %></span></p>
+							<p class = "reg_status info">Status:  <span id = "status" class = "sub-info"><%out.print(reg_status); %></span></p>
 								
 						</div>
 					
@@ -293,8 +293,7 @@
 					<input type="text" name="category_input" id="category_input" class = "hidden"  required><br>
 					
                         <select name = "status" id = "status" class = "status" disabled required>
-                            <option selected disabled hidden value = "">Current Status: <% out.print(reg_status); %></option>
-                            <option id = "currentStatus" value = "">Current Status: Pending</option>
+                            <option id = "pendingStatus" selected value = "">Current Status: Pending</option>
                         	<option id = "activeStatus" value = "Active">Current Status: Active</option>
                         	<option id = "finishedStatus" value = "Finished">Current Status: Finished</option>
                         </select>
@@ -385,11 +384,12 @@
 		clientInfo_container.each(function(){
 			//Variables for each div
 			let ID = $(this).find("#ID").text();
+			let staffEmail = $(this).find("staffEmail").text();
 			let type = $(this).find("#type").text();
 			let pNum = $(this).find("#pNum").text();
 			let issues = $(this).find("#issues").text();
 			let category = $(this).find("#category").text();
-			let status = $("#status");
+			let status = $(".status");
 			//Initialize empty tag values
 			let spanClient_ID = $(".span-client-ID");
 			let spanClient_vehicleType = $(".span-client-vehicleType");
@@ -405,6 +405,8 @@
 			let category_input = $("#category_input");
 			//On click event for each div
 			$(this).on('click', function(){
+				let currentStatus = $("#currentStatus");
+
 				//Append values stored in array to tags
 				spanClient_ID.text(ID);
 					spanClient_vehicleType.text(type);
@@ -422,6 +424,7 @@
 											mechEmail_input.attr("placeholder", "");
 												bookNowBtn.val("Choose a status for the job");
 													status.attr("disabled", false);
+
 			//let bookNow-btn_Option = $("#bookNow-btn option:selected").val();
 			status.change(function(){
 				
