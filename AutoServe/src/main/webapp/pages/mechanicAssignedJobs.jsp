@@ -128,19 +128,28 @@
 			try{
 				//Geting connection to display client applications
 				Connection con = ConnectionProvider.getConnection();
+				
 				//Create a statement using the connection provider
 				Statement state = con.createStatement();
+				Statement state1 = con.createStatement();
+				Statement state2 = con.createStatement();
 				//Create a result set to return the results from the statement
-				String sqlQuery = "SELECT * FROM engineRepair";
-				ResultSet result = state.executeQuery(sqlQuery);
+				String engineRepair = "SELECT * FROM engineRepair WHERE mechanicEmail = '"+userEmail+"'";
+				String breakRepair = "SELECT * FROM breakRepair WHERE mechanicEmail = '"+userEmail+"'";
+				String clutchRepair = "SELECT * FROM clutchRepair WHERE mechanicEmail = '"+userEmail+"'";
+				
+			
+				ResultSet result = state.executeQuery(engineRepair);
+				ResultSet result1 = state1.executeQuery(breakRepair);
+				ResultSet result2 = state2.executeQuery(clutchRepair);
 				
 				int reg_clientID = 0;
 			
 				System.out.println("Jobs TABLE : ");
 				
 				//Fetches the data columns and returns the values
-				while(result.next()){
-					//Session variables
+				while( result.next()){
+					//Engine Repair Table
 					reg_clientID = result.getInt(1);
 					reg_mechEmail = result.getString(2);
 					reg_staffEmail = result.getString(3);
@@ -165,13 +174,86 @@
 							<P class = "reg_VehicleType info">Type of Vehicle:  <span id = "type" class = "sub-info"><%out.print(reg_vehicleType); %></span></P>
 							<p class = "reg_plateNum info">Vehicle Plate Number:  <span id = "pNum" class = "sub-info"><%out.print(reg_plateNum); %></span></p>
 							<p class = "reg_issues info">Issues:  <span id = "issues" class = "sub-info"><%out.print(reg_issues); %></span></p>
-							<p class = "reg_status info">Category:  <span id = "category" class = "sub-info"><%out.print(reg_status); %></span></p>
+							<p class = "reg_status info">Status:  <span id = "category" class = "sub-info"><%out.print(reg_status); %></span></p>
 								
 						</div>
 					
-				<%	System.out.println("Client ID:" +reg_clientID+ "\nMechanic\'s Email:  "+userEmail+" | Vehicle Type: "+reg_vehicleType+ " | Plate Number: " + reg_plateNum+ "\nIssues: " + reg_issues+ "\nCurrent Status: " + reg_status);
-				}
+				<%	
 				
+				System.out.println("Client ID:" +reg_clientID+ "\nMechanic\'s Email:  "+userEmail+" | Vehicle Type: "+reg_vehicleType+ " | Plate Number: " + reg_plateNum+ "\nIssues: " + reg_issues+ "\nCurrent Status: " + reg_status);
+				}//end while
+					
+				//Fetches the data columns and returns the values
+				while( result1.next()){
+					//Engine Repair Table
+					reg_clientID = result1.getInt(1);
+					reg_mechEmail = result1.getString(2);
+					reg_staffEmail = result1.getString(3);
+					reg_vehicleType = result1.getString(4);
+					reg_plateNum = result1.getString(5);
+					reg_issues = result1.getString(6);
+					reg_status = result1.getString(7);
+
+					
+				%>
+					<div class = "client-info" style = "
+					background: rgb(239 239 239);
+					border-radius: .5rem;
+					padding: 1%;
+					height: auto;
+					text-align: left;
+					box-shadow: .2rem .1rem .4rem rgb(223, 223, 223);
+					cursor: pointer;">
+					
+							<p class = "reg_clientID info">Client ID: <span id = "ID" class = "sub-info"><%out.print(reg_clientID); %></span></p>
+							<P class = "reg_staffEmail info">Staff's Email:  <span id = "type" class = "sub-info"><%out.print(reg_vehicleType); %></span></P>
+							<P class = "reg_VehicleType info">Type of Vehicle:  <span id = "type" class = "sub-info"><%out.print(reg_vehicleType); %></span></P>
+							<p class = "reg_plateNum info">Vehicle Plate Number:  <span id = "pNum" class = "sub-info"><%out.print(reg_plateNum); %></span></p>
+							<p class = "reg_issues info">Issues:  <span id = "issues" class = "sub-info"><%out.print(reg_issues); %></span></p>
+							<p class = "reg_status info">Status:  <span id = "category" class = "sub-info"><%out.print(reg_status); %></span></p>
+								
+						</div>
+					
+				<%	
+				
+				System.out.println("Client ID:" +reg_clientID+ "\nMechanic\'s Email:  "+userEmail+" | Vehicle Type: "+reg_vehicleType+ " | Plate Number: " + reg_plateNum+ "\nIssues: " + reg_issues+ "\nCurrent Status: " + reg_status);
+				}//end while
+					
+				//Fetches the data columns and returns the values
+				while( result2.next()){
+					//Engine Repair Table
+					reg_clientID = result2.getInt(1);
+					reg_mechEmail = result2.getString(2);
+					reg_staffEmail = result2.getString(3);
+					reg_vehicleType = result2.getString(4);
+					reg_plateNum = result2.getString(5);
+					reg_issues = result2.getString(6);
+					reg_status = result2.getString(7);
+
+					
+				%>
+					<div class = "client-info" style = "
+					background: rgb(239 239 239);
+					border-radius: .5rem;
+					padding: 1%;
+					height: auto;
+					text-align: left;
+					box-shadow: .2rem .1rem .4rem rgb(223, 223, 223);
+					cursor: pointer;">
+					
+							<p class = "reg_clientID info">Client ID: <span id = "ID" class = "sub-info"><%out.print(reg_clientID); %></span></p>
+							<P class = "reg_staffEmail info">Staff's Email:  <span id = "type" class = "sub-info"><%out.print(reg_vehicleType); %></span></P>
+							<P class = "reg_VehicleType info">Type of Vehicle:  <span id = "type" class = "sub-info"><%out.print(reg_vehicleType); %></span></P>
+							<p class = "reg_plateNum info">Vehicle Plate Number:  <span id = "pNum" class = "sub-info"><%out.print(reg_plateNum); %></span></p>
+							<p class = "reg_issues info">Issues:  <span id = "issues" class = "sub-info"><%out.print(reg_issues); %></span></p>
+							<p class = "reg_status info">Status:  <span id = "category" class = "sub-info"><%out.print(reg_status); %></span></p>
+								
+						</div>
+					
+				<%	
+				
+				System.out.println("Client ID:" +reg_clientID+ "\nMechanic\'s Email:  "+userEmail+" | Vehicle Type: "+reg_vehicleType+ " | Plate Number: " + reg_plateNum+ "\nIssues: " + reg_issues+ "\nCurrent Status: " + reg_status);
+				}//end while
 				
 		}catch(SQLException e){
 			System.out.println("Problem returning registration info. SQL Error: " + e);
@@ -211,8 +293,8 @@
 					<input type="text" name="category_input" id="category_input" class = "hidden"  required><br>
 					
                         <select name = "status" id = "status" class = "status" disabled required>
-                            <option selected disabled hidden>Current Status: Pending</option>
-                            <option id = "currentStatus" value = "">Current Status: <% out.print(reg_status); %></option>
+                            <option selected disabled hidden value = "">Current Status: <% out.print(reg_status); %></option>
+                            <option id = "currentStatus" value = "">Current Status: Pending</option>
                         	<option id = "activeStatus" value = "Active">Current Status: Active</option>
                         	<option id = "finishedStatus" value = "Finished">Current Status: Finished</option>
                         </select>

@@ -107,14 +107,14 @@
                 <tr>
                     <td> 
                         <label for="firstname">First Name:</label><br>
-                        <input type = "text" name = "firstname" id="firstname" />
+                        <input type = "text" name = "firstname" id="firstname" required/>
                     </td>
                 </tr>
 
                 <tr>
                     <td> 
                         <label for="lastname">Last Name:</label><br>
-                        <input type = "text" name = "lastname" id= "lastname" />
+                        <input type = "text" name = "lastname" id= "lastname" required/>
                     </td>
                 </tr>
 
@@ -122,20 +122,20 @@
                 <tr>
                     <td>
                         <label for="email">Email:</label><br>
-                        <input type="email" name="email" id="email" >
+                        <input type="email" name="email" id="email" required/>
                     </td>
                 </tr>
                 
                  <tr>
                     <td>
                         <label for="phone">Phone: </label><br>
-                        <input type="text" name="phone" id="phone" >
+                        <input type="text" name="phone" id="phone" required/>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <label for="position">Position: </label><br>
-                        <select name = "position" id = "position" class = "position">
+                        <select name = "position" id = "position" class = "position" required/>
                         	<option value = "Staff">Staff</option>
                         	<option value = "Mechanic">Mechanic</option>
                         </select>
@@ -145,7 +145,7 @@
                 <tr>
                     <td>
                         <label for="password">Password: </label><br>
-                        <input type="password" name="password" id="password" >
+                        <input type="password" name="password" id="password" required/>
                         <div id="viewPassword-container"><input type="checkbox" id="viewPwd"><label for="viewPwd">Show Password</label></div>
                     </td>
                 </tr>

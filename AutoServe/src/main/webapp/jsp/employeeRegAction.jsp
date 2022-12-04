@@ -45,7 +45,8 @@ try{
 
 	}
 	else if(position.equals("Mechanic")){
-		String mechanicstaff_statement = "INSERT INTO Mechanic VALUES(mechanic_ID.nextval,?,?,?,?,?)";
+		System.out.println("Mechanic insersion");
+		String mechanicstaff_statement = "INSERT INTO Mechanic VALUES(mechanic_ID.nextval,?,?,?,?,?,?)";
 		PreparedStatement mechanicstaff_ps = con.prepareStatement(mechanicstaff_statement);
 		
 		mechanicstaff_ps.setString(1, firstname);
@@ -53,6 +54,8 @@ try{
 		mechanicstaff_ps.setString(3, email);
 		mechanicstaff_ps.setString(4, phone);
 		mechanicstaff_ps.setString(5, password);
+		mechanicstaff_ps.setString(6, position);
+
 
 		
 		mechanicstaff_ps.executeUpdate();
@@ -61,7 +64,7 @@ try{
 	}
 	
 	
-	response.sendRedirect("../index.jsp");
+	response.sendRedirect("../admin/registerStaff.jsp");
 
 }catch(Exception e){e.printStackTrace();}
 

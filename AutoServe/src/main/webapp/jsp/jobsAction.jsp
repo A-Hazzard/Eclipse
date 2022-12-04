@@ -69,6 +69,46 @@
 				String msg2 = "(jobsAction.jsp) Data entered successfully.";
 
 			}
+			else if(category.equals("Breaks")){
+				System.out.println("Engine table");
+				String sql2 = "INSERT INTO breakRepair VALUES(?,?,?,?,?,?,'Pending')";
+				PreparedStatement ps2;
+				ps2 = con.prepareStatement(sql2);
+					ps2.setInt(1, clientID);
+					ps2.setString(2, mechEmail);
+					ps2.setString(3, staffEmail);
+					ps2.setString(4, vehicleType);
+					ps2.setString(5, plateNumber);
+					ps2.setString(6, issues);
+			
+
+				//Will write information to table in database
+				ps2.executeUpdate();
+				System.out.println("(jobsAction.jsp) Form sent");
+
+				String msg2 = "(jobsAction.jsp) Data entered successfully.";
+
+			}
+			else if(category.equals("Clutch")){
+				System.out.println("Clutch table");
+				String sql2 = "INSERT INTO clutchRepair VALUES(?,?,?,?,?,?,'Pending')";
+				PreparedStatement ps2;
+				ps2 = con.prepareStatement(sql2);
+					ps2.setInt(1, clientID);
+					ps2.setString(2, mechEmail);
+					ps2.setString(3, staffEmail);
+					ps2.setString(4, vehicleType);
+					ps2.setString(5, plateNumber);
+					ps2.setString(6, issues);
+			
+
+				//Will write information to table in database
+				ps2.executeUpdate();
+				System.out.println("(jobsAction.jsp) Form sent");
+
+				String msg2 = "(jobsAction.jsp) Data entered successfully.";
+
+			}
 			
 			response.sendRedirect("../pages/jobApplications.jsp");
 
