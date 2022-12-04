@@ -56,9 +56,13 @@
                     }
 		.info {font-family: "Secular One", Roboto; font-weight: 350;}
 		.sub-info {font-family: "Segoe UI", Roboto; font-weight: 400;}
+		#applications{}
+	
+		
+		
     </style>
     
-    <title>Assigned Jobs</title>
+    <title>History</title>
 </head>
 <body>
 	<!-- Accessing java variables -->
@@ -106,13 +110,12 @@
     <main id = "clientApplication-main">
 		
 			<div id = "header-container">	
-					<h2 id = "jobApplication-h2">Assigned Job</h2> 
-					<button type = "button" id = "refreshApplications-btn">Refresh</button>
+					<h2 id = "jobApplication-h2">History done on your vehicles</h2> 
 				</div>
-			<br><br>
-			<div id = "applications">
+	
+			<div id = "applications" style = "padding-left: 6.5%; width: auto; display: inline-block;">
 				<br>
-					<div id = "container">
+					<div id = "container" style = "margin: unset; width: auto;">
 			
 				
 		<% 
@@ -123,6 +126,7 @@
 		String reg_vehicleType = "";
 		String reg_plateNum = "";
 		String reg_issues = "";
+		String reg_mechanicFeedback = "";
 		String reg_status = "";
 
 			try{
@@ -131,31 +135,25 @@
 				
 				//Create a statement using the connection provider
 				Statement state = con.createStatement();
-				Statement state1 = con.createStatement();
-				Statement state2 = con.createStatement();
+				
 				//Create a result set to return the results from the statement
-				String engineRepair = "SELECT * FROM engineRepair WHERE mechanicEmail = '"+userEmail+"'";
-				String breakRepair = "SELECT * FROM breakRepair WHERE mechanicEmail = '"+userEmail+"'";
-				String clutchRepair = "SELECT * FROM clutchRepair WHERE mechanicEmail = '"+userEmail+"'";
+				String engineRepair = "SELECT * FROM completedJobs WHERE clientID = '"+userID+"'";
 				
 			
 				ResultSet result = state.executeQuery(engineRepair);
-				ResultSet result1 = state1.executeQuery(breakRepair);
-				ResultSet result2 = state2.executeQuery(clutchRepair);
 				
 				int reg_clientID = 0;
 			
-				System.out.println("Jobs TABLE : ");
+				System.out.println("completedJobs TABLE : ");
 				
 				//Fetches the data columns and returns the values
 				while( result.next()){
-					//Engine Repair Table
-					reg_clientID = result.getInt(1);
+					//completedJobsTable
 					reg_mechEmail = result.getString(2);
-					reg_staffEmail = result.getString(3);
-					reg_vehicleType = result.getString(4);
-					reg_plateNum = result.getString(5);
-					reg_issues = result.getString(6);
+					reg_vehicleType = result.getString(3);
+					reg_plateNum = result.getString(4);
+					reg_issues = result.getString(5);
+					reg_mechanicFeedback = result.getString(6);
 					reg_status = result.getString(7);
 
 					
@@ -169,11 +167,11 @@
 					box-shadow: .2rem .1rem .4rem rgb(223, 223, 223);
 					cursor: pointer;">
 					
-							<p class = "reg_clientID info">Client ID: <span id = "ID" class = "sub-info"><%out.print(reg_clientID); %></span></p>
-							<P class = "reg_staffEmail info">Staff's Email:  <span id = "staffEmail" class = "sub-info"><%out.print(reg_staffEmail); %></span></P>
+							<P class = "reg_mechanicEmail info">Mechanic's contact email that assigned you:  <span id = "mechanicEmail" class = "sub-info"><%out.print(reg_mechEmail); %></span></P>
 							<P class = "reg_VehicleType info">Type of Vehicle:  <span id = "type" class = "sub-info"><%out.print(reg_vehicleType); %></span></P>
 							<p class = "reg_plateNum info">Vehicle Plate Number:  <span id = "pNum" class = "sub-info"><%out.print(reg_plateNum); %></span></p>
 							<p class = "reg_issues info">Issues:  <span id = "issues" class = "sub-info"><%out.print(reg_issues); %></span></p>
+							<p class = "reg_feedback info">Feedback from mechanic:  <span id = "feedback" class = "sub-info"><%out.print(reg_mechanicFeedback); %></span></p>
 							<p class = "reg_status info">Status:  <span id = "status" class = "sub-info"><%out.print(reg_status); %></span></p>
 								
 						</div>
@@ -183,128 +181,13 @@
 				System.out.println("Client ID:" +reg_clientID+ "\nMechanic\'s Email:  "+userEmail+" | Vehicle Type: "+reg_vehicleType+ " | Plate Number: " + reg_plateNum+ "\nIssues: " + reg_issues+ "\nCurrent Status: " + reg_status);
 				}//end while
 					
-				//Fetches the data columns and returns the values
-				while( result1.next()){
-					//Breaks Repair Table
-					reg_clientID = result1.getInt(1);
-					reg_mechEmail = result1.getString(2);
-					reg_staffEmail = result1.getString(3);
-					reg_vehicleType = result1.getString(4);
-					reg_plateNum = result1.getString(5);
-					reg_issues = result1.getString(6);
-					reg_status = result1.getString(7);
-
-					
-				%>
-					<div class = "client-info" style = "
-					background: rgb(239 239 239);
-					border-radius: .5rem;
-					padding: 1%;
-					height: auto;
-					text-align: left;
-					box-shadow: .2rem .1rem .4rem rgb(223, 223, 223);
-					cursor: pointer;">
-					
-							<p class = "reg_clientID info">Client ID: <span id = "ID" class = "sub-info"><%out.print(reg_clientID); %></span></p>
-							<P class = "reg_staffEmail info">Staff's Email:  <span id = "staffEmail" class = "sub-info"><%out.print(reg_staffEmail); %></span></P>
-							<P class = "reg_VehicleType info">Type of Vehicle:  <span id = "type" class = "sub-info"><%out.print(reg_vehicleType); %></span></P>
-							<p class = "reg_plateNum info">Vehicle Plate Number:  <span id = "pNum" class = "sub-info"><%out.print(reg_plateNum); %></span></p>
-							<p class = "reg_issues info">Issues:  <span id = "issues" class = "sub-info"><%out.print(reg_issues); %></span></p>
-							<p class = "reg_status info">Status:  <span id = "status" class = "sub-info"><%out.print(reg_status); %></span></p>
-								
-						</div>
-					
-				<%	
-				
-				System.out.println("Client ID:" +reg_clientID+ "\nMechanic\'s Email:  "+userEmail+" | Vehicle Type: "+reg_vehicleType+ " | Plate Number: " + reg_plateNum+ "\nIssues: " + reg_issues+ "\nCurrent Status: " + reg_status);
-				}//end while
-					
-				//Fetches the data columns and returns the values
-				while( result2.next()){
-					//Clutch Repair Table
-					reg_clientID = result2.getInt(1);
-					reg_mechEmail = result2.getString(2);
-					reg_staffEmail = result2.getString(3);
-					reg_vehicleType = result2.getString(4);
-					reg_plateNum = result2.getString(5);
-					reg_issues = result2.getString(6);
-					reg_status = result2.getString(7);
-
-					
-				%>
-					<div class = "client-info" style = "
-					background: rgb(239 239 239);
-					border-radius: .5rem;
-					padding: 1%;
-					height: auto;
-					text-align: left;
-					box-shadow: .2rem .1rem .4rem rgb(223, 223, 223);
-					cursor: pointer;">
-					
-							<p class = "reg_clientID info">Client ID: <span id = "ID" class = "sub-info"><%out.print(reg_clientID); %></span></p>
-							<P class = "reg_staffEmail info">Staff's Email:  <span id = "staffEmail" class = "sub-info"><%out.print(reg_staffEmail); %></span></P>
-							<P class = "reg_VehicleType info">Type of Vehicle:  <span id = "type" class = "sub-info"><%out.print(reg_vehicleType); %></span></P>
-							<p class = "reg_plateNum info">Vehicle Plate Number:  <span id = "pNum" class = "sub-info"><%out.print(reg_plateNum); %></span></p>
-							<p class = "reg_issues info">Issues:  <span id = "issues" class = "sub-info"><%out.print(reg_issues); %></span></p>
-							<p class = "reg_status info">Status:  <span id = "status" class = "sub-info"><%out.print(reg_status); %></span></p>
-								
-						</div>
-					
-				<%	
-				
-				System.out.println("Client ID:" +reg_clientID+ "\nMechanic\'s Email:  "+userEmail+" | Vehicle Type: "+reg_vehicleType+ " | Plate Number: " + reg_plateNum+ "\nIssues: " + reg_issues+ "\nCurrent Status: " + reg_status);
-				}//end while
-				
 		}catch(SQLException e){
 			System.out.println("Problem returning registration info. SQL Error: " + e);
 		}
 	%>
 					</div>
 				</div>
-			
-			
-			
-			
-			<form action="../jsp/updateJobStatus.jsp" method = 'post' id="registered-bookings-form" class = "mechanic-form">
-						<h2>Client #<span class = "span-client-ID"></span></h2>
-						<br>
-				<div class ="hidden">
-					<label class = "input info" for="mechanicEmail_input">Mechanic Email: <span class = "span-mechanic-email"></span></label><br>
-					<input type = "text" name = "mechanicEmail_input" id = "mechanicEmail_input"  required>
-					
-				</div>	
-			
-					<label class = "input-hidden info" for="clientID_input">ID: <span class = "span-client-ID sub-info"></span></label><br>
-					<input class = "input-hidden hidden" type = "text" name = "clientID_input" id = "clientID_input"  required>
-				<br>
-
-					<label for="vehicleType_input" class = "info">Type of Vehicle: <span class = "span-client-vehicleType sub-info"></span></label><br> 
-					<input type = "text" name="vehicleType_input" id="vehicleType_input" class = "hidden"   required>
-					<br>
-				
-					<label for="plateNum_input" class = "info">Plate Number: <span class = "span-client-plateNum sub-info"></span></label><br>
-					<input type="text" name="plateNum_input" id="plateNum_input" class = "hidden"  required><br>
-					
-					
-					<label for="issues_input" class = "info">Issues: <span class = "span-client-issues sub-info"></span></label><br>
-					<input type="text" name="issues_input" id="issues_input" class = "hidden"  required><br>
-					
-					<label for="status_input" class = "info">Status: <span class = "span-client-status sub-info"></span></label><br>
-					<input type="text" name="status_input" id="status_input" class = "hidden"  required><br>
-					
-                        <select name = "status" id = "selectStatus" class = "status" disabled required>
-                            <option id = "pendingStatus" selected value = "">Current Status: Pending</option>
-                        	<option id = "activeStatus" value = "Active">Current Status: Active</option>
-                        	<option id = "finishedStatus" value = "Finished">Current Status: Finished</option>
-                        </select>
-                        <br>
-                    <label for="mechanicFeedback" class = "feedback" style = "display: none;">Feedback:</label><br><br>
-	    			<textarea id="mechanicFeedback" class = "feedback" name="mechanicFeedback_input" placeholder="Feedback.." style="height:200px; width: 60%; display: none;"></textarea>
-	    			
-				<input type = "submit" value="Select a client to work with" id = "bookNow-btn" disabled/>
-
-			</form>
-        
+	   
 	</main>
 
  <footer>
@@ -436,22 +319,6 @@
 								bookNowBtn.css("background", orange);
 									bookNowBtn.css("opacity", "1");
 											bookNowBtn.css("cursor", "pointer");
-						                    	let option = $("#selectStatus option:selected").val();
-					
-				if(option == "Finished" || option == "Active"){
-					console.log("Finished Option Selected");
-					$(".feedback").css("display", "unset");
-					$(".feedback").css("margin-bottom", "1%");
-					$(".feedback").attr("required", true);
-
-
-				}
-				else{
-					console.log(option + " Option Selected");
-					$(".feedback").css("display", "none")
-					$(".feedback").attr("required", false);
-
-				}
 			})
 				
 			

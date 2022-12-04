@@ -1648,4 +1648,13 @@ footer #flex-container #footer-links #wrapper span a {
   border-color: orange;
   outline: none;
   margin-bottom: 5%;
+}
+.mechanic-form textarea {
+  border-radius: 0.5rem;
+  padding: 1%;
+}
+.mechanic-form textarea:focus {
+  outline: none !important;
+  border-color: rgb(229, 36, 14);
+  box-shadow: 0 0 3px rgb(229, 36, 14);
 }/*# sourceMappingURL=style.css.map */

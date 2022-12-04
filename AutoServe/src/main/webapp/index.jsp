@@ -81,8 +81,13 @@
                         		System.out.println("(index.jsp)Not an admin or staff. Hid Clients link. Email: " + email); 
                         	%> <li><a href="pages/mechanicAssignedJobs.jsp" class="links jsp-links">Assigned Jobs</a></li>
                         	
-                       <% }%> 
-
+                       <% }else if(position.equals("Client")){
+                    	   System.out.println("(index.jsp) Client Position. Showing Service History");
+                       %> <li><a href="pages/serviceHistory.jsp" class="links jsp-links">Service History</a></li>
+							<li><a href="pages/clientActiveJobs.jsp" class="links jsp-links">Active Jobs</a></li>
+						<% } %>
+					
+					
                 	<% //Display login/signup link if user is not logged in
                         if (sessionFname == null){ 
                         %> <li><a href="login.jsp" id="loginPage" class="links jsp-links">Login/Sign-Up</a>

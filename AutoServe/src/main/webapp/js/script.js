@@ -55,9 +55,13 @@ function setStyle(){
 		fNameContainer.css("margin-top", "-1.7%");
 
 	}
-	else if (userPosition == "Client"  || userPosition == "Mechanic"){
+	else if (userPosition == "Client"){
 		console.log(userPosition + " styling now");
-		fNameContainer.css("margin-left", "42%");
+		$(".link-container").css("margin-left", "-5%");
+				$(".link-container").css("margin-top", ".5%");
+
+
+		fNameContainer.css("margin-left", "62%");
 				fNameContainer.css("margin-top", "-1.8%");
 
 	}
