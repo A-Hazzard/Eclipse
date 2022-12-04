@@ -199,6 +199,7 @@ let logoTag = $("#logo");
 homePageLink.css("margin-left", "90%");
 homePageLink.css("z-index", "2");
 logoTag.css("margin-left", "2%");
+$("form").css("padding-top", "3%");
 $("#footer-links").load("states/footer/carLinks.txt");
 
 
@@ -346,6 +347,9 @@ var bookNowBtn = $("#bookNow-btn");
                         
                     }
 
+                    $("form").on('submit', function(){
+                    	alert("Your vehicle has been registered. Please wait 24/48 hours for confirmation.");
+                    })
 //You can also pass an optional settings object
 //below listed default settings
 AOS.init({

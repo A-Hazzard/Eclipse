@@ -76,11 +76,12 @@
                 <li><a href="#" id = "servicesPage" class="links">Services</a></li> 
                 	<% //Display  clients link only if user is either staff or admin
                         if(position.equals(staff) || position.equals(admin)){
-                            %> <li>
-                            <a href="pages/jobApplications.jsp" class="links jsp-links">Job Applications </a>
-                            </li> <% }
-                        else System.out.println("(index.jsp)Not an admin or staff. Hid Clients link. Email: " + email); 
-                    %>
+                            %> <li><a href="pages/jobApplications.jsp" class="links jsp-links">Job Applications </a></li> <% }
+                        else if(position.equals(mechanic)){
+                        		System.out.println("(index.jsp)Not an admin or staff. Hid Clients link. Email: " + email); 
+                        	%> <li><a href="pages/mechanicAssignedJobs.jsp" class="links jsp-links">Assigned Jobs</a></li>
+                        	
+                       <% }%> 
 
                 	<% //Display login/signup link if user is not logged in
                         if (sessionFname == null){ 

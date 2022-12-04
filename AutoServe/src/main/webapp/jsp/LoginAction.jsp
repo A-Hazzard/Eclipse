@@ -91,7 +91,7 @@ try{	 Connection con = ConnectionProvider.getConnection();
 						session.setAttribute("Phone",sessionPhone);
 						session.setAttribute("Position", sessionPosition);
 						
-						 response.sendRedirect("../index.jsp?msg=invalidLogin");
+						 response.sendRedirect("../index.jsp?msg=validLogin");
 					      System.out.println("Logged in as Winston Fields(ADMIN)(LoginAction.jsp)");
 							System.out.println("-------------\nREDIRECTED TO ADMIN PAGE\n-------------");
 
@@ -143,14 +143,14 @@ try{	 Connection con = ConnectionProvider.getConnection();
 						session.setAttribute("Phone",sessionPhone);
 						session.setAttribute("Position", sessionPosition);
 						
-						 response.sendRedirect("../index.jsp?msg=invalidLogin");
+						 response.sendRedirect("../index.jsp?msg=validLogin");
 					      System.out.println("Logged in as Winston Fields(ADMIN)(LoginAction.jsp)");
 							System.out.println("-------------\nREDIRECTED TO ADMIN PAGE\n-------------");
 
 						
 				 }
 				 if(loginSuccess == false){
-					 	response.sendRedirect("../login.jsp?msg=invalidLogin");
+					 	response.sendRedirect("../login.jsp?msg=validLogin");
 				 		System.out.println("Invalid Login Credentials");
 				 }
 			 
@@ -192,7 +192,7 @@ try{	 Connection con = ConnectionProvider.getConnection();
 					session.setAttribute("Phone",sessionPhone);
 					session.setAttribute("Position", sessionPosition);
 					
-					 response.sendRedirect("../index.jsp?msg=invalidLogin");
+					 response.sendRedirect("../index.jsp?msg=validLogin");
 				      System.out.println("Logged in as Winston Fields(ADMIN)(LoginAction.jsp)");
 						System.out.println("-------------\nREDIRECTED TO ADMIN PAGE\n-------------");
 

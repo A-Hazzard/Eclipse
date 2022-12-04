@@ -29,7 +29,7 @@ try{
 			ps.executeUpdate();
 			System.out.println("(bookingAction.jsp) Form sent");
 
-			response.sendRedirect("../index.jsp");
+			response.sendRedirect("../pages/vehicleRegistration.jsp");
 		
 
 }catch(NumberFormatException nfe){

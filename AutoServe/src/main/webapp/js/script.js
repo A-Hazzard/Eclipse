@@ -35,7 +35,7 @@ function setStyle(){
     fNameContainer.css("align-items", "center");
     fNameContainer.css("justify-content", "center");
 	
-	if(userPosition == "Staff") {
+	if(userPosition == "Staff" || userPosition == "Mechanic") {
 		console.log("staff styling now");
 		fNameContainer.css("margin-left", "50%");
 		fNameContainer.css("margin-top", "-1.8%");
