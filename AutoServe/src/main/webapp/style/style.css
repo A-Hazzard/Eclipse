@@ -1380,7 +1380,6 @@ footer #flex-container #footer-links #wrapper span a {
   height: 100vh;
   padding-top: 10%;
   display: flex;
-  flex-wrap: wrap;
   position: relative;
 }
 #clientApplication-main #header-container {
@@ -1413,6 +1412,9 @@ footer #flex-container #footer-links #wrapper span a {
 #clientApplication-main #applications #container {
   margin: 0% auto;
   width: 70%;
+}
+#clientApplication-main #applications .client-info {
+  position: relative;
 }
 #clientApplication-main #registered-bookings-form {
   padding-top: 1%;

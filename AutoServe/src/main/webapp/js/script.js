@@ -51,7 +51,7 @@ function setStyle(){
 	}
 	else if(userPosition == "Admin") {
 		console.log("Admin styling now");
-		fNameContainer.css("margin-left", "60%");
+		fNameContainer.css("margin-left", "63%");
 		fNameContainer.css("margin-top", "-1.7%");
 
 	}

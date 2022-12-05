@@ -20,11 +20,10 @@
 			String sql = "INSERT INTO registered_vehicles VALUES(regID.nextval,?,?,?,?,?,?,?)";
 			String sql1 = "INSERT INTO jobs VALUES(?,?,?,?,?,?,?,'Pending')";
         	String dropActiveJob = "DELETE FROM registrationq WHERE clientID = '"+clientID+"'";
+    		PreparedStatement ps = con.prepareStatement(sql);
+			PreparedStatement ps1 = con.prepareStatement(sql1);
+			PreparedStatement drop = con.prepareStatement(dropActiveJob);
 
-			PreparedStatement ps;
-			PreparedStatement ps1;
-
-			ps = con.prepareStatement(sql);
 				ps.setInt(1, clientID);
 				ps.setString(2, vehicleType);
 				ps.setString(3, plateNumber);
@@ -34,8 +33,8 @@
 				ps.setString(7, category);
 			//Will write information to table in database
 			
-			ps.executeUpdate();
-			ps1 = con.prepareStatement(sql1);
+	
+			
 				ps1.setInt(1, clientID);
 				ps1.setString(2, mechEmail);
 				ps1.setString(3, staffEmail);
@@ -43,8 +42,10 @@
 				ps1.setString(5, plateNumber);
 				ps1.setString(6, issues);
 				ps1.setString(7, category);
-			ps1.executeUpdate();
-			//ps2.executeUpdate();
+			
+				ps.executeUpdate();	
+				ps1.executeUpdate();
+				drop.executeUpdate();
 
 
 			
@@ -54,15 +55,15 @@
 
 			if(category.equals("Engine")){
 				System.out.println("Engine table");
-				String sql2 = "INSERT INTO engineRepair VALUES(?,?,?,?,?,?,'Pending')";
-				PreparedStatement ps2;
-				ps2 = con.prepareStatement(sql2);
-					ps2.setInt(1, clientID);
+				String sql2 = "INSERT INTO engineRepair VALUES('"+clientID+"','"+mechEmail+"','"+staffEmail+"','"+vehicleType+"','"+plateNumber+"','"+issues+"','Pending','"+category+"')";
+				PreparedStatement ps2= con.prepareStatement(sql2);
+					/*ps2.setInt(1, clientID);
 					ps2.setString(2, mechEmail);
 					ps2.setString(3, staffEmail);
 					ps2.setString(4, vehicleType);
 					ps2.setString(5, plateNumber);
 					ps2.setString(6, issues);
+						*/
 			
 
 				//Will write information to table in database
@@ -73,17 +74,17 @@
 
 			}
 			else if(category.equals("Breaks")){
-				System.out.println("Engine table");
-				String sql2 = "INSERT INTO breakRepair VALUES(?,?,?,?,?,?,'Pending')";
-				PreparedStatement ps2;
-				ps2 = con.prepareStatement(sql2);
-					ps2.setInt(1, clientID);
-					ps2.setString(2, mechEmail);
-					ps2.setString(3, staffEmail);
-					ps2.setString(4, vehicleType);
-					ps2.setString(5, plateNumber);
-					ps2.setString(6, issues);
-			
+				System.out.println("Breaks table");
+				String sql2 = "INSERT INTO breakRepair VALUES('"+clientID+"','"+mechEmail+"','"+staffEmail+"','"+vehicleType+"','"+plateNumber+"','"+issues+"','Pending','"+category+"')";
+				PreparedStatement ps2 = con.prepareStatement(sql2);
+				/*ps2.setInt(1, clientID);
+				ps2.setString(2, mechEmail);
+				ps2.setString(3, staffEmail);
+				ps2.setString(4, vehicleType);
+				ps2.setString(5, plateNumber);
+				ps2.setString(6, issues);
+				ps2.setString(8, category);
+*/
 
 				//Will write information to table in database
 				ps2.executeUpdate();
@@ -94,16 +95,16 @@
 			}
 			else if(category.equals("Clutch")){
 				System.out.println("Clutch table");
-				String sql2 = "INSERT INTO clutchRepair VALUES(?,?,?,?,?,?,'Pending')";
-				PreparedStatement ps2;
-				ps2 = con.prepareStatement(sql2);
-					ps2.setInt(1, clientID);
+				String sql2 = "INSERT INTO clutchRepair VALUES('"+clientID+"','"+mechEmail+"','"+staffEmail+"','"+vehicleType+"','"+plateNumber+"','"+issues+"','Pending','"+category+"')";
+				PreparedStatement ps2 = con.prepareStatement(sql2);
+					/*ps2.setInt(1, clientID);
 					ps2.setString(2, mechEmail);
 					ps2.setString(3, staffEmail);
 					ps2.setString(4, vehicleType);
 					ps2.setString(5, plateNumber);
 					ps2.setString(6, issues);
-			
+					ps2.setString(8, category);
+*/
 
 				//Will write information to table in database
 				ps2.executeUpdate();

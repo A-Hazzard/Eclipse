@@ -112,6 +112,8 @@
 			<div id = "header-container">	
 					<h2 id = "jobApplication-h2">Pending Appointments</h2> 
 				</div>
+				
+				<h3 style = "text-align: center; width: 100vw; font-size: 3rem; color: red;">You have no pending Applications</h3>
 					
 		<% 
 		//Mechanic email already initialized on login
@@ -133,14 +135,14 @@
 				Statement state = con.createStatement();
 				
 				//Create a result set to return the results from the statement
-				String engineRepair = "SELECT * FROM registrationQ WHERE clientID = '"+userID+"'";
+				String engineRepair = "SELECT * FROM pendingClients WHERE clientID = '"+userID+"'";
 				
 			
 				ResultSet result = state.executeQuery(engineRepair);
 				
 				int reg_clientID = 0;
 			
-				System.out.println("activeJobs TABLE : ");
+				System.out.println("Pending TABLE : ");
 				
 				//Fetches the data columns and returns the values
 				while( result.next()){
@@ -149,7 +151,7 @@
 					reg_plateNum = result.getString(3);
 					reg_issues = result.getString(4);
 					reg_category = result.getString(5);
-
+					System.out.println("Pending forms: \n" + reg_vehicleType + "\n" +  reg_plateNum+ "\n" +  reg_issues + "\n" + reg_category);
 					
 				%>
 					<div class = "client-info" style = "
@@ -163,11 +165,19 @@
 					position: relative;
 					margin-left: 5%">
 					<form action = "../jsp/dropPendingApplications.jsp" method = "POST" id = "pendingApplication-form">
-							<P class = "reg_VehicleType info">Type of Vehicle:  <span id = "type" class = "sub-info"><%out.print(reg_vehicleType); %></span></P>
-							<p class = "reg_plateNum info">Vehicle Plate Number:  <span id = "pNum" class = "sub-info"><%out.print(reg_plateNum); %></span></p>
-							<p class = "reg_issues info">Issues:  <span id = "issues" class = "sub-info"><%out.print(reg_issues); %></span></p>
-							<p class = "reg_category info">Category:  <span id = "category" class = "sub-info"><%out.print(reg_category); %></span></p>
-							<button type = "button" value = "CancelAppointment" style = "cursor: pointer; padding: 3%; color: black; font-size: 1rem; font-style: bold; font-family: $headerFont; background-color: white; border: none; border-radius: .5rem;">Cancel Appointment</button>
+							<label class = "hidden" for="clientID_input">ID: <span class = "span-client-ID sub-info"></span></label>
+							<input class = "hidden clientID_input" type = "text" name = "clientID_input"  required>
+				
+							<label for = "vehicleType_input" class = "reg_VehicleType info">Type of Vehicle:  <span class = "type" class = "sub-info"><%out.print(reg_vehicleType); %></span></label><br>
+												<input type = "text" name="vehicleType_input" class="vehicleType_input" class = "hidden"   required>
+							<label for = "plateNum_input" class = "reg_plateNum info">Vehicle Plate Number:  <span class = "pNum" class = "sub-info"><%out.print(reg_plateNum); %></span></label>
+												<input type="text" name="plateNum_input" class="plateNum_input" class = "hidden"  required><br>
+							<label for = "issues_input" class = "reg_issues info">Issues:  <span class = "issues" class = "sub-info"><%out.print(reg_issues); %></span></label>
+												<input type="text" name="issues_input" class="issues_input" class = "hidden"  required><br>
+							<label for = "category_input" class = "reg_category info">Category:  <span class = "category" class = "sub-info"><%out.print(reg_category); %></span></label>
+												<input type="text" name="category_input" class="category_input" class = "hidden"  required><br>
+							
+							<button type = "submit" value = "CancelAppointment" style = "padding: 3%; color: black; font-size: 1rem; font-style: bold; font-family: $headerFont; background-color: white; border: none; border-radius: .5rem;">Cancel Appointment</button>
 						</form>
 						</div>
 					
@@ -231,17 +241,9 @@
 	var getVariables = $(".getVariables");
 	var fNameContainer = $(".profile-name-container");
 	var clientInfo_container = $(".client-info");
-	var refreshBtn = $("#refreshApplications-btn");
 	const info = $(".client-info > .info");
 	let clientInfo = $(".client-info");
 	const orange = "rgb(229,36,14)";
-	let bookNowBtn = $("#bookNow-btn"); 
-	bookNowBtn.css("background", "grey");
-	bookNowBtn.css("opacity", ".5");
-	bookNowBtn.css("animation", "none");
-	bookNowBtn.css("cursor", "unset");
-	let currentStatus = $("#currentStatus");
-	currentStatus.val(currentStatus.text());
 	//clientInfo_container.css("margin-left", "20%");
 	clientInfo_container.css("margin-bottom", "5%");
 	info.css("fontSize","1.5rem");
@@ -255,76 +257,45 @@
 	console.log("Position: " + userPosition);
 	getVariables.css("position", "absolute");
 	getVariables.css("margin-top", "-100%");
-	
-	//refreshes the applications
-	refreshBtn.on('click', ()=>location.reload());
+	if($(".client-info").length >= 1) {
+		$("h3").css("display", "none");
+	}else{
+		$("main").css("height", "80vh");
 
+	}
 
 		//For each client application that loads on the website, display their information
 		clientInfo_container.each(function(){
 			//Variables for each div
-			let ID = $(this).find("#ID").text();
-			let staffEmail = $(this).find("staffEmail").text();
-			let type = $(this).find("#type").text();
-			let pNum = $(this).find("#pNum").text();
-			let issues = $(this).find("#issues").text();
-			let status = $(this).find("#status").text();
-
-			//Initialize empty tag values
-			let spanClient_ID = $(".span-client-ID");
-			let spanClient_vehicleType = $(".span-client-vehicleType");
-			let spanClient_plateNum = $(".span-client-plateNum");
-			let spanClient_Issues = $(".span-client-issues");
-			let spanClient_status = $(".span-client-status");
+			let type = $(this).find(".type").text();
+			let pNum = $(this).find(".pNum").text();
+			let issues = $(this).find(".issues").text();
+			let status = $(this).find(".status").text();
+			let category = $(this).find(".category").text();
+			let ID = $(this).find(".span-client-ID");
 			//Init empy input field values
-			let plateNum_input = $("#plateNum_input");
-			let vehicleType_input = $("#vehicleType_input");
-			let clientID_input = $("#clientID_input");
-			let mechEmail_input = $("#mechEmail");
-			let issues_input = $("#issues_input");
-			let status_input = $("#status_input");
-			let selectStatus =  $("#selectStatus");
-			//On click event for each div
-			$(this).on('click', function(){
-				//Append values stored in array to tags
-				spanClient_ID.text(ID);
-					spanClient_vehicleType.text(type);
-						spanClient_plateNum.text(pNum);
-							spanClient_Issues.text(issues);
-								spanClient_status.text(status);
-					
+			let vehicleType_input = $(this).find(".vehicleType_input");
+			let plateNum_input = $(this).find(".plateNum_input");
+			let issues_input = $(this).find(".issues_input");
+			let status_input = $(this).find(".status_input");
+			let category_input = $(this).find(".category_input");
+			let userID_input = $(this).find(".clientID_input");
 				//Append values stored in span tags to input fields	
-				clientID_input.val(ID);
 					plateNum_input.val(pNum);
 						vehicleType_input.val(type);
 							issues_input.val(issues);
-								status_input.val(status);
-									mechEmail_input.attr("readonly", false);
-											mechEmail_input.attr("placeholder", "");
-												bookNowBtn.val("Choose a status for the job");
-													selectStatus.attr("disabled", false);
+								category_input.val(category);
+									ID.text(userID);
+										userID_input.val(ID.text());
+$("#pendingApplication-form > .hidden").css("position", "absolute");
+$("#pendingApplication-form > .hidden").css("margin-left", "-1000%");
+$("#pendingApplication-form > input[type=text]").css("margin-left", "-1000%");
+$("#pendingApplication-form > input[type=text]").css("position", "absolute");
 
-			//let bookNow-btn_Option = $("#bookNow-btn option:selected").val();
-			selectStatus.change(function(){
-				
-					console.log("Status changed");
-						bookNowBtn.attr("disabled", false);
-							bookNowBtn.val("Update Status");
-								bookNowBtn.css("background", orange);
-									bookNowBtn.css("opacity", "1");
-											bookNowBtn.css("cursor", "pointer");
-			})
-				
-			
-					
-				
-				
 
-		})//End this.click method
-
-		
+		$("button").on('click',()=>{console.log("clicked");})
 })//End clientInfo_container method
-	
+
 </script>
 </body>
 </html>

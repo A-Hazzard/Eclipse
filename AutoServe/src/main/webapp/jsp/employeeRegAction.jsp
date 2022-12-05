@@ -30,7 +30,7 @@ try{
 	System.out.println("Employee Table Populated Successfully");
 	
 	if(position.equals("Staff")){
-		String staff_statement = "INSERT INTO Staff VALUES(staff_ID.nextval,?,?,?,?,?)";
+		String staff_statement = "INSERT INTO Staff VALUES(staff_ID.nextval,?,?,?,?,?,?)";
 		PreparedStatement staff_ps = con.prepareStatement(staff_statement);
 		
 		staff_ps.setString(1, firstname);
@@ -38,6 +38,7 @@ try{
 		staff_ps.setString(3, email);
 		staff_ps.setString(4, phone);
 		staff_ps.setString(5, password);
+		staff_ps.setString(6, position);
 		
 		
 		staff_ps.executeUpdate();

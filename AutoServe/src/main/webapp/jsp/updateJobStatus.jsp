@@ -6,6 +6,7 @@
 
 	try{
 		System.out.println("(UpdateobStatus.jsp) Form SUBMITTED");
+		
 		String status = request.getParameter("status").trim();
 		String vehicleType = request.getParameter("vehicleType_input").trim();
 		String plateNumber = request.getParameter("plateNum_input").trim();

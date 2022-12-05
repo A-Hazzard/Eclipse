@@ -113,9 +113,8 @@
 					<h2 id = "jobApplication-h2">History done on your vehicles</h2> 
 				</div>
 	
-			<div id = "applications" style = "padding-left: 6.5%; width: auto; display: inline-block;">
-				<br>
-					<div id = "container" style = "margin: unset; width: auto;">
+			
+							<h3 style = "text-align: center; width: 100vw; font-size: 3rem; color: red;">Your history is empty</h3>
 			
 				
 		<% 
@@ -164,10 +163,12 @@
 					background: rgb(239 239 239);
 					border-radius: .5rem;
 					padding: 1%;
-					height: auto;
+				
+					width: 40%;
 					text-align: left;
 					box-shadow: .2rem .1rem .4rem rgb(223, 223, 223);
-					cursor: unset;">
+					position: relative;
+					margin-left: 5%">
 					
 							<P class = "reg_mechanicEmail info">Mechanic's contact email that assigned you:  <span id = "mechanicEmail" class = "sub-info"><%out.print(reg_mechEmail); %></span></P>
 							<P class = "reg_VehicleType info">Type of Vehicle:  <span id = "type" class = "sub-info"><%out.print(reg_vehicleType); %></span></P>
@@ -188,9 +189,7 @@
 			System.out.println("Problem returning registration info. SQL Error: " + e);
 		}
 	%>
-					</div>
-				</div>
-	   
+				
 	</main>
 
  <footer>
@@ -267,7 +266,12 @@
 	
 	//refreshes the applications
 	refreshBtn.on('click', ()=>location.reload());
+	if($(".client-info").length >= 1) {
+		$("h3").css("display", "none");
+	}else{
+		$("main").css("height", "80vh");
 
+	}
 
 		//For each client application that loads on the website, display their information
 		clientInfo_container.each(function(){

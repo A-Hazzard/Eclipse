@@ -78,9 +78,12 @@
         <nav class="navbar"><!--NAVIGATION BAR-->
             <ul class="link-container">
                 <li><a href="../index.jsp" id="homePage" class="links">Home</a></li>
-
+                <%if(position.equals(staff)){
+                	%> <li><a href = "../pages/staffAssignmentHistory.jsp" class="links" id = "assignmentHistory">Assignment History</a></li>
+                <%} %>
                 <li style = "text-align: center;font-size: 2rem;">
-                <span class = "profile-name jsp-userName">         
+                <span class = "profile-name jsp-userName">
+                       
                 <% //Display client button only if user is admin/staff 
                 if(sessionFname == null)
 					System.out.println("(index.jsp)Username hidden\n");

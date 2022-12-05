@@ -79,6 +79,9 @@
             <ul class="link-container">
                 <li><a href="../index.jsp" id="homePage" class="links">Home</a></li>
 
+                <%if(position.equals("Mechanic")){
+                	%> <li><a href = "../pages/mechanicAssignedHistory.jsp" class="links" id = "assignedHistory">Assigned Jobs History</a></li>
+                <%} %>
                 <li style = "text-align: center;font-size: 2rem;">
                 <span class = "profile-name jsp-userName">         
                 <% //Display client button only if user is admin/staff 
@@ -125,6 +128,7 @@
 		String reg_issues = "";
 		String reg_invoice = "";
 		String reg_status = "";
+		String reg_category = "";
 
 			try{
 				//Geting connection to display client applications
@@ -158,7 +162,7 @@
 					reg_plateNum = result.getString(5);
 					reg_issues = result.getString(6);
 					reg_status = result.getString(7);
-
+					reg_category = result.getString(8);
 					
 				%>
 					<div class = "client-info" style = "

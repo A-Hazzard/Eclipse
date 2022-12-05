@@ -35,7 +35,7 @@ try{	 Connection con = ConnectionProvider.getConnection();
 				session.setAttribute("Phone",sessionPhone);
 				session.setAttribute("Position", sessionPosition);
 				
-				 response.sendRedirect("../index.jsp?msg=validLogin");
+				 response.sendRedirect("../admin/admin.jsp?msg=validLogin");
 			      System.out.println("Logged in as Winston Fields(ADMIN)(LoginAction.jsp)");
 					System.out.println("-------------\nREDIRECTED TO ADMIN PAGE\n-------------");
 
