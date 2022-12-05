@@ -62,7 +62,7 @@
 		
     </style>
     
-    <title>Active Jobs</title>
+    <title>Pending Jobs</title>
 </head>
 <body>
 	<!-- Accessing java variables -->
@@ -107,17 +107,12 @@
     </header>
 
     <!--Content loaded using AJAX with JQuery-->
-    <main id = "clientApplication-main">
+    <main id = "clientPendingApplication-main">
 		
 			<div id = "header-container">	
-					<h2 id = "jobApplication-h2">Active Jobs</h2> 
+					<h2 id = "jobApplication-h2">Pending Appointments</h2> 
 				</div>
-	
-			<div id = "applications" style = "padding-left: 6.5%; width: auto; display: inline-block;">
-				<br>
-					<div id = "container" style = "margin: unset; width: auto;">
-			
-				
+					
 		<% 
 		//Mechanic email already initialized on login
 		int ClientID = 0;
@@ -126,6 +121,7 @@
 		String reg_vehicleType = "";
 		String reg_plateNum = "";
 		String reg_issues = "";
+		String reg_category = "";
 		String reg_mechanicFeedback = "";
 		String reg_status = "";
 
@@ -137,7 +133,7 @@
 				Statement state = con.createStatement();
 				
 				//Create a result set to return the results from the statement
-				String engineRepair = "SELECT * FROM activeJobs WHERE clientID = '"+userID+"'";
+				String engineRepair = "SELECT * FROM registrationQ WHERE clientID = '"+userID+"'";
 				
 			
 				ResultSet result = state.executeQuery(engineRepair);
@@ -149,12 +145,10 @@
 				//Fetches the data columns and returns the values
 				while( result.next()){
 					//completedJobsTable
-					reg_mechEmail = result.getString(2);
-					reg_vehicleType = result.getString(3);
-					reg_plateNum = result.getString(4);
-					reg_issues = result.getString(5);
-					reg_mechanicFeedback = result.getString(6);
-					reg_status = result.getString(7);
+					reg_vehicleType = result.getString(2);
+					reg_plateNum = result.getString(3);
+					reg_issues = result.getString(4);
+					reg_category = result.getString(5);
 
 					
 				%>
@@ -162,18 +156,19 @@
 					background: rgb(239 239 239);
 					border-radius: .5rem;
 					padding: 1%;
-					height: auto;
+					height: 30%;
+					width: 40%;
 					text-align: left;
 					box-shadow: .2rem .1rem .4rem rgb(223, 223, 223);
-					cursor: pointer;">
-					
-							<P class = "reg_mechanicEmail info">Mechanic's contact email that assigned you:  <span id = "mechanicEmail" class = "sub-info"><%out.print(reg_mechEmail); %></span></P>
+					position: relative;
+					margin-left: 5%">
+					<form action = "../jsp/dropPendingApplications.jsp" method = "POST" id = "pendingApplication-form">
 							<P class = "reg_VehicleType info">Type of Vehicle:  <span id = "type" class = "sub-info"><%out.print(reg_vehicleType); %></span></P>
 							<p class = "reg_plateNum info">Vehicle Plate Number:  <span id = "pNum" class = "sub-info"><%out.print(reg_plateNum); %></span></p>
 							<p class = "reg_issues info">Issues:  <span id = "issues" class = "sub-info"><%out.print(reg_issues); %></span></p>
-							<p class = "reg_feedback info">Feedback from mechanic:  <span id = "feedback" class = "sub-info"><%out.print(reg_mechanicFeedback); %></span></p>
-							<p class = "reg_status info">Status:  <span id = "status" class = "sub-info"><%out.print(reg_status); %></span></p>
-								
+							<p class = "reg_category info">Category:  <span id = "category" class = "sub-info"><%out.print(reg_category); %></span></p>
+							<button type = "button" value = "CancelAppointment" style = "cursor: pointer; padding: 3%; color: black; font-size: 1rem; font-style: bold; font-family: $headerFont; background-color: white; border: none; border-radius: .5rem;">Cancel Appointment</button>
+						</form>
 						</div>
 					
 				<%	
@@ -185,12 +180,11 @@
 			System.out.println("Problem returning registration info. SQL Error: " + e);
 		}
 	%>
-					</div>
-				</div>
+			
 	   
 	</main>
 
- <footer>
+ <footer style = "position: static;">
     <div id="flex-container">
         <div id="footer-nav">
             <h4>Quick Links</h4> 

@@ -19,9 +19,11 @@
 	try{	
 			String sql = "INSERT INTO registered_vehicles VALUES(regID.nextval,?,?,?,?,?,?,?)";
 			String sql1 = "INSERT INTO jobs VALUES(?,?,?,?,?,?,?,'Pending')";
+        	String dropActiveJob = "DELETE FROM registrationq WHERE clientID = '"+clientID+"'";
 
 			PreparedStatement ps;
 			PreparedStatement ps1;
+
 			ps = con.prepareStatement(sql);
 				ps.setInt(1, clientID);
 				ps.setString(2, vehicleType);
@@ -42,6 +44,7 @@
 				ps1.setString(6, issues);
 				ps1.setString(7, category);
 			ps1.executeUpdate();
+			//ps2.executeUpdate();
 
 
 			

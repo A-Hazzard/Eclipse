@@ -85,6 +85,7 @@
                     	   System.out.println("(index.jsp) Client Position. Showing Service History");
                        %> <li><a href="pages/serviceHistory.jsp" class="links jsp-links">Service History</a></li>
 							<li><a href="pages/clientActiveJobs.jsp" class="links jsp-links">Active Jobs</a></li>
+							<li><a href="pages/clientPendingJobs.jsp" class="links jsp-links">Pending Jobs</a></li>
 						<% } %>
 					
 					
@@ -121,7 +122,7 @@
                                 if(position.equals(admin))
                                     out.print(firstName.toUpperCase().charAt(0) + "." + lastName.toUpperCase().charAt(0));
                                             else
-                                            	out.print(firstName.toUpperCase().charAt(0) + "." + lastName.toUpperCase().charAt(0));
+                                            	out.print(firstName.toUpperCase().charAt(0) + "" + lastName.toUpperCase().charAt(0));
                                 
                                 System.out.println("(index.jsp)Logged in as " + firstName + "\n");
                                 }

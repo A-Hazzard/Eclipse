@@ -61,7 +61,7 @@ function setStyle(){
 				$(".link-container").css("margin-top", ".5%");
 
 
-		fNameContainer.css("margin-left", "62%");
+		fNameContainer.css("margin-left", "71%");
 				fNameContainer.css("margin-top", "-1.8%");
 
 	}

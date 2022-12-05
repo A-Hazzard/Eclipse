@@ -116,7 +116,7 @@
                 <label for="plateNum">Plate Number: </label><br>
                 <input type="text" name="plateNumber" id="plateNum" required><br><br>
                 
-                <label for="category">Category: </label><br>
+                <label for="category">Category:</label><br>
                         <select name = "category" id = "category" class = "category">
                             <option selected disabled hidden>Select the type of job</option>
                         	<option value = "Engine">Engine Repair & Service</option>

@@ -128,6 +128,7 @@
 		String reg_issues = "";
 		String reg_mechanicFeedback = "";
 		String reg_status = "";
+		String reg_invoice = ""; 
 
 			try{
 				//Geting connection to display client applications
@@ -154,7 +155,8 @@
 					reg_plateNum = result.getString(4);
 					reg_issues = result.getString(5);
 					reg_mechanicFeedback = result.getString(6);
-					reg_status = result.getString(7);
+					reg_invoice = result.getString(7);
+					reg_status = result.getString(8);
 
 					
 				%>
@@ -165,7 +167,7 @@
 					height: auto;
 					text-align: left;
 					box-shadow: .2rem .1rem .4rem rgb(223, 223, 223);
-					cursor: pointer;">
+					cursor: unset;">
 					
 							<P class = "reg_mechanicEmail info">Mechanic's contact email that assigned you:  <span id = "mechanicEmail" class = "sub-info"><%out.print(reg_mechEmail); %></span></P>
 							<P class = "reg_VehicleType info">Type of Vehicle:  <span id = "type" class = "sub-info"><%out.print(reg_vehicleType); %></span></P>
@@ -173,7 +175,8 @@
 							<p class = "reg_issues info">Issues:  <span id = "issues" class = "sub-info"><%out.print(reg_issues); %></span></p>
 							<p class = "reg_feedback info">Feedback from mechanic:  <span id = "feedback" class = "sub-info"><%out.print(reg_mechanicFeedback); %></span></p>
 							<p class = "reg_status info">Status:  <span id = "status" class = "sub-info"><%out.print(reg_status); %></span></p>
-								
+							<p class = "reg_invoice info">Invoice:  <span id = "invoice" class = "sub-info"><%out.print(reg_invoice); %></span></p>
+
 						</div>
 					
 				<%	

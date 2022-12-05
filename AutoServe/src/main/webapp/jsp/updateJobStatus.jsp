@@ -12,7 +12,7 @@
 		String issues = request.getParameter("issues_input").trim();
 		String mechanicEmail = request.getParameter("mechanicEmail_input").trim();
 		String mechanicFeedback = request.getParameter("mechanicFeedback_input").trim();
-
+		String invoice = request.getParameter("invoiceLink_input").trim();
 		int clientID = Integer.parseInt(request.getParameter("clientID_input").trim());
 		
 		Connection con = ConnectionProvider.getConnection();
@@ -29,7 +29,7 @@
         
         if(status.equals("Finished")){
         	System.out.println("Finished Job");
-        	String completedJobs = "INSERT INTO completedJobs VALUES(?,?,?,?,?,?,'Finished')";
+        	String completedJobs = "INSERT INTO completedJobs VALUES(?,?,?,?,?,?,?,'Finished')";
         	String dropActiveJob = "DELETE FROM activeJobs WHERE clientID = '"+clientID+"'";
         	Statement state2 = con.createStatement();
         	//Drops active jobs table
@@ -42,6 +42,8 @@
         	ps.setString(4, plateNumber);
         	ps.setString(5, issues);
         	ps.setString(6, mechanicFeedback);
+        	ps.setString(7, invoice);
+
         	
         	ps.executeUpdate();
 			ps2.executeUpdate();

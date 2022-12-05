@@ -123,6 +123,7 @@
 		String reg_vehicleType = "";
 		String reg_plateNum = "";
 		String reg_issues = "";
+		String reg_invoice = "";
 		String reg_status = "";
 
 			try{
@@ -299,8 +300,10 @@
                         </select>
                         <br>
                     <label for="mechanicFeedback" class = "feedback" style = "display: none;">Feedback:</label><br><br>
-	    			<textarea id="mechanicFeedback" class = "feedback" name="mechanicFeedback_input" placeholder="Feedback.." style="height:200px; width: 60%; display: none;"></textarea>
+	    			<textarea id="mechanicFeedback" class = "feedback" name="mechanicFeedback_input" placeholder="Feedback.." style="height:200px; width: 60%; display: none;"></textarea><br>
 	    			
+	    			<label for = "invoiceLink_input" class = "invoice" style = "display: none;">Invoice Link:</label><br>
+	    			<input type = "text" name = "invoiceLink_input" id = "invoiceLink_input"  class = "invoice" placeholder = "link..." style = "display: none;"/>
 				<input type = "submit" value="Select a client to work with" id = "bookNow-btn" disabled/>
 
 			</form>
@@ -443,14 +446,21 @@
 					$(".feedback").css("display", "unset");
 					$(".feedback").css("margin-bottom", "1%");
 					$(".feedback").attr("required", true);
-
+					
 
 				}
+				
 				else{
 					console.log(option + " Option Selected");
 					$(".feedback").css("display", "none")
 					$(".feedback").attr("required", false);
+					$("#invoiceLink_input").css("display", "none");
 
+				}
+				
+				if(option == "Finished"){
+					$("#invoiceLink_input").attr("required", true);
+					$(".invoice").css("display", "unset");
 				}
 			})
 				
