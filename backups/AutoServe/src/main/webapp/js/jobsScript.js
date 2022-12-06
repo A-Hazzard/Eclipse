@@ -1,7 +1,7 @@
 
 $(function(){
     $("#footer-links").load("footer/carLinks.txt");
-
+$("#homePage").css("margin-left", "90%");
 	//Loads jobs
 	$("#job1").click(function(){
     console.log("loaded " + $(this).attr('id'));

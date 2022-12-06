@@ -42,6 +42,7 @@ $("#footer-links").load("../pages/states/footer/carLinks.txt");
                 $("main").hide().load("../pages/states/jobsPage.txt").fadeIn("slow");
             })
 
+
                 //loads memberPage on click
                 $("#loginPage").on('click', function(){
 					if(userPosition != "Admin"){
