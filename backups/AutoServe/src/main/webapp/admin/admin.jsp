@@ -1,5 +1,6 @@
 <% 
 
+
 	
 	//getting credentail attributes from loginAction.jsp
 	Object sessionEmail = session.getAttribute("Email");
@@ -7,7 +8,7 @@
 	Object sessionLname = session.getAttribute("LastName");
 	Object sessionPhone = session.getAttribute("Phone");
 	Object sessionPosition = session.getAttribute("Position");
-	Object sessionUserID = session.getAttribute("userID");
+	Object sessionUserID = session.getAttribute("UserID");
 	
 	String userID = String.valueOf(sessionUserID);
 	
@@ -27,11 +28,10 @@
 	    System.out.println("(index.jsp)Username hidden\n");
 	    System.out.println("(index.jsp)Not logged in\n");
 	}else{
-	   
+	
 	    System.out.println("(index.jsp)Logged in as " + sessionFname + "\n");
 	}
 
-		
 %>
 <html lang = "en">
 <head>
@@ -62,8 +62,10 @@
 	<span id = "userLastName" class =  "getVariables"><% out.print(lastName); %></span>
 	<span id = "userPhone" class =  "getVariables"><% out.print(phone); %></span>
 	<span id = "userPosition" class = "getVariables"><% out.print(position); %></span>
+		<span id = "userID" class = "getVariables"><% out.print(userID); %></span>
+	
    <!--Horizontal Header of the web page-->
-    <header class="header admin-header">
+    <header class="header admin-header" style = "display: none;">
 
         <h1 id="logo" class ="admin-logo"><a href = "../index.jsp" 
         style = "text-decoration: none; color: black;">Auto Serve Inc.</a></h1>
@@ -73,8 +75,9 @@
             <ul class="link-container">
                 
                 <li><a href="../pages/jobsPages.html" id="jobsPage" class="links">Jobs</a></li>
-                <li><a href="../pages/clientApplications.jsp" class="links jsp-links">Client Applications </a>
+                <li><a href="../pages/jobApplications.jsp" class="links jsp-links">Job Applications </a>
                 <li><a href="admin.jsp" id="adminPortal" class="links jsp-links">Admin Portal</a>
+                <li><a href="registerStaff.jsp" id="employeeForm" class="links jsp-links">Forms</a>
                 <li><a href="../jsp/logoutAction.jsp" class = "Links jsp-linnks logout">Logout</a>
                 
             </ul>
@@ -87,16 +90,18 @@
     <main data-aos="zoom-in" data-aos-offset="0" data-aos-delay="1" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top" 
     id = "admin-main" style = "height: 100vh;">
 
-        <div id = "admin-top-nav">
+        <div id = "admin-top-nav" style = "display: none;">
         	<ul class="link-container">
                 
                 <li><a href="../pages/jobsPages.html" id="jobsPage" class="links">Reports <i class="fa-sharp fa-solid fa-caret-down"></i></a></li>
-                <li><a href="../pages/clientApplications.jsp" class="links jsp-links">Project <i class="fa-sharp fa-solid fa-caret-down"></i></a></li>
+                <li><a href="../pages/jobApplications.jsp" class="links jsp-links">Project <i class="fa-sharp fa-solid fa-caret-down"></i></a></li>
                 <li><a href="admin.jsp" id="adminPortal" class="links jsp-links"><img src = "../pages/media/US-FLAG.png" width = "20px" height = "20px" alt = "language-flag" id = "language-flag"/> English <i class="fa-sharp fa-solid fa-caret-down"></i></a></li>
                 <li id = "profile-picture"><img src = "../pages/media/winsstonFields.jpeg"  alt = "profile-picture"/></li>
                 
             </ul>
         </div>
+        
+        <h1 id = "warn" style = "color: red; padding-top: 20%; text-align: center; display: none;">PLEASE <a href = "../login.jsp">LOGIN</a> AS ADMIN TO VIEW THIS PAGE</h1>
       
     </main>
     
@@ -117,7 +122,7 @@
             <div id="footer-links"></div>
         </div>
             <br><br>
-            <p id="copyright" style="text-align: center; opacity: .5;">Copyright © 2022 Auto Serve Inc. All Rights Reserved.</p>
+            <p id="copyright" style="text-align: center; opacity: .5;">Copyright � 2022 Auto Serve Inc. All Rights Reserved.</p>
     </footer>
 
 <script src="https://code.jquery.com/jquery-3.6.1.min.js" ></script>
@@ -151,7 +156,15 @@
 		var getVariables = $(".getVariables");
 		var fNameContainer = $(".profile-name-container");
 		var nameStr = parseInt(userFirstName.length);
-		
+		//makes blank page if user isnt admin or null
+		if(userID == "null" || userID == ""){
+			
+		    $("#warn").css("display", "block")
+		console.log("null")
+		} else{
+			$("#admin-top-nav").css("display", "block");
+			$("header").css("display", "block");
+		}
 		
 		console.log("Position: " + userPosition);
 		getVariables.css("position", "absolute");
