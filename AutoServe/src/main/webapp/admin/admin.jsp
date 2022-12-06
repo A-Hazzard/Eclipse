@@ -62,8 +62,10 @@
 	<span id = "userLastName" class =  "getVariables"><% out.print(lastName); %></span>
 	<span id = "userPhone" class =  "getVariables"><% out.print(phone); %></span>
 	<span id = "userPosition" class = "getVariables"><% out.print(position); %></span>
+		<span id = "userID" class = "getVariables"><% out.print(userID); %></span>
+	
    <!--Horizontal Header of the web page-->
-    <header class="header admin-header">
+    <header class="header admin-header" style = "display: none;">
 
         <h1 id="logo" class ="admin-logo"><a href = "../index.jsp" 
         style = "text-decoration: none; color: black;">Auto Serve Inc.</a></h1>
@@ -88,7 +90,7 @@
     <main data-aos="zoom-in" data-aos-offset="0" data-aos-delay="1" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top" 
     id = "admin-main" style = "height: 100vh;">
 
-        <div id = "admin-top-nav">
+        <div id = "admin-top-nav" style = "display: none;">
         	<ul class="link-container">
                 
                 <li><a href="../pages/jobsPages.html" id="jobsPage" class="links">Reports <i class="fa-sharp fa-solid fa-caret-down"></i></a></li>
@@ -98,6 +100,8 @@
                 
             </ul>
         </div>
+        
+        <h1 id = "warn" style = "color: red; padding-top: 20%; text-align: center; display: none;">PLEASE <a href = "../login.jsp">LOGIN</a> AS ADMIN TO VIEW THIS PAGE</h1>
       
     </main>
     
@@ -152,7 +156,15 @@
 		var getVariables = $(".getVariables");
 		var fNameContainer = $(".profile-name-container");
 		var nameStr = parseInt(userFirstName.length);
-		
+		//makes blank page if user isnt admin or null
+		if(userID == "null" || userID == ""){
+			
+		    $("#warn").css("display", "block")
+		console.log("null")
+		} else{
+			$("#admin-top-nav").css("display", "block");
+			$("header").css("display", "block");
+		}
 		
 		console.log("Position: " + userPosition);
 		getVariables.css("position", "absolute");

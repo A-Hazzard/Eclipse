@@ -43,7 +43,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="https://th.bing.com/th/id/OIP.cAA3eIjKFPQHSQJTSnmTMgHaHa?pid=ImgDet&rs=1    " />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Lora&family=Secular+One&display=swap" rel="stylesheet">
 
     <style>
@@ -114,6 +114,8 @@
 				</div>
 			<br><br>
 			<div id = "applications">
+				<h3 style = "margin-left: 3%; font-size: 2rem; color: red;">You haven't been assigned to any jobs</h3>
+			
 				<br>
 					<div id = "container">
 			
@@ -180,6 +182,7 @@
 							<p class = "reg_plateNum info">Vehicle Plate Number:  <span id = "pNum" class = "sub-info"><%out.print(reg_plateNum); %></span></p>
 							<p class = "reg_issues info">Issues:  <span id = "issues" class = "sub-info"><%out.print(reg_issues); %></span></p>
 							<p class = "reg_status info">Status:  <span id = "status" class = "sub-info"><%out.print(reg_status); %></span></p>
+							<p class = "reg_ategory info">Category:  <span id = "category" class = "sub-info"><%out.print(reg_category); %></span></p>
 								
 						</div>
 					
@@ -198,6 +201,7 @@
 					reg_plateNum = result1.getString(5);
 					reg_issues = result1.getString(6);
 					reg_status = result1.getString(7);
+					reg_category = result1.getString(8);
 
 					
 				%>
@@ -216,6 +220,7 @@
 							<p class = "reg_plateNum info">Vehicle Plate Number:  <span id = "pNum" class = "sub-info"><%out.print(reg_plateNum); %></span></p>
 							<p class = "reg_issues info">Issues:  <span id = "issues" class = "sub-info"><%out.print(reg_issues); %></span></p>
 							<p class = "reg_status info">Status:  <span id = "status" class = "sub-info"><%out.print(reg_status); %></span></p>
+															<p class = "reg_ategory info">Category:  <span id = "category" class = "sub-info"><%out.print(reg_category); %></span></p>
 								
 						</div>
 					
@@ -234,6 +239,7 @@
 					reg_plateNum = result2.getString(5);
 					reg_issues = result2.getString(6);
 					reg_status = result2.getString(7);
+					reg_category = result2.getString(8);
 
 					
 				%>
@@ -252,6 +258,7 @@
 							<p class = "reg_plateNum info">Vehicle Plate Number:  <span id = "pNum" class = "sub-info"><%out.print(reg_plateNum); %></span></p>
 							<p class = "reg_issues info">Issues:  <span id = "issues" class = "sub-info"><%out.print(reg_issues); %></span></p>
 							<p class = "reg_status info">Status:  <span id = "status" class = "sub-info"><%out.print(reg_status); %></span></p>
+							<p class = "reg_ategory info">Category:  <span id = "category" class = "sub-info"><%out.print(reg_category); %></span></p>
 								
 						</div>
 					
@@ -262,6 +269,7 @@
 				
 		}catch(SQLException e){
 			System.out.println("Problem returning registration info. SQL Error: " + e);
+			e.printStackTrace();
 		}
 	%>
 					</div>
@@ -297,8 +305,11 @@
 					<label for="status_input" class = "info">Status: <span class = "span-client-status sub-info"></span></label><br>
 					<input type="text" name="status_input" id="status_input" class = "hidden"  required><br>
 					
+					<label for="category_input" class = "info">Category: <span class = "span-client-category sub-info"></span></label><br>
+					<input type="text" name="category_input" id="category_input" class = "hidden"  required><br>
+					
                         <select name = "status" id = "selectStatus" class = "status" disabled required>
-                            <option id = "pendingStatus" selected value = "">Current Status: Pending</option>
+                            <option id = "pendingStatus" value = "Pending">Current Status: Pending</option>
                         	<option id = "activeStatus" value = "Active">Current Status: Active</option>
                         	<option id = "finishedStatus" value = "Finished">Current Status: Finished</option>
                         </select>
@@ -388,7 +399,14 @@
 	
 	//refreshes the applications
 	refreshBtn.on('click', ()=>location.reload());
+	if($(".client-info").length >= 1) {
+		$("main").css("height", "unset")
 
+		$("h3").css("display", "none");
+	}else{
+		$("main").css("height", "80vh");
+
+	}
 
 		//For each client application that loads on the website, display their information
 		clientInfo_container.each(function(){
@@ -399,6 +417,7 @@
 			let pNum = $(this).find("#pNum").text();
 			let issues = $(this).find("#issues").text();
 			let status = $(this).find("#status").text();
+			let category = $(this).find("#category").text();
 
 			//Initialize empty tag values
 			let spanClient_ID = $(".span-client-ID");
@@ -406,6 +425,7 @@
 			let spanClient_plateNum = $(".span-client-plateNum");
 			let spanClient_Issues = $(".span-client-issues");
 			let spanClient_status = $(".span-client-status");
+			let spanClient_category = $(".span-client-category");
 			//Init empy input field values
 			let plateNum_input = $("#plateNum_input");
 			let vehicleType_input = $("#vehicleType_input");
@@ -413,6 +433,7 @@
 			let mechEmail_input = $("#mechEmail");
 			let issues_input = $("#issues_input");
 			let status_input = $("#status_input");
+			let category_input = $("#category_input");
 			let selectStatus =  $("#selectStatus");
 			//On click event for each div
 			$(this).on('click', function(){
@@ -422,18 +443,19 @@
 						spanClient_plateNum.text(pNum);
 							spanClient_Issues.text(issues);
 								spanClient_status.text(status);
-					
+								spanClient_category.text(category);
 				//Append values stored in span tags to input fields	
 				clientID_input.val(ID);
 					plateNum_input.val(pNum);
 						vehicleType_input.val(type);
 							issues_input.val(issues);
 								status_input.val(status);
-									mechEmail_input.attr("readonly", false);
-											mechEmail_input.attr("placeholder", "");
-												bookNowBtn.val("Choose a status for the job");
-													selectStatus.attr("disabled", false);
-
+								category_input.val(category);
+										mechEmail_input.attr("readonly", false);
+												mechEmail_input.attr("placeholder", "");
+													bookNowBtn.val("Choose a status for the job");
+														selectStatus.attr("disabled", false);
+															
 			//let bookNow-btn_Option = $("#bookNow-btn option:selected").val();
 			selectStatus.change(function(){
 				
@@ -459,7 +481,10 @@
 					$(".feedback").css("display", "none")
 					$(".feedback").attr("required", false);
 					$("#invoiceLink_input").css("display", "none");
+					$("#invoiceLink_input").attr("required", false);
 
+					$(".invoice").css("display", "none");
+					
 				}
 				
 				if(option == "Finished"){

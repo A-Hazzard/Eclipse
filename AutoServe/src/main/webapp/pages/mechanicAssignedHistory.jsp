@@ -109,7 +109,7 @@
     </header>
 
     <!--Content loaded using AJAX with JQuery-->
-    <main id = "clientApplication-main">
+    <main id = "mechanicAssignedHistory-main" style = "display-flex; flex-wrap: wrap;">
 		
 			<div id = "header-container">	
 					<h2 id = "jobApplication-h2">Assigned Tasks</h2> 
@@ -159,7 +159,6 @@
 					reg_issues = result.getString(6);
 					reg_category = result.getString(7);
 					reg_status = result.getString(8);
-					
 				%>
 					<div class = "client-info" style = "
 					background: rgb(239 239 239);

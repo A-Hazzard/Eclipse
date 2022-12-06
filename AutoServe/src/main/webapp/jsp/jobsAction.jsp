@@ -19,12 +19,10 @@
 	try{	
 			String sql = "INSERT INTO registered_vehicles VALUES(regID.nextval,?,?,?,?,?,?,?,?)";
 			String sql1 = "INSERT INTO jobs VALUES(?,?,?,?,?,?,?,'Pending')";
-        	String dropActiveJob = "DELETE FROM registrationq WHERE clientID = '"+clientID+"'";
+        	String dropActiveJob = "DELETE FROM registrationq WHERE (clientID = '"+clientID+"' AND vehicleType = '" +vehicleType+"' AND platenumber = '"+plateNumber+"' AND issues = '"+issues+"')";
+        	
     		PreparedStatement ps = con.prepareStatement(sql);
-			PreparedStatement ps1 = con.prepareStatement(sql1);
-			PreparedStatement drop = con.prepareStatement(dropActiveJob);
-
-				ps.setInt(1, clientID);
+	    		ps.setInt(1, clientID);
 				ps.setString(2, vehicleType);
 				ps.setString(3, plateNumber);
 				ps.setString(4, issues);
@@ -32,6 +30,10 @@
 				ps.setString(6, mechEmail);
 				ps.setString(7, category);
 				ps.setString(8, status);
+			PreparedStatement ps1 = con.prepareStatement(sql1);
+			PreparedStatement drop = con.prepareStatement(dropActiveJob);
+
+				
 			//Will write information to table in database
 			
 	

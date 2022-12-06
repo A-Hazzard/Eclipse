@@ -109,7 +109,7 @@
     </header>
 
     <!--Content loaded using AJAX with JQuery-->
-    <main id = "clientApplication-main">
+    <main id = "staffAssignmentHistory-main">
 		
 			<div id = "header-container">	
 					<h2 id = "jobApplication-h2">Mechanics' Assigned Tasks</h2> 

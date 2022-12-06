@@ -43,7 +43,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="https://th.bing.com/th/id/OIP.cAA3eIjKFPQHSQJTSnmTMgHaHa?pid=ImgDet&rs=1    " />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Lora&family=Secular+One&display=swap" rel="stylesheet">
 
     <style>
@@ -114,7 +114,10 @@
 				</div>
 			<br><br>
 			<div id = "applications">
+				<h3 style = "margin-left: 3%; font-size: 2rem; color: red;">There are no applications at this time</h3>
+			
 				<br>
+				
 					<div id = "container">
 			
 				
@@ -291,7 +294,13 @@
 	//refreshes the applications
 	refreshBtn.on('click', ()=>location.reload());
 
+	if($(".client-info").length >= 1) {
+		$("main").css("height", "unset")
+		$("h3").css("display", "none");
+	}else{
+		$("main").css("height", "100vh");
 
+	}
 		//For each client application that loads on the website, display their information
 		clientInfo_container.each(function(){
 			//Variables for each div

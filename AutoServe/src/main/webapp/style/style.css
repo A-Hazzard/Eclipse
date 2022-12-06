@@ -1475,22 +1475,26 @@ footer #flex-container #footer-links #wrapper span a {
   }
 }
 
-#clientPendingApplication-main {
+#clientPendingApplication-main, #staffAssignmentHistory-main, #mechanicAssignedHistory-main {
   padding: 10% 15% 0 15%;
   display: flex;
   flex-wrap: wrap;
   position: relative;
 }
-#clientPendingApplication-main #header-container {
+#clientPendingApplication-main #header-container, #staffAssignmentHistory-main #header-container, #mechanicAssignedHistory-main #header-container {
   position: absolute;
   padding-left: 6.5%;
   margin-top: -5%;
 }
-#clientPendingApplication-main #header-container #clientApplication-h2 {
+#clientPendingApplication-main #header-container #clientApplication-h2, #staffAssignmentHistory-main #header-container #clientApplication-h2, #mechanicAssignedHistory-main #header-container #clientApplication-h2 {
   margin-bottom: 1%;
   color: rgb(229, 36, 14);
   font-family: "Segoe UI";
   font-size: 1.5rem;
+}
+#clientPendingApplication-main form, #staffAssignmentHistory-main form, #mechanicAssignedHistory-main form {
+  position: -webkit-sticky;
+  position: sticky;
 }
 
 .registerStaff-main {

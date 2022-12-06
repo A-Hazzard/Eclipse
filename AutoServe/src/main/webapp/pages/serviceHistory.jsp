@@ -107,9 +107,9 @@
     </header>
 
     <!--Content loaded using AJAX with JQuery-->
-    <main id = "clientApplication-main">
+    <main id = "clientApplication-main" style = "display: flex; flex-wrap: wrap;">
 		
-			<div id = "header-container">	
+			<div id = "header-container" ">	
 					<h2 id = "jobApplication-h2">History done on your vehicles</h2> 
 				</div>
 	
@@ -297,6 +297,7 @@
 			let issues_input = $("#issues_input");
 			let status_input = $("#status_input");
 			let selectStatus =  $("#selectStatus");
+			let invoice = $("#invoice").text();
 			//On click event for each div
 			$(this).on('click', function(){
 				//Append values stored in array to tags
@@ -329,12 +330,15 @@
 			})
 				
 			
+			
+		  
+				
+			 $('#invoice').each(function() { 
+				  $(this).html($(this).html().replace(/(?:(https?\:\/\/[^\s]+))/m, '<a href="$1">$1</a>'));
+			  });
 					
-				
-				
-
 		})//End this.click method
-
+		
 		
 })//End clientInfo_container method
 	
