@@ -13,11 +13,11 @@
 		String plateNumber = request.getParameter("plateNumber").trim();
 		String issues = request.getParameter("issues_input").trim();
 		String category = request.getParameter("category_input").trim();
-		
+		String status = request.getParameter("status_input");
 		System.out.println("(registeredVehicles.jsp)Info entered in registered vechile table:\nClient ID: " + clientID + "\nvehicleType " + vehicleType + "\nPlate number" + plateNumber + "\nMechanic Email: " + mechEmail);
 		
 	try{	
-			String sql = "INSERT INTO registered_vehicles VALUES(regID.nextval,?,?,?,?,?,?,?)";
+			String sql = "INSERT INTO registered_vehicles VALUES(regID.nextval,?,?,?,?,?,?,?,?)";
 			String sql1 = "INSERT INTO jobs VALUES(?,?,?,?,?,?,?,'Pending')";
         	String dropActiveJob = "DELETE FROM registrationq WHERE clientID = '"+clientID+"'";
     		PreparedStatement ps = con.prepareStatement(sql);
@@ -31,6 +31,7 @@
 				ps.setString(5, staffEmail);
 				ps.setString(6, mechEmail);
 				ps.setString(7, category);
+				ps.setString(8, status);
 			//Will write information to table in database
 			
 	

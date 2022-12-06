@@ -151,6 +151,7 @@
 					reg_plateNum = result.getString(3);
 					reg_issues = result.getString(4);
 					reg_category = result.getString(5);
+					reg_status = result.getString(6);
 					System.out.println("Pending forms: \n" + reg_vehicleType + "\n" +  reg_plateNum+ "\n" +  reg_issues + "\n" + reg_category);
 					
 				%>
@@ -176,6 +177,8 @@
 												<input type="text" name="issues_input" class="issues_input" class = "hidden"  required><br>
 							<label for = "category_input" class = "reg_category info">Category:  <span class = "category" class = "sub-info"><%out.print(reg_category); %></span></label>
 												<input type="text" name="category_input" class="category_input" class = "hidden"  required><br>
+							<label for = "status_input" class = "reg_status info">Status:  <span class = "status" class = "sub-info"><%out.print(reg_status); %></span></label>
+												<input type="text" name="status_input" class="status_input" class = "hidden"  required><br>
 							
 							<button type = "submit" value = "CancelAppointment" style = "padding: 3%; color: black; font-size: 1rem; font-style: bold; font-family: $headerFont; background-color: white; border: none; border-radius: .5rem;">Cancel Appointment</button>
 						</form>
@@ -284,6 +287,7 @@
 					plateNum_input.val(pNum);
 						vehicleType_input.val(type);
 							issues_input.val(issues);
+							status_input.val(status);
 								category_input.val(category);
 									ID.text(userID);
 										userID_input.val(ID.text());
