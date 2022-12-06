@@ -30,7 +30,7 @@ try{
 	System.out.println("Employee Table Populated Successfully");
 	
 	if(position.equals("Staff")){
-		String staff_statement = "INSERT INTO Staff VALUES(staff_ID.nextval,?,?,?,?,?)";
+		String staff_statement = "INSERT INTO Staff VALUES(staff_ID.nextval,?,?,?,?,?,?)";
 		PreparedStatement staff_ps = con.prepareStatement(staff_statement);
 		
 		staff_ps.setString(1, firstname);
@@ -38,6 +38,7 @@ try{
 		staff_ps.setString(3, email);
 		staff_ps.setString(4, phone);
 		staff_ps.setString(5, password);
+		staff_ps.setString(6, position);
 		
 		
 		staff_ps.executeUpdate();
@@ -45,7 +46,8 @@ try{
 
 	}
 	else if(position.equals("Mechanic")){
-		String mechanicstaff_statement = "INSERT INTO Mechanic VALUES(mechanic_ID.nextval,?,?,?,?,?)";
+		System.out.println("Mechanic insersion");
+		String mechanicstaff_statement = "INSERT INTO Mechanic VALUES(mechanic_ID.nextval,?,?,?,?,?,?)";
 		PreparedStatement mechanicstaff_ps = con.prepareStatement(mechanicstaff_statement);
 		
 		mechanicstaff_ps.setString(1, firstname);
@@ -53,6 +55,8 @@ try{
 		mechanicstaff_ps.setString(3, email);
 		mechanicstaff_ps.setString(4, phone);
 		mechanicstaff_ps.setString(5, password);
+		mechanicstaff_ps.setString(6, position);
+
 
 		
 		mechanicstaff_ps.executeUpdate();
@@ -61,7 +65,7 @@ try{
 	}
 	
 	
-	response.sendRedirect("../index.jsp");
+	response.sendRedirect("../admin/registerStaff.jsp");
 
 }catch(Exception e){e.printStackTrace();}
 

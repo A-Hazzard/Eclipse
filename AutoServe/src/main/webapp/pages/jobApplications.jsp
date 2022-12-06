@@ -43,7 +43,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="https://th.bing.com/th/id/OIP.cAA3eIjKFPQHSQJTSnmTMgHaHa?pid=ImgDet&rs=1    " />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Lora&family=Secular+One&display=swap" rel="stylesheet">
 
     <style>
@@ -78,9 +78,12 @@
         <nav class="navbar"><!--NAVIGATION BAR-->
             <ul class="link-container">
                 <li><a href="../index.jsp" id="homePage" class="links">Home</a></li>
-
+                <%if(position.equals(staff)){
+                	%> <li><a href = "../pages/staffAssignmentHistory.jsp" class="links" id = "assignmentHistory">Assignment History</a></li>
+                <%} %>
                 <li style = "text-align: center;font-size: 2rem;">
-                <span class = "profile-name jsp-userName">         
+                <span class = "profile-name jsp-userName">
+                       
                 <% //Display client button only if user is admin/staff 
                 if(sessionFname == null)
 					System.out.println("(index.jsp)Username hidden\n");
@@ -111,7 +114,10 @@
 				</div>
 			<br><br>
 			<div id = "applications">
+				<h3 style = "margin-left: 3%; font-size: 2rem; color: red;">There are no applications at this time</h3>
+			
 				<br>
+				
 					<div id = "container">
 			
 				
@@ -122,7 +128,7 @@
 						//Create a statement using the connection provider
 						Statement state = con.createStatement();
 						//Create a result set to return the results from the statement
-						String sqlQuery = "SELECT clientID, vehicletype, platenumber, issues, category FROM registrationQ";
+						String sqlQuery = "SELECT clientID, vehicletype, platenumber, issues, category, status FROM registrationQ";
 						ResultSet result = state.executeQuery(sqlQuery);
 						
 						int reg_clientID = 0;
@@ -130,6 +136,7 @@
 						String reg_plateNum = "";
 						String reg_issues = "";
 						String reg_category = "";
+						String reg_status = "";
 						System.out.println("RegistrationQ TABLE : ");
 						//Fetches the data columns and returns the values
 						while(result.next()){
@@ -139,6 +146,7 @@
 							reg_plateNum = result.getString(3);
 							reg_issues = result.getString(4);
 							reg_category = result.getString(5);
+							reg_status = result.getString(6);
 							
 						%>
 							<div class = "client-info" style = "
@@ -156,6 +164,7 @@
 									<p class = "reg_plateNum info">Vehicle Plate Number:  <span id = "pNum" class = "sub-info"><%out.print(reg_plateNum); %></span></p>
 									<p class = "reg_issues info">Issues:  <span id = "issues" class = "sub-info"><%out.print(reg_issues); %></span></p>
 									<p class = "reg_category info">Category:  <span id = "category" class = "sub-info"><%out.print(reg_category); %></span></p>
+									<p class = "reg_status info">Status:  <span id = "status" class = "sub-info"><%out.print(reg_status); %></span></p>
   								
 								</div>
 							
@@ -199,6 +208,9 @@
 					<label for="category_input" class = "info">Category: <span class = "span-client-category sub-info"></span></label><br>
 					<input type="text" name="category_input" id="category_input" class = "hidden"  required><br>
 					
+					<label for = "status_input" class = "reg_status info">Status:  <span class = "span-client-status" class = "sub-info"></span></label>
+						<br>						<input type="text" name="status_input" class="status_input hidden"  required><br>
+							
 					<label for="mechEmail" class = "info">Mechanic Email: </label><br>
 					<input type="text" name="mechEmail" id="mechEmail" readonly = "readonly" placeholder = "Select a client" required><br><br>
 					
@@ -282,7 +294,13 @@
 	//refreshes the applications
 	refreshBtn.on('click', ()=>location.reload());
 
+	if($(".client-info").length >= 1) {
+		$("main").css("height", "unset")
+		$("h3").css("display", "none");
+	}else{
+		$("main").css("height", "100vh");
 
+	}
 		//For each client application that loads on the website, display their information
 		clientInfo_container.each(function(){
 			//Variables for each div
@@ -291,12 +309,16 @@
 			let pNum = $(this).find("#pNum").text();
 			let issues = $(this).find("#issues").text();
 			let category = $(this).find("#category").text();
+			let status = $(this).find("#status").text();
+
 			//Initialize empty tag values
 			let spanClient_ID = $(".span-client-ID");
 			let spanClient_vehicleType = $(".span-client-vehicleType");
 			let spanClient_plateNum = $(".span-client-plateNum");
 			let spanClient_Issues = $(".span-client-issues");
 			let spanClient_Category = $(".span-client-category");
+			let spanClient_status = $(".span-client-status");
+
 			//Init empy input field values
 			let plateNum_input = $("#plateNum_input");
 			let vehicleType_input = $("#vehicleType_input");
@@ -304,6 +326,8 @@
 			let mechEmail_input = $("#mechEmail");
 			let issues_input = $("#issues_input");
 			let category_input = $("#category_input");
+			let status_input = $(".status_input");
+
 			//On click event for each div
 			$(this).on('click', function(){
 				//Append values stored in array to tags
@@ -312,13 +336,15 @@
 						spanClient_plateNum.text(pNum);
 							spanClient_Issues.text(issues);
 								spanClient_Category.text(category);
-					
+								spanClient_status.text(status);
 				//Append values stored in span tags to input fields	
 				userID_input.val(ID);
 					plateNum_input.val(pNum);
 						vehicleType_input.val(type);
 							issues_input.val(issues);
 								category_input.val(category);
+									status_input.val(status);
+
 									mechEmail_input.attr("readonly", false);
 											mechEmail_input.attr("placeholder", "");
 												bookNowBtn.val("Enter mechanic's Email");

@@ -37,20 +37,31 @@ function setStyle(){
 	
 	if(userPosition == "Staff") {
 		console.log("staff styling now");
-		fNameContainer.css("margin-left", "50%");
+		fNameContainer.css("margin-left", "55%");
+		fNameContainer.css("margin-top", "-1.8%");
+
+		
+	}
+	else if(userPosition == "Mechanic") {
+		console.log("staff styling now");
+		fNameContainer.css("margin-left", "52%");
 		fNameContainer.css("margin-top", "-1.8%");
 
 		
 	}
 	else if(userPosition == "Admin") {
 		console.log("Admin styling now");
-		fNameContainer.css("margin-left", "60%");
+		fNameContainer.css("margin-left", "63%");
 		fNameContainer.css("margin-top", "-1.7%");
 
 	}
-	else if (userPosition == "Client"  || userPosition == "Mechanic"){
+	else if (userPosition == "Client"){
 		console.log(userPosition + " styling now");
-		fNameContainer.css("margin-left", "38%");
+		$(".link-container").css("margin-left", "-5%");
+				$(".link-container").css("margin-top", ".5%");
+
+
+		fNameContainer.css("margin-left", "71%");
 				fNameContainer.css("margin-top", "-1.8%");
 
 	}

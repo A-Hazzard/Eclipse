@@ -1,7 +1,6 @@
 package Servlets;
 import java.sql.*;
 import java.sql.DriverManager;
-import java.io.PrintWriter;
 
 public class ConnectionProvider {
 	public static Connection getConnection() {
