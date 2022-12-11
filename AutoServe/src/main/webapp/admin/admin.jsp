@@ -1,3 +1,5 @@
+<%@ page import = "Servlets.ConnectionProvider"%>
+<%@ page import = "java.sql.*" %>
 <% 
 
 
@@ -17,7 +19,8 @@
 	String lastName = String.valueOf(sessionLname);
 	String phone = String.valueOf(sessionPhone);
 	String position = String.valueOf(sessionPosition);
-	
+	String msg = request.getParameter("msg");
+
 	if(firstName != null){
 		System.out.println(firstName + " ID: " + userID);
 	}
@@ -51,6 +54,61 @@
                     font-size: 1.1rem;
                     font-family: 'Roboto';
                     }
+                    .progress-bar {
+  position: relative;
+  height: 100px;
+  width: 100px;
+}
+
+.progress-bar div {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+
+.progress-bar div span {
+  position: absolute;
+  font-family: Arial;
+  font-size: 25px;
+  line-height: 75px;
+  height: 75px;
+  width: 75px;
+  left: 12.5px;
+  top: 12.5px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.progress-bar .background { background-color: #b3cef6; }
+
+.progress-bar .rotate {
+  clip: rect(0 50px 100px 0);
+  background-color: #4b86db;
+}
+
+.progress-bar .left {
+  clip: rect(0 50px 100px 0);
+  opacity: 1;
+  background-color: #b3cef6;
+}
+
+.progress-bar .right {
+  clip: rect(0 50px 100px 0);
+  transform: rotate(180deg);
+  opacity: 0;
+  background-color: #4b86db;
+}
+
+@keyframes 
+toggle {  0% {
+ opacity: 0;
+}
+ 100% {
+ opacity: 1;
+}
+}
     </style>
     
     <title>Auto Serve ADMIN</title>
@@ -103,6 +161,99 @@
         
         <h1 id = "warn" style = "color: red; padding-top: 20%; text-align: center; display: none;">PLEASE <a href = "../login.jsp">LOGIN</a> AS ADMIN TO VIEW THIS PAGE</h1>
       
+      <% 
+      Connection con = ConnectionProvider.getConnection();
+    	Statement state = con.createStatement();
+      	Statement state1 = con.createStatement();
+      	Statement state2 = con.createStatement();
+      	Statement state3 = con.createStatement();
+      	Statement state4 = con.createStatement();
+      	Statement state5 = con.createStatement();
+      	Statement state6 = con.createStatement();
+      	ResultSet rs = state.executeQuery("SELECT COUNT(ID) FROM employee");
+      	ResultSet rs1 = state1.executeQuery("SELECT COUNT(ID) FROM staff");
+      	ResultSet rs2 = state2.executeQuery("SELECT COUNT(ID) FROM mechanic");
+      	ResultSet rs3 = state3.executeQuery("SELECT COUNT(ID) FROM clients");
+      	ResultSet rs4 = state4.executeQuery("SELECT work FROM hourly_schedule");
+      	ResultSet rs5 = state5.executeQuery("SELECT lunch FROM hourly_schedule");
+      	ResultSet rs6 = state6.executeQuery("SELECT meetings FROM hourly_schedule");
+
+      	int employee_count = 0;
+      	int staff_count = 0;
+      	int mechanic_count = 0;
+      	int client_count = 0;
+      	int workHours = 0;
+      	int lunchHours = 0;
+      	int meetingsHours = 0;
+      	while(rs.next()){
+      		employee_count = rs.getInt(1);
+      		
+      	}
+      	while(rs1.next()){
+          	
+      		staff_count = rs1.getInt(1);
+      	
+      	}while(rs2.next()){
+      		mechanic_count = rs2.getInt(1);
+     
+      	}while(rs3.next()){
+      		
+      		client_count = rs3.getInt(1);
+      	}while(rs4.next()){
+      		
+      		workHours = rs4.getInt(1);
+      	}while(rs5.next()){
+      		
+      		lunchHours = rs5.getInt(1);
+      	}while(rs6.next()){
+      		
+      		meetingsHours = rs6.getInt(1);
+      	}
+      	
+      	System.out.println("text of employees: " + employee_count + "\ntext of Staff Members: " + staff_count + "\ntext of Mechanics: " + mechanic_count + "\ntext of clients: " + client_count);
+      %>
+    <div class = "statistics" style = "display: flex; justify-content: center;margin-top: 5%;">
+	     <div class = "count" style = " margin-left: 5%;">
+	           <div class="progress-bar" data-percent="<% out.print(employee_count); %>" data-duration="100" data-color="#ccc,blue"></div>
+	     		<p>text of Employees</p>
+	     </div>
+	      
+	      <div class = "count" style = " margin-left: 10%;">
+	           <div class="progress-bar" data-percent="<% out.print(staff_count); %>" data-duration="100" data-color="#ccc,yellow"></div>
+	     		<p>text of Staff Members</p>
+	     </div>
+	     
+	     <div class = "count" style = " margin-left: 10%;">
+	           <div class="progress-bar" data-percent="<% out.print(mechanic_count); %>" data-duration="100" data-color="#ccc,green"></div>
+	     		<p>text of Mechanics</p>
+	     </div>
+	     <div class = "count" style = " margin-left: 10%;">
+	           <div class="progress-bar" data-percent="<% out.print(client_count); %>" data-duration="100" data-color="#ccc,purple"></div>
+	     		<p>text of clients</p>
+	     </div>
+     </div>
+     <br><br>
+     <div>
+      <div id="piechart" >
+         </div>
+     <form action = "../jsp/updateHourlySchedule.jsp" method = "POST">
+     		 <% if("invalidNumber".equals(msg)){ %>
+                    	<p id = "errorMsg" style = "text-align: left; color: red;">Invalid Number. Try again</p>
+                        <%} %>
+         		<label for = "workHours_input">New Work Hours: </label><br>
+         		<input type = "text" name = "workHours_input" id = "workHours_input" placeholder = "<% out.print(workHours); %>"/>
+         		<br>
+         		<label for = "lunchHours_input">New Lunch Hours: </label><br>
+         		<input type = "text" name = "lunchHours_input" id = "lunchHours_input" placeholder = "<% out.print(lunchHours); %>"/>
+         		<br>
+         		<label for = "meetingsHours_input">New Work Hours: </label><br>
+         		<input type = "text" name = "meetingsHours_input" id = "meetingsHours_input" placeholder = "<% out.print(meetingsHours); %>"/>
+         		<br>
+         		<button type = "submit">Change Hours</button>
+         	</form>
+         </div>
+        
+     
     </main>
     
     <br><br>
@@ -130,8 +281,38 @@
 <script src="https://code.jquery.com/jquery-3.6.1.min.js" ></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script src="admin.js"></script>
+<script src = "../js/jQuery-plugin-progressbar.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Work',     <% out.print(workHours); %>],
+          ['Eat',      <% out.print(lunchHours); %>],
+          ['Meetings',  <% out.print(meetingsHours); %>]
+        
+        ]);
+
+        var options = {
+          title: 'My Daily Activities'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+      $("#workHours_input").val(<% out.print(workHours); %>);
+      $("#meetingsHours_input").val(<% out.print(meetingsHours); %>);
+      $("#lunchHours_input").val(<% out.print(lunchHours); %>);
+    </script>
 <script>
         //stores user position in variable(client/staff/admin)
+$(".progress-bar").loading();
+$(".count > div").css("margin", "0 auto");
 
 		var car = false;
 		var truck = false;
@@ -157,7 +338,7 @@
 		var fNameContainer = $(".profile-name-container");
 		var nameStr = parseInt(userFirstName.length);
 		//makes blank page if user isnt admin or null
-		if(userID == "null" || userID == ""){
+		if(userPosition != "Admin"){
 			
 		    $("#warn").css("display", "block")
 		console.log("null")
