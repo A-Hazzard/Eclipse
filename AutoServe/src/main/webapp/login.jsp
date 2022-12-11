@@ -79,12 +79,12 @@
     <main id = "index">
         <!--Main content for login page-->
     <div  data-aos="zoom-in-up"
-                    data-aos-offset="-100"
+                    data-aos-offset="1"
                     data-aos-delay="1"
                     data-aos-duration="500"
                     data-aos-easing="ease-in"
                     data-aos-mirror="true"
-                    data-aos-once="false"
+                    data-aos-once="true"
                     data-aos-anchor-placement="top"  id = "access-main">
 <br><br>
         <h2>Log In</h2><br>

@@ -1,6 +1,6 @@
 
 $(function(){
-    $("#footer-links").load("footer/carLinks.txt");
+    $("#footer-links").load("states/footer/carLinks.txt");
 $("#homePage").css("margin-left", "90%");
 	//Loads jobs
 	$("#job1").click(function(){
@@ -47,7 +47,7 @@ $("#homePage").css("margin-left", "90%");
 
                 $("#footer-links").fadeOut(500);
                 setTimeout(function(){
-                    $("#footer-links").load("footer/carLinks.txt").fadeIn(1000);
+                    $("#footer-links").load("states/footer/carLinks.txt").fadeIn(1000);
                 }, 500)
 
             }
@@ -75,7 +75,7 @@ $("#homePage").css("margin-left", "90%");
                 
                 $("#footer-links").fadeOut(500);
                 setTimeout(function(){
-                    $("#footer-links").load("footer/bikesLinks.txt").fadeIn(1000);
+                    $("#footer-links").load("states/footer/bikesLinks.txt").fadeIn(1000);
                 }, 500)
                 
             }
@@ -101,7 +101,7 @@ $("#homePage").css("margin-left", "90%");
 
                 $("#footer-links").fadeOut(500);
                 setTimeout(function(){
-                    $("#footer-links").load("footer/scootersLinks.txt").fadeIn(1000);
+                    $("#footer-links").load("states/footer/scootersLinks.txt").fadeIn(1000);
                 }, 500)
             }
         }

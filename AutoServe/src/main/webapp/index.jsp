@@ -136,12 +136,12 @@
 
     <!--Content loaded using AJAX with JQuery-->
     <main data-aos="zoom-in"
-        data-aos-offset="0"
+        data-aos-offset="1"
         data-aos-delay="1"
         data-aos-duration="500"
-        data-aos-easing="ease-in-out"
+        data-aos-easing="ease-in"
         data-aos-mirror="true"
-        data-aos-once="false"
+        data-aos-once="true"
         data-aos-anchor-placement="top" 
         id = "index"></main>
     
