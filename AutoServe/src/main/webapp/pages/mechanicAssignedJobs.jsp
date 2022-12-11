@@ -80,7 +80,10 @@
                 <li><a href="../index.jsp" id="homePage" class="links">Home</a></li>
 
                 <%if(position.equals("Mechanic")){
-                	%> <li><a href = "../pages/mechanicAssignedHistory.jsp" class="links" id = "assignedHistory">Assigned Jobs History</a></li>
+                	%> <li><a href = "../pages/mechanicAssignedHistory.jsp" class="links" id = "assignedHistory">Assignment History</a></li>
+                <%} %>
+                 <%if(position.equals("Mechanic")){
+                	%> <li><a href = "mechanicActiveJobs.jsp" class="links" id = "assignmentHistory">Active Jobs</a></li>
                 <%} %>
                 <li style = "text-align: center;font-size: 2rem;">
                 <span class = "profile-name jsp-userName">         
@@ -108,12 +111,14 @@
     <!--Content loaded using AJAX with JQuery-->
     <main id = "clientApplication-main">
 		
-			<div id = "header-container">	
+			<div id = "header-container" style = "display: none;">	
 					<h2 id = "jobApplication-h2">Assigned Job</h2> 
 					<button type = "button" id = "refreshApplications-btn">Refresh</button>
 				</div>
 			<br><br>
 			<div id = "applications">
+															       <h2 id = "warn" style = "color: red; padding-top: 5%; margin-left: 55%; display: none;">PLEASE <a href = "../login.jsp">LOGIN</a>  TO VIEW THIS PAGE</h2>
+			
 				<h3 style = "margin-left: 3%; font-size: 2rem; color: red;">You haven't been assigned to any jobs</h3>
 			
 				<br>
@@ -278,7 +283,7 @@
 			
 			
 			
-			<form action="../jsp/updateJobStatus.jsp" method = 'post' id="registered-bookings-form" class = "mechanic-form">
+			<form action="../jsp/updateJobStatus.jsp" method = 'post' id="registered-bookings-form" class = "mechanic-form" style = "display: none;">
 						<h2>Client #<span class = "span-client-ID"></span></h2>
 						<br>
 				<div class ="hidden">
@@ -407,6 +412,17 @@
 		$("main").css("height", "80vh");
 
 	}
+	
+	if(userID == "null" || userID == ""){
+			
+		    $("#warn").css("display", "block");
+		    $("h3").css("display", "none");
+	
+		}
+	else{
+		$("#header-container").css("display", "unset");
+		$("form").css("display", "block");
+	}
 
 		//For each client application that loads on the website, display their information
 		clientInfo_container.each(function(){
@@ -502,7 +518,116 @@
 
 		
 })//End clientInfo_container method
-	
+
+$(function(){
+    $("#footer-links").load("states/footer/carLinks.txt");
+	//Loads jobs
+	$("#job1").click(function(){
+    console.log("loaded " + $(this).attr('id'));
+    $("#job-status").hide().load("states/heavyEquipment.txt").fadeIn("slow");
+})
+		
+		$("#job2").click(function(){
+			console.log("loaded " + $(this).attr('id'));
+		    $("#job-status").hide().load("states/electricVehicleTech.txt").fadeIn("slow");
+		})
+		
+		$("#job3").click(function(){
+			console.log("loaded " + $(this).attr('id'));
+		    $("#job-status").hide().load("states/mechanicalSystem.txt").fadeIn("slow");
+		})
+		
+  //changes style of links in the footer on click
+  $(".categories").click(function(){
+        console.log("Underlined " + $(this).text());
+
+        let carClick = false;
+        let bikesClick = false;
+        let scootersClick = false;
+        if ( $(this).text() === "Cars" ) {
+            carClick = true;
+            bikesClick = false;
+            scootersClick = false;
+            if(carClick){
+                console.log($(this).text() + " link clicked");
+                $(this).css("text-decoration", "underline");
+                $(this).css("opacity", 1);
+                $(this).css("opacity", 1);
+                $(this).css("color", "white");
+
+                $("#scooters").css("opacity", .5);
+                $("#scooters").css("color", "rgb(205,206,224)");
+
+                $("#bikes").css("opacity", .5);
+                $("#bikes").css("color", "rgb(205,206,224)");
+
+                $("#bikes").css("text-decoration", "none");
+                $("#scooters").css("text-decoration", "none");
+
+                $("#footer-links").fadeOut(500);
+                setTimeout(function(){
+                    $("#footer-links").load("states/footer/carLinks.txt").fadeIn(1000);
+                }, 500)
+
+            }
+        }
+        else if ( $(this).text() === "Bikes" ) {
+            carClick = false;
+            scootersClick = false;
+            bikesClick = true;
+            if(bikesClick){ 
+                console.log($(this).text() + " link clicked");
+                $(this).css("text-decoration", "underline");
+                $("#cars").css("text-decoration", "none");
+                $(this).css("opacity", 1);
+                $(this).css("opacity", 1);
+                $(this).css("color", "white");
+
+                $("#cars").css("opacity", .5);
+                $("#cars").css("color", "rgb(205,206,224)");
+
+                $("#scooters").css("opacity", .5);
+                $("#scooters").css("color", "rgb(205,206,224)");
+
+                $("#scooters").css("text-decoration", "none");
+
+                
+                $("#footer-links").fadeOut(500);
+                setTimeout(function(){
+                    $("#footer-links").load("states/footer/bikesLinks.txt").fadeIn(1000);
+                }, 500)
+                
+            }
+        }
+        else if ( $(this).text() === "Scooters" ) {
+            carClick = false;
+            bikesClick = false;
+            scootersClick = true;
+            if(scootersClick){ 
+                console.log($(this).text() + " link clicked");
+                $(this).css("text-decoration", "underline");
+                $(this).css("opacity", 1);
+                $(this).css("color", "white");
+
+                $("#cars").css("opacity", .5);
+                $("#cars").css("color", "rgb(205,206,224)");
+
+                $("#bikes").css("opacity", .5);
+                $("#bikes").css("color", "rgb(205,206,224)");
+
+                $("#cars").css("text-decoration", "none");
+                $("#bikes").css("text-decoration", "none");
+
+                $("#footer-links").fadeOut(500);
+                setTimeout(function(){
+                    $("#footer-links").load("states/footer/scootersLinks.txt").fadeIn(1000);
+                }, 500)
+            }
+        }
+    });
+  
+  
+});	
 </script>
 </body>
 </html>

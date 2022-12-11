@@ -62,7 +62,7 @@
 		
     </style>
     
-    <title>Assignment History</title>
+    <title>Invoices</title>
 </head>
 <body>
 	<!-- Accessing java variables -->
@@ -83,16 +83,17 @@
             <ul class="link-container">
                 <li><a href="../index.jsp" id="homePage" class="links">Home</a></li>
 				<%if(position.equals(staff)){
-                	%> <li><a href = "../pages/jobApplications.jsp" class="links">Job Applications</a></li>
+                	%> <li><a href = "jobApplications.jsp" class="links">Job Applications</a></li>
                 <%} %>
+                <%if(position.equals(staff)){
+				                	%> <li><a href = "staffAssignmentHistory.jsp" class="links" id = "assignmentHistory">Assignment History</a></li>
+				                <%} %>
                  <%if(position.equals(staff)){
                 	%> <li><a href = "staffActiveJobs.jsp" class="links" id = "assignmentHistory">Active Jobs</a></li>
                 <%} %>
-                <%if(position.equals(staff)){
-                	%> <li><a href = "../pages/staffInvoices.jsp" class="links">Invoices</a></li>
-                <%} %>
+				
                 <li style = "text-align: center;font-size: 2rem;">
-                <span class = "profile-name jsp-userName" style = "margin-left: 2%;">         
+                <span class = "profile-name jsp-userName">         
                 <% //Display client button only if user is admin/staff 
                 if(sessionFname == null)
 					System.out.println("(index.jsp)Username hidden\n");
@@ -115,16 +116,15 @@
     </header>
 
     <!--Content loaded using AJAX with JQuery-->
-    <main id = "staffAssignmentHistory-main">
+    <main id = "clientApplication-main" style = "display: flex; flex-wrap: wrap;">
 		
 			<div id = "header-container" style = "display: none;">	
-					<h2 id = "jobApplication-h2">Mechanics' Assigned Tasks</h2> 
+					<h2 id = "jobApplication-h2">Invoices</h2> 
 				</div>
+													       <h2 id = "warn" style = "color: red; padding-top: 5%; margin-left: 38%; display: none;">PLEASE <a href = "../login.jsp">LOGIN</a>  TO VIEW THIS PAGE</h2>
 	
-								       <h2 id = "warn" style = "color: red; padding-top: 5%; margin-left: 30%; display: none;">PLEASE <a href = "../login.jsp">LOGIN</a>  TO VIEW THIS PAGE</h2>
 			
-			
-							<h3 style = "text-align: center; width: 100vw; font-size: 3rem; color: red;">You haven't assigned any mechanic to a job</h3>
+							<h3 style = "text-align: center; width: 100vw; font-size: 3rem; color: red;">There are no Invoices</h3>
 			
 				
 		<% 
@@ -138,7 +138,6 @@
 		String reg_mechanicFeedback = "";
 		String reg_status = "";
 		String reg_invoice = ""; 
-		String reg_category = "";
 
 			try{
 				//Geting connection to display client applications
@@ -148,7 +147,7 @@
 				Statement state = con.createStatement();
 				
 				//Create a result set to return the results from the statement
-				String engineRepair = "SELECT * FROM jobs where staffEmail = '" +userEmail+"'";
+				String engineRepair = "SELECT * FROM completedJobs WHERE clientID = '"+userID+"'";
 				
 			
 				ResultSet result = state.executeQuery(engineRepair);
@@ -160,13 +159,14 @@
 				//Fetches the data columns and returns the values
 				while( result.next()){
 					//completedJobsTable
-					reg_clientID = result.getInt(1);
 					reg_mechEmail = result.getString(2);
-					reg_vehicleType = result.getString(4);
-					reg_plateNum = result.getString(5);
-					reg_issues = result.getString(6);
-					reg_category = result.getString(7);
+					reg_vehicleType = result.getString(3);
+					reg_plateNum = result.getString(4);
+					reg_issues = result.getString(5);
+					reg_mechanicFeedback = result.getString(6);
+					reg_invoice = result.getString(7);
 					reg_status = result.getString(8);
+
 					
 				%>
 					<div class = "client-info" style = "
@@ -180,12 +180,13 @@
 					position: relative;
 					margin-left: 5%">
 					
-							<P class = "reg_mechanicEmail info">Mechanic's contact email:  <span id = "mechanicEmail" class = "sub-info"><%out.print(reg_mechEmail); %></span></P>
+							<P class = "reg_mechanicEmail info">Mechanic's contact email that assigned you:  <span id = "mechanicEmail" class = "sub-info"><%out.print(reg_mechEmail); %></span></P>
 							<P class = "reg_VehicleType info">Type of Vehicle:  <span id = "type" class = "sub-info"><%out.print(reg_vehicleType); %></span></P>
 							<p class = "reg_plateNum info">Vehicle Plate Number:  <span id = "pNum" class = "sub-info"><%out.print(reg_plateNum); %></span></p>
 							<p class = "reg_issues info">Issues:  <span id = "issues" class = "sub-info"><%out.print(reg_issues); %></span></p>
+							<p class = "reg_feedback info">Feedback from mechanic:  <span id = "feedback" class = "sub-info"><%out.print(reg_mechanicFeedback); %></span></p>
 							<p class = "reg_status info">Status:  <span id = "status" class = "sub-info"><%out.print(reg_status); %></span></p>
-							<p class = "reg_category info">Category:  <span id = "category" class = "sub-info"><%out.print(reg_category); %></span></p>
+							<p class = "reg_invoice info">Invoice:  <span id = "invoice" class = "sub-info"><%out.print(reg_invoice); %></span></p>
 
 						</div>
 					
@@ -281,17 +282,15 @@
 		$("main").css("height", "80vh");
 
 	}
-if(userID == "null" || userID == ""){
-		
-	    $("#warn").css("display", "block");
-	    $("h3").css("display", "none");
-
+	if(userID == "null" || userID == ""){
+			
+		    $("#warn").css("display", "block");
+		    $("h3").css("display", "none");
+		}
+	else{
+		$("#header-container").css("display", "unset");
+		$("form").css("display", "block");
 	}
-else{
-	$("#header-container").css("display", "unset");
-	$("form").css("display", "block");
-}
-
 		//For each client application that loads on the website, display their information
 		clientInfo_container.each(function(){
 			//Variables for each div
@@ -316,6 +315,7 @@ else{
 			let issues_input = $("#issues_input");
 			let status_input = $("#status_input");
 			let selectStatus =  $("#selectStatus");
+			let invoice = $("#invoice").text();
 			//On click event for each div
 			$(this).on('click', function(){
 				//Append values stored in array to tags
@@ -348,12 +348,15 @@ else{
 			})
 				
 			
+			
+		  
+				
+			 $('#invoice').each(function() { 
+				  $(this).html($(this).html().replace(/(?:(https?\:\/\/[^\s]+))/m, '<a href="$1">$1</a>'));
+			  });
 					
-				
-				
-
 		})//End this.click method
-
+		
 		
 })//End clientInfo_container method
 

@@ -62,7 +62,7 @@
 		
     </style>
     
-    <title>Assignment History</title>
+    <title>Active Jobs</title>
 </head>
 <body>
 	<!-- Accessing java variables -->
@@ -83,16 +83,16 @@
             <ul class="link-container">
                 <li><a href="../index.jsp" id="homePage" class="links">Home</a></li>
 				<%if(position.equals(staff)){
-                	%> <li><a href = "../pages/jobApplications.jsp" class="links">Job Applications</a></li>
+                	%> <li><a href = "jobApplications.jsp" class="links">Job Applications</a></li>
                 <%} %>
-                 <%if(position.equals(staff)){
-                	%> <li><a href = "staffActiveJobs.jsp" class="links" id = "assignmentHistory">Active Jobs</a></li>
-                <%} %>
-                <%if(position.equals(staff)){
-                	%> <li><a href = "../pages/staffInvoices.jsp" class="links">Invoices</a></li>
+				<%if(position.equals(staff)){
+				                	%> <li><a href = "staffAssignmentHistory.jsp" class="links" id = "assignmentHistory">Assignment History</a></li>
+				                <%} %>
+				                <%if(position.equals(staff)){
+                	%> <li><a href = "staffInvoices.jsp" class="links" id = "assignmentHistory">Invoices</a></li>
                 <%} %>
                 <li style = "text-align: center;font-size: 2rem;">
-                <span class = "profile-name jsp-userName" style = "margin-left: 2%;">         
+                <span class = "profile-name jsp-userName">         
                 <% //Display client button only if user is admin/staff 
                 if(sessionFname == null)
 					System.out.println("(index.jsp)Username hidden\n");
@@ -115,17 +115,15 @@
     </header>
 
     <!--Content loaded using AJAX with JQuery-->
-    <main id = "staffAssignmentHistory-main">
+    <main id = "clientApplication-main">
 		
 			<div id = "header-container" style = "display: none;">	
-					<h2 id = "jobApplication-h2">Mechanics' Assigned Tasks</h2> 
+					<h2 id = "jobApplication-h2">Active Jobs</h2> 
 				</div>
-	
-								       <h2 id = "warn" style = "color: red; padding-top: 5%; margin-left: 30%; display: none;">PLEASE <a href = "../login.jsp">LOGIN</a>  TO VIEW THIS PAGE</h2>
-			
-			
-							<h3 style = "text-align: center; width: 100vw; font-size: 3rem; color: red;">You haven't assigned any mechanic to a job</h3>
-			
+												       <h2 id = "warn" style = "color: red; padding-top: 5%; margin-left: 38%; display: none;">PLEASE <a href = "../login.jsp">LOGIN</a>  TO VIEW THIS PAGE</h2>
+				
+			<h3 style = "text-align: center; width: 100vw; font-size: 3rem; color: red;">There's no ongoing activities</h3>
+				
 				
 		<% 
 		//Mechanic email already initialized on login
@@ -137,8 +135,6 @@
 		String reg_issues = "";
 		String reg_mechanicFeedback = "";
 		String reg_status = "";
-		String reg_invoice = ""; 
-		String reg_category = "";
 
 			try{
 				//Geting connection to display client applications
@@ -148,45 +144,45 @@
 				Statement state = con.createStatement();
 				
 				//Create a result set to return the results from the statement
-				String engineRepair = "SELECT * FROM jobs where staffEmail = '" +userEmail+"'";
+				String engineRepair = "SELECT * FROM activeJobs WHERE clientID = '"+userID+"'";
 				
 			
 				ResultSet result = state.executeQuery(engineRepair);
 				
 				int reg_clientID = 0;
 			
-				System.out.println("completedJobs TABLE : ");
+				System.out.println("activeJobs TABLE : ");
 				
 				//Fetches the data columns and returns the values
 				while( result.next()){
 					//completedJobsTable
-					reg_clientID = result.getInt(1);
 					reg_mechEmail = result.getString(2);
-					reg_vehicleType = result.getString(4);
-					reg_plateNum = result.getString(5);
-					reg_issues = result.getString(6);
-					reg_category = result.getString(7);
-					reg_status = result.getString(8);
+					reg_vehicleType = result.getString(3);
+					reg_plateNum = result.getString(4);
+					reg_issues = result.getString(5);
+					reg_mechanicFeedback = result.getString(6);
+					reg_status = result.getString(7);
+
 					
 				%>
 					<div class = "client-info" style = "
 					background: rgb(239 239 239);
 					border-radius: .5rem;
 					padding: 1%;
-				
+					height: 30%;
 					width: 40%;
 					text-align: left;
 					box-shadow: .2rem .1rem .4rem rgb(223, 223, 223);
 					position: relative;
 					margin-left: 5%">
 					
-							<P class = "reg_mechanicEmail info">Mechanic's contact email:  <span id = "mechanicEmail" class = "sub-info"><%out.print(reg_mechEmail); %></span></P>
+							<P class = "reg_mechanicEmail info">Mechanic's contact email that assigned you:  <span id = "mechanicEmail" class = "sub-info"><%out.print(reg_mechEmail); %></span></P>
 							<P class = "reg_VehicleType info">Type of Vehicle:  <span id = "type" class = "sub-info"><%out.print(reg_vehicleType); %></span></P>
 							<p class = "reg_plateNum info">Vehicle Plate Number:  <span id = "pNum" class = "sub-info"><%out.print(reg_plateNum); %></span></p>
 							<p class = "reg_issues info">Issues:  <span id = "issues" class = "sub-info"><%out.print(reg_issues); %></span></p>
+							<p class = "reg_feedback info">Feedback from mechanic:  <span id = "feedback" class = "sub-info"><%out.print(reg_mechanicFeedback); %></span></p>
 							<p class = "reg_status info">Status:  <span id = "status" class = "sub-info"><%out.print(reg_status); %></span></p>
-							<p class = "reg_category info">Category:  <span id = "category" class = "sub-info"><%out.print(reg_category); %></span></p>
-
+								
 						</div>
 					
 				<%	
@@ -198,7 +194,6 @@
 			System.out.println("Problem returning registration info. SQL Error: " + e);
 		}
 	%>
-				
 	</main>
 
  <footer>
@@ -275,12 +270,14 @@
 	
 	//refreshes the applications
 	refreshBtn.on('click', ()=>location.reload());
+
 	if($(".client-info").length >= 1) {
 		$("h3").css("display", "none");
 	}else{
 		$("main").css("height", "80vh");
 
 	}
+	
 if(userID == "null" || userID == ""){
 		
 	    $("#warn").css("display", "block");
@@ -291,7 +288,6 @@ else{
 	$("#header-container").css("display", "unset");
 	$("form").css("display", "block");
 }
-
 		//For each client application that loads on the website, display their information
 		clientInfo_container.each(function(){
 			//Variables for each div

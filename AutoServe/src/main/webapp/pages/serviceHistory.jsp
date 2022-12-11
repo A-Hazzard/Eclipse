@@ -107,11 +107,12 @@
     </header>
 
     <!--Content loaded using AJAX with JQuery-->
-    <main id = "clientApplication-main" style = "display: flex; flex-wrap: wrap;">
+    <main id = "clientApplication-main" style = "display: flex; flex-wrap: wrap; ">
 		
-			<div id = "header-container" ">	
+			<div id = "header-container" style = "display: none">	
 					<h2 id = "jobApplication-h2">History done on your vehicles</h2> 
 				</div>
+					       <h2 id = "warn" style = "color: red; padding-top: 5%; margin-left: 35%; display: none;">PLEASE <a href = "../login.jsp">LOGIN</a>  TO VIEW THIS PAGE</h2>
 	
 			
 							<h3 style = "text-align: center; width: 100vw; font-size: 3rem; color: red;">Your history is empty</h3>
@@ -272,7 +273,13 @@
 		$("main").css("height", "80vh");
 
 	}
+if(userID == "null" || userID == ""){
+		
+	    $("#warn").css("display", "block");
+	    $("h3").css("display", "none");
 
+	console.log("null")
+	}
 		//For each client application that loads on the website, display their information
 		clientInfo_container.each(function(){
 			//Variables for each div
@@ -341,7 +348,116 @@
 		
 		
 })//End clientInfo_container method
-	
+
+$(function(){
+    $("#footer-links").load("states/footer/carLinks.txt");
+	//Loads jobs
+	$("#job1").click(function(){
+    console.log("loaded " + $(this).attr('id'));
+    $("#job-status").hide().load("states/heavyEquipment.txt").fadeIn("slow");
+})
+		
+		$("#job2").click(function(){
+			console.log("loaded " + $(this).attr('id'));
+		    $("#job-status").hide().load("states/electricVehicleTech.txt").fadeIn("slow");
+		})
+		
+		$("#job3").click(function(){
+			console.log("loaded " + $(this).attr('id'));
+		    $("#job-status").hide().load("states/mechanicalSystem.txt").fadeIn("slow");
+		})
+		
+  //changes style of links in the footer on click
+  $(".categories").click(function(){
+        console.log("Underlined " + $(this).text());
+
+        let carClick = false;
+        let bikesClick = false;
+        let scootersClick = false;
+        if ( $(this).text() === "Cars" ) {
+            carClick = true;
+            bikesClick = false;
+            scootersClick = false;
+            if(carClick){
+                console.log($(this).text() + " link clicked");
+                $(this).css("text-decoration", "underline");
+                $(this).css("opacity", 1);
+                $(this).css("opacity", 1);
+                $(this).css("color", "white");
+
+                $("#scooters").css("opacity", .5);
+                $("#scooters").css("color", "rgb(205,206,224)");
+
+                $("#bikes").css("opacity", .5);
+                $("#bikes").css("color", "rgb(205,206,224)");
+
+                $("#bikes").css("text-decoration", "none");
+                $("#scooters").css("text-decoration", "none");
+
+                $("#footer-links").fadeOut(500);
+                setTimeout(function(){
+                    $("#footer-links").load("states/footer/carLinks.txt").fadeIn(1000);
+                }, 500)
+
+            }
+        }
+        else if ( $(this).text() === "Bikes" ) {
+            carClick = false;
+            scootersClick = false;
+            bikesClick = true;
+            if(bikesClick){ 
+                console.log($(this).text() + " link clicked");
+                $(this).css("text-decoration", "underline");
+                $("#cars").css("text-decoration", "none");
+                $(this).css("opacity", 1);
+                $(this).css("opacity", 1);
+                $(this).css("color", "white");
+
+                $("#cars").css("opacity", .5);
+                $("#cars").css("color", "rgb(205,206,224)");
+
+                $("#scooters").css("opacity", .5);
+                $("#scooters").css("color", "rgb(205,206,224)");
+
+                $("#scooters").css("text-decoration", "none");
+
+                
+                $("#footer-links").fadeOut(500);
+                setTimeout(function(){
+                    $("#footer-links").load("states/footer/bikesLinks.txt").fadeIn(1000);
+                }, 500)
+                
+            }
+        }
+        else if ( $(this).text() === "Scooters" ) {
+            carClick = false;
+            bikesClick = false;
+            scootersClick = true;
+            if(scootersClick){ 
+                console.log($(this).text() + " link clicked");
+                $(this).css("text-decoration", "underline");
+                $(this).css("opacity", 1);
+                $(this).css("color", "white");
+
+                $("#cars").css("opacity", .5);
+                $("#cars").css("color", "rgb(205,206,224)");
+
+                $("#bikes").css("opacity", .5);
+                $("#bikes").css("color", "rgb(205,206,224)");
+
+                $("#cars").css("text-decoration", "none");
+                $("#bikes").css("text-decoration", "none");
+
+                $("#footer-links").fadeOut(500);
+                setTimeout(function(){
+                    $("#footer-links").load("states/footer/scootersLinks.txt").fadeIn(1000);
+                }, 500)
+            }
+        }
+    });
+  
+  
+});
 </script>
 </body>
 </html>
