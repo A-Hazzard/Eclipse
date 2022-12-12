@@ -15,6 +15,7 @@
 		String category = request.getParameter("category_input").trim();
 		String invoice = request.getParameter("invoiceLink_input").trim();
 		int clientID = Integer.parseInt(request.getParameter("clientID_input").trim());
+		int fee = Integer.parseInt(request.getParameter("fee").trim());
 		
 		Connection con = ConnectionProvider.getConnection();
 		Statement state = con.createStatement();
@@ -30,7 +31,7 @@
         
         if(status.equals("Finished")){
         	System.out.println("Finished Job");
-        	String completedJobs = "INSERT INTO completedJobs VALUES(?,?,?,?,?,?,?,'Finished')";
+        	String completedJobs = "INSERT INTO completedJobs VALUES(?,?,?,?,?,?,?,'Finished',?,?)";
         	String dropActiveJob = "DELETE FROM activeJobs WHERE (clientID = '"+clientID+"' AND vehicleType = '" +vehicleType+"' AND platenumber = '"+plateNumber+"' AND issue = '"+issues+"')";
         	
         	Statement state2 = con.createStatement();
@@ -43,6 +44,8 @@
         	ps.setString(5, issues);
         	ps.setString(6, mechanicFeedback);
         	ps.setString(7, invoice);
+        	ps.setInt(8, fee);
+        	ps.setString(9, category);
 
         	PreparedStatement ps2 = con.prepareStatement(dropActiveJob);
     		ps.executeUpdate();

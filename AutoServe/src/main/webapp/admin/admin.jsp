@@ -34,6 +34,8 @@
 	
 	    System.out.println("(index.jsp)Logged in as " + sessionFname + "\n");
 	}
+    
+   
 
 %>
 <html lang = "en">
@@ -170,6 +172,10 @@ toggle {  0% {
       	Statement state4 = con.createStatement();
       	Statement state5 = con.createStatement();
       	Statement state6 = con.createStatement();
+      	Statement state7 = con.createStatement();
+      	Statement state8 = con.createStatement();
+      	Statement state9 = con.createStatement();
+      	
       	ResultSet rs = state.executeQuery("SELECT COUNT(ID) FROM employee");
       	ResultSet rs1 = state1.executeQuery("SELECT COUNT(ID) FROM staff");
       	ResultSet rs2 = state2.executeQuery("SELECT COUNT(ID) FROM mechanic");
@@ -177,6 +183,15 @@ toggle {  0% {
       	ResultSet rs4 = state4.executeQuery("SELECT work FROM hourly_schedule");
       	ResultSet rs5 = state5.executeQuery("SELECT lunch FROM hourly_schedule");
       	ResultSet rs6 = state6.executeQuery("SELECT meetings FROM hourly_schedule");
+
+
+        ResultSet rs7 = state7.executeQuery("SELECT SUM(FEE) FROM completedJOBS WHERE CATEGORY = 'Clutch'");
+        ResultSet rs8 = state8.executeQuery("SELECT SUM(FEE) FROM completedJOBS WHERE CATEGORY = 'Engine'");
+        ResultSet rs9 = state9.executeQuery("SELECT SUM(FEE) FROM completedJOBS WHERE CATEGORY = 'Breaks'");
+    	
+        int clutchCount = 0;
+        int engineCount = 0;
+        int breaksCount = 0;
 
       	int employee_count = 0;
       	int staff_count = 0;
@@ -205,11 +220,23 @@ toggle {  0% {
       	}while(rs5.next()){
       		
       		lunchHours = rs5.getInt(1);
-      	}while(rs6.next()){
-      		
-      		meetingsHours = rs6.getInt(1);
       	}
-      	
+      	while(rs6.next()){
+
+      		meetingsHours = rs6.getInt(1);
+      	}while(rs7.next()){
+
+        	clutchCount = rs7.getInt(1);
+      	}while(rs8.next()){
+
+        	engineCount = rs8.getInt(1);
+      	}while(rs9.next()){
+
+        	breaksCount = rs9.getInt(1);
+      	}
+  
+       
+        
       	System.out.println("text of employees: " + employee_count + "\ntext of Staff Members: " + staff_count + "\ntext of Mechanics: " + mechanic_count + "\ntext of clients: " + client_count);
       %>
     <div class = "statistics" style = "display: flex; justify-content: center;margin-top: 5%;">
@@ -317,14 +344,15 @@ toggle {  0% {
     
     
     <script type="text/javascript">
+
     google.charts.load("current", {packages:['corechart']});
     google.charts.setOnLoadCallback(drawChart);
     function drawChart() {
       var data = google.visualization.arrayToDataTable([
         ["Element", "Density", { role: "style" } ],
-        ["Engine", 8.94, "#b87333"],
-        ["Clutch", 10.49, "silver"],
-        ["Breaks", 19.30, "gold"]
+        ["Clutch", <% out.print(clutchCount); %>, "#b87333"],
+        ["Eegine", <% out.print(engineCount); %>, "silver"],
+        ["Breaks", <% out.print(breaksCount); %>, "gold"]
       ]);
 
       var view = new google.visualization.DataView(data);

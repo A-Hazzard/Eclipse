@@ -324,6 +324,10 @@
 	    			
 	    			<label for = "invoiceLink_input" class = "invoice" style = "display: none;">Invoice Link:</label><br>
 	    			<input type = "text" name = "invoiceLink_input" id = "invoiceLink_input"  class = "invoice" placeholder = "link..." style = "display: none;"/>
+	    			<br>
+	    			<label for = "fee" class = "fee" style = "display: none;">Fee:</label><br>
+	    			<input type = "text" name = "fee" id = "fee"  class = "fee" placeholder = "TTD" style = "display: none;"/>
+				
 				<input type = "submit" value="Select a client to work with" id = "bookNow-btn" disabled/>
 
 			</form>
@@ -488,6 +492,10 @@
 					$(".feedback").css("display", "unset");
 					$(".feedback").css("margin-bottom", "1%");
 					$(".feedback").attr("required", true);
+					
+					$(".fee").css("display", "unset");
+					$(".fee").css("margin-bottom", "1%");
+					$(".fee").attr("required", true);
 					
 
 				}
