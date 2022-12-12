@@ -234,8 +234,7 @@ toggle {  0% {
      </div>
      <br><br>
      <div>
-      <div id="piechart" >
-         </div>
+      <div id="piechart" style = "background-color: red; width: 50%; height: 50%;"></div>
      <form action = "../jsp/updateHourlySchedule.jsp" method = "POST">
      		 <% if("invalidNumber".equals(msg)){ %>
                     	<p id = "errorMsg" style = "text-align: left; color: red;">Invalid Number. Try again</p>
@@ -253,6 +252,7 @@ toggle {  0% {
          	</form>
          </div>
         
+<div id="columnchart_values" style="width: 900px; height: 300px;"></div>
      
     </main>
     
@@ -282,6 +282,7 @@ toggle {  0% {
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script src="admin.js"></script>
 <script src = "../js/jQuery-plugin-progressbar.js"></script>
+
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
@@ -308,6 +309,42 @@ toggle {  0% {
       $("#workHours_input").val(<% out.print(workHours); %>);
       $("#meetingsHours_input").val(<% out.print(meetingsHours); %>);
       $("#lunchHours_input").val(<% out.print(lunchHours); %>);
+      setTimeout(function(){
+    	  $("rect, this")[0].attr("fill", "rgb(245, 245, 245)");
+    	  }, 300);
+    </script>
+    
+    
+    
+    <script type="text/javascript">
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Element", "Density", { role: "style" } ],
+        ["Engine", 8.94, "#b87333"],
+        ["Clutch", 10.49, "silver"],
+        ["Breaks", 19.30, "gold"]
+      ]);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+
+      var options = {
+        title: "Income made per service",
+        width: 600,
+        height: 400,
+        bar: {groupWidth: "95%"},
+        legend: { position: "none" },
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+      chart.draw(view, options);
+  }
     </script>
 <script>
         //stores user position in variable(client/staff/admin)
