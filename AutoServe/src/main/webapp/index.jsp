@@ -47,6 +47,23 @@
                     font-size: 1.1rem;
                     font-family: 'Roboto';
                     }
+                    
+                    .trailer{
+             		display: none;
+				    
+				    position: absolute;
+				    margin: -49% auto;
+				      z-index: 2;
+				    }
+				    
+				    .video{
+				           width: 90vw;
+				    height: 85vh;
+				    margin-top: -3%;
+				    margin-left: 4%;	
+				  
+				    }
+    }
     </style>
     
     <title>Auto Serve Inc.</title>

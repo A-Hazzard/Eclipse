@@ -1,3 +1,4 @@
+
 <%@ page import = "Servlets.ConnectionProvider"%>
 <%@ page import = "java.sql.*" %>
 <% 
@@ -148,7 +149,7 @@ toggle {  0% {
 
     <!--Content loaded using AJAX with JQuery-->
     <main data-aos="zoom-in" data-aos-offset="0" data-aos-delay="1" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top" 
-    id = "admin-main" style = "height: 100vh;">
+    id = "admin-main">
 
         <div id = "admin-top-nav" style = "display: none;">
         	<ul class="link-container">
@@ -272,14 +273,14 @@ toggle {  0% {
          		<label for = "lunchHours_input">New Lunch Hours: </label><br>
          		<input type = "text" name = "lunchHours_input" id = "lunchHours_input" placeholder = "<% out.print(lunchHours); %>"/>
          		<br>
-         		<label for = "meetingsHours_input">New Work Hours: </label><br>
+         		<label for = "meetingsHours_input">Meetings: </label><br>
          		<input type = "text" name = "meetingsHours_input" id = "meetingsHours_input" placeholder = "<% out.print(meetingsHours); %>"/>
          		<br>
          		<button type = "submit">Change Hours</button>
          	</form>
          </div>
         
-<div id="columnchart_values" style="width: 900px; height: 300px;"></div>
+<div id="columnchart_values" style="width: 900px; height: 300px; margin: -32% 0 0 50%; position: absolute;"></div>
      
     </main>
     
@@ -315,6 +316,7 @@ toggle {  0% {
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
 
+      $("main").css("background", "white");
       function drawChart() {
 
         var data = google.visualization.arrayToDataTable([
@@ -336,9 +338,7 @@ toggle {  0% {
       $("#workHours_input").val(<% out.print(workHours); %>);
       $("#meetingsHours_input").val(<% out.print(meetingsHours); %>);
       $("#lunchHours_input").val(<% out.print(lunchHours); %>);
-      setTimeout(function(){
-    	  $("rect, this")[0].attr("fill", "rgb(245, 245, 245)");
-    	  }, 300);
+     
     </script>
     
     
