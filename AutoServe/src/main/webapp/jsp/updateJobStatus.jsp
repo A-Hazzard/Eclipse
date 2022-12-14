@@ -113,6 +113,19 @@
         	del.executeUpdate();
 
         }
+        else if(status.equals("Pending")){
+    		PreparedStatement pendingClients = con.prepareStatement("INSERT INTO pendingClients VALUES("+clientID+",?,?,?,?, 'Pending')");
+    		PreparedStatement activeJobs = con.prepareStatement("DELETE FROM activeJobs WHERE (clientID = '"+clientID+"' AND vehicleType = '" +vehicleType+"' AND platenumber = '"+plateNumber+"' AND issue = '"+issues+"' AND mechanicemail = '"+mechanicEmail+"')"); 
+    		pendingClients.setString(1,vehicleType);
+    		pendingClients.setString(2,plateNumber);
+    		pendingClients.setString(3,issues);
+    		pendingClients.setString(4,category);
+			
+			pendingClients.executeUpdate();
+			activeJobs.executeUpdate();
+
+			System.out.println("Added Client back to pending table");
+        }
         
         response.sendRedirect("../pages/mechanicAssignedJobs.jsp");
 	}catch(SQLException exp){

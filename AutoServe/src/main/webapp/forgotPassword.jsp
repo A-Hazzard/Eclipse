@@ -17,6 +17,7 @@
 		String phone = String.valueOf(sessionPhone);
 		String position = String.valueOf(sessionPosition);
 		String msg = request.getParameter("msg");
+		String errorMsg = "";
 		if(firstName != null){
 			System.out.println(firstName + " ID: " + userID);
 		}
@@ -47,8 +48,7 @@
                     font-size: 1.1rem;
                     font-family: 'Roboto';
                     }
-                    
-                    select{
+                      select{
                      width: 60%; 
             font-size: 1rem;
             height: 2.3rem;
@@ -59,11 +59,9 @@
             outline: none;
             margin-bottom: 5%;
             }
-            
-          
     </style>
     
-    <title>Auto Serve Inc.</title>
+    <title>Forgot Password</title>
 </head>
 <body>
 	<!-- Accessing java variables -->
@@ -85,94 +83,70 @@
                 <li><a href="index.jsp" id="homePage" class="links">Home</a></li>
             </ul>
         </nav>
+
     </header>
 
     <!--Content loaded using AJAX with JQuery-->
-    <main>
-     <div data-aos="zoom-in-down"
+    <main id = "index">
+        <!--Main content for login page-->
+    <div  data-aos="zoom-in-up"
                     data-aos-offset="1"
                     data-aos-delay="1"
                     data-aos-duration="500"
                     data-aos-easing="ease-in"
                     data-aos-mirror="true"
                     data-aos-once="true"
-                    data-aos-anchor-placement="top" id = "access-main">
+                    data-aos-anchor-placement="top"  id = "access-main">
 
+        <h2>Forgot Password</h2><br>
+        <p>Remember your info? <a href="login.jsp" id="registrationPage">Login</a> </p>
 
-        <h2>Sign Up</h2><br>
-        <p>Already a member? <a href = "login.jsp" id="loginPage2">Log in.</a>
-
-
-        <form action="jsp/registrationAction.jsp" method="post" class="Form">
+        <!--Form used for logging in-->
+        <form action="forgotPasswordAction.jsp" method="post" class="Form">
             <table id="loginFormTable">
+            
                 <tr>
-                    <td> 
-                        <label for="firstname">First Name:</label><br>
-                        <input type = "text" name = "firstname" id="firstname" required/>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td> 
-                        <label for="lastname">Last Name:</label><br>
-                        <input type = "text" name = "lastname" id= "lastname" required/>
-                    </td>
-                </tr>
-
-               
-                <tr>
-                    <td>
-                        <label for="email">Email:</label><br>
+                    <td>     	
+                    <% if("invalidInfo".equals(msg)){ %>
+                    	<p id = "errorMsg" style = "text-align: left; color: red;">Information doesn't match. Try again</p>
+                        <%} %>
+                        <label for="email">Email: </label><br>
                         <input type="email" name="email" id="email" required>
+                        	
                     </td>
                 </tr>
-                
-                 <tr>
+                <tr>
                     <td>
-                        <label for="phone">Phone: </label><br>
-                        <input type="text" name="phone" id="phone" required>
-                    </td>
-                </tr>
-                 <tr>
-                	<td>
-                		<label for = "securityQuestion">Security Question:</label><br>
-                		<select name = "securityQuestion" required>
+                       <select name = "securityQuestion" required>
 				  			<option value = "Where were you born?"> Where were you born? </option>
 				  			<option value = "What was your first pet?"> What was your first pet? </option>
+				  			<option value = "What is your grandmother's name?"> What is your grandmother's name? </option>
 				  			<option value = "What primary school did you attend?"> What primary school did you attend? </option>
 				  		</select>
-                	</td>
+				  		
+				  		 <label for = "newPassword" style = "display: none;">Answer:</label><br>
+                		  	<input type = "text" name = "answer" id = "answer" placeholder = "Enter Answer" required>
+                    </td>
+                    
+                   
                 </tr>
-                
-                <tr>
-                	<td>
-                			<label for = "answer" style = "display: none;">Answer:</label>
-                	  		<input type = "text" name = "answer" placeholder = "Enter Answer" required>
-                	</td>
-                </tr>
+             
                 
                 <tr>
                     <td>
-                        <label for="password">Password: </label><br>
-                        <input type="password" autocomplete name="password" id="password" required>
-                    	<div id="viewPassword-container"><input type="checkbox" id="viewPwd"><label for="viewPwd">Show Password</label></div>
-                    	</td>
+                        	<label for = "newPassword">New Password:</label><br>
+                		  	<input type = "password" name = "newPassword" id = "newPassword" placeholder = "********" required>
+                    </td>
                 </tr>
-                
-               
-          
+
                 <tr>
-                    <td><input type="submit" value="Sign Up" id="submit"/></td>
+                    <td><input type="submit" value="Reset Password" id="submit"/>
+                    </td>
                 </tr>
             </table>
         </form>
-
-		
-</div>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
+       
+    </div>
         
         </main>
     
@@ -228,7 +202,6 @@ var fNameContainer_text = $(".profile-name-container").text();
 var getVariables = $(".getVariables");
 var fNameContainer = $(".profile-name-container");
 var nameStr = parseInt(userFirstName.length);
-
 
 console.log("Position: " + userPosition);
 getVariables.css("position", "absolute");

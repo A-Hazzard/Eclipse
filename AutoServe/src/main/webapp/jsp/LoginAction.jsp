@@ -182,7 +182,7 @@ try{	 Connection con = ConnectionProvider.getConnection();
 					String sessionLname = result.getString(3);
 					String sessionEmail = result.getString(4);
 					String sessionPhone = result.getString(5);
-					String sessionPosition = result.getString(7);
+					String sessionPosition = result.getString(9);
 				
 					//set attributes to share vairable to another file to access
 					session.setAttribute("UserID", sessionID);

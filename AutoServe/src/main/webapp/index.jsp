@@ -63,7 +63,12 @@
 				    margin-left: 4%;	
 				  
 				    }
-    }
+ 
+ a{
+ 	text-decoration: none;
+ 	color: black;
+ }
+ 
     </style>
     
     <title>Auto Serve Inc.</title>
@@ -130,8 +135,8 @@
                 <!--Display user name if logged in-->
                 <% 
                 if (firstName != null) { %>
-                    <li class = "profile-name-container">
-                        <span class = "profile-name jsp-userName">         
+                    <li class = "profile-name-container" style = "cursor: pointer;">
+                        <span class = "profile-name jsp-userName"><a style = "color: black;"href = "accountSettings.jsp">         
                         <% //Display client link only if user is admin/staff 
                             if(sessionFname == null)
                                 System.out.println("(index.jsp)Username hidden\n");
@@ -143,10 +148,14 @@
                                 
                                 System.out.println("(index.jsp)Logged in as " + firstName + "\n");
                                 }
-                    %></span>
+                    %></a></span>
                     <span id = "userID" style = "position: absolute; margin-top: -1000%;"> <% out.print(userID); %> </span></li>
+                    
+
                 <% } %>
             </ul>
+            
+            
         </nav>
 
     </header>
@@ -219,6 +228,8 @@ var nameStr = parseInt(userFirstName.length);
 console.log("Position: " + userPosition);
 getVariables.css("position", "absolute");
 getVariables.css("margin-top", "-100%");
+let clicked = false;
+
 
 </script>
 </body>

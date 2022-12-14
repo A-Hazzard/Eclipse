@@ -3,12 +3,14 @@
 
 <%
 	System.out.println("registrationAction.jsp executed");
-String firstname = request.getParameter("firstname");
-String lastname = request.getParameter("lastname");
-String email = request.getParameter("email");
-String phone = request.getParameter("phone");
+String firstname = request.getParameter("firstname").trim();
+String lastname = request.getParameter("lastname").trim();
+String email = request.getParameter("email").trim();
+String phone = request.getParameter("phone").trim();
 //String position = request.getParameter("position");
-String password = request.getParameter("password");
+String password = request.getParameter("password").trim();
+String securityQuestion = request.getParameter("securityQuestion").trim();
+String answer = request.getParameter("answer").trim();
 try{
 	boolean signUp = true;
 	//Try to get user info
@@ -17,7 +19,7 @@ try{
 	Connection con = ConnectionProvider.getConnection();
 	Statement state = con.createStatement();
 	
-	String sql = "INSERT INTO Clients VALUES(client_ID.nextval,?,?,?,?,?,'Client')";
+	String sql = "INSERT INTO Clients VALUES(client_ID.nextval,?,?,?,?,?,?,?,'Client')";
 	
 	PreparedStatement ps = con.prepareStatement(sql);
 	
@@ -25,7 +27,9 @@ try{
 	ps.setString(2, lastname);
 	ps.setString(3, email);
 	ps.setString(4, phone);
-	ps.setString(5, password);
+	ps.setString(5, securityQuestion);
+	ps.setString(6, answer);
+	ps.setString(7, password);
 	
 	ps.executeUpdate();
 	

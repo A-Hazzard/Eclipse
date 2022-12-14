@@ -519,6 +519,13 @@
 					$(".fee").css("margin-bottom", "1%");
 					$(".fee").attr("required", true);
 				}
+				if(option == "Active"){
+					$("#invoiceLink_input").attr("required", false);
+					$(".invoice").css("display", "none");
+					$(".fee").css("display", "none");
+					$(".fee").css("margin-bottom", "unset");
+					$(".fee").attr("required", false);
+				}
 			})
 				
 			

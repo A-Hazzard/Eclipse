@@ -115,7 +115,7 @@
                 <tr>
                     <td>
                         <br>
-                        <a href = "pages/forgotPassword.html" id="forgotpassword">Forgot Password</a>
+                        <a href = "forgotPassword.jsp" id="forgotpassword">Forgot Password</a>
                     </td>
                 </tr>
 

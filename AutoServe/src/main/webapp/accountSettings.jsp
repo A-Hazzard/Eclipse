@@ -17,6 +17,7 @@
 		String phone = String.valueOf(sessionPhone);
 		String position = String.valueOf(sessionPosition);
 		String msg = request.getParameter("msg");
+		String errorMsg = "";
 		if(firstName != null){
 			System.out.println(firstName + " ID: " + userID);
 		}
@@ -48,8 +49,35 @@
                     font-family: 'Roboto';
                     }
                     
-                    select{
-                     width: 60%; 
+                 .flex-wrapper{
+                     margin: 10% auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    }
+    
+    .account-info{
+    	border: 3px solid black;
+    border-radius: 2rem;
+    height: 30vh;
+    padding: 2%;
+    	
+    }
+    
+    .security-info{
+    margin-left: 2%;
+    border: 3px solid black;
+    border-radius: 2rem;
+   
+    padding: 2%;
+    }
+    
+    .fa-envelope{
+    	margin-right: 2%;
+    }
+    
+    select{
+     width: 100%; 
             font-size: 1rem;
             height: 2.3rem;
             border-top: none;
@@ -58,12 +86,30 @@
             border-color: orange;
             outline: none;
             margin-bottom: 5%;
-            }
-            
-          
+    }   
+     input[type=submit]{
+            height: 3rem;
+            background-color: rgb(229,36,14);;
+            border: none;
+            border-radius: 1rem;
+            padding: 3%;
+            color: white;
+            font-size: .8rem;
+            margin-top: -10%;
+        }
+        
+         input[type=text], input[type=email]{
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        width: 100%;
+        height: 2rem;
+        margin-bottom: 15%;
+        outline: none;
+        }
     </style>
     
-    <title>Auto Serve Inc.</title>
+    <title>Account Settings</title>
 </head>
 <body>
 	<!-- Accessing java variables -->
@@ -85,95 +131,100 @@
                 <li><a href="index.jsp" id="homePage" class="links">Home</a></li>
             </ul>
         </nav>
+
     </header>
 
     <!--Content loaded using AJAX with JQuery-->
-    <main>
-     <div data-aos="zoom-in-down"
-                    data-aos-offset="1"
-                    data-aos-delay="1"
-                    data-aos-duration="500"
-                    data-aos-easing="ease-in"
-                    data-aos-mirror="true"
-                    data-aos-once="true"
-                    data-aos-anchor-placement="top" id = "access-main">
-
-
-        <h2>Sign Up</h2><br>
-        <p>Already a member? <a href = "login.jsp" id="loginPage2">Log in.</a>
-
-
-        <form action="jsp/registrationAction.jsp" method="post" class="Form">
+    <main id = "accountSettings-main">
+    <br><br>
+    <h2 style = "text-align: center;">MY ACCOUNT</h2>
+    			<div class = "flex-wrapper" style = "margin-top: 2%;">
+    			
+    			<div class = "account-info">
+    				<p class = "profile-name">Name: <% out.print(firstName + " " + lastName); %></p>
+    				<p class = "profile-Email" class = "getVariables">Email: <% out.print(email); %></p>
+					<p class = "profile-Phone" class =  "getVariables">Phone: <% out.print(phone); %></p>
+					<p class = "profile-Position" class = "getVariables">Position: <% out.print(position); %></p>
+					
+    			</div>
+    				<div class = "security-info">
+    						<p class = "info-header">Security Info</p>
+    						<i class="fa-solid fa-user-pen"></i>
+    						<br>
+    						<p class = "details">Keep your verification methods and security info up to date.</p>
+    						<a class = "updateInfo-btn" href = "#">Update Info -></a>
+    						 <!--Form used for logging in-->
+        <form action="jsp/accountSettings/updateInfoAction.jsp" method="post" class="Form">
             <table id="loginFormTable">
-                <tr>
-                    <td> 
-                        <label for="firstname">First Name:</label><br>
-                        <input type = "text" name = "firstname" id="firstname" required/>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td> 
-                        <label for="lastname">Last Name:</label><br>
-                        <input type = "text" name = "lastname" id= "lastname" required/>
-                    </td>
-                </tr>
-
-               
+            
+           	
+                        
                 <tr>
                     <td>
-                        <label for="email">Email:</label><br>
-                        <input type="email" name="email" id="email" required>
-                    </td>
-                </tr>
-                
-                 <tr>
-                    <td>
-                        <label for="phone">Phone: </label><br>
-                        <input type="text" name="phone" id="phone" required>
-                    </td>
-                </tr>
-                 <tr>
-                	<td>
-                		<label for = "securityQuestion">Security Question:</label><br>
-                		<select name = "securityQuestion" required>
+                    
+                    <% if("invalidInfo".equals(msg)){ %>
+                    	<p id = "errorMsg" style = "text-align: left; color: red;">Information doesn't match. Try again</p>
+                        <%} %>
+                        
+                        <input type = "hidden" class = "position_input" name = "position" value = "<% out.print(position); %>" required>
+                        <input type = "hidden" class = "userID_input" name = "userID" value = <% out.print(userID); %> required>
+                       <select name = "securityQuestion" required>
 				  			<option value = "Where were you born?"> Where were you born? </option>
 				  			<option value = "What was your first pet?"> What was your first pet? </option>
 				  			<option value = "What primary school did you attend?"> What primary school did you attend? </option>
 				  		</select>
-                	</td>
+				  		
+				  		 <label for = "newPassword" style = "display: none;">Answer:</label><br>
+                		  	<input type = "text" name = "answer" id = "answer" placeholder = "Enter Answer" required>
+                    </td>
+                    
+                   
                 </tr>
-                
+            
+
                 <tr>
-                	<td>
-                			<label for = "answer" style = "display: none;">Answer:</label>
-                	  		<input type = "text" name = "answer" placeholder = "Enter Answer" required>
-                	</td>
-                </tr>
-                
-                <tr>
-                    <td>
-                        <label for="password">Password: </label><br>
-                        <input type="password" autocomplete name="password" id="password" required>
-                    	<div id="viewPassword-container"><input type="checkbox" id="viewPwd"><label for="viewPwd">Show Password</label></div>
-                    	</td>
-                </tr>
-                
-               
-          
-                <tr>
-                    <td><input type="submit" value="Sign Up" id="submit"/></td>
+                    <td><input type="submit" value="Update Info" id="submit"/>
+                    </td>
                 </tr>
             </table>
         </form>
-
-		
-</div>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-        
+    				</div>
+    				
+    				
+    				
+    				
+    				<div class = "security-info">
+    						<p class = "info-header">Password</p>
+							<i class="fa-solid fa-key"></i>   						<br>
+    						<p class = "details">Make your password stronger, or change it if someone else knows it.</p>
+    				
+    				
+    				 <form action = "jsp/accountSettings/updatePasswordAction.jsp" method = "POST">
+               <input type = "hidden" class = "position_input" name = "position" value = "<% out.print(position); %>" required>
+                        <input type = "hidden" class = "userID_input" name = "userID" value = <% out.print(userID); %> required>
+                       
+             			<label for="password">Password: </label><br>
+                        <br>
+                        <label for = "currentPassword">Current Password:</label><br>
+                        <input type="password" autocomplete name="currentPassword" id="currentPassword" required>
+                        <br>
+                        
+                        <label for = "newPassword">New Password:</label><br>
+                        <input type="password" autocomplete name="newPassword" id="newPassword" required>
+                    	
+                    	<div id="viewPassword-container"><input type="checkbox" id="viewPwd"><label for="viewPwd">Show Password</label></div>
+                    	 <br><br><br>
+                    	  <input type="submit" value="Change Password" id="submit-password"/>
+              </form>
+    				
+    				</div>
+    				    
+             
+               
+    				
+    			</div>
+    			
+    			
         </main>
     
    
@@ -229,12 +280,45 @@ var getVariables = $(".getVariables");
 var fNameContainer = $(".profile-name-container");
 var nameStr = parseInt(userFirstName.length);
 
-
 console.log("Position: " + userPosition);
 getVariables.css("position", "absolute");
 getVariables.css("margin-top", "-100%");
 
 
+$(".updateInfo-btn").on('click', function(){
+	$('.trailer').fadeIn("slow");
+
+	//$(".trailer").css('visibility', 'visible');
+		
+    $('#background-image').css('filter', 'blur(5px)');
+
+})
+
+$('.updatePassword-btn').on('click', function(){
+	$('.trailer').fadeOut("slow");
+				//$(".trailer").css('visibility', 'hidden');
+	
+	$('#background-image').css('filter', 'unset');
+	
+});
+
+
+let viewPwd = false;
+
+$("#viewPwd").on('click', function(){
+let getPwdType = $("#password");
+if(viewPwd === false) {
+    console.log('checked, changed password field to text')
+    getPwdType.attr('type', 'text');
+    viewPwd = true;
+
+}
+else if(viewPwd === true){
+    console.log("Unchecked, changed password field back to password")
+    getPwdType.attr('type', 'password');
+    viewPwd = false;
+}
+})
 //loads registrationPage on click
 $("#registrationPage").on('click', function(){
 
