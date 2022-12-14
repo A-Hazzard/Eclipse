@@ -40,7 +40,9 @@
         	int fee = Integer.parseInt(request.getParameter("fee"));
         	String completedJobs = "INSERT INTO completedJobs VALUES(?,?,?,?,?,?,?,'Finished',?,?)";
         	String dropActiveJob = "DELETE FROM activeJobs WHERE (clientID = '"+clientID+"' AND vehicleType = '" +vehicleType+"' AND platenumber = '"+plateNumber+"' AND issue = '"+issues+"')";
-        	
+        	String dropPending = "DELETE FROM pendingClients WHERE (clientID = '"+clientID+"' AND vehicleType = '" +vehicleType+"' AND platenumber = '"+plateNumber+"' AND issueS = '"+issues+"' AND category = '"+category+"')"; 
+        	PreparedStatement delete = con.prepareStatement(dropPending);
+
         	Statement state2 = con.createStatement();
         	//Drops active jobs table
         	PreparedStatement ps = con.prepareStatement(completedJobs);
@@ -58,6 +60,7 @@
         	PreparedStatement ps2 = con.prepareStatement(dropActiveJob);
     		ps.executeUpdate();
 			ps2.executeUpdate();
+			delete.executeUpdate();
 			
 			if(category.equals("Engine")){
 	        	System.out.println("Engine Deletion");
