@@ -112,6 +112,32 @@ toggle {  0% {
  opacity: 1;
 }
 }
+
+form{
+    position: absolute;
+    z-index: 2;
+    margin: -15% 0 0 27.5%;
+    }
+    
+    form input{
+    	border-top: none;
+    	border-right: none;
+    	border-left: none;
+    	border-bottom-color:  rgb(229,36,14);;
+    	outline: none;
+    }
+    
+    form button{
+    	padding: 3%;
+    	font-size: 1.2rem;
+    	font-family: 'Roboto';
+    	border: none;
+    	margin-top: 4%;
+    	border-color:  rgb(229,36,14);;
+    	background-color:  rgb(229,36,14);
+    	color: white;
+    	border-radius: .3rem;
+    }
     </style>
     
     <title>Auto Serve ADMIN</title>
@@ -135,9 +161,7 @@ toggle {  0% {
         <nav class="navbar admin-navbar">
             <ul class="link-container">
                 
-                <li><a href="../pages/jobsPages.html" id="jobsPage" class="links">Jobs</a></li>
-                <li><a href="../pages/jobApplications.jsp" class="links jsp-links">Job Applications </a>
-                <li><a href="admin.jsp" id="adminPortal" class="links jsp-links">Admin Portal</a>
+                <li><a href="admin.jsp" id="adminPortal" class="links jsp-links">Statistics</a>
                 <li><a href="registerStaff.jsp" id="employeeForm" class="links jsp-links">Forms</a>
                 <li><a href="../jsp/logoutAction.jsp" class = "Links jsp-linnks logout">Logout</a>
                 
@@ -154,8 +178,8 @@ toggle {  0% {
         <div id = "admin-top-nav" style = "display: none;">
         	<ul class="link-container">
                 
-                <li><a href="../pages/jobsPages.html" id="jobsPage" class="links">Reports <i class="fa-sharp fa-solid fa-caret-down"></i></a></li>
-                <li><a href="../pages/jobApplications.jsp" class="links jsp-links">Project <i class="fa-sharp fa-solid fa-caret-down"></i></a></li>
+                <li><a href="#" id="jobsPage" class="links">Reports <i class="fa-sharp fa-solid fa-caret-down"></i></a></li>
+                <li><a href="#" class="links jsp-links">Project <i class="fa-sharp fa-solid fa-caret-down"></i></a></li>
                 <li><a href="admin.jsp" id="adminPortal" class="links jsp-links"><img src = "../pages/media/US-FLAG.png" width = "20px" height = "20px" alt = "language-flag" id = "language-flag"/> English <i class="fa-sharp fa-solid fa-caret-down"></i></a></li>
                 <li id = "profile-picture"><img src = "../pages/media/winsstonFields.jpeg"  alt = "profile-picture"/></li>
                 
@@ -238,39 +262,42 @@ toggle {  0% {
   
        
         
-      	System.out.println("text of employees: " + employee_count + "\ntext of Staff Members: " + staff_count + "\ntext of Mechanics: " + mechanic_count + "\ntext of clients: " + client_count);
+      	System.out.println("Number of employees: " + employee_count + "\nNumber of Staff Members: " + staff_count + "\nNumber of Mechanics: " + mechanic_count + "\nNumber of clients: " + client_count);
       %>
-    <div class = "statistics" style = "display: flex; justify-content: center;margin-top: 5%;">
+      <br><br>
+      	    	<h2 id = "h2" style = "text-align: center; display: none;">Statistics</h2>
+      
+    <div class = "statistics" style = "display: none; justify-content: center;margin-top: 3%;">
 	     <div class = "count" style = " margin-left: 5%;">
-	           <div class="progress-bar" data-percent="<% out.print(employee_count); %>" data-duration="100" data-color="#ccc,blue"></div>
-	     		<p>text of Employees</p>
+	           <div class="progress-bar" data-percent="<% out.print(employee_count); %>" data-duration="3000" data-color="#ccc,blue"></div>
+	     		<p>Number of Employees</p>
 	     </div>
 	      
 	      <div class = "count" style = " margin-left: 10%;">
-	           <div class="progress-bar" data-percent="<% out.print(staff_count); %>" data-duration="100" data-color="#ccc,yellow"></div>
-	     		<p>text of Staff Members</p>
+	           <div class="progress-bar" data-percent="<% out.print(staff_count); %>" data-duration="4000" data-color="#ccc,yellow"></div>
+	     		<p>Number of Staff Members</p>
 	     </div>
 	     
 	     <div class = "count" style = " margin-left: 10%;">
-	           <div class="progress-bar" data-percent="<% out.print(mechanic_count); %>" data-duration="100" data-color="#ccc,green"></div>
-	     		<p>text of Mechanics</p>
+	           <div class="progress-bar" data-percent="<% out.print(mechanic_count); %>" data-duration="5000" data-color="#ccc,green"></div>
+	     		<p>Number of Mechanics</p>
 	     </div>
 	     <div class = "count" style = " margin-left: 10%;">
-	           <div class="progress-bar" data-percent="<% out.print(client_count); %>" data-duration="100" data-color="#ccc,purple"></div>
-	     		<p>text of clients</p>
+	           <div class="progress-bar" data-percent="<% out.print(client_count); %>" data-duration="6000" data-color="#ccc,purple"></div>
+	     		<p>Number of clients</p>
 	     </div>
      </div>
      <br><br>
      <div>
-      <div id="piechart" style = "background-color: red; width: 50%; height: 50%;"></div>
-     <form action = "../jsp/updateHourlySchedule.jsp" method = "POST">
+      <div id="piechart" style = "width: 50%; height: 50%; display: none;"></div>
+     <form action = "../jsp/updateHourlySchedule.jsp" method = "POST" style = "display: none;">
      		 <% if("invalidNumber".equals(msg)){ %>
                     	<p id = "errorMsg" style = "text-align: left; color: red;">Invalid Number. Try again</p>
                         <%} %>
-         		<label for = "workHours_input">New Work Hours: </label><br>
+         		<label for = "workHours_input">Set Work Hours: </label><br>
          		<input type = "text" name = "workHours_input" id = "workHours_input" placeholder = "<% out.print(workHours); %>"/>
          		<br>
-         		<label for = "lunchHours_input">New Lunch Hours: </label><br>
+         		<label for = "lunchHours_input">Set Lunch Hours: </label><br>
          		<input type = "text" name = "lunchHours_input" id = "lunchHours_input" placeholder = "<% out.print(lunchHours); %>"/>
          		<br>
          		<label for = "meetingsHours_input">Meetings: </label><br>
@@ -280,7 +307,7 @@ toggle {  0% {
          	</form>
          </div>
         
-<div id="columnchart_values" style="width: 900px; height: 300px; margin: -32% 0 0 50%; position: absolute;"></div>
+<div id="columnchart_values" style="width: 900px; height: 300px; margin: -25% 0 0 50%; position: absolute; display: none;"></div>
      
     </main>
     
@@ -351,7 +378,7 @@ toggle {  0% {
       var data = google.visualization.arrayToDataTable([
         ["Element", "Density", { role: "style" } ],
         ["Clutch", <% out.print(clutchCount); %>, "#b87333"],
-        ["Eegine", <% out.print(engineCount); %>, "silver"],
+        ["Engine", <% out.print(engineCount); %>, "silver"],
         ["Breaks", <% out.print(breaksCount); %>, "gold"]
       ]);
 
@@ -402,15 +429,29 @@ $(".count > div").css("margin", "0 auto");
 		var getVariables = $(".getVariables");
 		var fNameContainer = $(".profile-name-container");
 		var nameStr = parseInt(userFirstName.length);
+		
+		
+		
+		
+		
 		//makes blank page if user isnt admin or null
 		if(userPosition != "Admin"){
 			
-		    $("#warn").css("display", "block")
-		console.log("null")
+		    $("#warn").css("display", "block");
+		    $("main").css("height", "100vh");
+			console.log("null")
 		} else{
 			$("#admin-top-nav").css("display", "block");
 			$("header").css("display", "block");
+			$("#h2").css("display", "block");
+			$(".statistics").css("display", "flex");
+			$("#columnchart_values").css("display", "block");
+			$("#piechart").css("display", "block");
+			$("form").css("display", "block");	
 		}
+		
+		
+		
 		
 		console.log("Position: " + userPosition);
 		getVariables.css("position", "absolute");

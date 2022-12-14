@@ -116,7 +116,7 @@
 				
 			<h3 style = "text-align: center; width: 100vw; font-size: 3rem; color: red;">You have no active jobs</h3>
 				
-				
+	<div id = "wrapper" style = "display: flex; flex-wrap: wrap;">
 		<% 
 		//Mechanic email already initialized on login
 		int ClientID = 0;
@@ -161,19 +161,21 @@
 					background: rgb(239 239 239);
 					border-radius: .5rem;
 					padding: 1%;
-					height: 30%;
-					width: 40%;
+					display: inline-block;
+					width: 56%;
+					height: 50%;
+					overflow-y: scroll;
 					text-align: left;
 					box-shadow: .2rem .1rem .4rem rgb(223, 223, 223);
 					position: relative;
 					margin-left: 5%">
 					
-							<P class = "reg_mechanicEmail info">Mechanic's contact email that assigned you:  <span id = "mechanicEmail" class = "sub-info"><%out.print(reg_mechEmail); %></span></P>
-							<P class = "reg_VehicleType info">Type of Vehicle:  <span id = "type" class = "sub-info"><%out.print(reg_vehicleType); %></span></P>
-							<p class = "reg_plateNum info">Vehicle Plate Number:  <span id = "pNum" class = "sub-info"><%out.print(reg_plateNum); %></span></p>
-							<p class = "reg_issues info">Issues:  <span id = "issues" class = "sub-info"><%out.print(reg_issues); %></span></p>
-							<p class = "reg_feedback info">Feedback from mechanic:  <span id = "feedback" class = "sub-info"><%out.print(reg_mechanicFeedback); %></span></p>
-							<p class = "reg_status info">Status:  <span id = "status" class = "sub-info"><%out.print(reg_status); %></span></p>
+							<p class = "reg_mechanicEmail info">Mechanic's contact email that assigned you:  <span id = "mechanicEmail" class = "sub-info"><%out.print(reg_mechEmail); %></span></p><br><br>
+							<p class = "reg_VehicleType info">Type of Vehicle:  <span id = "type" class = "sub-info"><%out.print(reg_vehicleType); %></span></p><br>
+							<p class = "reg_plateNum info">Vehicle Plate Number:  <span id = "pNum" class = "sub-info"><%out.print(reg_plateNum); %></span></p><br>
+							<p class = "reg_issues info">Issues:  <span id = "issues" class = "sub-info"><%out.print(reg_issues); %></span></p><br>
+							<p class = "reg_feedback info">Feedback from mechanic:  <span id = "feedback" class = "sub-info"><%out.print(reg_mechanicFeedback); %></span></p><br>
+							<p class = "reg_status info">Status:  <span id = "status" class = "sub-info"><%out.print(reg_status); %></span></p><br>
 								
 						</div>
 					
@@ -186,6 +188,7 @@
 			System.out.println("Problem returning registration info. SQL Error: " + e);
 		}
 	%>
+	</div>
 	</main>
 
  <footer>
@@ -203,7 +206,7 @@
         <div id="footer-links"></div>
     </div>
         <br><br>
-        <p id="copyright" style="text-align: center; opacity: .5;">Copyright © 2022 Auto Serve Inc. All Rights Reserved.</p>
+        <p id="copyright" style="text-align: center; opacity: .5;">Copyright © 2022 Auto Serve Inc. All Rights Reserved.</p><br>
 </footer>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script src="https://kit.fontawesome.com/18479e6558.js"></script>

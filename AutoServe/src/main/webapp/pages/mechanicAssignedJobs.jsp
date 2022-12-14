@@ -109,7 +109,7 @@
     </header>
 
     <!--Content loaded using AJAX with JQuery-->
-    <main id = "clientApplication-main">
+    <main id = "clientApplication-main" class = "mechanicAssignedJobs-main " >
 		
 			<div id = "header-container" style = "display: none;">	
 					<h2 id = "jobApplication-h2">Assigned Job</h2> 
@@ -168,8 +168,9 @@
 					reg_vehicleType = result.getString(4);
 					reg_plateNum = result.getString(5);
 					reg_issues = result.getString(6);
-					reg_status = result.getString(7);
-					reg_category = result.getString(8);
+					reg_category = result.getString(7);
+
+					reg_status = result.getString(8);
 					
 				%>
 					<div class = "client-info" style = "
@@ -205,8 +206,9 @@
 					reg_vehicleType = result1.getString(4);
 					reg_plateNum = result1.getString(5);
 					reg_issues = result1.getString(6);
-					reg_status = result1.getString(7);
-					reg_category = result1.getString(8);
+					reg_category = result1.getString(7);
+
+					reg_status = result1.getString(8);
 
 					
 				%>
@@ -283,7 +285,7 @@
 			
 			
 			
-			<form action="../jsp/updateJobStatus.jsp" method = 'post' id="registered-bookings-form" class = "mechanic-form" style = "display: none;">
+			<form action="../jsp/updateJobStatus.jsp" method = 'post' id="registered-bookings-form" class = "mechanic-form" style = "display: none; height: auto; ">
 						<h2>Client #<span class = "span-client-ID"></span></h2>
 						<br>
 				<div class ="hidden">
@@ -333,7 +335,7 @@
 			</form>
         
 	</main>
-
+<br><br><br>
  <footer>
     <div id="flex-container">
         <div id="footer-nav">
@@ -493,12 +495,11 @@
 					$(".feedback").css("margin-bottom", "1%");
 					$(".feedback").attr("required", true);
 					
-					$(".fee").css("display", "unset");
-					$(".fee").css("margin-bottom", "1%");
-					$(".fee").attr("required", true);
+					
 					
 
 				}
+		
 				
 				else{
 					console.log(option + " Option Selected");
@@ -514,6 +515,9 @@
 				if(option == "Finished"){
 					$("#invoiceLink_input").attr("required", true);
 					$(".invoice").css("display", "unset");
+					$(".fee").css("display", "unset");
+					$(".fee").css("margin-bottom", "1%");
+					$(".fee").attr("required", true);
 				}
 			})
 				

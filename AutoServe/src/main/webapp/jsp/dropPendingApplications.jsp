@@ -11,7 +11,7 @@
 	
 	//QUERIES
 	String dropPendingTable = "DELETE FROM pendingClients WHERE (clientID = '"+clientID+"' AND vehicleType = '" +vehicleType+"' AND platenumber = '"+plateNumber+"' AND issues = '"+issues+"' AND category = '"+category+"' AND status = '"+status+"')";
-	String dropRegVehicleTable = "DELETE FROM registered_vehicles WHERE (clientID = '"+clientID+"' AND vehicleType = '" +vehicleType+"' AND platenumber = '"+plateNumber+"' AND issues = '"+issues+"' AND jobcategory = '"+category+"' AND status = '"+status+"')";
+	String dropRegVehicleTable = "DELETE FROM registered_vehicles WHERE (clientID = '"+clientID+"' AND vehicleType = '" +vehicleType+"' AND platenumber = '"+plateNumber+"' AND issues = '"+issues+"' AND category = '"+category+"' AND status = '"+status+"')";
 	String dropJobsTable = "DELETE FROM jobs WHERE (clientID = '"+clientID+"' AND vehicleType = '" +vehicleType+"' AND platenumber = '"+plateNumber+"' AND issue = '"+issues+"' AND category = '"+category+"' AND currentstatus ='"+status+"')";
 	String dropRegistrationQTable = "DELETE FROM registrationq WHERE (clientID = '"+clientID+"' AND vehicleType = '" +vehicleType+"' AND platenumber = '"+plateNumber+"' AND issues = '"+issues+"' AND category = '"+category+"' AND status ='"+status+"')";
 	

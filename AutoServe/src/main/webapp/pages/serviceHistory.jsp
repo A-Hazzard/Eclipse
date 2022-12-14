@@ -165,7 +165,10 @@
 					border-radius: .5rem;
 					padding: 1%;
 				
+					display: inline-block;
 					width: 40%;
+					height: 18%;
+					overflow-y: scroll;	
 					text-align: left;
 					box-shadow: .2rem .1rem .4rem rgb(223, 223, 223);
 					position: relative;

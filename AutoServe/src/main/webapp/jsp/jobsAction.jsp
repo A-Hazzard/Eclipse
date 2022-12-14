@@ -1,4 +1,4 @@
-<%@ page import = "Servlets.ConnectionProvider" %>
+		<%@ page import = "Servlets.ConnectionProvider" %>
 <%@ page import = "java.sql.*" %>
 
 <%
@@ -65,7 +65,7 @@
 
     			if(category.equals("Engine")){
     				System.out.println("Engine table");
-    				String sql2 = "INSERT INTO engineRepair VALUES('"+clientID+"','"+mechEmail+"','"+staffEmail+"','"+vehicleType+"','"+plateNumber+"','"+issues+"','Pending','"+category+"')";
+    				String sql2 = "INSERT INTO engineRepair VALUES('"+clientID+"','"+mechEmail+"','"+staffEmail+"','"+vehicleType+"','"+plateNumber+"','"+issues+"','"+category+"','Pending')";
     				PreparedStatement ps2= con.prepareStatement(sql2);
     					/*ps2.setInt(1, clientID);
     					ps2.setString(2, mechEmail);
@@ -85,7 +85,7 @@
     			}
     			else if(category.equals("Breaks")){
     				System.out.println("Breaks table");
-    				String sql2 = "INSERT INTO breakRepair VALUES('"+clientID+"','"+mechEmail+"','"+staffEmail+"','"+vehicleType+"','"+plateNumber+"','"+issues+"','Pending','"+category+"')";
+    				String sql2 = "INSERT INTO breakRepair VALUES('"+clientID+"','"+mechEmail+"','"+staffEmail+"','"+vehicleType+"','"+plateNumber+"','"+issues+"','"+category+"','Pending')";
     				PreparedStatement ps2 = con.prepareStatement(sql2);
     				/*ps2.setInt(1, clientID);
     				ps2.setString(2, mechEmail);
@@ -105,7 +105,7 @@
     			}
     			else if(category.equals("Clutch")){
     				System.out.println("Clutch table");
-    				String sql2 = "INSERT INTO clutchRepair VALUES('"+clientID+"','"+mechEmail+"','"+staffEmail+"','"+vehicleType+"','"+plateNumber+"','"+issues+"','Pending','"+category+"')";
+    				String sql2 = "INSERT INTO clutchRepair VALUES('"+clientID+"','"+mechEmail+"','"+staffEmail+"','"+vehicleType+"','"+plateNumber+"','"+issues+"','Pending', '"+category+"')";
     				PreparedStatement ps2 = con.prepareStatement(sql2);
     					/*ps2.setInt(1, clientID);
     					ps2.setString(2, mechEmail);

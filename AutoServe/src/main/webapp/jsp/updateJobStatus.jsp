@@ -15,22 +15,29 @@
 		String category = request.getParameter("category_input").trim();
 		String invoice = request.getParameter("invoiceLink_input").trim();
 		int clientID = Integer.parseInt(request.getParameter("clientID_input").trim());
-		int fee = Integer.parseInt(request.getParameter("fee").trim());
 		
+
 		Connection con = ConnectionProvider.getConnection();
 		Statement state = con.createStatement();
+		Statement states1 = con.createStatement();
+		Statement states2 = con.createStatement();
+		Statement states3 = con.createStatement();
+		
 		String UpdateEngineRepair = "UPDATE engineRepair SET currentStatus = '"+status+"' WHERE (clientID = '"+clientID+"' AND vehicleType = '" +vehicleType+"' AND platenumber = '"+plateNumber+"' AND issue = '"+issues+"' AND category = '"+category+"')"; 
 		String UpdateBreaksRepair = "UPDATE breakRepair SET currentStatus = '"+status+"' WHERE(clientID = '"+clientID+"' AND vehicleType = '" +vehicleType+"' AND platenumber = '"+plateNumber+"' AND issue = '"+issues+"' AND category = '"+category+"')"; 
 		String UpdateClutchRepair = "UPDATE clutchRepair SET currentStatus = '"+status+"' WHERE (clientID = '"+clientID+"' AND vehicleType = '" +vehicleType+"' AND platenumber = '"+plateNumber+"' AND issue = '"+issues+"' AND category = '"+category+"')"; 
 		String Updatejobs ="UPDATE jobs SET currentStatus = '"+status+"' WHERE (clientID = '"+clientID+"' AND vehicleType = '" +vehicleType+"' AND platenumber = '"+plateNumber+"' AND issue = '"+issues+"' AND category = '"+category+"')"; 
 
+
         ResultSet rs = state.executeQuery(UpdateEngineRepair);
-        rs = state.executeQuery(UpdateBreaksRepair);
-        rs = state.executeQuery(UpdateClutchRepair);
-        rs = state.executeQuery(Updatejobs);
+	        ResultSet rs1 = states1.executeQuery(UpdateBreaksRepair);
+	        ResultSet rs2 = states2.executeQuery(UpdateClutchRepair);
+		
+        ResultSet rs3 = states3.executeQuery(Updatejobs);
         
         if(status.equals("Finished")){
         	System.out.println("Finished Job");
+        	int fee = Integer.parseInt(request.getParameter("fee"));
         	String completedJobs = "INSERT INTO completedJobs VALUES(?,?,?,?,?,?,?,'Finished',?,?)";
         	String dropActiveJob = "DELETE FROM activeJobs WHERE (clientID = '"+clientID+"' AND vehicleType = '" +vehicleType+"' AND platenumber = '"+plateNumber+"' AND issue = '"+issues+"')";
         	
@@ -44,8 +51,9 @@
         	ps.setString(5, issues);
         	ps.setString(6, mechanicFeedback);
         	ps.setString(7, invoice);
-        	ps.setInt(8, fee);
-        	ps.setString(9, category);
+        	ps.setString(8, category);
+
+        	ps.setInt(9, fee);
 
         	PreparedStatement ps2 = con.prepareStatement(dropActiveJob);
     		ps.executeUpdate();

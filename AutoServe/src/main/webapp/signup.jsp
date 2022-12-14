@@ -128,13 +128,7 @@
                     	</td>
                 </tr>
                 
-                <tr>
-                    <td>
-                        <br>
-                        <a href = "pages/forgotPassword.html" id="forgotpassword">Forgot Password</a>
-                    </td>
-                </tr>
-
+          
                 <tr>
                     <td><input type="submit" value="Sign Up" id="submit"/></td>
                 </tr>

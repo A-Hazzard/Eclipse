@@ -17,8 +17,8 @@ try{
 		String msg = "Data entered successfully. <a href = \"registration.html\">Register again.</a>";
 		Connection con = ConnectionProvider.getConnection();
 			
-			PreparedStatement ps = con.prepareStatement("INSERT INTO registrationq VALUES("+clientID+",?,?,?,?, 'Pending')");
-			PreparedStatement ps2 = con.prepareStatement("INSERT INTO pendingClients VALUES("+clientID+",?,?,?,?, 'Pending')");
+		PreparedStatement ps = con.prepareStatement("INSERT INTO registrationq VALUES("+clientID+",?,?,?,?, 'Pending')");
+		PreparedStatement ps2 = con.prepareStatement("INSERT INTO pendingClients VALUES("+clientID+",?,?,?,?, 'Pending')");
 
 			ps.setString(1,vehicleType);
 			ps.setString(2,plateNumber);

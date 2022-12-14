@@ -1377,7 +1377,7 @@ footer #flex-container #footer-links #wrapper span a {
 
 #clientApplication-main {
   width: 100vw;
-  height: 100vh;
+  height: 100vw;
   padding-top: 10%;
   display: flex;
   position: relative;
@@ -1679,4 +1679,8 @@ footer #flex-container #footer-links #wrapper span a {
   outline: none !important;
   border-color: rgb(229, 36, 14);
   box-shadow: 0 0 3px rgb(229, 36, 14);
+}
+
+.mechanicAssignedJobs-main {
+  height: auto !important;
 }/*# sourceMappingURL=style.css.map */

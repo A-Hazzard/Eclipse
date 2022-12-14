@@ -69,12 +69,10 @@
         style = "text-decoration: none; color: black;">Auto Serve Inc.</a></h1>
         
     
-        <nav class="navbar admin-navbar">
+         <nav class="navbar admin-navbar">
             <ul class="link-container">
                 
-                <li><a href="../pages/jobsPages.html" id="jobsPage" class="links">Jobs</a></li>
-                <li><a href="../pages/clientApplications.jsp" class="links jsp-links">Client Applications </a>
-                <li><a href="admin.jsp" id="adminPortal" class="links jsp-links">Admin Portal</a>
+                <li><a href="admin.jsp" id="adminPortal" class="links jsp-links">Statistics</a>
                 <li><a href="registerStaff.jsp" id="employeeForm" class="links jsp-links">Forms</a>
                 <li><a href="../jsp/logoutAction.jsp" class = "Links jsp-linnks logout">Logout</a>
                 
@@ -91,8 +89,8 @@
         <div id = "admin-top-nav">
         <ul class="link-container">
                 
-                <li><a href="../pages/jobsPages.html" id="jobsPage" class="links">Reports <i class="fa-sharp fa-solid fa-caret-down"></i></a></li>
-                <li><a href="../pages/clientApplications.jsp" class="links jsp-links">Project <i class="fa-sharp fa-solid fa-caret-down"></i></a></li>
+                <li><a href="#" id="jobsPage" class="links">Reports <i class="fa-sharp fa-solid fa-caret-down"></i></a></li>
+                <li><a href="#" class="links jsp-links">Project <i class="fa-sharp fa-solid fa-caret-down"></i></a></li>
                 <li><a href="admin.jsp" id="adminPortal" class="links jsp-links"><img src = "../pages/media/US-FLAG.png" width = "20px" height = "20px" alt = "language-flag" id = "language-flag"/> English <i class="fa-sharp fa-solid fa-caret-down"></i></a></li>
                 <li id = "profile-picture"><img src = "../pages/media/winsstonFields.jpeg"  alt = "profile-picture"/></li>
                 
@@ -147,13 +145,6 @@
                         <label for="password">Password: </label><br>
                         <input type="password" name="password" id="password" required/>
                         <div id="viewPassword-container"><input type="checkbox" id="viewPwd"><label for="viewPwd">Show Password</label></div>
-                    </td>
-                </tr>
-                
-                <tr>
-                    <td>
-                        <br>
-                        <a href = "../pages/forgotPassword.html" id="forgotpassword">Forgot Password</a>
                     </td>
                 </tr>
 
