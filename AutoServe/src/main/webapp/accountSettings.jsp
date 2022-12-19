@@ -57,19 +57,30 @@
     }
     
     .account-info{
-    	border: 3px solid black;
-    border-radius: 2rem;
-    height: 30vh;
+    border-radius: .5rem;
+    height: 50vh;
     padding: 2%;
-    	
+    position: relative;
+    	box-shadow: rgb(0 0 0 / 13%) 0px 5.6px 9.6px 0px, rgb(0 0 0 / 11%) 0px 0.3px 0.9px 0px;
     }
     
+    .profile{
+    	font-family: 'Segoe UI';
+    	font-size: 14px;
+    	text-align: left;
+    	
+    }
     .security-info{
     margin-left: 2%;
-    border: 3px solid black;
-    border-radius: 2rem;
+    box-shadow: rgb(0 0 0 / 13%) 0px 5.6px 9.6px 0px, rgb(0 0 0 / 11%) 0px 0.3px 0.9px 0px;
+    border-radius: 1rem;
    
-    padding: 2%;
+    padding: .5%;
+    }
+    
+    .info-header{
+    font-family: 'Segoe UI';
+    	font-size: 28px;
     }
     
     .fa-envelope{
@@ -98,7 +109,7 @@
             margin-top: -10%;
         }
         
-         input[type=text], input[type=email]{
+         input[type=text], input[type=email], input[type=password]{
         border-top: none;
         border-right: none;
         border-left: none;
@@ -107,6 +118,48 @@
         margin-bottom: 15%;
         outline: none;
         }
+        
+        #newPassword, #currentPassword{
+        	margin-bottom: 2%;
+        }
+        
+        
+        .white{
+		       border-radius: 50%;
+    width: 5rem;
+    background: #dad9d9;
+    padding: 3%;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: -38% auto;
+        	
+        }
+        .orange{
+        	    background: white;
+    border-radius: 50%;
+    width: 5rem;
+    background: orange;
+    padding: 3%;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+        }
+        
+        .fa-user{
+        	  font-size: 2rem;
+        	
+        	}
+        	
+        	.passwordLabel{
+        		margin-top: -5%;
+        	}
+        	
+        	#answer{
+        		margin-bottom: 5%;
+        	}
     </style>
     
     <title>Account Settings</title>
@@ -138,21 +191,33 @@
     <main id = "accountSettings-main">
     <br><br>
     <h2 style = "text-align: center;">MY ACCOUNT</h2>
+    <% if(("changedSecurityInfo").equals(msg)){ %>
+    	<h3 style = "text-align: center;">Changed Security Information</h3>
+    	<%} else if(("changedPassword").equals(msg)){ %>
+    		<h3 style = "text-align: center;">Changed Password</h3>
+    		<%} %>
+    		
     			<div class = "flex-wrapper" style = "margin-top: 2%;">
     			
     			<div class = "account-info">
-    				<p class = "profile-name">Name: <% out.print(firstName + " " + lastName); %></p>
-    				<p class = "profile-Email" class = "getVariables">Email: <% out.print(email); %></p>
-					<p class = "profile-Phone" class =  "getVariables">Phone: <% out.print(phone); %></p>
-					<p class = "profile-Position" class = "getVariables">Position: <% out.print(position); %></p>
-					
+    			
+	    			<div class = "white">
+	    				<div class = "orange">
+	    			    			<i class="fa-solid fa-user"></i>
+	    				</div>
+    			</div>
+    			<br><br><br><br><br>
+    				<p class = "profile-name profile">Name: <% out.print(firstName + " " + lastName); %></p>
+    				<p class = "profile-Email profile" class = "getVariables">Email: <% out.print(email); %></p>
+					<p class = "profile-Phone profile" class =  "getVariables">Phone: <% out.print(phone); %></p>
+					<p class = "profile-Position profile" class = "getVariables">Position: <% out.print(position); %></p>
+				
     			</div>
     				<div class = "security-info">
     						<p class = "info-header">Security Info</p>
     						<i class="fa-solid fa-user-pen"></i>
     						<br>
     						<p class = "details">Keep your verification methods and security info up to date.</p>
-    						<a class = "updateInfo-btn" href = "#">Update Info -></a>
     						 <!--Form used for logging in-->
         <form action="jsp/accountSettings/updateInfoAction.jsp" method="post" class="Form">
             <table id="loginFormTable">
@@ -162,7 +227,7 @@
                 <tr>
                     <td>
                     
-                    <% if("invalidInfo".equals(msg)){ %>
+                    <% if("invalidSecurityInfo".equals(msg)){ %>
                     	<p id = "errorMsg" style = "text-align: left; color: red;">Information doesn't match. Try again</p>
                         <%} %>
                         
@@ -176,13 +241,19 @@
 				  		
 				  		 <label for = "newPassword" style = "display: none;">Answer:</label><br>
                 		  	<input type = "text" name = "answer" id = "answer" placeholder = "Enter Answer" required>
+                		  	
+                		  	<label for = "currentPassword" class = "passwordLabel">Password:</label>
+                        <input type="password" autocomplete name="password" id="password" required>
+                        
+                		  	
                     </td>
                     
                    
                 </tr>
             
-
+<br><br><br><br>
                 <tr>
+                
                     <td><input type="submit" value="Update Info" id="submit"/>
                     </td>
                 </tr>
@@ -200,6 +271,10 @@
     				
     				
     				 <form action = "jsp/accountSettings/updatePasswordAction.jsp" method = "POST">
+              
+              	 <% if("invalidInfo".equals(msg)){ %>
+                    	<p id = "errorMsg" style = "text-align: left; color: red;">Information doesn't match. Try again</p>
+                        <%} %>
                <input type = "hidden" class = "position_input" name = "position" value = "<% out.print(position); %>" required>
                         <input type = "hidden" class = "userID_input" name = "userID" value = <% out.print(userID); %> required>
                        

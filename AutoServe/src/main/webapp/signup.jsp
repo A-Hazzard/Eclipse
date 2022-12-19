@@ -60,7 +60,8 @@
             margin-bottom: 5%;
             }
             
-          
+          .needed{
+          color: red;}
     </style>
     
     <title>Auto Serve Inc.</title>
@@ -107,14 +108,14 @@
             <table id="loginFormTable">
                 <tr>
                     <td> 
-                        <label for="firstname">First Name:</label><br>
+                        <label for="firstname">First Name:<span class = "needed">*</span></label><br>
                         <input type = "text" name = "firstname" id="firstname" required/>
                     </td>
                 </tr>
 
                 <tr>
                     <td> 
-                        <label for="lastname">Last Name:</label><br>
+                        <label for="lastname">Last Name:<span class = "needed">*</span></label><br>
                         <input type = "text" name = "lastname" id= "lastname" required/>
                     </td>
                 </tr>
@@ -122,20 +123,20 @@
                
                 <tr>
                     <td>
-                        <label for="email">Email:</label><br>
+                        <label for="email">Email:<span class = "needed">*</span></label><br>
                         <input type="email" name="email" id="email" required>
                     </td>
                 </tr>
                 
                  <tr>
                     <td>
-                        <label for="phone">Phone: </label><br>
+                        <label for="phone">Phone:<span class = "needed">*</span> </label><br>
                         <input type="text" name="phone" id="phone" required>
                     </td>
                 </tr>
                  <tr>
                 	<td>
-                		<label for = "securityQuestion">Security Question:</label><br>
+                		<label for = "securityQuestion">Security Question:<span class = "needed">*</span></label><br>
                 		<select name = "securityQuestion" required>
 				  			<option value = "Where were you born?"> Where were you born? </option>
 				  			<option value = "What was your first pet?"> What was your first pet? </option>
@@ -146,14 +147,14 @@
                 
                 <tr>
                 	<td>
-                			<label for = "answer" style = "display: none;">Answer:</label>
+                			<label for = "answer" style = "display: none;">Answer:<span class = "needed">*</span></label>
                 	  		<input type = "text" name = "answer" placeholder = "Enter Answer" required>
                 	</td>
                 </tr>
                 
                 <tr>
                     <td>
-                        <label for="password">Password: </label><br>
+                        <label for="password">Password: <span class = "needed">*</span></label><br>
                         <input type="password" autocomplete name="password" id="password" required>
                     	<div id="viewPassword-container"><input type="checkbox" id="viewPwd"><label for="viewPwd">Show Password</label></div>
                     	</td>
@@ -176,7 +177,7 @@
         
         </main>
     
-   
+   <br><br><br><br><br><br>
     <footer>
         <div id="flex-container">
             <div id="footer-nav">
@@ -191,7 +192,7 @@
             <!--LOAD LINKS FROM footer-nav using JQuery-->
             <div id="footer-links"></div>
         </div>
-<br><br>
+
 <p id="copyright" style="text-align: center; opacity: .5;">Copyright © 2022 Auto Serve Inc. All Rights Reserved.</p>
     </footer>
     
@@ -285,6 +286,8 @@ AOS.init({
   anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
 
 });
+
+
 </script>
 </body>
 </html>

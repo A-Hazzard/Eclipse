@@ -13,17 +13,32 @@
 		
 		Connection con = ConnectionProvider.getConnection();
 		Statement state = con.createStatement();
+		Statement state1 = con.createStatement();
 		
+		int valid = 0;
 		if(position.equals("Client")){
-			PreparedStatement ps = con.prepareStatement("UPDATE clients SET securityQuestion = '" + securityQuestion + "' WHERE ID = " + userID);
-			PreparedStatement ps1 = con.prepareStatement("UPDATE clients SET answer = '" + answer+ "' WHERE ID = " + userID);
-			ps.executeUpdate();
-			ps1.executeUpdate();
+		
+			ResultSet rs = state.executeQuery("UPDATE clients SET securityQuestion = '" + securityQuestion + "' WHERE ID = " + userID + " AND password = '" + password + "'");
+			ResultSet rs1 = state1.executeQuery("UPDATE clients SET answer = '" + answer+ "' WHERE ID = " + userID + " AND password = '" + password + "'");
+			
+			while(rs.next()){
+				response.sendRedirect("../../accountSettings.jsp?msg=changedSecurityInfo");
+
+			}
+			while(rs1.next()){
+				response.sendRedirect("../../accountSettings.jsp?msg=changedSecurityInfo");
+
+			}
 		}
 		
-		response.sendRedirect("../../accountSettings.jsp?msg=changedInfo");
+		
+		if(valid == 0){
+			response.sendRedirect("../../accountSettings.jsp?msg=invalidSecurityInfo");
+
+		}
+		
+		
 	}catch(Exception e){
-		System.out.println(e);
 		e.printStackTrace();
 	}
 

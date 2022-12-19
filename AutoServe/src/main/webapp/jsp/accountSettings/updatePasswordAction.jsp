@@ -20,7 +20,7 @@
 			
 				while(rs.next()){
 					test = 1;
-					response.sendRedirect("../../accountSettings.jsp?msg=changedInfo");
+					response.sendRedirect("../../accountSettings.jsp?msg=changedPassword");
 
 				}
 		

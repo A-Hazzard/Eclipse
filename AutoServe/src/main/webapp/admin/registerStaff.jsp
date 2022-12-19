@@ -51,6 +51,14 @@
                     font-size: 1.1rem;
                     font-family: 'Roboto';
                     }
+                    
+                    .needed{
+                    	color: red;
+                    }
+                    
+                    input{
+                    	background-color: transparent;
+                    }
     </style>
     
     <title>Employee Registration</title>
@@ -104,14 +112,14 @@
             <table id="loginFormTable">
                 <tr>
                     <td> 
-                        <label for="firstname">First Name:</label><br>
+                        <label for="firstname">First Name:<span class = "needed">*</span></label><br>
                         <input type = "text" name = "firstname" id="firstname" required/>
                     </td>
                 </tr>
 
                 <tr>
                     <td> 
-                        <label for="lastname">Last Name:</label><br>
+                        <label for="lastname">Last Name:<span class = "needed">*</span></label><br>
                         <input type = "text" name = "lastname" id= "lastname" required/>
                     </td>
                 </tr>
@@ -119,20 +127,20 @@
                
                 <tr>
                     <td>
-                        <label for="email">Email:</label><br>
+                        <label for="email">Email:<span class = "needed">*</span></label><br>
                         <input type="email" name="email" id="email" required/>
                     </td>
                 </tr>
                 
                  <tr>
                     <td>
-                        <label for="phone">Phone: </label><br>
+                        <label for="phone">Phone: <span class = "needed">*</span></label><br>
                         <input type="text" name="phone" id="phone" required/>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <label for="position">Position: </label><br>
+                        <label for="position">Position:<span class = "needed">*</span> </label><br>
                         <select name = "position" id = "position" class = "position" required/>
                         	<option value = "Staff">Staff</option>
                         	<option value = "Mechanic">Mechanic</option>
@@ -142,7 +150,7 @@
                 
                 <tr>
                     <td>
-                        <label for="password">Password: </label><br>
+                        <label for="password">Password:<span class = "needed">*</span> </label><br>
                         <input type="password" name="password" id="password" required/>
                         <div id="viewPassword-container"><input type="checkbox" id="viewPwd"><label for="viewPwd">Show Password</label></div>
                     </td>
